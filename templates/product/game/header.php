@@ -154,8 +154,6 @@ global $product;
                                                     </div>
                                                 </div>
                                             <?php endforeach;
-                                            $region_options = [];
-                                            $rg = [];
                                             ?>
                                         </div>
                                         <?php foreach ($product->get_available_variations() as $variation) : ?>
@@ -173,8 +171,10 @@ global $product;
                                                 foreach ($variation['attributes'] as $key => $value) {
                                                     $variationData .= 'data-bs-' . $key . '="' . $value . '"';
                                                 }
+
+
                                             ?>
-                                                <div class="card bg-light my-3 game_<?= get_term($option_id)->slug ?>" data-region-slug="<?= $variation['attributes']['attribute_pa_region'] . '_' . get_term($option_id)->slug ?>">
+                                                <div class="<?= $regions[0] != $variation['attributes']['attribute_pa_region'] ? 'd-none ' : '' ?>card bg-light my-3 game_<?= get_term($option_id)->slug ?>" data-region-slug="<?= $variation['attributes']['attribute_pa_region'] . '_' . get_term($option_id)->slug ?>">
                                                     <div class="card-body px-4 py-6">
                                                         <?php
                                                         $taxonomy = 'pa_platform';
@@ -261,7 +261,11 @@ global $product;
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php
+                            $region_options = [];
+                            $rg = [];
+
+                        endforeach; ?>
                     </div>
                     <!--end::Accordion-->
                 </div>
