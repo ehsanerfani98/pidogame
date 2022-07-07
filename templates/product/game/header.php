@@ -2,10 +2,10 @@
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 
-dd($product->get_attribute('pa_device'));
-dd($product->get_attributes()['pa_device']);
-
-
+foreach(explode(',', $product->get_attribute('pa_device')) as $name){
+    $sorting_id_devices[] = get_term_by( 'name', $name, 'pa_device' )->term_id;
+}
+dd($sorting_id_devices);
 ?>
 
 <!-- <div class="row">
