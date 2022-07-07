@@ -1,6 +1,10 @@
 <?php
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
+
+dd($product->get_attributes()['pa_device']['options']);
+
+
 ?>
 
 <!-- <div class="row">
