@@ -5,7 +5,8 @@ global $product;
 foreach(explode(',', $product->get_attribute('pa_device')) as $name){
     $sorting_id_devices[] = get_term_by( 'name', $name, 'pa_device' )->term_id;
 }
-dd($sorting_id_devices);
+
+
 ?>
 
 <!-- <div class="row">
@@ -122,7 +123,7 @@ dd($sorting_id_devices);
                 <div class="card-body px-2 py-6">
                     <!--begin::Accordion-->
                     <div class="accordion" id="kt_accordion_1">
-                        <?php foreach ($product->get_attributes()['pa_device']['options'] as $option_id) : ?>
+                        <?php foreach ($sorting_id_devices as $option_id) : ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="kt_accordion_1_header_1">
                                     <button class="accordion-button fs-4 fw-bold <?= get_term($option_id)->slug == 'pc' ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#<?= get_term($option_id)->slug ?>" aria-expanded="<?= get_term($option_id)->slug == 'pc' ? 'true' : 'false' ?>" aria-controls="kt_accordion_1_body_1">
