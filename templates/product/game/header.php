@@ -2,7 +2,8 @@
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 
-// dd($product->get_attributes()['pa_device']);
+dd($product->get_attribute('pa_device'));
+dd($product->get_attributes()['pa_device']);
 
 
 ?>
