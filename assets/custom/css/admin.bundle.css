@@ -1,0 +1,3 @@
+body, div:not(.star), p, a:not(.dashicons), h1, h2, h3, h4, h5, h6, input, label, textarea, option, select, body#tinymce.wp-editor, .block-editor-block-list__layout, button:not(.ed_button):not(.dashicons), span:not(.ab-icon):not(.icon):not(.dashicons) {
+	font-family: IRANSansX !important;
+}

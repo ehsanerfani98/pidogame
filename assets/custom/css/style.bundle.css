@@ -1,0 +1,240 @@
+@keyframes placeHolderShimmer {
+	0% {
+		background-position: -468px 0
+	}
+
+	100% {
+		background-position: 468px 0
+	}
+}
+
+.animated-background {
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeHolderShimmer;
+	animation-timing-function: linear;
+	background: linear-gradient(to right, var(--bs-light-dark) 8%, var(--bs-gray-300) 18%, var(--bs-light-dark) 33%);
+	background-size: 1000px 104px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.pt-56p3 {
+	padding-top: 56.3%;
+}
+
+.ar-16-3 {
+	aspect-ratio: 16/3;
+}
+
+.ar-16-8 {
+	aspect-ratio: 16/8;
+}
+
+@media (min-width: 768px) {
+	.ar-md-16-6 {
+		aspect-ratio: 16/6;
+	}
+}
+
+@media (min-width: 992px) {
+	.ar-lg-16-6 {
+		aspect-ratio: 16/6;
+	}
+}
+
+@media (min-width: 1200px) {
+	.ar-xl-16-4 {
+		aspect-ratio: 16/4;
+	}
+}
+
+.mb-50 {
+	margin-bottom: 12.5rem !important;
+}
+
+.aligncenter {
+	margin: 0 auto;
+	display: block;
+}
+
+.img-rounded img {
+	border-radius: 0.475rem !important;
+}
+
+.fslightbox-slide-number-container {
+	max-width: unset !important;
+}
+
+.select2-container--bootstrap5 .select2-selection {
+	height: auto !important;
+}
+
+.product-checkbox:checked+label {
+	background-color: var(--bs-light-primary) !important;
+	border-color: var(--bs-primary) !important;
+}
+
+.product-checkbox:checked+label span.badge {
+	display: flex !important;
+}
+
+.gift-notice p:last-child {
+	margin-bottom: 0 !important;
+}
+
+.gift-card {
+	width: 100%;
+	height: 190px;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	perspective: 600px;
+}
+
+.gift-card-part {
+	width: 100%;
+	height: 190px;
+	-webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+}
+
+.gift-card-front {
+	-webkit-transform: rotateY(0);
+	-moz-transform: rotateY(0);
+}
+
+.gift-card-back {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+}
+
+.gift-card-flip:hover .gift-card-front {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+
+}
+
+.gift-card-flip:hover .gift-card-back {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+}
+
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+	padding: 0 14px 0 50px;
+}
+
+
+/* Hide the images by default */
+.mySlides {
+	display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+	cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 48%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 9px;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+	text-align: center;
+	background-color: #222;
+	padding: 2px 16px;
+	color: white;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Six columns side by side */
+.column {
+	float: left;
+	width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+	opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+	opacity: 1;
+}
+
+.brt {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-left: 0;
+}
+
+.wraper-video {
+	position: relative;
+}
+
+.plswb-play {
+	filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(137deg) brightness(119%) contrast(119%);
+	position: absolute;
+	right: 40%;
+	top: 40%;
+}
+
+.plswb-content-game-single img {
+	border-radius: 10px;
+}
