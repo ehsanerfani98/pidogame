@@ -75,3 +75,7 @@ function getslug(item) {
         }
     }
 }
+
+function removeHiddenVideo() {
+    $('#viemo').removeClass('d-none');
+}
