@@ -18,7 +18,7 @@ if (!empty($attachmentIds)) :
                     </a> -->
 
 
-                    <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-youtube" href="http://tv.pidogame.com/games/2491.webm">
+                    <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-html5" href="http://tv.pidogame.com/games/2491.webm">
                         <!--begin::Icon-->
                         <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
                         <!--end::Icon-->
