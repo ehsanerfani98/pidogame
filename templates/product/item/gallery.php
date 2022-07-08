@@ -18,7 +18,7 @@ if (!empty($attachmentIds)) :
                     </a> -->
 
 
-                    <a onclick="removeHiddenVideo()" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-vimeo" href="#vimeo">
+                    <a id="removeHiddenVideo" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-vimeo" href="#vimeo">
                         <!--begin::Icon-->
                         <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
                         <!--end::Icon-->
@@ -26,15 +26,13 @@ if (!empty($attachmentIds)) :
                     <iframe id="vimeo" style="display:none" src="http://tv.pidogame.com/games/2491.webm" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
                     <script>
                         jQuery('document').ready(function() {
-                            console.log('dddd');
+                            jQuery('#removeHiddenVideo').click(function() {
+                                jQuery('#viemo').css({
+                                    "display": "unset",
+                                    "height": "unset"
+                                });
+                            });
                         });
-                        // function removeHiddenVideo() {
-                        //     console.log('fffff');
-                        //     jQuery('#viemo').css({
-                        //         "display": "unset",
-                        //         "height": "unset"
-                        //     });;
-                        // }
                     </script>
                 </div>
             <?php endif ?>
