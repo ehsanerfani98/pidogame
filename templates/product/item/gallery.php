@@ -9,12 +9,19 @@ if (!empty($attachmentIds)) :
         <div data-tns="true" data-tns-loop="false" data-tns-autoplay="false" data-tns-swipe-angle="false" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-responsive="{768: {items: 2}, 1200: {items: 4}}" data-tns-dots="false" data-tns-prev-button="#kt_gallery_slider_prev" data-tns-next-button="#kt_gallery_slider_next">
             <?php if ($meta['opt-product-trailer-video']) : ?>
                 <div class="text-center px-5 py-5">
-                    <a class="position-relative d-block overlay" data-fslightbox="lightbox-html5" href="http://tv.pidogame.com/games/2491.webm">
+                    <!-- <a class="position-relative d-block overlay" data-fslightbox="lightbox-html5" href="<?php echo $meta['opt-product-trailer-video'] ?>">
                         <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px" style="background-image:url('<?php echo $meta['opt-product-trailer-image']['url'] ?>')"></div>
                         <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
                             <i class="bi bi-play-fill text-white fs-3x"></i>
                         </div>
                         <span class="position-absolute top-0 start-50 translate-middle badge badge-danger">تریلر محصول<i class="bi bi-play-fill text-inverse-danger me-1"></i></span>
+                    </a> -->
+
+
+                    <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-youtube" href="http://tv.pidogame.com/games/2491.webm">
+                        <!--begin::Icon-->
+                        <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
+                        <!--end::Icon-->
                     </a>
                 </div>
             <?php endif ?>
