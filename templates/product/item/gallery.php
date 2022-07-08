@@ -9,9 +9,9 @@ if (!empty($attachmentIds)) :
         <div data-tns="true" data-tns-loop="false" data-tns-autoplay="false" data-tns-swipe-angle="false" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-responsive="{768: {items: 2}, 1200: {items: 4}}" data-tns-dots="false" data-tns-prev-button="#kt_gallery_slider_prev" data-tns-next-button="#kt_gallery_slider_next">
             <?php if ($meta['opt-product-trailer-video']) : ?>
                 <div class="text-center px-5 py-5">
-                    <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-youtube" href="https://www.youtube.com/embed/xshEZzpS4CQ">
+                    <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-youtube" href="https://hajifirouz10.cdn.asset.aparat.com/aparat-video/217b41ceea9c6d4ad782b5adb470b78946069058-1080p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImVlNWY4NThmNTYxNDRmNjM1YzJjOTg0ZTQyZjI5MzBjIiwiZXhwIjoxNjU3MzE4OTIzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.NCdTO-jaWDK7_SixAmnBWSf8w5zFSDqx9_fpJriC_wE">
                         <!--begin::Icon-->
-                        <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
+                        <img src="<?php echo $meta['opt-product-trailer-image']['url'] ?>" class="position-absolute top-50 start-50 translate-middle" alt="" />
                         <!--end::Icon-->
                     </a>
                     <!-- <a class="position-relative d-block overlay" data-fslightbox="lightbox-html5" href="<?php echo $meta['opt-product-trailer-video'] ?>">
