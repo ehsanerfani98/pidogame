@@ -53,9 +53,9 @@ switch (true) {
                 </div>
             </div>
             <div class="separator separator-dashed my-5"></div>
-            <div class="mt-2 mb-4 d-flex justify-content-between">
+            <div class="mt-2 mb-4 d-flex justify-content-between" style="flex-wrap: wrap;">
                 <span>ژانر : </span>
-                <span class="text-gray-700 lh-lg badge badge-light-dark">
+                <span class="text-gray-700 lh-lg badge badge-light-dark" style="flex-wrap: wrap; flex-direction: row-reverse;">
                     <?php if ($product->get_attribute('genre')) : ?>
                         <?php
                         $i = 0;
