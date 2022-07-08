@@ -46,8 +46,8 @@ global $product;
                         </div>
                         <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
                             <?php
-                            get_template_part('templates/product/game/new-comment');
-                            get_template_part('templates/product/game/comments');
+                            get_template_part('templates/product/gift/new-comment');
+                            get_template_part('templates/product/gift/comments');
                             ?>
                         </div>
                     </div>
