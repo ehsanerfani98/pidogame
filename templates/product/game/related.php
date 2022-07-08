@@ -2,10 +2,10 @@
 global $product;
 $related = wc_get_related_products($product->get_id(), 4);
 ?>
-<div class="row">
-    <div class="col-12 col-xl-12">
         <div class="mt-10">
-            <div class="d-flex flex-stack mb-5">
+            <div class="card">
+                <div class="card-body">
+                <div class="d-flex flex-stack mb-5">
                 <h3 class="text-dark">محصولات مرتبط</h3>
             </div>
             <div class="separator separator-dashed mb-9"></div>
@@ -35,6 +35,7 @@ $related = wc_get_related_products($product->get_id(), 4);
                     </div>
                 <?php endforeach ?>
             </div>
+                </div>
+            </div>
+          
         </div>
-    </div>
-</div>
