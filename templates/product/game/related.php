@@ -1,6 +1,6 @@
 <?php
 global $product;
-$related = wc_get_related_products($product->get_id(), 3);
+$related = wc_get_related_products($product->get_id(), 4);
 ?>
 <div class="row">
     <div class="col-12 col-xl-12">
