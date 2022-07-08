@@ -26,7 +26,7 @@ if (!empty($attachmentIds)) :
                     <iframe id="vimeo" style="display:none" src="http://tv.pidogame.com/games/2491.webm" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
                     <script>
                         function removeHiddenVideo() {
-                            alert('dsadas');
+                            console.log('fffff');
                             jQuery('#viemo').css({
                                 "display": "unset",
                                 "height": "unset"
