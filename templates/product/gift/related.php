@@ -5,7 +5,7 @@ $related = wc_get_related_products($product->get_id(), 4);
 
 
 <div class="row">
-    <div class="col-12 col-xl-9">
+    <div class="col-12 col-lg-12">
 
         <div class="mt-10">
 
