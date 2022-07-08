@@ -1,7 +1,7 @@
 <?php $options = get_option('pidogame_framework');
 global $product; ?>
 <div id="comment" class="row">
-    <div class="col-12 col-xl-9">
+    <div class="col-12 col-xl-12">
         <div class="mt-17">
             <div class="d-flex flex-stack mb-5">
                 <h3 class="text-dark">دیدگاه خود را بنویسید</h3>
