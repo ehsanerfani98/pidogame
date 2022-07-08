@@ -5,6 +5,8 @@ $related = wc_get_related_products($product->get_id(), 3);
 <div class="row">
     <div class="col-12 col-xl-9">
         <div class="mt-10">
+         <div class="card">
+            <div class="card-body">
             <div class="d-flex flex-stack mb-5">
                 <h3 class="text-dark">محصولات مرتبط</h3>
             </div>
@@ -35,6 +37,8 @@ $related = wc_get_related_products($product->get_id(), 3);
                     </div>
                 <?php endforeach ?>
             </div>
+            </div>
+         </div>
         </div>
     </div>
 </div>
