@@ -81,7 +81,7 @@ jQuery('document').ready(function() {
         jQuery('#vimeo').css({
             "display": "unset",
             "height": "1080px",
-            "height": "1920px",
+            "width": "1920px",
         });
     });
 });
