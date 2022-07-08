@@ -293,7 +293,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
         <div class="row">
             <div class="card">
                 <div class="card-body px-2 py-5">
-
                     <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
                         <li class="nav-item">
                             <a class="brt nav-link active btn btn-flex btn-active-light-primary" data-bs-toggle="tab" href="#kt_tab_pane_4">
@@ -338,7 +337,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
