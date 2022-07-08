@@ -23,7 +23,7 @@ if (!empty($attachmentIds)) :
                         <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
                         <!--end::Icon-->
                     </a>
-                    <iframe id="vimeo" style="display:none" src="http://tv.pidogame.com/games/2491.webm" width="1920px" height="1080px" frameBorder="0" allow="autoplay" allowFullScreen></iframe>
+                    <iframe id="vimeo" src="http://tv.pidogame.com/games/2491.webm" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
 
                 </div>
             <?php endif ?>
