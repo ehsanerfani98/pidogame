@@ -76,3 +76,12 @@ function getslug(item) {
     }
 }
 
+jQuery('document').ready(function() {
+    jQuery('#removeHiddenVideo').click(function() {
+        jQuery('#vimeo').css({
+            "display": "unset",
+            "height": "1080px",
+            "height": "1920px",
+        });
+    });
+});
