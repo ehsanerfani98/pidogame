@@ -318,7 +318,11 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active px-2 plswb-content-game-single" id="kt_tab_pane_4" role="tabpanel" style="line-height: 2.7"><?php the_content() ?></div>
+                        <div class="tab-pane fade show active px-2" id="kt_tab_pane_4" role="tabpanel" style="line-height: 2.7">
+                        <div class="mt-xl-4 mt-lg-3 mt-md-2 mt-1 lh-xl text-gray-700 fs-6 ss02 img-rounded">
+                        <?php the_content() ?>
+                        </div>
+                    </div>
                         <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
                             <?php
                             get_template_part('templates/product/game/new-comment');
