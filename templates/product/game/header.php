@@ -203,9 +203,9 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
 
                                                         <?php
                                                         if ($variationProduct->is_in_stock()) : ?>
-                                                            <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" <?php echo $variationData ?> class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-0 position-relative bg-light-dark border-info">
+                                                            <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" <?php echo $variationData ?> class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-0 position-relative bg-light-dark border-primary">
                                                                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
-                                                                    <a role="button" class="btn btn-sm btn-info me-4">افزودن</a>
+                                                                    <a role="button" class="btn btn-sm btn-primary me-4">افزودن</a>
                                                                     <div class="me-2">
                                                                         <a class="text-gray-800 fs-6 fw-bold ss02 d-flex flex-column">
                                                                             <span><?php echo $title ?></span>
@@ -222,7 +222,7 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
                                                                     <?php if ($variationProduct->is_on_sale()) : ?>
                                                                         <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
-                                                                        <span class="text-info fw-boldest fs-2x ss02"><?php echo number_format($variationProduct->sale_price) ?></span>
+                                                                        <span class="text-primary fw-boldest fs-2x ss02"><?php echo number_format($variationProduct->sale_price) ?></span>
                                                                         <span class="fw-bold fs-2 text-gray-600 me-1 ms-2"><?php echo get_woocommerce_currency_symbol() ?></span>
                                                                         <?php $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100) ?>
                                                                         <span class="badge badge-lg badge-success align-self-center px-2 ms-3 ss02"><?php echo $percentage ?>% تخفیف</span>
@@ -238,7 +238,7 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                                                                             <span class="d-none d-xl-block position-absolute top-0 start-75 translate-middle-y badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
                                                                         <?php endif ?>
                                                                     <?php else : ?>
-                                                                        <span class="text-info fw-boldest fs-2x ss02"><?php echo number_format($variationProduct->regular_price) ?></span>
+                                                                        <span class="text-primary fw-boldest fs-2x ss02"><?php echo number_format($variationProduct->regular_price) ?></span>
                                                                         <span class="fw-bold fs-2 text-gray-600 me-1 ms-2"><?php echo get_woocommerce_currency_symbol() ?></span>
                                                                     <?php endif ?>
                                                                 </div>
@@ -291,7 +291,7 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
 
                     <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
                         <li class="nav-item">
-                            <a class="brt nav-link active btn btn-flex btn-active-light-info" data-bs-toggle="tab" href="#kt_tab_pane_4">
+                            <a class="brt nav-link active btn btn-flex btn-active-light-primary" data-bs-toggle="tab" href="#kt_tab_pane_4">
                                 <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
                                         <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
                                         <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
@@ -304,7 +304,7 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="brt nav-link btn btn-flex btn-active-light-info" data-bs-toggle="tab" href="#kt_tab_pane_5">
+                            <a class="brt nav-link btn btn-flex btn-active-light-primary" data-bs-toggle="tab" href="#kt_tab_pane_5">
                                 <span class="svg-icon svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
                                         <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                         <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
