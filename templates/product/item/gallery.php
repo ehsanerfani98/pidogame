@@ -27,6 +27,7 @@ if (!empty($attachmentIds)) :
                     <script>
                         jQuery('document').ready(function() {
                             jQuery('#removeHiddenVideo').click(function() {
+                                console.log('ddddd');
                                 jQuery('#viemo').css({
                                     "display": "unset",
                                     "height": "unset"
