@@ -3,6 +3,9 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 $attachmentIds = $product->get_gallery_image_ids();
 if (!empty($attachmentIds)) :
+
+dd( $meta['opt-product-trailer-video']);
+
 ?>
     <div class="separator my-5"></div>
     <div class="tns tns-default" style="direction: ltr;">
