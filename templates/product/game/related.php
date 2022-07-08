@@ -12,7 +12,7 @@ $related = wc_get_related_products($product->get_id(), 3);
             <div class="row g-10">
                 <?php foreach ($related as $productId) :
                     $relatedProduct = wc_get_product($productId) ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3">
                         <div class="card-xl-stretch">
                             <a href="<?php echo get_permalink($productId) ?>">
                                 <div class="position-relative w-100 pt-56p3 animated-background rounded">
