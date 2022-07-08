@@ -264,7 +264,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
-                                                                    <span class="text-danger fw-boldest fs-2x">ناموجود</span>
+                                                                    <span class="text-danger fw-boldest fs-4">ناموجود</span>
                                                                 </div>
                                                             </div>
                                                         <?php endif ?>
