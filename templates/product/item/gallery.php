@@ -18,12 +18,14 @@ if (!empty($attachmentIds)) :
                     </a> -->
 
 
-                    <a id="removeHiddenVideo" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('assets/media/stock/600x400/img-23.jpg')" data-fslightbox="lightbox-vimeo" href="#vimeo">
-                        <!--begin::Icon-->
-                        <img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
-                        <!--end::Icon-->
+                    <a id="removeHiddenVideo" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center rounded position-relative min-h-175px" style="background-image:url('<?php echo $meta['opt-product-trailer-image']['url'] ?>')" data-fslightbox="lightbox-vimeo" href="#vimeo">
+                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px" style="background-image:url('<?php echo $meta['opt-product-trailer-image']['url'] ?>')"></div>
+                        <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
+                            <i class="bi bi-play-fill text-white fs-3x"></i>
+                        </div>
+                        <span class="position-absolute top-0 start-50 translate-middle badge badge-danger">تریلر محصول<i class="bi bi-play-fill text-inverse-danger me-1"></i></span>
                     </a>
-                    <iframe id="vimeo" style="display:none" src="http://tv.pidogame.com/games/2491.webm" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+                    <iframe id="vimeo" style="display:none" src="<?php echo $meta['opt-product-trailer-video'] ?>" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
                     <script>
                         jQuery('document').ready(function() {
                             jQuery('#removeHiddenVideo').click(function() {
