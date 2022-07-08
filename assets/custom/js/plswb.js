@@ -77,5 +77,6 @@ function getslug(item) {
 }
 
 function removeHiddenVideo() {
+    alert('dsadas');
     $('#viemo').css({"display":"unset", "height":"unset"});;
 }
