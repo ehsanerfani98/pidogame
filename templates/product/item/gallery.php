@@ -18,7 +18,7 @@ if (!empty($attachmentIds)) :
                     </a> -->
 
 
-                    <a id="removeHiddenVideo" class="position-relative d-block overlay" style="background-image:url('<?php echo $meta['opt-product-trailer-image']['url'] ?>')" data-fslightbox="lightbox-vimeo" href="#vimeo">
+                    <a id="removeHiddenVideo" class="position-relative d-block overlay"  data-fslightbox="lightbox-vimeo" href="#vimeo">
                         <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px" style="background-image:url('<?php echo $meta['opt-product-trailer-image']['url'] ?>')"></div>
                         <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
                             <i class="bi bi-play-fill text-white fs-3x"></i>
