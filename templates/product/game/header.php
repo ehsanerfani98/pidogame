@@ -2,8 +2,8 @@
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 
-foreach(explode(',', $product->get_attribute('pa_device')) as $name){
-    $sorting_id_devices[] = get_term_by( 'name', $name, 'pa_device' )->term_id;
+foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
+    $sorting_id_devices[] = get_term_by('name', $name, 'pa_device')->term_id;
 }
 
 
@@ -23,6 +23,11 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
 <div class=" d-lg-flex row px-4 position-relative">
 
     <div class="row">
+        <div class="col-lg-12">
+            <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+                <?php if (function_exists('bcn_display')) bcn_display() ?>
+            </ul>
+        </div>
         <div class="col-lg-12">
             <div class="mb-3" style="padding-right: 1rem;">
                 <h1 class="text-gray" style="font-size: 1.65rem;"><?php the_title() ?></h1>
@@ -147,7 +152,7 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                                             }
                                             ?>
 
-                                            <?php 
+                                            <?php
                                             $i = 0;
                                             foreach ($region_options as $option_region_id) : ?>
                                                 <div class="col-lg-3 col-6 p-0 mb-5">
@@ -162,8 +167,8 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                                                     </div>
                                                 </div>
                                             <?php
-                                            $i++;
-                                             endforeach;
+                                                $i++;
+                                            endforeach;
                                             ?>
                                         </div>
                                         <?php foreach ($product->get_available_variations() as $variation) : ?>
@@ -319,10 +324,10 @@ foreach(explode(',', $product->get_attribute('pa_device')) as $name){
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active px-2" id="kt_tab_pane_4" role="tabpanel" style="line-height: 2.7">
-                        <div class="mt-xl-4 mt-lg-3 mt-md-2 mt-1 lh-xl text-gray-700 fs-6 ss02 img-rounded">
-                        <?php the_content() ?>
+                            <div class="mt-xl-4 mt-lg-3 mt-md-2 mt-1 lh-xl text-gray-700 fs-6 ss02 img-rounded">
+                                <?php the_content() ?>
+                            </div>
                         </div>
-                    </div>
                         <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
                             <?php
                             get_template_part('templates/product/game/new-comment');
