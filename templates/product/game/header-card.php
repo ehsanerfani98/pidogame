@@ -47,9 +47,8 @@ switch (true) {
     <div class="card-body p-3">
         <img class="w-100 rounded mb-2" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>">
         <div class="px-5">
-            <div class="row my-3">
+            <div class="row pt-3">
                 <div class="col-12">
-                    <!-- <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?> -->
                 </div>
             </div>
             <div class="separator separator-dashed my-5"></div>
