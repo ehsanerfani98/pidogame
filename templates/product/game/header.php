@@ -13,7 +13,10 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 <div class=" d-lg-flex row px-4 position-relative">
 
     <div class="row">
-     
+        <div class="col-lg-12">
+            <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+            </ul>
+        </div>
         <div class="col-lg-12">
             <div class="mb-3" style="padding-right: 1rem;">
                 <h1 class="text-gray" style="font-size: 1.65rem;"><?php the_title() ?></h1>
