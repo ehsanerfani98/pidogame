@@ -26,7 +26,6 @@ switch (true) {
         <div class="px-10">
             <div class="row my-3">
                 <div class="col-12">
-                    <!-- <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?> -->
                 </div>
             </div>
             <div class="separator separator-dashed my-5"></div>
