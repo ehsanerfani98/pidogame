@@ -29,6 +29,7 @@ switch (true) {
                     <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
                 </div>
             </div>
+            <hr>
             <div class="row my-3">
                 <div class="col-6">
                     <?php if ($product->get_attribute('producer')) : ?>
