@@ -47,12 +47,7 @@ switch (true) {
     <div class="card-body p-3">
         <img class="w-100 rounded mb-2" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>">
         <div class="px-5">
-            <div class="row my-3">
-                <div class="col-12">
-                    <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
-                </div>
-            </div>
-            <div class="separator separator-dashed my-5"></div>
+            
             <div class="row pt-5">
                 <div class="col-12">
                     <p class="lh-xl text-gray-700 ss02 m-0" style="text-align: justify;"><?php echo get_the_excerpt() ?></p>
@@ -69,10 +64,10 @@ switch (true) {
                             $taxonomy = 'pa_genre';
                             $genre = get_term_by('name', trim($genre), $taxonomy);
                         ?>
-                            <a class="mx-1" href="<?= home_url('genre/') . $genre->slug ?>"><?= $genre->name ?></a>
-                            <?= $i + 1 < count(explode(',', $product->get_attribute('genre'))) ? ',' : '' ?>
+                            <a class="mx-1" href="<?= home_url( 'genre/' ).$genre->slug ?>"><?= $genre->name ?></a> 
+                            <?= $i+1 < count(explode(',', $product->get_attribute('genre'))) ? ',' : '' ?>
                     <?php
-                            $i++;
+                    $i++;
                         endforeach;
                     endif; ?>
                 </span>
