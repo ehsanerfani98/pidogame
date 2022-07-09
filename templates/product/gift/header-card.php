@@ -22,6 +22,7 @@ switch (true) {
 ?>
 <div class="card">
     <div class="card-body p-3">
+    <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
         <img class="w-100 rounded mb-2" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>">
         <div class="px-10">
             <div class="row my-3">
