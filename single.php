@@ -152,7 +152,7 @@ get_header();
                                                 <div class="mb-17 lh-xl text-gray-700 fs-5 ss02 img-rounded">
                                                     <?php the_content() ?>
                                                 </div>
-                                                <div class="d-flex align-items-center border-1 border-dashed card-rounded p-5 p-lg-10 mb-14">
+                                                <!-- <div class="d-flex align-items-center border-1 border-dashed card-rounded p-5 p-lg-10 mb-14">
                                                     <div class="text-center flex-shrink-0 me-7 me-lg-13">
                                                         <div class="symbol symbol-70px symbol-circle mb-2">
                                                             <img src="<?php echo get_avatar_url(get_the_author_meta('ID')) ?>">
@@ -165,7 +165,7 @@ get_header();
                                                     <div class="mb-0 fs-6">
                                                         <div class="text-muted fw-bold lh-lg mb-2 ss02"><?php the_author_meta('description') ?></div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <?php
                                                 $tags = get_the_tags();
                                                 $tagsLabel = '';
