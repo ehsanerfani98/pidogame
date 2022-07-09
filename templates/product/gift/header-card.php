@@ -28,6 +28,8 @@ switch (true) {
                 <div class="col-12">
                     <?php echo do_shortcode("[yith_wcwl_add_to_wishlist]"); ?>
                 </div>
+            </div>
+            <div class="row my-3">
                 <div class="col-6">
                     <?php if ($product->get_attribute('producer')) : ?>
                         <span class="text-muted">سازنده:</span>
