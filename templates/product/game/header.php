@@ -12,6 +12,15 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
 <div class=" d-lg-flex row px-4 position-relative">
 
+    <div class="row">
+     
+        <div class="col-lg-12">
+            <div class="mb-3" style="padding-right: 1rem;">
+                <h1 class="text-gray" style="font-size: 1.65rem;"><?php the_title() ?></h1>
+                <h3 class="fs-5 text-gray-700 mt-3 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
+            </div>
+        </div>
+    </div>
 
     <div class="col-lg-5 col-xl-4">
         <?php get_template_part('templates/product/game/header-card') ?>
