@@ -15,6 +15,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
     <div class="row">
         <div class="col-lg-12">
             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+                <?php if (function_exists('bcn_display')) bcn_display() ?>
             </ul>
         </div>
         <div class="col-lg-12">
