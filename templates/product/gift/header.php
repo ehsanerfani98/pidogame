@@ -2,6 +2,15 @@
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 ?>
+
+<div class="row">
+    <div class="col-lg-12 px-5">
+        <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+            <?php if (function_exists('bcn_display')) bcn_display() ?>
+        </ul>
+    </div>
+</div>
+
 <div class="card overlay overflow-hidden w-100">
     <div class="card-body p-0">
         <div class="ar-16-8 ar-md-16-6 ar-lg-16-6 ar-xl-16-4 bgi-size-cover bgi-position-center" style="background-image: url(<?php echo $meta['opt-product-wallpaper-image']['url'] ?>)"></div>
