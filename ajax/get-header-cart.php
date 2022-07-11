@@ -12,37 +12,38 @@ $options = get_option('pidogame_framework') ?>
             </span>
         </div>
         <div class="pb-15 fw-bold">
-            <h3 class="text-gray-600 fs-5 mb-2"><?php echo $options['opt-header-cart-empty-title'] ?></h3>
-            <div class="text-muted fs-7"><?php echo $options['opt-header-cart-empty-subtitle'] ?></div>
+            <h3 class="text-gray-600 fs-5 mb-2"><?= $options['opt-header-cart-empty-title'] ?></h3>
+            <div class="text-muted fs-7"><?= $options['opt-header-cart-empty-subtitle'] ?></div>
         </div>
     </div>
 <?php else : ?>
+    
     <div class="d-flex flex-column">
-        <h3 class="text-dark fw-bold px-9 py-5 border-bottom"><?php echo $options['opt-header-cart-title'] ?>
-            <span class="fs-8 opacity-75 ps-3 ss02"><?php echo WC()->cart->get_cart_contents_count() ?> مورد</span>
+        <h3 class="text-dark fw-bold px-9 py-5 border-bottom"><?= $options['opt-header-cart-title'] ?>
+            <span class="fs-8 opacity-75 ps-3 ss02"><?= count( WC()->cart->get_cart()) ?> مورد</span>
         </h3>
     </div>
     <div class="tab-content">
         <div class="scroll-y mh-325px my-5 px-8">
             <?php global $woocommerce;
             $items = $woocommerce->cart->get_cart();
-            foreach ($items as $item => $values) : $_product = wc_get_product($values['data']->get_id()) ?>
+            foreach ($items as $item => $values) : $_product = wc_get_product($values['product_id']) ?>
                 <div class="rounded border-gray-300 border-1 border-gray-300 border-dashed px-7 py-3 mb-3">
                     <div class="d-flex flex-stack py-4">
                         <div class="d-flex align-items-center me-2">
                             <div class="symbol symbol-50px me-5">
                                 <span class="symbol-label bg-lighten">
                                     <?php $meta = get_post_meta($_product->get_id(), 'pidogame_framework_products', true) ?>
-                                    <div class="w-100 h-100 bgi-size-cover bgi-position-center rounded" style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($_product->get_id())) ?>');"></div>
+                                    <div class="w-100 h-100 bgi-size-cover bgi-position-center rounded" style="background-image: url('<?= wp_get_attachment_url(get_post_thumbnail_id($_product->get_id())) ?>');"></div>
                                 </span>
-                                <span id="header-cart-remove-item" data-product-id="<?php echo $_product->get_id() ?>" role="button" class="symbol-badge badge badge-circle bg-danger start-0 top-0">
+                                <span id="header-cart-remove-item" data-product-id="<?= $_product->get_id() ?>" role="button" class="symbol-badge badge badge-circle bg-danger start-0 top-0">
                                     <i class="bi bi-x text-white"></i>
                                 </span>
-                                <span class="symbol-badge badge badge-circle bg-info start-0 top-100 ss02"><?php echo $values['quantity'] ?></span>
+                                <span class="symbol-badge badge badge-circle bg-info start-0 top-100 ss02"><?= $values['quantity'] ?></span>
                             </div>
                             <div class="d-flex align-items-center flex-wrap w-100">
                                 <div class="mb-1 pe-3 flex-grow-1">
-                                    <a href="<?php echo $_product->get_permalink() ?>" class="text-gray-800 text-hover-primary fw-bold"><?php echo $_product->get_title() ?></a>
+                                    <a href="<?= $_product->get_permalink() ?>" class="text-gray-800 text-hover-primary fw-bold"><?= $_product->get_title() ?></a>
                                     <div class="d-block">
                                         <span class="svg-icon svg-icon-primary svg-icon-6">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -57,14 +58,16 @@ $options = get_option('pidogame_framework') ?>
                                 </div>
                             </div>
                         </div>
-                        <span class="badge badge-light fs-8 ss02"><?php echo number_format(get_post_meta($values['product_id'], '_price', true) * $values['quantity']) ?></span>
+                        <span class="badge badge-light fs-8 ss02"><?= 
+                           $price = WC()->cart->get_product_price( $values['data'] );
+ number_format($price) ?></span>
                     </div>
                 </div>
             <?php endforeach ?>
         </div>
         <div class="py-3 text-center border-top">
-            <a class="btn btn-sm btn-light me-2" href="<?php echo wc_get_cart_url() ?>"><?php echo $options['opt-header-cart-cart-button'] ?></a>
-            <a class="btn btn-sm btn-primary" href="<?php echo wc_get_checkout_url() ?>"><?php echo $options['opt-header-cart-checkout-button'] ?><span class="badge badge-light-primary ms-2 ss02"><?php echo number_format(WC()->cart->cart_contents_total) . ' ' . get_woocommerce_currency_symbol() ?></span></a>
+            <a class="btn btn-sm btn-light me-2" href="<?= wc_get_cart_url() ?>"><?= $options['opt-header-cart-cart-button'] ?></a>
+            <a class="btn btn-sm btn-primary" href="<?= wc_get_checkout_url() ?>"><?= $options['opt-header-cart-checkout-button'] ?><span class="badge badge-light-primary ms-2 ss02"><?= number_format(WC()->cart->cart_contents_total) . ' ' . get_woocommerce_currency_symbol() ?></span></a>
         </div>
     </div>
 <?php endif ?>
