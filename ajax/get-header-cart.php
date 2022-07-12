@@ -17,10 +17,9 @@ $options = get_option('pidogame_framework') ?>
         </div>
     </div>
 <?php else : ?>
-    
     <div class="d-flex flex-column">
         <h3 class="text-dark fw-bold px-9 py-5 border-bottom"><?= $options['opt-header-cart-title'] ?>
-            <span class="fs-8 opacity-75 ps-3 ss02"><?= count( WC()->cart->get_cart()) ?> مورد</span>
+            <span class="fs-8 opacity-75 ps-3 ss02"><?= count(WC()->cart->get_cart()) ?> مورد</span>
         </h3>
     </div>
     <div class="tab-content">
@@ -53,14 +52,19 @@ $options = get_option('pidogame_framework') ?>
                                                 <path opacity="0.3" d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <span class="fs-8 text-primary">ریجن آزاد</span>
+                                        <span class="fs-8 text-primary">
+                                            ریجن <?php
+                                                $slug = $values['variation']['attribute_pa_region'];
+                                                echo get_term_by( 'slug', $slug, 'pa_region' )->name;
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <span class="badge badge-light fs-8 ss02"><?= 
-                           $price = WC()->cart->get_product_price( $values['data'] );
- number_format($price) ?></span>
+                        <span class="badge badge-light fs-8 ss02"><?=
+                                                                    $price = WC()->cart->get_product_price($values['data']);
+                                                                    number_format($price) ?></span>
                     </div>
                 </div>
             <?php endforeach ?>
