@@ -14,7 +14,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
     <div class="row">
         <?php
-        do_action( 'woocommerce_add_to_cart' );
+        do_action( 'myalarm' );
         ?>
         <div class="col-lg-12">
             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">

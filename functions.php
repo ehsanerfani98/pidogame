@@ -701,5 +701,7 @@ function dd($dd){
 
 add_action( 'woocommerce_add_to_cart', function ()
 {
-  echo "<a>test</a>";
+  add_action( 'myalarm', function(){
+	echo "<a>تست</a>";
+  });
 });
