@@ -14,10 +14,20 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
     <div class="row">
         <?php
-        add_action( 'woocommerce_add_to_cart', function ()
+        function custom_add_to_cart_message()
         {
-          wp_die( 'fgfg' );
-        });
+            $return_to  = get_permalink(wc_get_page_id('shop'));
+
+            if (get_option('woocommerce_cart_redirect_after_add') == 'yes') {
+                $message = sprintf('<a href="%s" class="button">%s</a> %s', get_permalink(wc_get_page_id('cart')), __('View Cart &rarr;', 'woocommerce'), __('Product successfully added to your cart.', 'woocommerce'));
+            } else {
+                $message = sprintf('<a href="%s" class="button">%s</a> %s', $return_to, __('Continue Shopping &rarr;', 'woocommerce'), __('Product successfully <h5>added</h5>to your cart.', 'woocommerce'));
+            }
+
+            return $message;
+        }
+        add_filter('wc_add_to_cart_message', 'custom_add_to_cart_message');
+
         ?>
         <div class="col-lg-12">
             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
