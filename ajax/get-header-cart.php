@@ -54,9 +54,10 @@ $options = get_option('pidogame_framework') ?>
                                         </span>
                                         <span class="fs-8 text-primary">
                                             ریجن <?php
-                                                $slug = $values['variation']['attribute_pa_region'];
-                                                echo get_term_by( 'slug', $slug, 'pa_region' )->name;
-                                            ?>
+                                                    $slug_r = $values['variation']['attribute_pa_region'];
+                                                    $slug_d = $values['variation']['attribute_pa_platform'];
+                                                    echo get_term_by('slug', $slug_d, 'pa_platform')->name . ' ' . get_term_by('slug', $slug_r, 'pa_region')->name;
+                                                    ?>
                                         </span>
                                     </div>
                                 </div>
