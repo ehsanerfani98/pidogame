@@ -35,7 +35,7 @@ $options = get_option('pidogame_framework') ?>
                                     <?php $meta = get_post_meta($_product->get_id(), 'pidogame_framework_products', true) ?>
                                     <div class="w-100 h-100 bgi-size-cover bgi-position-center rounded" style="background-image: url('<?= wp_get_attachment_url(get_post_thumbnail_id($_product->get_id())) ?>');"></div>
                                 </span>
-                                <span id="header-cart-remove-item" data-product-id="<?= $values['product_id'] ?>" role="button" class="symbol-badge badge badge-circle bg-danger start-0 top-0">
+                                <span id="header-cart-remove-item" data-product-id="<?= $values['variation_id'] ?>" role="button" class="symbol-badge badge badge-circle bg-danger start-0 top-0">
                                     <i class="bi bi-x text-white"></i>
                                 </span>
                                 <span class="symbol-badge badge badge-circle bg-info start-0 top-100 ss02"><?= $values['quantity'] ?></span>
