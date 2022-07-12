@@ -54,16 +54,26 @@ $options = get_option('pidogame_framework') ?>
                                         </span>
                                         <span class="fs-8 text-primary">
                                             <?php
+                                            $_product_plswb   = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
 
-                                            $slug_r = $values['variation']['attribute_pa_region'];
-                                            $slug_d = $values['variation']['attribute_pa_device'];
-                                            $region = !empty(get_term_by('slug', $slug_r, 'pa_region')->name) ? 'ریجن ' . get_term_by('slug', $slug_r, 'pa_region')->name : '';
-                                            $device = !empty(get_term_by('slug', $slug_d, 'pa_device')->name) ? get_term_by('slug', $slug_d, 'pa_device')->name : '';
-                                            if (!empty($device) and !empty($region)) {
-                                                echo $device . ' - ' . $region;
+                                            $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product_plswb->is_visible() ? $_product_plswb->get_permalink($values) : '', $values, $item);
+
+                                            if (!$product_permalink) {
+                                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product_plswb->get_name(), $values, $item) . '&nbsp;');
                                             } else {
-                                                echo $device . $region;
+                                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a href="%s">%s</a>', esc_url($product_permalink), $_product_plswb->get_name()), $values, $item));
                                             }
+
+
+                                            // $slug_r = $values['variation']['attribute_pa_region'];
+                                            // $slug_d = $values['variation']['attribute_pa_device'];
+                                            // $region = !empty(get_term_by('slug', $slug_r, 'pa_region')->name) ? 'ریجن ' . get_term_by('slug', $slug_r, 'pa_region')->name : '';
+                                            // $device = !empty(get_term_by('slug', $slug_d, 'pa_device')->name) ? get_term_by('slug', $slug_d, 'pa_device')->name : '';
+                                            // if (!empty($device) and !empty($region)) {
+                                            //     echo $device . ' - ' . $region;
+                                            // } else {
+                                            //     echo $device . $region;
+                                            // }
                                             ?>
                                         </span>
                                     </div>
