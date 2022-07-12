@@ -702,6 +702,16 @@ function dd($dd){
 add_action( 'woocommerce_add_to_cart', function ()
 {
   add_action( 'myalarm', function(){
-	echo "<a>تست</a>";
-  });
+
+?>
+<!--begin::Alert-->
+<div class="alert alert-success">
+    <span class="svg-icon svg-icon-2hx svg-icon-success me-3">...</span>
+    <div class="d-flex flex-column">
+        <h4 class="mb-1 text-dark">تبریک!</h4>
+        <span>محصول مورد نظر شما با موفقیت به سبد خرید اضافه شد.</span>
+    </div>
+</div>
+<?php
+});
 });
