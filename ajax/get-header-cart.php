@@ -57,9 +57,13 @@ $options = get_option('pidogame_framework') ?>
 
                                             $slug_r = $values['variation']['attribute_pa_region'];
                                             $slug_d = $values['variation']['attribute_pa_device'];
-                                            $region = !empty(get_term_by('slug', $slug_r, 'pa_region')->name) ? 'ریجن '.get_term_by('slug', $slug_r, 'pa_region')->name : '';
+                                            $region = !empty(get_term_by('slug', $slug_r, 'pa_region')->name) ? 'ریجن ' . get_term_by('slug', $slug_r, 'pa_region')->name : '';
                                             $device = !empty(get_term_by('slug', $slug_d, 'pa_device')->name) ? get_term_by('slug', $slug_d, 'pa_device')->name : '';
-                                            echo  $region . $device;
+                                            if (!empty($device) and !empty($region)) {
+                                                echo $device . ' - ' . $region;
+                                            } else {
+                                                echo $device . $region;
+                                            }
                                             ?>
                                         </span>
                                     </div>
