@@ -13,22 +13,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 <div class=" d-lg-flex row px-4 position-relative">
 
     <div class="row">
-        <?php
-        function custom_add_to_cart_message()
-        {
-            $return_to  = get_permalink(wc_get_page_id('shop'));
-
-            if (get_option('woocommerce_cart_redirect_after_add') == 'yes') {
-                $message = sprintf('<a href="%s" class="button">%s</a> %s', get_permalink(wc_get_page_id('cart')), __('View Cart &rarr;', 'woocommerce'), __('Product successfully added to your cart.', 'woocommerce'));
-            } else {
-                $message = sprintf('<a href="%s" class="button">%s</a> %s', $return_to, __('Continue Shopping &rarr;', 'woocommerce'), __('Product successfully <h5>added</h5>to your cart.', 'woocommerce'));
-            }
-
-            return $message;
-        }
-        add_filter('wc_add_to_cart_message', 'custom_add_to_cart_message');
-do_filter('wc_add_to_cart_message');
-        ?>
+        
         <div class="col-lg-12">
             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
                 <?php if (function_exists('bcn_display')) bcn_display() ?>
