@@ -698,3 +698,8 @@ add_action('wp_ajax_woocommerce_save_attributes', 'ajaxWoocommerceSaveAttributes
 function dd($dd){
 	wp_die(var_dump($dd));
 }
+
+add_action( 'woocommerce_add_to_cart', function ()
+{
+  echo "<a>test</a>";
+});
