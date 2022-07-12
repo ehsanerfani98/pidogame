@@ -27,7 +27,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
             return $message;
         }
         add_filter('wc_add_to_cart_message', 'custom_add_to_cart_message');
-
+do_filter('wc_add_to_cart_message');
         ?>
         <div class="col-lg-12">
             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
