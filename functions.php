@@ -705,13 +705,30 @@ add_action( 'woocommerce_add_to_cart', function ()
 
 ?>
 <!--begin::Alert-->
-<div class="alert alert-success">
-    <span class="svg-icon svg-icon-2hx svg-icon-success me-3">...</span>
-    <div class="d-flex flex-column">
-        <h4 class="mb-1 text-dark">تبریک!</h4>
-        <span>محصول مورد نظر شما با موفقیت به سبد خرید اضافه شد.</span>
+<div class="alert alert-dismissible bg-primary d-flex flex-column flex-sm-row p-5 mb-10">
+    <!--begin::Icon-->
+    <span class="svg-icon svg-icon-2hx svg-icon-light me-4 mb-5 mb-sm-0">...</span>
+    <!--end::Icon-->
+
+    <!--begin::Wrapper-->
+    <div class="d-flex flex-column text-light pe-0 pe-sm-10">
+        <!--begin::Title-->
+        <h4 class="mb-2 light">This is an alert</h4>
+        <!--end::Title-->
+
+        <!--begin::Content-->
+        <span>The alert component can be used to highlight certain parts of your page for higher content visibility.</span>
+        <!--end::Content-->
     </div>
+    <!--end::Wrapper-->
+
+    <!--begin::Close-->
+    <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
+        <span class="svg-icon svg-icon-2x svg-icon-light">...</span>
+    </button>
+    <!--end::Close-->
 </div>
+<!--end::Alert-->
 <?php
 });
 });
