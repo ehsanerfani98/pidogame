@@ -739,3 +739,6 @@ add_action('woocommerce_add_to_cart', function () {
 <?php
 	});
 });
+
+
+add_filter( 'wc_add_to_cart_message_html', '__return_false' );
