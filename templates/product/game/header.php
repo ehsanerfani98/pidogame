@@ -16,7 +16,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
         <?php
         add_action( 'woocommerce_add_to_cart', function ()
         {
-          echo "ffff";
+          wp_die( 'fgfg' );
         });
         ?>
         <div class="col-lg-12">
