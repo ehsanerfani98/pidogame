@@ -720,7 +720,7 @@ add_action('woocommerce_add_to_cart', function () {
 				<h4 class="mb-2 text-light">تبریک</h4>
 				<span>محصول شما با موفقیت به سبد خرید اضافه شد.</span>
 			</div>
-			<a href="<?= home_url( 'cart/' ) ?>" class="btn btn-info m-2">مشاهده سبد خرید</a>
+			<a href="<?= home_url( 'cart/' ) ?>" class="btn btn-light-info m-2">مشاهده سبد خرید</a>
 
 			<!--end::Content-->
 			<!--begin::Close-->
