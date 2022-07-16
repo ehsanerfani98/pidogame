@@ -4,6 +4,8 @@ global $product;
 ?>
 
 <div class="row">
+    <?php do_action('myalarm'); ?>
+
     <div class="col-lg-12 px-5">
         <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
             <?php if (function_exists('bcn_display')) bcn_display() ?>

@@ -454,20 +454,22 @@ jQuery(function () {
             url: addToCartUrl,
             type: 'GET',
             success: function () {
-                Swal.fire({
-                    text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
-                    icon: "success",
-                    buttonsStyling: !1,
-                    showCancelButton: true,
-                    confirmButtonText: "مشاهده سبد خرید",
-                    cancelButtonText: "ادامه خرید",
-                    customClass: {
-                        confirmButton: "btn btn-primary",
-                        cancelButton: 'btn btn-light'
-                    }
-                }).then(function (e) {
-                    if (e.isConfirmed == true) redirectUrl && (location.href = redirectUrl);
-                });
+                location.reload();
+
+                // Swal.fire({
+                //     text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
+                //     icon: "success",
+                //     buttonsStyling: !1,
+                //     showCancelButton: true,
+                //     confirmButtonText: "مشاهده سبد خرید",
+                //     cancelButtonText: "ادامه خرید",
+                //     customClass: {
+                //         confirmButton: "btn btn-primary",
+                //         cancelButton: 'btn btn-light'
+                //     }
+                // }).then(function (e) {
+                //     if (e.isConfirmed == true) redirectUrl && (location.href = redirectUrl);
+                // });
             }
         })
     })
