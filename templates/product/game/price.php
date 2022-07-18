@@ -5,7 +5,6 @@ $type = $product->get_type();
 ?>
 <?php switch ($type):
     case 'simple':
-        wp_die('dd');
         if ($product->is_in_stock()) : ?>
             <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-6 position-relative bg-hover-light-dark border-hover-info">
                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
