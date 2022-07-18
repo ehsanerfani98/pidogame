@@ -30,6 +30,8 @@ global $product;
                 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
                 do_action('woocommerce_single_product_summary');
                 ?>
+                <a href="<?php echo $product->add_to_cart_url() ?>" value="<?php echo esc_attr( $product->get_id() ); ?>" class="ajax_add_to_cart add_to_cart_button" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="<?php echo esc_attr($sku) ?>" aria-label="Add “<?php the_title_attribute() ?>” to your cart"> Add to Cart </a>
+
             </div>
         </div>
     </div>

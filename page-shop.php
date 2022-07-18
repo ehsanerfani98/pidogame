@@ -1,4 +1,5 @@
 <?php
+
 $options = get_option('pidogame_framework');
 get_header();
 ?>
@@ -104,23 +105,16 @@ get_header();
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
                     <div class="row">
-
                         <?php
-
                         $args = array(
                             'post_type' => ['product'],
-                            'author' => get_current_user_id(),
                             'post_status' => ['publish'],
                             'posts_per_page' => 12
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()) :
                             while ($query->have_posts()) : $query->the_post();
-
-
                         ?>
-
-
                                 <div class="col-lg-3 mb-5">
                                     <a href="<?php the_permalink() ?>">
 
