@@ -59,8 +59,6 @@ $type = $product->get_type();
         <?php endif;
         break;
     case 'variable': 
-        wp_die('dd');
-
     ?>
         <div class="scroll h-250px pe-5">
             <?php $variations = $product->get_available_variations();
