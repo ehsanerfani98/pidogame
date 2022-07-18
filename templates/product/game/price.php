@@ -73,7 +73,7 @@ $type = $product->get_type();
                     $variationData .= 'data-bs-' . $key . '="' . $value . '"';
                 }
                 if ($variationProduct->is_in_stock()) : ?>
-                    <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" <?php echo $variationData ?> class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-6 position-relative bg-hover-light-dark border-hover-info">
+                    <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy"  class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-6 position-relative bg-hover-light-dark border-hover-info">
                         <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
                             <a role="button" class="btn btn-sm btn-info me-4">افزودن</a>
                             <div class="me-2">
