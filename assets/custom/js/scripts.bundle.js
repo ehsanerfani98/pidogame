@@ -416,10 +416,9 @@ jQuery(function () {
     if (productBuyModal) {
         productBuyModal.addEventListener('show.bs.modal', function (event) {
             var button = event.relatedTarget;
-            console.log(button);
             $(button).each(function () {
                 $.each(this.attributes, function () {
-                    console.log('g');
+                    console.log(this.specified);
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
                         var recipient = this.name.replace('data-bs-', '');
                         $('#kt_modal_product_buy').find('[name="' + recipient + '"]').val(this.value).trigger('change');
