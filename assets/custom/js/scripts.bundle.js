@@ -418,8 +418,9 @@ jQuery(function () {
             var button = event.relatedTarget;
             $(button).each(function () {
                 $.each(this.attributes, function () {
-                    console.log(this.name);
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
+                        console.log(this.name);
+
                         var recipient = this.name.replace('data-bs-', '');
                         $('#kt_modal_product_buy').find('[name="' + recipient + '"]').val(this.value).trigger('change');
                     }
