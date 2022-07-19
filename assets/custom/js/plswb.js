@@ -76,3 +76,6 @@ function getslug(item) {
     }
 }
 
+function testmodal() {
+    console.log('sss');
+}

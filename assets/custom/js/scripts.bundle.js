@@ -411,8 +411,6 @@ jQuery(function () {
     }
 
 
-    function testmodal() {
-        console.log('dd');
         // Change attributes on modal (Buy product modal)
         var productBuyModal = document.getElementById('kt_modal_product_buy');
         if (productBuyModal) {
@@ -428,7 +426,6 @@ jQuery(function () {
                 });
             })
         }
-    }
 
 
     // Reply comment
