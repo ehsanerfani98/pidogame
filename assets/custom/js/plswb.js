@@ -79,6 +79,7 @@ function getslug(item) {
 function testmodal() {
     var productBuyModal = document.getElementById('kt_modal_product_buy');
     if (productBuyModal) {
+        console.log(productBuyModal);
         productBuyModal.addEventListener('show.bs.modal', function (event) {
             var button = event.relatedTarget;
             jQuery(button).each(function () {
