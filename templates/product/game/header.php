@@ -199,7 +199,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
                                                         <?php
                                                         if ($variationProduct->is_in_stock()) : ?>
-                                                            <div role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" <?php echo $variationData ?> class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-0 position-relative bg-light-dark border-primary">
+                                                            <div onclick="testmodal()" role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" <?php echo $variationData ?> class="d-block d-xl-flex border border-gray-300 border-dashed rounded p-6 mb-0 position-relative bg-light-dark border-primary">
                                                                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
                                                                     <a role="button" class="btn btn-sm btn-primary me-4">افزودن</a>
                                                                     <div class="me-2">
