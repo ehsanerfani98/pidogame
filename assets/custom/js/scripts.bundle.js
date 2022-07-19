@@ -416,6 +416,7 @@ jQuery(function () {
     if (productBuyModal) {
         productBuyModal.addEventListener('show.bs.modal', function (event) {
             var button = event.relatedTarget;
+            console.log(button);
             $(button).each(function () {
                 $.each(this.attributes, function () {
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
