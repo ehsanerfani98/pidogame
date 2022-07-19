@@ -420,7 +420,7 @@ jQuery(function () {
                 $.each(this.attributes, function () {
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
                         var recipient = this.name.replace('data-bs-', '');
-                        console.log(recipient);
+                        console.log(this.value);
 
                         $('#kt_modal_product_buy').find('[name="' + recipient + '"]').val(this.value).trigger('change');
                     }
