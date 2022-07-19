@@ -76,7 +76,7 @@ function getslug(item) {
     }
 }
 
-function testmodal() {
+// function testmodal() {
     var productBuyModal = document.getElementById('kt_modal_product_buy');
     if (productBuyModal) {
         productBuyModal.addEventListener('show.bs.modal', function (event) {
@@ -92,4 +92,4 @@ function testmodal() {
             });
         })
     }
-}
+// }
