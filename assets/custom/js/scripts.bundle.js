@@ -415,7 +415,6 @@ jQuery(function () {
     var productBuyModal = document.getElementById('kt_modal_product_buy');
     if (productBuyModal) {
         productBuyModal.addEventListener('show.bs.modal', function (event) {
-            $(document).clone(true);
             var button = event.relatedTarget;
             $(button).each(function () {
                 $.each(this.attributes, function () {
