@@ -324,15 +324,15 @@ jQuery(function () {
 
     /*============ Style ============*/
     // Select2 variables (Buy product modal)
-    $('#kt_modal_product_buy .variations tr').each(function () {
-        var current = $(this);
-        current.find('th.label label').unwrap().removeAttr('for').addClass('required fs-5 fw-bold mb-2');
-        current.find('td.value select').unwrap().prop("required", true).addClass('form-select form-select-solid').attr('data-allow-clear', 'true').select2({
-            placeholder: 'انتخاب کنید',
-            minimumResultsForSearch: -1
-        })
-        current.wrapAll('<div class="d-flex flex-column mb-10"></div>').contents().unwrap();
-    })
+    // $('#kt_modal_product_buy .variations tr').each(function () {
+    //     var current = $(this);
+    //     current.find('th.label label').unwrap().removeAttr('for').addClass('required fs-5 fw-bold mb-2');
+    //     current.find('td.value select').unwrap().prop("required", true).addClass('form-select form-select-solid').attr('data-allow-clear', 'true').select2({
+    //         placeholder: 'انتخاب کنید',
+    //         minimumResultsForSearch: -1
+    //     })
+    //     current.wrapAll('<div class="d-flex flex-column mb-10"></div>').contents().unwrap();
+    // })
     $('#kt_modal_product_buy .variations').addClass('d-block');
     $('#kt_modal_product_buy .variations').find('tbody').addClass('d-block');
     $('.reset_variations').remove();
@@ -420,7 +420,7 @@ jQuery(function () {
                 $.each(this.attributes, function () {
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
                         var recipient = this.name.replace('data-bs-', '');
-                        $('#kt_modal_product_buy').find('[name="' + recipient + '"]').prop(this.value).trigger('change');
+                        $('#kt_modal_product_buy').find('[name="' + recipient + '"]').val(this.value).trigger('change');
                     }
                 });
             });
