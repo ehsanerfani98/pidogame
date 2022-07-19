@@ -54,15 +54,15 @@ $options = get_option('pidogame_framework') ?>
                                         </span>
                                         <span class="fs-8 text-primary">
                                             <?php
-                                            $_product_plswb   = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
+                                            // $_product_plswb   = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
 
-                                            $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product_plswb->is_visible() ? $_product_plswb->get_permalink($values) : '', $values, $item);
+                                            // $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product_plswb->is_visible() ? $_product_plswb->get_permalink($values) : '', $values, $item);
 
-                                            if (!$product_permalink) {
-                                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product_plswb->get_name(), $values, $item) . '&nbsp;');
-                                            } else {
-                                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a href="%s">%s</a>', esc_url($product_permalink), $_product_plswb->get_name()), $values, $item));
-                                            }
+                                            // if (!$product_permalink) {
+                                            //     echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product_plswb->get_name(), $values, $item) . '&nbsp;');
+                                            // } else {
+                                            //     echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a href="%s">%s</a>', esc_url($product_permalink), $_product_plswb->get_name()), $values, $item));
+                                            // }
 
 
                                             // $slug_r = $values['variation']['attribute_pa_region'];
