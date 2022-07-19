@@ -419,8 +419,9 @@ jQuery(function () {
             $(button).each(function () {
                 $.each(this.attributes, function () {
                     if (this.specified && this.name.startsWith('data-bs-attribute')) {
-                        console.log(this.name);
                         var recipient = this.name.replace('data-bs-', '');
+                        console.log(recipient);
+
                         $('#kt_modal_product_buy').find('[name="' + recipient + '"]').val(this.value).trigger('change');
                     }
                 });
