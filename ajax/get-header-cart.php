@@ -42,7 +42,6 @@ $options = get_option('pidogame_framework') ?>
                             </div>
                             <div class="d-flex align-items-center flex-wrap w-100">
                                 <div class="mb-1 pe-3 flex-grow-1">
-                                    <a href="<?= $_product->get_permalink() ?>" class="text-gray-800 text-hover-primary fw-bold"><?= $_product->get_title() ?></a>
                                     <div class="d-block">
                                         <span class="svg-icon svg-icon-primary svg-icon-6">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -53,6 +52,8 @@ $options = get_option('pidogame_framework') ?>
                                             </svg>
                                         </span>
                                         <span class="fs-8 text-primary">
+                                        <a href="<?= $_product->get_permalink() ?>" class="text-gray-800 text-hover-primary fw-bold"><?= $_product->get_title() ?></a>
+
                                             <?php
                                             // $_product_plswb   = apply_filters('woocommerce_cart_item_product', $values['data'], $values, $item);
 
