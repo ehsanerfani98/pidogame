@@ -239,9 +239,15 @@
 	border-radius: 10px;
 }
 
-	.woocommerce-error::before {
-    top: 15% !important;
-    right: 0.5em !important;
+.woocommerce-error::before {
+	top: 15% !important;
+	right: 0.5em !important;
 	font-size: 2rem !important;
 	color: #ffb9bc !important;
+}
+.woocommerce-success::before {
+	top: 15% !important;
+	right: 0.5em !important;
+	font-size: 2rem !important;
+	color: #b9ffbe !important;
 }
