@@ -37,3 +37,12 @@ if (!$notices) {
 			<?php endforeach; ?>
 		</div>
 </ul>
+
+<style>
+	.woocommerce-error::before {
+    top: 33%;
+    right: 0.5em;
+	font-size: 2rem;
+	color: #ffb9bc;
+}
+</style>
