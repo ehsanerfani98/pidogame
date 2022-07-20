@@ -25,9 +25,19 @@ if (!$notices) {
 }
 
 ?>
+<style>
+	.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
+    font-family: WooCommerce;
+    content: "\e028";
+    display: inline-block;
+    position: absolute;
+    top: 33%;
+    right: 0.5em;
+}
+</style>
 <ul class="woocommerce-error alert alert-dismissible bg-light-danger border border-danger border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
 	<?php foreach ($notices as $notice) : ?>
-		<div class="d-flex flex-column pe-0 pe-sm-10">
+		<div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">
 
 			<span<?php echo wc_get_notice_data_attr($notice); ?>>
 				<?php echo wc_kses_notice($notice['notice']); ?>
