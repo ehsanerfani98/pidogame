@@ -41,8 +41,13 @@ do_action('woocommerce_before_cart'); ?>
 		display: inline-block;
 		width: 30%;
 	}
+	
 	.coupon{
 		display: inline-block;
+	}
+
+	.wrap-footer-cart{
+		display: flex;
 	}
 </style>
 <div class="card">
@@ -169,14 +174,17 @@ do_action('woocommerce_before_cart'); ?>
 						<tr>
 							<td colspan="6" class="actions">
 
-								<?php if (wc_coupons_enabled()) { ?>
+							<div class="wrap-footer-cart">
+							<?php if (wc_coupons_enabled()) { ?>
 									<div class="coupon">
 										<label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> <input type="text" name="coupon_code" class="input-text form-control" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="btn btn-success" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
 										<?php do_action('woocommerce_cart_coupon'); ?>
 									</div>
 								<?php } ?>
-
 								<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+
+							</div>
+								
 
 								<?php do_action('woocommerce_cart_actions'); ?>
 
