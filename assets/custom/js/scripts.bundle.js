@@ -347,7 +347,7 @@ jQuery(function () {
     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
     var addToCartStep = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('step'));
     var addToCartDialerElement = document.querySelector(".quantity");
-    var addToCartDialerObjecty = new KTDialer(addToCartDialerElement, {
+    var addToCartDialerObject = new KTDialer(addToCartDialerElement, {
         min: addToCartMin,
         max: addToCartMax,
         step: addToCartStep
