@@ -205,7 +205,7 @@ do_action('woocommerce_before_cart'); ?>
 
 <?php do_action('woocommerce_before_cart_collaterals'); ?>
 
-<div class="card">
+<div class="card mt-3">
 	<div class="card-body">
 	<div class="cart-collaterals">
 	<?php
