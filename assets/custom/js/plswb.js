@@ -76,5 +76,4 @@ function getslug(item) {
     }
 }
 
-
-  
+$('.shop_table').wrapAll("<card></card>");
