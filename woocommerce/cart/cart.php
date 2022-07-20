@@ -48,7 +48,7 @@ do_action('woocommerce_before_cart'); ?>
 
 	.wrap-footer-cart {
 		display: flex;
-		justify-content: end;
+		justify-content: space-between;
 	}
 </style>
 <div class="card">
@@ -61,7 +61,7 @@ do_action('woocommerce_before_cart'); ?>
 						<tr>
 							<th class="product-remove">&nbsp;</th>
 							<th class="product-thumbnail">&nbsp;</th>
-							<th class="product-name"></th>
+							<th class="product-name"><?php esc_html_e('Product', 'woocommerce'); ?></th>
 							<th class="product-price"><?php esc_html_e('Price', 'woocommerce'); ?></th>
 							<th class="product-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
 							<th class="product-subtotal"><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
@@ -176,12 +176,12 @@ do_action('woocommerce_before_cart'); ?>
 							<td colspan="6" class="actions">
 
 								<div class="wrap-footer-cart">
-									<!-- <?php if (wc_coupons_enabled()) { ?>
+									<?php if (wc_coupons_enabled()) { ?>
 										<div class="coupon">
 											<label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> <input type="text" name="coupon_code" class="input-text form-control" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="btn btn-success" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
 											<?php do_action('woocommerce_cart_coupon'); ?>
 										</div>
-									<?php } ?> -->
+									<?php } ?>
 									<button type="submit" class=" btn btn-info" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
 
 								</div>
