@@ -34,7 +34,7 @@ do_action('woocommerce_before_cart'); ?>
 		height: 100%;
 		border-radius: 50%;
 		border: 4px solid #a6c0c9;
-		padding: 4px;
+		padding: 2px;
 	}
 </style>
 <div class="card">
