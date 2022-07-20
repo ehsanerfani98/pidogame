@@ -25,7 +25,7 @@ if (!$notices) {
 }
 
 ?>
-<ul class=" alert alert-dismissible bg-light-danger d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
+<ul class="woocommerce-error alert alert-dismissible bg-light-danger border border-danger border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
 	<?php foreach ($notices as $notice) : ?>
 		<div class="d-flex flex-column pe-0 pe-sm-10">
 
