@@ -4,7 +4,7 @@
 </script>
 
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/global/plugins.bundle.js"></script>
-<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script> -->
+<script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
 <!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/scripts.bundle.js"></script> -->
 <!-- <script src="<?php echo get_template_directory_uri() ?>/assets/custom/js/scripts.bundle.js"></script> -->
 
