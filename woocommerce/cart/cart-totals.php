@@ -29,7 +29,7 @@ defined('ABSPATH') || exit;
 
 			<h2><?php esc_html_e('Cart totals', 'woocommerce'); ?></h2>
 
-			<table cellspacing="0" class="shop_table shop_table_responsive">
+			<table cellspacing="0" class="shop_table shop_table_responsive table-striped gy-7 gs-7 table-rounded border">
 
 				<tr class="cart-subtotal">
 					<th><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
