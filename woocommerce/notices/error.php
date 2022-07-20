@@ -25,12 +25,7 @@ if (!$notices) {
 }
 
 ?>
-<style>
-	.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
-    top: 33%;
-    right: 0.5em;
-}
-</style>
+
 <ul class="woocommerce-error alert alert-dismissible bg-light-danger border border-danger border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
 <div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">
 
