@@ -33,9 +33,9 @@ if (!wc_coupons_enabled()) { // @codingStandardsIgnoreLine.
 		<p><?php esc_html_e('If you have a coupon code, please apply it below.', 'woocommerce'); ?></p>
 
 		<div class="d-flex justify-content-between align-items-center">
-		<!-- <p class="form-row form-row-first">
+		<p class="form-row form-row-first">
 			<input type="text" name="coupon_code" class="input-text form-control form-control-solid" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="coupon_code" value="" />
-		</p> -->
+		</p>
 
 		<p class="form-row ">
 			<button type="submit" class="btn btn-info" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
