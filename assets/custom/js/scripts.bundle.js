@@ -365,50 +365,50 @@ jQuery(function () {
 
     /*============ Process ============*/
     // Add price to button and change quantity (Buy product modal)
-    // $('#kt_modal_product_buy input').change(function () {
-    //     var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
-    //     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
-    //     addToCartDialerObject.setMinValue(addToCartMin);
-    //     addToCartDialerObject.setMaxValue(addToCartMax);
-    //     addToCartDialerObject.update();
-    // })
+    $('#kt_modal_product_buy input').change(function () {
+        var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
+        var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
+        addToCartDialerObject.setMinValue(addToCartMin);
+        addToCartDialerObject.setMaxValue(addToCartMax);
+        addToCartDialerObject.update();
+    })
 
     // Change price by quantity increase
-    // if (Object.keys(addToCartDialerObject).length !== 0) {
-    //     addToCartDialerObject.on('kt.dialer.increase', function () {
-    //         var quantityValueBefore = parseInt(addToCartDialerObject.getValue());
-    //         addToCartDialerObject.on('kt.dialer.increased', function () {
-    //             var quantityValue = parseInt(addToCartDialerObject.getValue());
-    //             if (quantityValue !== quantityValueBefore) {
-    //                 var badge = $('.price-badge').text();
-    //                 badgePrice = badge.replaceAll(',', '');
-    //                 badgePrice = parseInt(badgePrice);
-    //                 if (badgePrice) {
-    //                     newPrice = (quantityValue * badgePrice) / (quantityValue - 1);
-    //                     var newPriceHtml = newPrice.toLocaleString();
-    //                     $('.price-badge').empty().text(newPriceHtml + ' تومان');
-    //                 }
-    //             }
-    //         })
-    //     })
-    //     // Change price by quantity decrease
-    //     addToCartDialerObject.on('kt.dialer.decrease', function () {
-    //         var quantityValueBefore = parseInt(addToCartDialerObject.getValue());
-    //         addToCartDialerObject.on('kt.dialer.decreased', function () {
-    //             var quantityValue = parseInt(addToCartDialerObject.getValue());
-    //             if (quantityValue !== quantityValueBefore) {
-    //                 var badge = $('.price-badge').text();
-    //                 badgePrice = badge.replaceAll(',', '');
-    //                 badgePrice = parseInt(badgePrice);
-    //                 if (badgePrice) {
-    //                     newPrice = (quantityValue * badgePrice) / (quantityValue + 1);
-    //                     var newPriceHtml = newPrice.toLocaleString();
-    //                     $('.price-badge').empty().text(newPriceHtml + ' تومان');
-    //                 }
-    //             }
-    //         })
-    //     })
-    // }
+    if (Object.keys(addToCartDialerObject).length !== 0) {
+        addToCartDialerObject.on('kt.dialer.increase', function () {
+            var quantityValueBefore = parseInt(addToCartDialerObject.getValue());
+            addToCartDialerObject.on('kt.dialer.increased', function () {
+                var quantityValue = parseInt(addToCartDialerObject.getValue());
+                if (quantityValue !== quantityValueBefore) {
+                    var badge = $('.price-badge').text();
+                    badgePrice = badge.replaceAll(',', '');
+                    badgePrice = parseInt(badgePrice);
+                    if (badgePrice) {
+                        newPrice = (quantityValue * badgePrice) / (quantityValue - 1);
+                        var newPriceHtml = newPrice.toLocaleString();
+                        $('.price-badge').empty().text(newPriceHtml + ' تومان');
+                    }
+                }
+            })
+        })
+        // Change price by quantity decrease
+        addToCartDialerObject.on('kt.dialer.decrease', function () {
+            var quantityValueBefore = parseInt(addToCartDialerObject.getValue());
+            addToCartDialerObject.on('kt.dialer.decreased', function () {
+                var quantityValue = parseInt(addToCartDialerObject.getValue());
+                if (quantityValue !== quantityValueBefore) {
+                    var badge = $('.price-badge').text();
+                    badgePrice = badge.replaceAll(',', '');
+                    badgePrice = parseInt(badgePrice);
+                    if (badgePrice) {
+                        newPrice = (quantityValue * badgePrice) / (quantityValue + 1);
+                        var newPriceHtml = newPrice.toLocaleString();
+                        $('.price-badge').empty().text(newPriceHtml + ' تومان');
+                    }
+                }
+            })
+        })
+    }
 
     $('.shop_table').wrapAll("<div class='card'><div class='card-body'></div></div>");
     $('.shop_table').find('.quantity').prepend('<button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect><rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect></svg></span></button>');
