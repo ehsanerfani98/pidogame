@@ -20,6 +20,10 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
 <style>
+	.table>tbody>tr>td {
+		vertical-align: middle !important;
+	}
+
 	.plswb-thumbnail {
 		width: 70px;
 		height: 70px;
