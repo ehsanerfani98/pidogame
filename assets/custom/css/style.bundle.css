@@ -245,7 +245,7 @@
 	font-size: 2rem !important;
 	color: #ffb9bc !important;
 }
-.woocommerce-success::before {
+.woocommerce-message::before {
 	top: 15% !important;
 	right: 0.5em !important;
 	font-size: 2rem !important;
