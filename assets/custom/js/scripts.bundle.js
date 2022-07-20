@@ -425,8 +425,8 @@ jQuery(function () {
         step: addToShopStep
     })
     $('#shop_table input').change(function () {
-        var addToCartMin = parseInt($('#shop_table').find('.quantity').find('input').attr('min'));
-        var addToCartMax = parseInt($('#shop_table').find('.quantity').find('input').attr('max'));
+        var addToShopMin = parseInt($('#shop_table').find('.quantity').find('input').attr('min'));
+        var addToShopMax = parseInt($('#shop_table').find('.quantity').find('input').attr('max'));
         addToShopDialerObject.setMinValue(addToShopMin);
         addToShopDialerObject.setMaxValue(addToShopMax);
         addToShopDialerObject.update();
