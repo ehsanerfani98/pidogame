@@ -347,11 +347,11 @@ jQuery(function () {
     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
     var addToCartStep = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('step'));
     var addToCartDialerElement = document.querySelector(".quantity");
-    var addToCartDialerObject = new KTDialer(addToCartDialerElement, {
-        min: addToCartMin,
-        max: addToCartMax,
-        step: addToCartStep
-    })
+    // var addToCartDialerObject = new KTDialer(addToCartDialerElement, {
+    //     min: addToCartMin,
+    //     max: addToCartMax,
+    //     step: addToCartStep
+    // })
 
     // Add to cart button and stock and notice modify (Buy product modal)
     $('#kt_modal_product_buy').find('.single_add_to_cart_button').addClass('btn btn-primary ms-2').removeClass('button alt');
@@ -365,13 +365,13 @@ jQuery(function () {
 
     /*============ Process ============*/
     // Add price to button and change quantity (Buy product modal)
-    $('#kt_modal_product_buy input').change(function () {
-        var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
-        var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
-        addToCartDialerObject.setMinValue(addToCartMin);
-        addToCartDialerObject.setMaxValue(addToCartMax);
-        addToCartDialerObject.update();
-    })
+    // $('#kt_modal_product_buy input').change(function () {
+    //     var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
+    //     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
+    //     addToCartDialerObject.setMinValue(addToCartMin);
+    //     addToCartDialerObject.setMaxValue(addToCartMax);
+    //     addToCartDialerObject.update();
+    // })
 
     // Change price by quantity increase
     // if (Object.keys(addToCartDialerObject).length !== 0) {
