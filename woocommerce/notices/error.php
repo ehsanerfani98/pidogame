@@ -38,11 +38,3 @@ if (!$notices) {
 		</div>
 </ul>
 
-<style>
-	.woocommerce-error::before {
-    top: 33% !important;
-    right: 0.5em !important;
-	font-size: 2rem;
-	color: #ffb9bc;
-}
-</style>
