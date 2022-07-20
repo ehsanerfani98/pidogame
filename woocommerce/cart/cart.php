@@ -24,10 +24,13 @@ do_action('woocommerce_before_cart'); ?>
 		width: 70px;
 		height: 70px;
 	}
+
 	.plswb-thumbnail img {
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
+		border: 2px solid #3da0db;
+		padding: 2px;
 	}
 </style>
 <div class="card">
@@ -78,15 +81,15 @@ do_action('woocommerce_before_cart'); ?>
 									<td class="product-thumbnail">
 										<div class="plswb-thumbnail">
 
-										<?php
-										$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
+											<?php
+											$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
-										if (!$product_permalink) {
-											echo $thumbnail; // PHPCS: XSS ok.
-										} else {
-											printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
-										}
-										?>
+											if (!$product_permalink) {
+												echo $thumbnail; // PHPCS: XSS ok.
+											} else {
+												printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
+											}
+											?>
 										</div>
 									</td>
 
