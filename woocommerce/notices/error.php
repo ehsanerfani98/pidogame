@@ -27,10 +27,6 @@ if (!$notices) {
 ?>
 <style>
 	.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before {
-    font-family: WooCommerce;
-    content: "\e028";
-    display: inline-block;
-    position: absolute;
     top: 33%;
     right: 0.5em;
 }
