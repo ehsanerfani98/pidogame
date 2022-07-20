@@ -41,6 +41,9 @@ do_action('woocommerce_before_cart'); ?>
 		display: inline-block;
 		width: 30%;
 	}
+	.coupon{
+		display: inline-block;
+	}
 </style>
 <div class="card">
 	<div class="card-body">
