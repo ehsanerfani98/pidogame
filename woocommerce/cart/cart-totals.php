@@ -20,10 +20,10 @@ defined('ABSPATH') || exit;
 
 ?>
 
-<div class="card mt-3">
-	<div class="card-body">
 
-		<div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
+<div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
+	<div class="card mt-3">
+		<div class="card-body">
 
 			<?php do_action('woocommerce_before_cart_totals'); ?>
 
