@@ -27,9 +27,11 @@ if (!$notices) {
 ?>
 <ul class="woocommerce-error alert alert-dismissible bg-danger d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
 	<?php foreach ($notices as $notice) : ?>
-		<span<?php echo wc_get_notice_data_attr($notice); ?>>
-			<?php echo wc_kses_notice($notice['notice']); ?>
-			</span>
-		<?php endforeach; ?>
-</ul>
+		<div class="d-flex flex-column pe-0 pe-sm-10">
 
+			<span<?php echo wc_get_notice_data_attr($notice); ?>>
+				<?php echo wc_kses_notice($notice['notice']); ?>
+				</span>
+			<?php endforeach; ?>
+		</div>
+</ul>
