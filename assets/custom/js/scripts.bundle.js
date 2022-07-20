@@ -410,10 +410,10 @@ jQuery(function () {
         })
     }
 
-    $('.shop_table').wrapAll("<card></card>");
+    $('.shop_table').wrapAll("<div class='card'><div class='card-body'></div></div>");
 
 
-    
+
     // Change attributes on modal (Buy product modal)
     var productBuyModal = document.getElementById('kt_modal_product_buy');
     if (productBuyModal) {
