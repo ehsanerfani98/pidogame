@@ -748,3 +748,81 @@ add_action('woocommerce_add_to_cart', function () {
 
 
 add_filter( 'wc_add_to_cart_message_html', '__return_false' );
+
+
+
+
+// add_filter('woocommerce_checkout_fields', 'addBootstrapToCheckoutFields' );
+//  function addBootstrapToCheckoutFields($fields) {
+//     foreach ($fields as &$fieldset) {
+//         foreach ($fieldset as &$field) {
+//             $field['input_class'][] = 'form-control form-control-solid';
+//         }
+//     }
+//     return $fields;
+// }
+
+
+add_filter('woocommerce_form_field_args','wc_form_field_args',10,3);
+
+function wc_form_field_args( $args, $key, $value = null ) {
+
+
+
+switch ( $args['type'] ) {
+
+    case "select" :  /* Targets all select input type elements, except the country and state select input types */
+        $args['class'][] = 'form-group'; // Add a class to the field's html element wrapper - woocommerce input types (fields) are often wrapped within a <p></p> tag  
+        $args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+        //$args['custom_attributes']['data-plugin'] = 'select2';
+        $args['label_class'] = array('control-label');
+        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
+    break;
+
+    case 'country' : /* By default WooCommerce will populate a select with the country names - $args defined for this specific input type targets only the country select element */
+        $args['class'][] = 'form-group single-country';
+		$args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+        $args['label_class'] = array('control-label');
+        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
+    break;
+
+    case "state" : /* By default WooCommerce will populate a select with state names - $args defined for this specific input type targets only the country select element */
+        $args['class'][] = 'form-group'; // Add class to the field's html element wrapper 
+        $args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+        //$args['custom_attributes']['data-plugin'] = 'select2';
+        $args['label_class'] = array('control-label');
+        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
+    break;
+
+
+    case "password" :
+    case "text" :
+    case "email" :
+    case "tel" :
+    case "number" :
+        $args['class'][] = 'form-group';
+        //$args['input_class'][] = 'form-control input-lg'; // will return an array of classes, the same as bellow
+        $args['input_class'] = array('form-control', 'form-control-solid');
+        $args['label_class'] = array('control-label');
+    break;
+
+    case 'textarea' :
+        $args['input_class'] = array('form-control', 'form-control-solid');
+        $args['label_class'] = array('control-label');
+    break;
+
+    case 'checkbox' :  
+    break;
+
+    case 'radio' :
+    break;
+
+    default :
+        $args['class'][] = 'form-group';
+        $args['input_class'] = array('form-control', 'form-control-solid');
+        $args['label_class'] = array('control-label');
+    break;
+    }
+
+    return $args;
+}
