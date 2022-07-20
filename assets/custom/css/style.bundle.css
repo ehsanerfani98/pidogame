@@ -251,3 +251,9 @@
 	font-size: 2rem !important;
 	color: #a2e8a7 !important;
 }
+.woocommerce-info::before {
+	top: 15% !important;
+	right: 0.5em !important;
+	font-size: 2rem !important;
+	color: #a2bae8 !important;
+}
