@@ -355,11 +355,11 @@ jQuery(function () {
 
     // Add to cart button and stock and notice modify (Buy product modal)
     // $('#kt_modal_product_buy').find('.single_add_to_cart_button').addClass('btn btn-primary ms-2').removeClass('button alt');
-    $('#kt_modal_product_buy').find('.stock').remove();
-    $('.modal-body').find('.yith-wcwl-add-to-wishlist').remove();
-    $('.quantity,.single_add_to_cart_button').wrapAll('<div class="text-center"></div>');
-    $('#kt_modal_product_buy').find('.notice p').last().addClass('mb-0');
-    $('.single_add_to_cart_button').append('<span class="price-badge badge badge-light-primary ms-2 ss02"></span>');
+    // $('#kt_modal_product_buy').find('.stock').remove();
+    // $('.modal-body').find('.yith-wcwl-add-to-wishlist').remove();
+    // $('.quantity,.single_add_to_cart_button').wrapAll('<div class="text-center"></div>');
+    // $('#kt_modal_product_buy').find('.notice p').last().addClass('mb-0');
+    // $('.single_add_to_cart_button').append('<span class="price-badge badge badge-light-primary ms-2 ss02"></span>');
     /*============ Style ============*/
 
 
