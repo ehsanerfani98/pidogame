@@ -40,8 +40,8 @@ if (!$notices) {
 
 <style>
 	.woocommerce-error::before {
-    top: 33%;
-    right: 0.5em;
+    top: 33% !important;
+    right: 0.5em !important;
 	font-size: 2rem;
 	color: #ffb9bc;
 }
