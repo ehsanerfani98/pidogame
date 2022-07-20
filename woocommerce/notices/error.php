@@ -41,13 +41,7 @@ if (!$notices) {
 	<!--end::Icon-->
 	<!--begin::Content-->
 	<div class="d-flex flex-column pe-0 pe-sm-10">
-		<span>
-			<?php foreach ($notices as $notice) : ?>
-				<li<?php echo wc_get_notice_data_attr($notice); ?>>
-					<?php echo wc_kses_notice($notice['notice']); ?>
-					</li>
-				<?php endforeach; ?>
-		</span>
+	x
 	</div>
 	<!--end::Content-->
 	<!--begin::Close-->
