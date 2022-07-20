@@ -240,8 +240,8 @@
 }
 
 	.woocommerce-error::before {
-    top: 33% !important;
+    top: 15% !important;
     right: 0.5em !important;
-	font-size: 2rem;
-	color: #ffb9bc;
+	font-size: 2rem !important;
+	color: #ffb9bc !important;
 }
