@@ -25,16 +25,16 @@ do_action('woocommerce_before_cart'); ?>
 	}
 
 	.plswb-thumbnail {
-		width: 70px;
-		height: 70px;
+		width: 80px;
+		height: 80px;
 	}
 
 	.plswb-thumbnail img {
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
-		border: 2px solid #3da0db;
-		padding: 2px;
+		border: 4px solid #a6c0c9;
+		padding: 4px;
 	}
 </style>
 <div class="card">
