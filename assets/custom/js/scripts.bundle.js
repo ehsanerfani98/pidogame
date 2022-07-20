@@ -347,11 +347,11 @@ jQuery(function () {
     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
     var addToCartStep = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('step'));
     var addToCartDialerElement = document.querySelector(".quantity");
-    // var addToCartDialerObject = new KTDialer(addToCartDialerElement, {
-    //     min: addToCartMin,
-    //     max: addToCartMax,
-    //     step: addToCartStep
-    // })
+    var addToCartDialerObjecty = new KTDialer(addToCartDialerElement, {
+        min: addToCartMin,
+        max: addToCartMax,
+        step: addToCartStep
+    })
 
     // Add to cart button and stock and notice modify (Buy product modal)
     $('#kt_modal_product_buy').find('.single_add_to_cart_button').addClass('btn btn-primary ms-2').removeClass('button alt');
@@ -424,13 +424,7 @@ jQuery(function () {
         max: addToShopMax,
         step: addToShopStep
     })
-    $('#shop_table input').change(function () {
-        var addToShopMin = parseInt($('#shop_table').find('.quantity').find('input').attr('min'));
-        var addToShopMax = parseInt($('#shop_table').find('.quantity').find('input').attr('max'));
-        addToShopDialerObject.setMinValue(addToShopMin);
-        addToShopDialerObject.setMaxValue(addToShopMax);
-        addToShopDialerObject.update();
-    })
+
 
 
 
