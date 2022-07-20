@@ -48,7 +48,7 @@ do_action('woocommerce_before_cart'); ?>
 
 	.wrap-footer-cart {
 		display: flex;
-		justify-content: space-between;
+		justify-content: end;
 	}
 </style>
 <div class="card">
