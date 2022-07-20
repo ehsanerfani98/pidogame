@@ -39,7 +39,7 @@ do_action('woocommerce_before_cart'); ?>
 
 	#coupon_code {
 		display: inline-block;
-		width: 30%;
+		width: 50%;
 	}
 
 	.coupon {
