@@ -32,4 +32,8 @@ if (!$notices) {
 			<?php echo wc_kses_notice($notice['notice']); ?>
 		</div>
 	</div>
+	<script>
+		console.log(jQuery('restore-item').parent());
+	</script>
 <?php endforeach; ?>
+
