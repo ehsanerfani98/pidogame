@@ -3,6 +3,7 @@
     var templateDirectory = "<?php echo get_template_directory_uri() ?>";
 </script>
 
+<script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/Iris/src/iris.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/global/plugins.bundle.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/js/scripts.bundle.js"></script>
