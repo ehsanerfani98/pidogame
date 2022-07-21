@@ -50,6 +50,26 @@ do_action('woocommerce_before_cart'); ?>
 		display: flex;
 		justify-content: end;
 	}
+
+	.plswb-restore-back {
+		justify-content: space-between !important;
+		align-items: center !important;
+		flex-direction: row !important;
+		width: 100% !important;
+	}
+
+	a.restore-item {
+		border: none !important;
+		background: #009ef7 !important;
+		border-radius: 8px !important;
+		padding: .8rem 1.5rem !important;
+		color: white !important;
+	}
+
+	a.restore-item:hover {
+		background: #0b95e6 !important;
+	}
+	
 </style>
 <div class="card">
 	<div class="card-body">
