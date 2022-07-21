@@ -27,14 +27,17 @@ if (!$notices) {
 ?>
 
 <?php foreach ($notices as $notice) : ?>
+
+	<style>
+		.restore-item{
+			background: #000;
+		}
+	</style>
 	<div class="woocommerce-message alert alert-dismissible bg-light-success border border-success border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" <?php echo wc_get_notice_data_attr($notice); ?> role="alert">
 		<div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">
 			<?php echo wc_kses_notice($notice['notice']); ?>
 		</div>
-		jhjhj
 	</div>
-	<script>
-		console.log(jQuery('restore-item').parent());
-	</script>
+	
 <?php endforeach; ?>
 
