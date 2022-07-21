@@ -368,7 +368,7 @@ jQuery(function () {
     $('#kt_modal_product_buy input').change(function () {
         var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
         var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
-        // addToCartDialerObject.setMinValue(addToCartMin);
+        addToCartDialerObject.setMinValue(addToCartMin);
         addToCartDialerObject.setMaxValue(addToCartMax);
         addToCartDialerObject.update();
     })
