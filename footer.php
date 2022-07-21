@@ -5,9 +5,8 @@
 
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/global/plugins.bundle.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
-<script src="<?php echo get_template_directory_uri() ?>/assets/custom/js/scripts.bundle.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/js/scripts.bundle.js"></script>
-
+<script src="<?php echo get_template_directory_uri() ?>/assets/custom/js/scripts.bundle.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/assets/plugins/custom/Iris/src/iris.js"></script>
 
