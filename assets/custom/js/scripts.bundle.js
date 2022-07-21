@@ -375,7 +375,6 @@ jQuery(function () {
         })
     }
     catch (err) {
-        console.log(err.message);
     }
 
     // Change price by quantity increase
