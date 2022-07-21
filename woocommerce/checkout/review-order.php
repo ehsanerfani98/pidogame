@@ -19,9 +19,9 @@
 defined('ABSPATH') || exit;
 ?>
 <div class="card mb-5">
-	<div class="card-body">
+	<div class="card-body p-4">
 		<div class="table-responsive">
-			<table class="table table-striped table-rounded border gy-7 gs-7">
+			<table class="woocommerce-checkout-review-order-table table table-striped table-rounded border gy-7 gs-7">
 				<thead>
 					<tr>
 						<th class="product-name"><?php esc_html_e('Product', 'woocommerce'); ?></th>
