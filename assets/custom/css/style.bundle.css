@@ -259,7 +259,7 @@
 }
 
 
-.woocommerce-message .restore-item, {
+.woocommerce-message .restore-item{
     float: right;
     padding: 0 0 0 1em;
     background: 0 0;
