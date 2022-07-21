@@ -76,4 +76,3 @@ function getslug(item) {
     }
 }
 
-console.log(jQuery('restore-item').remove());

@@ -259,20 +259,9 @@
 }
 
 
-.woocommerce-message .restore-item{
-    float: right;
-    padding: 0 0 0 1em;
-    background: 0 0;
-    color: #fff;
-    box-shadow: none;
-    line-height: 1.618;
-    border-width: 0 0 0 1px;
-    border-left-style: solid;
-    border-left-color: rgba(255,255,255,.25)!important;
-    border-radius: 0;
-}
-.woocommerce-message .restore-item:hover {
-    background: 0 0;
-    color: #fff;
-    opacity: .8;
+
+.plswb-restore-back{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
