@@ -31,6 +31,7 @@ if (!$notices) {
 		<div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">
 			<?php echo wc_kses_notice($notice['notice']); ?>
 		</div>
+		jhjhj
 	</div>
 	<script>
 		console.log(jQuery('restore-item').parent());
