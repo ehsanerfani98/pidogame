@@ -371,9 +371,9 @@ jQuery(function () {
         try {
             addToCartDialerObject.setMinValue(addToCartMin);
             addToCartDialerObject.setMaxValue(addToCartMax);
-            addToCartDialerObject.update();    
+            addToCartDialerObject.update();
         } catch (error) {
-            
+
         }
 
     })
@@ -641,15 +641,26 @@ jQuery(function () {
 });
 
 
-// let slideIndex = 1;
-// showSlides(slideIndex);
+let slideIndex = 1;
+try {
+    showSlides(slideIndex);
+} catch (error) {
 
-// function plusSlides(n) {
-//     showSlides(slideIndex += n);
-// }
+}
+function plusSlides(n) {
+    try {
+        showSlides(slideIndex += n);
+    } catch (error) {
 
-// function currentSlide(n) {
-//     showSlides(slideIndex = n);
-// }
+    }
+}
+
+function currentSlide(n) {
+    try {
+        showSlides(slideIndex = n);
+    } catch (error) {
+
+    }
+}
 
 
