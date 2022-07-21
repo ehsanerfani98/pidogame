@@ -25,11 +25,7 @@ if (!$notices) {
 }
 
 ?>
-	<style>
-		.restore-item{
-			background: #000;
-		}
-	</style>
+	
 <?php foreach ($notices as $notice) : ?>
 
 
