@@ -2,7 +2,7 @@
 
 function extra_fields(event) {
 
-    var button = document.querySelector("#kt_button");
+    var button = jQuery(event.target).find('button');
 
     button.setAttribute("data-kt-indicator", "on");
 
