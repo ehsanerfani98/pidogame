@@ -1,10 +1,7 @@
 
 
-function extra_fields(item,event) {
+function extra_fields(event) {
 
-    var button = jQuery(item).find('button');
-
-    button.setAttribute("data-kt-indicator", "on");
 
     let myform = event.target;
     let fd = new FormData(myform);
@@ -27,6 +24,11 @@ function extra_fields(item,event) {
             }
         }
     }
+
+    var button = document.querySelector("#"+variation_id);
+
+    button.setAttribute("data-kt-indicator", "on");
+
 
     var metaData = {
         meta_data_cart
