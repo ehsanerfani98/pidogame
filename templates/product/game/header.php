@@ -215,15 +215,16 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         <span class="text-muted fw-bold d-block fs-7 ss02"><?php echo $subtitle ?></span>
                                                                     </div>
                                                                 </div> -->
-                                                                <?php $plswb_fields = fx_check($variation['variation_id']);
-                                                                if (count($plswb_fields) > 0) :
-                                                                ?>
-                                                                    <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
-                                                                        <form onsubmit="return extra_fields(event)" action="" method="post">
-                                                                            <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
-                                                                            <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
 
-                                                                            <div class="d-flex flex-column">
+                                                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                                                    <form onsubmit="return extra_fields(event)" action="" method="post">
+                                                                        <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
+                                                                        <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
+
+                                                                        <div class="d-flex flex-column">
+                                                                            <?php $plswb_fields = fx_check($variation['variation_id']);
+                                                                            if (count($plswb_fields) > 0) :
+                                                                            ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
                                                                                     <?php switch ($item['type_field']):
                                                                                         case 'email': ?>
@@ -315,11 +316,12 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                             break;
                                                                                     endswitch; ?>
                                                                                 <?php endforeach; ?>
-                                                                                <button type="submit" class="btn btn-primary">افزودن به سبد خرید</button>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                <?php endif; ?>
+                                                                            <?php endif; ?>
+
+                                                                            <button type="submit" class="btn btn-primary">افزودن به سبد خرید</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
                                                                     <?php if ($variationProduct->is_on_sale()) : ?>
                                                                         <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
