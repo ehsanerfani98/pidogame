@@ -25,7 +25,7 @@ function extra_fields(event) {
         }
     }
 
-    var button = document.querySelector(variation_id);
+    var button = document.querySelector('btn_'+variation_id);
 
     button.setAttribute("data-kt-indicator", "on");
 
