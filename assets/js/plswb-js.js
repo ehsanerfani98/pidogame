@@ -42,7 +42,19 @@ function extra_fields(event) {
         url: woocommerce_params .ajax_url,
         data: data,
         success: function (response) {
-            console.log(response);
+            Swal.fire({
+                text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
+                icon: "success",
+                buttonsStyling: !1,
+                showCancelButton: true,
+                confirmButtonText: "مشاهده سبد خرید",
+                cancelButtonText: "ادامه خرید",
+                customClass: {
+                    confirmButton: "btn btn-primary",
+                    cancelButton: 'btn btn-light'
+                }
+            })
+            // console.log(response);
         }
     });
 
