@@ -12,9 +12,9 @@ function extra_fields(event) {
     for (var [id, value] of fd.entries()) {
         if (id.startsWith('ext')) {
             let title = jQuery('#' + id).data('extra-title');
-            meta_data_cart.push( {
-                title : title,
-                value : value
+            meta_data_cart.push({
+                title: title,
+                value: value
             });
         } else {
             if (id == 'variation-id') {
@@ -25,7 +25,7 @@ function extra_fields(event) {
         }
     }
 
-    var button = document.querySelector('btn_'+variation_id);
+    var button = document.querySelector('btn_' + variation_id);
 
     button.setAttribute("data-kt-indicator", "on");
 
@@ -45,7 +45,7 @@ function extra_fields(event) {
 
     jQuery.ajax({
         type: "post",
-        url: woocommerce_params .ajax_url,
+        url: woocommerce_params.ajax_url,
         data: data,
         success: function (response) {
             Swal.fire({
