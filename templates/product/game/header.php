@@ -328,6 +328,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         </div>
                                                                     </form>
                                                                 </div>
+                                                                
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
                                                                     <?php if ($variationProduct->is_on_sale()) : ?>
                                                                         <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
