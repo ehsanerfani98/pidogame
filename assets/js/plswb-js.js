@@ -1,8 +1,8 @@
 
 
-function extra_fields(event) {
+function extra_fields(item,event) {
 
-    var button = jQuery(event.target).find('button');
+    var button = jQuery(item).find('button');
 
     button.setAttribute("data-kt-indicator", "on");
 

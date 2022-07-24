@@ -217,7 +217,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                 </div> -->
 
                                                                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
-                                                                    <form onsubmit="return extra_fields(event)" action="" method="post">
+                                                                    <form onsubmit="return extra_fields(this,event)" action="" method="post">
                                                                         <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
 
