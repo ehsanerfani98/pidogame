@@ -317,8 +317,14 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                     endswitch; ?>
                                                                                 <?php endforeach; ?>
                                                                             <?php endif; ?>
-
-                                                                            <button type="submit" class="btn btn-primary">افزودن به سبد خرید</button>
+                                                                            <button type="submit" class="btn btn-primary" id="kt_button">
+                                                                                <span class="indicator-label">
+                                                                                    افزودن به سبد خرید
+                                                                                </span>
+                                                                                <span class="indicator-progress">
+                                                                                    در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                                                </span>
+                                                                            </button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

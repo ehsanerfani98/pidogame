@@ -2,6 +2,10 @@
 
 function extra_fields(event) {
 
+    var button = document.querySelector("#kt_button");
+
+    button.setAttribute("data-kt-indicator", "on");
+
     let myform = event.target;
     let fd = new FormData(myform);
     let meta_data_cart = [];
@@ -54,6 +58,8 @@ function extra_fields(event) {
                     cancelButton: 'btn btn-light'
                 }
             })
+            button.removeAttribute("data-kt-indicator");
+
             // console.log(response);
         }
     });
