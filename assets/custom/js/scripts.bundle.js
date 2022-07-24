@@ -343,6 +343,7 @@ jQuery(function () {
     $('#kt_modal_product_buy').find('.quantity').append('<button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect><rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect><rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect></svg></span></button>');
     $('#kt_modal_product_buy').find('.quantity').find('input').attr('type', 'text').addClass('form-control form-control-solid border-0 text-center ss02 w-100px').attr('readonly', true).attr('data-kt-dialer-control', 'input').removeAttr('inputmode').removeAttr('autocomplete').removeAttr('size').removeAttr('title');
     $('#kt_modal_product_buy').find('.quantity').addClass('position-relative w-100px d-inline-block');
+    $('#kt_modal_product_buy').find('.position-relative').addClass('plswb-quantity');
     var addToCartMin = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('min'));
     var addToCartMax = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('max'));
     var addToCartStep = parseInt($('#kt_modal_product_buy').find('.quantity').find('input').attr('step'));
@@ -357,9 +358,24 @@ jQuery(function () {
     $('#kt_modal_product_buy').find('.single_add_to_cart_button').addClass('btn btn-primary ms-2').removeClass('button alt');
     $('#kt_modal_product_buy').find('.stock').remove();
     $('.modal-body').find('.yith-wcwl-add-to-wishlist').remove();
-    $('#kt_modal_product_buy .quantity,#kt_modal_product_buy .single_add_to_cart_button').wrapAll('<div class="text-center"></div>');
+    $('.plswb-quantity,#kt_modal_product_buy .single_add_to_cart_button').wrapAll('<div class="text-center"></div>');
     $('#kt_modal_product_buy').find('.notice p').last().addClass('mb-0');
     $('.single_add_to_cart_button').append('<span class="price-badge badge badge-light-primary ms-2 ss02"></span>');
+    
+    // $('#kt_modal_product_buy').find('.single_add_to_cart_button').remove();
+    // $('#kt_modal_product_buy').find('.plswb-btn-addtocart').addClass('btn btn-primary ms-2').removeClass('button alt');
+    // $('#kt_modal_product_buy').find('.stock').remove();
+    // $('.modal-body').find('.yith-wcwl-add-to-wishlist').remove();
+    // $('.plswb-quantity,#kt_modal_product_buy .plswb-btn-addtocart').wrapAll('<div class="text-center"></div>');
+    // $('#kt_modal_product_buy').find('.notice p').last().addClass('mb-0');
+    // $('.plswb-btn-addtocart').append('<span class="price-badge badge badge-light-primary ms-2 ss02"></span>');
+
+    // $('.plswb-btn-addtocart').on('click', function () {
+    //     var product_id = $('#kt_modal_product_buy').find('.variations_form').data('product_id');
+    //     var product_variations = $('#kt_modal_product_buy').find('.variations_form').data('product_variations');
+    //     console.log(product_variations);
+    // });
+
     /*============ Style ============*/
 
 
@@ -414,24 +430,6 @@ jQuery(function () {
             })
         })
     }
-
-    // $('.shop_table').wrapAll("<div class='card'><div class='card-body'></div></div>");
-    // $('.shop_table').find('.quantity').prepend('<button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect><rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect></svg></span></button>');
-    // $('.shop_table').find('.quantity').append('<button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect><rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect><rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect></svg></span></button>');
-    // $('.shop_table').find('.quantity').find('input').attr('type', 'text').addClass('form-control form-control-solid border-0 text-center ss02 w-100px').attr('readonly', true).attr('data-kt-dialer-control', 'input').removeAttr('inputmode').removeAttr('autocomplete').removeAttr('size').removeAttr('title');
-    // $('.shop_table').find('.quantity').addClass('position-relative w-100px d-inline-block');
-    // var addToShopMin = parseInt($('.shop_table').find('.quantity').find('input').attr('min'));
-    // var addToShopMax = parseInt($('.shop_table').find('.quantity').find('input').attr('max'));
-    // var addToShopStep = parseInt($('.shop_table').find('.quantity').find('input').attr('step'));
-    // var addToShopDialerElement = document.querySelector(".quantity");
-    // var addToShopDialerObject = new KTDialer(addToShopDialerElement, {
-    //     min: addToShopMin,
-    //     max: addToShopMax,
-    //     step: addToShopStep
-    // })
-
-
-
 
     // Change attributes on modal (Buy product modal)
     var productBuyModal = document.getElementById('kt_modal_product_buy');

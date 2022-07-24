@@ -4,11 +4,61 @@
 require_once get_theme_file_path() . '/codestar/codestar-framework.php';
 require_once get_theme_file_path() . '/options.php';
 
-function mytheme_add_woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+
+define('MY_ACF_PATH', get_stylesheet_directory() . '/inc/acf/');
+define('MY_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/');
+include_once(MY_ACF_PATH . 'acf.php');
+
+
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url($url)
+{
+	return MY_ACF_URL;
 }
 
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
+function my_acf_settings_show_admin($show_admin)
+{
+	return false;
+}
+
+function mytheme_add_woocommerce_support()
+{
+	add_theme_support('woocommerce');
+}
+add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+
+include_once(get_stylesheet_directory() . '/inc/options.php');
+
+
+function fx_check($vid)
+{
+	$arg = array(
+		'post_type' => 'extra_fields_plswb',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+	);
+	$fields_plswb = new WP_Query($arg);
+
+	if ($fields_plswb->have_posts()) {
+		while ($fields_plswb->have_posts()) {
+			$fields_plswb->the_post();
+			$extra_fields = get_field("plswb_fields", get_the_ID());
+			foreach ($extra_fields as $item) {
+				foreach ($item['show_in_products'] as $show_product) {
+					$variation_id = $show_product->ID;
+					if ($variation_id == $vid) {
+						$new_extra_fields[] = $item;
+					}
+				}
+			}
+		}
+		wp_reset_postdata();
+	}
+
+	return $new_extra_fields;
+}
 
 
 // Get theme mode
@@ -726,7 +776,7 @@ add_action('woocommerce_add_to_cart', function () {
 				<h4 class="mb-2 text-light">تبریک</h4>
 				<span>محصول شما با موفقیت به سبد خرید اضافه شد.</span>
 			</div>
-			<a href="<?= home_url( 'cart/' ) ?>" class="btn btn-light-info m-2">مشاهده سبد خرید</a>
+			<a href="<?= home_url('cart/') ?>" class="btn btn-light-info m-2">مشاهده سبد خرید</a>
 
 			<!--end::Content-->
 			<!--begin::Close-->
@@ -747,7 +797,7 @@ add_action('woocommerce_add_to_cart', function () {
 });
 
 
-add_filter( 'wc_add_to_cart_message_html', '__return_false' );
+add_filter('wc_add_to_cart_message_html', '__return_false');
 
 
 
@@ -763,76 +813,170 @@ add_filter( 'wc_add_to_cart_message_html', '__return_false' );
 // }
 
 
-add_filter('woocommerce_form_field_args','wc_form_field_args',10,3);
+add_filter('woocommerce_form_field_args', 'wc_form_field_args', 10, 3);
 
-function wc_form_field_args( $args, $key, $value = null ) {
-
-
-
-switch ( $args['type'] ) {
-
-    case "select" :  /* Targets all select input type elements, except the country and state select input types */
-        $args['class'][] = 'form-group'; // Add a class to the field's html element wrapper - woocommerce input types (fields) are often wrapped within a <p></p> tag  
-        $args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
-        //$args['custom_attributes']['data-plugin'] = 'select2';
-        $args['label_class'] = array('control-label');
-        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
-    break;
-
-    case 'country' : /* By default WooCommerce will populate a select with the country names - $args defined for this specific input type targets only the country select element */
-        $args['class'][] = 'form-group single-country';
-		$args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
-        $args['label_class'] = array('control-label');
-        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
-    break;
-
-    case "state" : /* By default WooCommerce will populate a select with state names - $args defined for this specific input type targets only the country select element */
-        $args['class'][] = 'form-group'; // Add class to the field's html element wrapper 
-        $args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
-        //$args['custom_attributes']['data-plugin'] = 'select2';
-        $args['label_class'] = array('control-label');
-        $args['custom_attributes'] = array( 'data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',  );
-    break;
+function wc_form_field_args($args, $key, $value = null)
+{
 
 
-    case "password" :
-    case "text" :
-    case "email" :
-    case "tel" :
-    case "number" :
-        $args['class'][] = 'form-group';
-        //$args['input_class'][] = 'form-control input-lg'; // will return an array of classes, the same as bellow
-        $args['input_class'] = array('form-control', 'form-control-solid');
-        $args['label_class'] = array('control-label');
-    break;
 
-    case 'textarea' :
-        $args['input_class'] = array('form-control', 'form-control-solid');
-        $args['label_class'] = array('control-label');
-    break;
+	switch ($args['type']) {
 
-    case 'checkbox' :  
-    break;
+		case "select":  /* Targets all select input type elements, except the country and state select input types */
+			$args['class'][] = 'form-group'; // Add a class to the field's html element wrapper - woocommerce input types (fields) are often wrapped within a <p></p> tag  
+			$args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+			//$args['custom_attributes']['data-plugin'] = 'select2';
+			$args['label_class'] = array('control-label');
+			$args['custom_attributes'] = array('data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',);
+			break;
 
-    case 'radio' :
-    break;
+		case 'country': /* By default WooCommerce will populate a select with the country names - $args defined for this specific input type targets only the country select element */
+			$args['class'][] = 'form-group single-country';
+			$args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+			$args['label_class'] = array('control-label');
+			$args['custom_attributes'] = array('data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',);
+			break;
 
-    default :
-        $args['class'][] = 'form-group';
-        $args['input_class'] = array('form-control', 'form-control-solid');
-        $args['label_class'] = array('control-label');
-    break;
-    }
+		case "state": /* By default WooCommerce will populate a select with state names - $args defined for this specific input type targets only the country select element */
+			$args['class'][] = 'form-group'; // Add class to the field's html element wrapper 
+			$args['input_class'] = array('form-select', 'form-select-solid'); // Add a class to the form input itself
+			//$args['custom_attributes']['data-plugin'] = 'select2';
+			$args['label_class'] = array('control-label');
+			$args['custom_attributes'] = array('data-control' => 'select2', 'data-allow-clear' => 'true', 'aria-hidden' => 'true',);
+			break;
 
-    return $args;
+
+		case "password":
+		case "text":
+		case "email":
+		case "tel":
+		case "number":
+			$args['class'][] = 'form-group';
+			//$args['input_class'][] = 'form-control input-lg'; // will return an array of classes, the same as bellow
+			$args['input_class'] = array('form-control', 'form-control-solid');
+			$args['label_class'] = array('control-label');
+			break;
+
+		case 'textarea':
+			$args['input_class'] = array('form-control', 'form-control-solid');
+			$args['label_class'] = array('control-label');
+			break;
+
+		case 'checkbox':
+			break;
+
+		case 'radio':
+			break;
+
+		default:
+			$args['class'][] = 'form-group';
+			$args['input_class'] = array('form-control', 'form-control-solid');
+			$args['label_class'] = array('control-label');
+			break;
+	}
+
+	return $args;
 }
 
 
-remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
-add_action( 'woocommerce_cart_is_empty', 'custom_empty_cart_message', 10 );
+remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
+add_action('woocommerce_cart_is_empty', 'custom_empty_cart_message', 10);
 
-function custom_empty_cart_message() {
-    $html  = '<div class="woocommerce-info alert alert-dismissible bg-light-primary border border-primary border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10"><div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">';
-    $html .= wp_kses_post( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) );
-    echo $html . '</div></div>';
+function custom_empty_cart_message()
+{
+	$html  = '<div class="woocommerce-info alert alert-dismissible bg-light-primary border border-primary border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10"><div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">';
+	$html .= wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce')));
+	echo $html . '</div></div>';
 }
+
+
+
+
+//نمایش دیتا در سبد خرید
+function add_cf_after_cart_item_name($name_html, $cart_item, $cart_item_key)
+{
+	if (!empty($cart_item['meta_data_cart'])) {
+		foreach ($cart_item['meta_data_cart'] as $item) {
+			$name_html .= 		"<br>" . $item['title'] . ' : ' . $item['value'];
+		}
+	}
+	return $name_html;
+}
+add_filter('woocommerce_cart_item_name', 'add_cf_after_cart_item_name', 10, 3);
+
+
+//اضافه کردن دیتا به سبد خرید
+// function kia_add_cart_item_data($cart_item, $product_id)
+// {
+// 	$cart_item['meta_data_cart'] = [
+// 		'name' => 'دستگاه',
+// 		'device' => 'پلی استیشن'
+// 	];
+// 	return $cart_item;
+// }
+// add_filter('woocommerce_add_cart_item_data', 'kia_add_cart_item_data', 10, 2);
+
+
+// ذخیره دیتا بعد از پرداخت
+add_action('woocommerce_checkout_create_order_line_item', 'save_cart_item_custom_meta_as_order_item_meta', 10, 4);
+function save_cart_item_custom_meta_as_order_item_meta($cart_item, $cart_item_key, $values, $order)
+{
+	if (!empty($values['meta_data_cart'])) {
+		foreach ($values['meta_data_cart'] as $item) {
+			$cart_item->update_meta_data($item['title'], $item['value']);
+		}
+	}
+
+}
+
+
+
+
+
+add_action('wp_ajax_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
+
+function woocommerce_ajax_add_to_cart()
+{
+
+	$product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
+	$quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+	$variation_id = absint($_POST['variation_id']);
+	// This is where you extra meta-data goes in
+	$cart_item_data = $_POST['meta'];
+	// $passed_validation = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
+	$product_status = get_post_status($product_id);
+
+	// wp_send_json( [
+	// 	'data' => $product_id
+	// ] );
+
+	// Remember to add $cart_item_data to WC->cart->add_to_cart
+	if (WC()->cart->add_to_cart($product_id, $quantity, $variation_id, array(), $cart_item_data) && 'publish' === $product_status) {
+
+		do_action('woocommerce_ajax_added_to_cart', $product_id);
+
+		if ('yes' === get_option('woocommerce_cart_redirect_after_add')) {
+			wc_add_to_cart_message(array($product_id => $quantity), true);
+		}
+
+		WC_AJAX::get_refreshed_fragments();
+	} else {
+
+		$data = array(
+			'error' => true,
+			'product_url' => apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id)
+		);
+
+		echo wp_send_json($data);
+	}
+
+	wp_die();
+}
+
+
+function ti_custom_javascript()
+{
+	wp_enqueue_script('plswb-js', get_template_directory_uri() . '/assets/js/plswb-js.js', '', '', true);
+}
+add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
