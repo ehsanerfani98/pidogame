@@ -25,9 +25,8 @@ function extra_fields(event) {
         }
     }
 
-    var button = document.querySelector('btn_' + variation_id);
+    jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 
-    button.setAttribute("data-kt-indicator", "on");
 
 
     var metaData = {
@@ -60,7 +59,9 @@ function extra_fields(event) {
                     cancelButton: 'btn btn-light'
                 }
             })
-            button.removeAttribute("data-kt-indicator");
+
+            jQuery('#btn_' + variation_id).removeAttribute('data-kt-indicator');
+
 
             // console.log(response);
         }
