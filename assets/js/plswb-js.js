@@ -1,5 +1,7 @@
 
-
+jQuery(document).ready(function(){
+alert();
+});
 function extra_fields(event) {
 
 
@@ -27,7 +29,6 @@ function extra_fields(event) {
 
     jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 
-console.log(jQuery('#btn_' + variation_id));
 
     var metaData = {
         meta_data_cart
