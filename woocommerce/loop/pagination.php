@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Pagination - Show numbered pagination for catalog pages
  *
@@ -15,37 +16,78 @@
  * @version 3.3.1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-$total   = isset( $total ) ? $total : wc_get_loop_prop( 'total_pages' );
-$current = isset( $current ) ? $current : wc_get_loop_prop( 'current_page' );
-$base    = isset( $base ) ? $base : esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
-$format  = isset( $format ) ? $format : '';
+$total   = isset($total) ? $total : wc_get_loop_prop('total_pages');
+$current = isset($current) ? $current : wc_get_loop_prop('current_page');
+$base    = isset($base) ? $base : esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
+$format  = isset($format) ? $format : '';
 
-if ( $total <= 1 ) {
+if ($total <= 1) {
 	return;
 }
 ?>
-<nav class="woocommerce-pagination">
-	<?php
-	echo paginate_links(
-		apply_filters(
-			'woocommerce_pagination_args',
-			array( // WPCS: XSS ok.
-				'base'      => $base,
-				'format'    => $format,
-				'add_args'  => false,
-				'current'   => max( 1, $current ),
-				'total'     => $total,
-				'prev_text' => is_rtl() ? '&rarr;' : '&larr;',
-				'next_text' => is_rtl() ? '&larr;' : '&rarr;',
-				'type'      => 'list',
-				'end_size'  => 3,
-				'mid_size'  => 3,
-			)
-		)
-	);
-	?>
-</nav>
+<style>
+	span.page-numbers.current {
+		border: none !important;
+		background: #f33591 !important;
+		color: #fff !important;
+		border-radius: 4px;
+		font-family: IRANSansX !important;
+	}
+
+	a.page-numbers {
+		border: none !important;
+		background: #35c1b5 !important;
+		color: #ffffff !important;
+		border-radius: 4px;
+		font-family: IRANSansX !important;
+	}
+
+	.page-numbers{
+		border: none !important;
+	}
+
+	.page-numbers > li{
+		margin-left: 4px !important;
+		border: none !important;
+		font-family: IRANSansX !important;
+	}
+
+	.page-numbers .dots{
+		display: none !important;
+	}
+	.prev, .next{
+		display: none !important;
+	}
+</style>
+<!-- <div class="card">
+	<div class="card-body py-5"> -->
+		<div class="row">
+		<nav class="woocommerce-pagination">
+			<?php
+			echo paginate_links(
+				apply_filters(
+					'woocommerce_pagination_args',
+					array( // WPCS: XSS ok.
+						'base'      => $base,
+						'format'    => $format,
+						'add_args'  => false,
+						'current'   => max(1, $current),
+						'total'     => $total,
+						'prev_text' => is_rtl() ? '&rarr;' : '&larr;',
+						'next_text' => is_rtl() ? '&larr;' : '&rarr;',
+						'type'      => 'list',
+						'end_size'  => 3,
+						'mid_size'  => 3,
+					)
+				)
+			);
+			?>
+		</nav>
+		</div>
+		
+	<!-- </div>
+</div> -->

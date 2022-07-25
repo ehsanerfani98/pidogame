@@ -117,7 +117,6 @@ get_header();
                         ?>
                                 <div class="col-lg-3 mb-5">
                                     <a href="<?php the_permalink() ?>">
-
                                         <div class="wrap-cart-plswb card">
 
                                             <div class="image-cart-plswb">

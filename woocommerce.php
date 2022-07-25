@@ -9,9 +9,13 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
-                    <?php if (have_posts()) :
+                    <?php if (!is_shop()) : ?>
+                        <?php if (have_posts()) :
                             woocommerce_content();
-                    endif ?>
+                        endif ?>
+                    <?php else : ?>
+                        <?php woocommerce_get_template('archive-product.php'); ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php get_template_part('templates/page/footer/footer') ?>

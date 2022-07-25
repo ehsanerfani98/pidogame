@@ -5,6 +5,7 @@ require_once get_theme_file_path() . '/codestar/codestar-framework.php';
 require_once get_theme_file_path() . '/options.php';
 
 
+define('IMAGES_URL', get_stylesheet_directory_uri() . '/assets/media/images/');
 define('MY_ACF_PATH', get_stylesheet_directory() . '/inc/acf/');
 define('MY_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/');
 include_once(MY_ACF_PATH . 'acf.php');
