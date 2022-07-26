@@ -1045,7 +1045,10 @@ function custom_price_format( $price, $product ) {
         // Get the default variation prices or if not set the variable product min prices
         $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_sale_price( 'min', true );
-    }
+		$price = '<div class=" mx-2 fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+		return $price;
+
+	}
     // 2. Other products types
     else {
         $regular_price = $product->get_regular_price();
@@ -1061,5 +1064,6 @@ function custom_price_format( $price, $product ) {
         // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
         $price = '<div class=" mx-2 fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
     }
+	
     return $price;
 }
