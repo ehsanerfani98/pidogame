@@ -79,7 +79,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 					<a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
 				</div>
 			<?php else : ?>
-				<div class="card-footer py-3 text-center bg-danger bg-opacity-75">
+				<div class="card-footer py-1 text-center bg-danger bg-opacity-75">
 					<a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
 				</div>
 			<?php endif ?>
