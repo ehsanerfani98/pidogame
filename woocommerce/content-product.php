@@ -80,7 +80,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 				</div>
 			<?php else : ?>
 				<div class="card-footer py-3 text-center bg-danger bg-opacity-75">
-					<a class="d-block fw-bolder fs-4 py-2 text-white">ناموجود</a>
+					<a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
 				</div>
 			<?php endif ?>
 
