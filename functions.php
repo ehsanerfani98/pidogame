@@ -993,10 +993,10 @@ function wpa83368_price_html($price, $product)
 			$from = $product->regular_price;
 			$to = $product->price;
 			if ($from == $to) {
-				return '<div class="badge mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
 			}
 			if (empty($from)) {
-				return '<div class="badge mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
 			}
 			return '<div class=" mx-2 fs-5 px-4 py-2"><del>' . ((is_numeric($from)) ? woocommerce_price($from) : $from) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
 		} else {
