@@ -79,6 +79,6 @@ if ($total <= 1) {
 
 
 <script>
-	jQuery('a.page-numbers').addClass('btn btn-light btn-opacity-75 text-white');
+	jQuery('a.page-numbers').addClass('btn btn-secondary btn-opacity-75 text-white');
 	jQuery('span.page-numbers.current').addClass('btn btn-primary').removeClass('page-numbers').removeClass('current');
 </script>
