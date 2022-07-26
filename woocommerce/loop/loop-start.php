@@ -31,6 +31,14 @@ if (!defined('ABSPATH')) {
 	.image-cart-plswb {
 		text-align: center;
 		padding: .5rem;
+		width: 300px !important;
+		height: 150px !important;
+	}
+
+	.image-cart-plswb img{
+		width: 100% !important;
+		height: 100% !important;
+		object-fit: cover;
 	}
 
 	.image-cart-plswb img {
@@ -111,11 +119,7 @@ if (!defined('ABSPATH')) {
 		gap: 4rem;
 	}
 
-	.no-image {
-		width: 300px !important;
-		height: 146px !important;
-		object-fit: cover;
-	}
+	
 </style>
 
 

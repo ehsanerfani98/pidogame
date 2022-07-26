@@ -32,7 +32,7 @@ if (empty($product) || !$product->is_visible()) {
 
 			<div class="image-cart-plswb">
 				<?php if ( file_exists( get_attached_file ( get_post_thumbnail_id( get_the_ID() ) ))): ?>
-				<?php the_post_thumbnail('cart-product-plswb') ?>
+				<?php the_post_thumbnail() ?>
 				<?php else: ?>
 					<img class="no-image" src="<?= IMAGES_URL.'no-image-found.png' ?>" alt="">
 				<?php endif; ?>
