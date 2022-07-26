@@ -981,3 +981,19 @@ function ti_custom_javascript()
 	wp_enqueue_script('plswb-js', get_template_directory_uri() . '/assets/js/plswb-js.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
+
+
+
+add_filter( 'woocommerce_get_catalog_ordering_args', 'woo_add_postmeta_ordering_args' );
+function woo_add_postmeta_ordering_args( $args_sort ) {
+
+  $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : '';
+
+  switch( $orderby_value ) {
+     case 'last_modified':
+        $args_sort['orderby']  = 'modified';
+        $args_sort['order']    = 'DESC';
+     break;
+  }
+  return $args_sort;
+}
