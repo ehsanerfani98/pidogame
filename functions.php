@@ -927,7 +927,6 @@ function save_cart_item_custom_meta_as_order_item_meta($cart_item, $cart_item_ke
 			$cart_item->update_meta_data($item['title'], $item['value']);
 		}
 	}
-
 }
 
 
@@ -985,23 +984,26 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
-function wpa83368_price_html( $price,$product ){
+add_filter('woocommerce_get_price_html', 'wpa83368_price_html', 100, 2);
+function wpa83368_price_html($price, $product)
+{
 	// return $product->price;
-	 if ( $product->price > 0 ) {
-	   if ( $product->price && isset( $product->regular_price ) ) {
-		 $from = $product->regular_price;
-		 $to = $product->price;
-		 if($from == $to){
-			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</div>';
+	if ($product->price > 0) {
+		if ($product->price && isset($product->regular_price)) {
+			$from = $product->regular_price;
+			$to = $product->price;
+			if ($from == $to) {
+				return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+			}
+			if (empty($from)) {
+				return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+			}
+			return '<div class=" mx-2 fs-5 px-4 py-2"><del>' . ((is_numeric($from)) ? woocommerce_price($from) : $from) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+		} else {
+			$to = $product->price;
+			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
 		}
-		 return '<div class=" mx-2 fs-5 px-4 py-2"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</div>';
-	   } else {
-		 $to = $product->price;
-		 return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . '</div>';
-	   }
 	} else {
-	  return '<div class="badge badge-success fs-5 px-4 py-2">رایگان</div>';
+		return '<div class="badge badge-success fs-5 px-4 py-2">رایگان</div>';
 	}
- }
-
+}
