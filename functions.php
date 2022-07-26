@@ -982,8 +982,3 @@ function ti_custom_javascript()
 }
 add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
-
-
-
-
-function my_woocommerce_catalog_orderby( $orderby ) { unset($orderby["last_modified"]);  return $orderby; } add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
