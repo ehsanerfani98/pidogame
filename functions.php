@@ -1068,6 +1068,11 @@ function custom_price_format( $price, $product ) {
     }
 	else{
 		if($sale_price == 0){
+			if($regular_price == 0){
+				$price = '<div class=" fs-5 px-4 py-2">' . 'رایگان' . '</div>';
+				return $price;
+			}
+	
 			$price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div>';
 			return $price;
 		}
