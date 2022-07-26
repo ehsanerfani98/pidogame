@@ -997,3 +997,12 @@ function woo_add_postmeta_ordering_args( $args_sort ) {
   }
   return $args_sort;
 }
+
+
+add_filter( 'woocommerce_default_catalog_orderby_options', 'woo_add_new_postmeta_orderby' );
+add_filter( 'woocommerce_catalog_orderby', 'woo_add_new_postmeta_orderby' );
+
+function woo_add_new_postmeta_orderby( $sortby ) {
+    $sortby['last_modified'] = __( 'Sort By Last Modified', 'woocommerce' );
+    return $sortby;
+}
