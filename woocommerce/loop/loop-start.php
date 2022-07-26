@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
 
 	.image-cart-plswb {
 		text-align: center;
-		height: 150px !important;
+		height: 200px !important;
 	}
 
 	.image-cart-plswb img {
