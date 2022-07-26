@@ -982,7 +982,10 @@ function ti_custom_javascript()
 }
 add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
-add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
+
+
+
+// add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
 function wpa83368_price_html( $price,$product ){
 	// return $product->price;
 	 if ( $product->price > 0 ) {
