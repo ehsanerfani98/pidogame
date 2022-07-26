@@ -80,5 +80,5 @@ if ($total <= 1) {
 
 <script>
 	jQuery('a.page-numbers').addClass('btn btn-primary');
-	jQuery('span.page-numbers.current').addClass('btn btn-info');
+	jQuery('span.page-numbers.current').addClass('btn btn-info').removeClass('page-numbers');
 </script>
