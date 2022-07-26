@@ -1018,6 +1018,7 @@ function custom_price_format( $price, $product ) {
 
     // 1. Variable products
     if( $product->is_type('variable') ){
+		return
 
         // Searching for the default variation
         $default_attributes = $product->get_default_attributes();
