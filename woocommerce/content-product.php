@@ -40,7 +40,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 				<?php endif; ?>
 			</div>
 
-			<div class="wrap-content-product mt-2">
+			<div class="wrap-content-product mt-2 pb-2">
 				<div class="title-cart-plswb">
 					<h4><?php the_title() ?></h4>
 				</div>
