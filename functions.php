@@ -982,7 +982,19 @@ function ti_custom_javascript()
 }
 add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
-add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
-function wpa83367_price_html( $price, $product ){
-    return 'Was:' . str_replace( '<ins>', ' Now:<ins>', $price );
-}
+add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
+function wpa83368_price_html( $price,$product ){
+	// return $product->price;
+	 if ( $product->price > 0 ) {
+	   if ( $product->price && isset( $product->regular_price ) ) {
+		 $from = $product->regular_price;
+		 $to = $product->price;
+		 return '<div class="old-colt"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' Retail </del>  | </div><div class="live-colst">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'Our Price</div>';
+	   } else {
+		 $to = $product->price;
+		 return '<div class="live-colst">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . 'Our Price</div>';
+	   }
+	} else {
+	  return '<div class="live-colst">0 Our Price</div>';
+	}
+ }
