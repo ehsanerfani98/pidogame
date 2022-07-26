@@ -1063,7 +1063,7 @@ function custom_price_format( $price, $product ) {
         // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
         $price = '<div class=" mx-2 fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
     }else{
-        $price = '<div class=" mx-2 fs-5 px-4 py-2">' . wc_price($regular_price) . ' /  </div><div class=" mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        $price = '<div class=" mx-2 fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
 	}
     return $price;
 }
