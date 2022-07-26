@@ -30,6 +30,12 @@ if ($total <= 1) {
 }
 ?>
 <style>
+
+
+	.page-numbers{
+		border: none !important;
+	}
+
 	.page-numbers > li{
 		margin-left: 4px !important;
 		border: none !important;
