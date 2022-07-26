@@ -984,26 +984,81 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-add_filter('woocommerce_get_price_html', 'wpa83368_price_html', 100, 2);
-function wpa83368_price_html($price, $product)
-{
-	// return $product->price;
-	if ($product->price > 0) {
-		if ($product->price && isset($product->regular_price)) {
-			$from = $product->regular_price;
-			$to = $product->price;
-			if ($from == $to) {
-				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-			}
-			if (empty($from)) {
-				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-			}
-			return '<div class=" mx-2 fs-5 px-4 py-2"><del>' . ((is_numeric($from)) ? woocommerce_price($from) : $from) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-		} else {
-			$to = $product->price;
-			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-		}
-	} else {
-		return '<div class="fs-5 px-4 py-2">رایگان</div>';
-	}
+// add_filter('woocommerce_get_price_html', 'custom_price_format', 100, 2);
+// add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
+
+// function custom_price_format($price, $product)
+// {
+// 	// return $product->price;
+// 	if ($product->price > 0) {
+// 		if ($product->price && isset($product->regular_price)) {
+// 			$from = $product->regular_price;
+// 			$to = $product->price;
+// 			if ($from == $to) {
+// 				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+// 			}
+// 			if (empty($from)) {
+// 				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+// 			}
+// 			return '<div class=" mx-2 fs-5 px-4 py-2"><del>' . ((is_numeric($from)) ? woocommerce_price($from) : $from) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+// 		} else {
+// 			$to = $product->price;
+// 			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
+// 		}
+// 	} else {
+// 		return '<div class="fs-5 px-4 py-2">رایگان</div>';
+// 	}
+// }
+
+
+
+add_filter( 'woocommerce_get_price_html', 'custom_price_format', 10, 2 );
+add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
+function custom_price_format( $price, $product ) {
+
+    // 1. Variable products
+    if( $product->is_type('variable') ){
+
+        // Searching for the default variation
+        $default_attributes = $product->get_default_attributes();
+        // Loop through available variations
+        foreach($product->get_available_variations() as $variation){
+            $found = true; // Initializing
+            // Loop through variation attributes
+            foreach( $variation['attributes'] as $key => $value ){
+                $taxonomy = str_replace( 'attribute_', '', $key );
+                // Searching for a matching variation as default
+                if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
+                    $found = false;
+                    break;
+                }
+            }
+            // When it's found we set it and we stop the main loop
+            if( $found ) {
+                $default_variaton = $variation;
+                break;
+            } // If not we continue
+            else {
+                continue;
+            }
+        }
+        // Get the default variation prices or if not set the variable product min prices
+        $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
+        $sale_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_sale_price( 'min', true );
+    }
+    // 2. Other products types
+    else {
+        $regular_price = $product->get_regular_price();
+        $sale_price    = $product->get_sale_price();
+    }
+
+    // Formatting the price
+    if ( $regular_price !== $sale_price && $product->is_on_sale()) {
+        // Percentage calculation and text
+        $percentage = round( ( $regular_price - $sale_price ) / $regular_price * 100 ).'%';
+        $percentage_txt = __(' Save', 'woocommerce' ).' '.$percentage;
+
+        $price = '<del>' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
+    }
+    return $price;
 }
