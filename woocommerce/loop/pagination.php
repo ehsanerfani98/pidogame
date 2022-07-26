@@ -30,28 +30,9 @@ if ($total <= 1) {
 }
 ?>
 <style>
-	span.page-numbers.current {
-		border: none !important;
-		color: #fff !important;
-		border-radius: 4px;
-		font-family: IRANSansX !important;
-	}
-
-	a.page-numbers {
-		border: none !important;
-		color: #ffffff !important;
-		border-radius: 4px;
-		font-family: IRANSansX !important;
-	}
-
-	.page-numbers{
-		border: none !important;
-	}
-
 	.page-numbers > li{
 		margin-left: 4px !important;
 		border: none !important;
-		font-family: IRANSansX !important;
 	}
 
 	.page-numbers .dots{
@@ -93,4 +74,5 @@ if ($total <= 1) {
 
 <script>
 	jQuery('a.page-numbers').addClass('btn btn-primary');
+	jQuery('span.page-numbers.current').addClass('btn btn-info');
 </script>
