@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) {
 	}
 
 	.wrap-content-product {
-		padding: 0.6rem 1.5rem 1rem 1.5rem;
+		padding: 0.6rem 1rem 1rem 1rem;
 	}
 
 	.title-cart-plswb h4 {
