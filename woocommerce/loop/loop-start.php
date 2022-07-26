@@ -34,7 +34,7 @@ if (!defined('ABSPATH')) {
 		height: 150px !important;
 	}
 
-	.image-cart-plswb img{
+	.image-cart-plswb img {
 		width: 100% !important;
 		height: 100% !important;
 		object-fit: cover;
@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) {
 	}
 
 	.wrap-content-product {
-		padding: 0.2rem 2.5rem 1.4rem 2.5rem;
+		padding: 0.6rem 1.5rem 1rem 1.5rem;
 	}
 
 	.title-cart-plswb h4 {
@@ -54,29 +54,39 @@ if (!defined('ABSPATH')) {
 	}
 
 	.icon-device {
-		background: rgb(243 53 145 / 10%);
-		padding: .2rem .4rem .3rem .3rem;
-		width: 2rem;
-		height: 2rem;
+		background: rgb(0 158 247 / 16%);
+		width: 1.4rem;
+		height: 1.2rem;
 		border-radius: 20%;
+		position: relative;
 	}
 
 	.icon-device svg {
-		width: 15px;
-		height: 15px;
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		right: 4px;
+		top: 2.2px;
 	}
 
-	.deavice_name h4 {
+	.deavice_name {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: .5rem;
+		flex-wrap: wrap;
+	}
+
+	.deavice_name h5 {
 		font-weight: bold;
 		margin: 0;
+		font-size: 12px;
 	}
 
 	.device-cart-plswb {
 		margin-top: 1rem;
-		margin-bottom: 1.2rem;
-		display: flex;
+		margin-bottom: .5rem;
 		align-items: center;
-		gap: 1rem;
 	}
 
 	.platform,
@@ -117,8 +127,6 @@ if (!defined('ABSPATH')) {
 		align-items: center;
 		gap: 4rem;
 	}
-
-	
 </style>
 
 

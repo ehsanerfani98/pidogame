@@ -65,7 +65,7 @@ if ($total <= 1) {
 </style>
 <!-- <div class="card">
 	<div class="card-body py-5"> -->
-		<div class="row">
+		<div class="row mt-10">
 		<nav class="woocommerce-pagination">
 			<?php
 			echo paginate_links(
