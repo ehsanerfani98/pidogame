@@ -989,12 +989,12 @@ function wpa83368_price_html( $price,$product ){
 	   if ( $product->price && isset( $product->regular_price ) ) {
 		 $from = $product->regular_price;
 		 $to = $product->price;
-		 return '<div class="badge badge-danger mx-2 fs-4"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </del>  </div><div class="badge badge-success mx-2 fs-4">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</div>';
+		 return '<div class="badge badge-danger mx-2 fs-4 p-4"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </del>  </div><div class="badge badge-success mx-2 fs-4 p-4">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</div>';
 	   } else {
 		 $to = $product->price;
-		 return '<div class="badge badge-success mx-2 fs-4">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . '</div>';
+		 return '<div class="badge badge-success mx-2 fs-4 p-4">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . '</div>';
 	   }
 	} else {
-	  return '<div class="badge badge-success fs-4">رایگان</div>';
+	  return '<div class="badge badge-success fs-4 p-4">رایگان</div>';
 	}
  }
