@@ -30,18 +30,18 @@ if (!defined('ABSPATH')) {
 
 	.image-cart-plswb {
 		text-align: center;
-		padding: .3rem;
 		height: 150px !important;
 	}
 
 	.image-cart-plswb img {
 		width: 100% !important;
 		height: 100% !important;
-		object-fit: cover;
+		object-fit: fill;
 	}
 
 	.image-cart-plswb img {
-		border-radius: 6px;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
 	}
 
 	.wrap-content-product {
