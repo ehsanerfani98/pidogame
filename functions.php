@@ -1012,8 +1012,8 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-// add_filter( 'woocommerce_get_price_html', 'custom_price_format', 10, 2 );
-// add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
+add_filter( 'woocommerce_get_price_html', 'custom_price_format', 10, 2 );
+add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
 function custom_price_format( $price, $product ) {
 
     // 1. Variable products
@@ -1046,7 +1046,7 @@ function custom_price_format( $price, $product ) {
         $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_sale_price( 'min', true );
 		$price = '<div class=" mx-2 fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
-		return var_dump($product->get_available_variations());
+		return var_dump($product->get_variation_regular_price( 'min', true ));
 
 	}
     // 2. Other products types
