@@ -30,8 +30,7 @@ if (!defined('ABSPATH')) {
 
 	.image-cart-plswb {
 		text-align: center;
-		padding: .5rem;
-		width: 300px !important;
+		padding: .3rem;
 		height: 150px !important;
 	}
 
