@@ -46,7 +46,6 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 				</div>
 
 				<div class="device-cart-plswb">
-
 					<div class="deavice_name">
 						<span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
@@ -55,6 +54,8 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 						<h5><?= $meta['opt-product-subtitle'] ?></h5>
 					</div>
 				</div>
+				<div class="separator separator-dashed my-5"></div>
+
 				<div class="price text-center mt-6">
 					<span class="badge badge-light p-2">
 						<?php echo $product->get_price_html(); ?>
