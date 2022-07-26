@@ -985,7 +985,7 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
+// add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
 // function wpa83368_price_html( $price,$product ){
 // 	// return $product->price;
 // 	 if ( $product->price > 0 ) {
@@ -1003,20 +1003,3 @@ add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
 //  }
 
 
-function wpa83368_price_html($product){
-	// $price_html = '<div class="product-price">';
-	// if ( $product->get_price() > 0 ) {
-	// 	if ($product->get_price() && $product->get_regular_price()) {
-	// 		$from = $product->get_regular_price();
-	// 		$to = $product->get_price();
-	// 		$price_html .= '<del>'. ( ( is_numeric( $from ) ) ? wc_price( $from ) : $from ) .'</del><ins>'.( ( is_numeric( $to ) ) ? wc_price( $to ) : $to ) .'</ins>';
-	// 	}else{
-	// 		$to = $product->get_price();
-	// 		$price_html .= '<ins>' . ( ( is_numeric( $to ) ) ? wc_price( $to ) : $to ) . '</ins>';
-	// 	}
-	// }else{
-	// 	$price_html .= '<div class="free">free</div>';
-	// }
-	// $price_html .= '</div>';
-	// return $price_html;
-}
