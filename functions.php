@@ -984,25 +984,6 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-add_filter( 'woocommerce_get_catalog_ordering_args', 'woo_add_postmeta_ordering_args' );
-function woo_add_postmeta_ordering_args( $args_sort ) {
-
-  $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : '';
-
-  switch( $orderby_value ) {
-     case 'last_modified':
-        $args_sort['orderby']  = 'modified';
-        $args_sort['order']    = 'DESC';
-     break;
-  }
-  return $args_sort;
-}
 
 
-add_filter( 'woocommerce_default_catalog_orderby_options', 'woo_add_new_postmeta_orderby' );
-add_filter( 'woocommerce_catalog_orderby', 'woo_add_new_postmeta_orderby' );
-
-function woo_add_new_postmeta_orderby( $sortby ) {
-    $sortby['last_modified'] = __( 'Sort By Last Modified', 'woocommerce' );
-    return $sortby;
-}
+function my_woocommerce_catalog_orderby( $orderby ) { unset($orderby["last_modified"]);  return $orderby; } add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
