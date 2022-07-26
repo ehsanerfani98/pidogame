@@ -73,7 +73,7 @@ if (!defined('ABSPATH')) {
 		display: flex;
 		flex-direction: row-reverse;
 		align-items: center;
-		gap: .5rem;
+		gap: .3rem;
 		flex-wrap: wrap;
 	}
 
