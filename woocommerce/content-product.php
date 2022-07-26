@@ -54,7 +54,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 						<h5><?= $meta['opt-product-subtitle'] ?></h5>
 					</div>
 				</div>
-				<div class="separator separator-dashed my-5"></div>
+				<div class="separator separator-solid my-5"></div>
 
 				<div class="price text-center mt-6">
 					<span class="badge badge-light p-2">
