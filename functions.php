@@ -1004,6 +1004,6 @@ function wpa83368_price_html($price, $product)
 			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
 		}
 	} else {
-		return '<div class="badge badge-success fs-5 px-4 py-2">رایگان</div>';
+		return '<div class="fs-5 px-4 py-2">رایگان</div>';
 	}
 }
