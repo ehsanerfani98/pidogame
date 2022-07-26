@@ -985,7 +985,7 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-// add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
+add_filter( 'woocommerce_get_price_html', 'wpa83368_price_html', 100, 2 );
 // function wpa83368_price_html( $price,$product ){
 // 	// return $product->price;
 // 	 if ( $product->price > 0 ) {
@@ -1003,3 +1003,18 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 //  }
 
 
+function wpa83368_price_html( $price,$product ){
+    if ( $product->price > 0 ) {
+      if ( $product->price && isset( $product->regular_price ) ) {
+        $from = $product->regular_price;
+        $to = $product->price;
+        return '<ins><span class="amount">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</span></ins>
+        <del><span class="amount">'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </span></del>';
+      } else {
+        $to = $product->price;
+        return '<ins><span class="amount">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . '</span></ins>';
+      }
+   } else {
+     return '免费';
+   }
+}
