@@ -44,9 +44,9 @@ if ($total <= 1) {
 	.page-numbers .dots{
 		display: none !important;
 	}
-	.prev, .next{
+	/* .prev, .next{
 		display: none !important;
-	}
+	} */
 </style>
 <!-- <div class="card">
 	<div class="card-body py-5"> -->
