@@ -1012,8 +1012,8 @@ add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 
-add_filter( 'woocommerce_get_price_html', 'custom_price_format', 10, 2 );
-add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
+// add_filter( 'woocommerce_get_price_html', 'custom_price_format', 10, 2 );
+// add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
 function custom_price_format( $price, $product ) {
 
     // 1. Variable products
