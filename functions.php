@@ -1046,7 +1046,7 @@ function custom_price_format( $price, $product ) {
         $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
         $sale_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_sale_price( 'min', true );
 		$price = '<div class=" mx-2 fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
-		return $price;
+		return $default_attributes;
 
 	}
     // 2. Other products types
