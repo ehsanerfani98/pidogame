@@ -40,7 +40,7 @@ if ($total <= 1) {
 
 	a.page-numbers {
 		border: none !important;
-		background: #40b6f9 !important;
+		background: #307aca !important;
 		color: #ffffff !important;
 		border-radius: 4px;
 		font-family: IRANSansX !important;
