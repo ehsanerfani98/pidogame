@@ -1058,7 +1058,8 @@ function custom_price_format( $price, $product ) {
         $percentage = round( ( $regular_price - $sale_price ) / $regular_price * 100 ).'%';
         $percentage_txt = __(' Save', 'woocommerce' ).' '.$percentage;
 
-        $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
+        // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
+        $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del>';
     }
     return $price;
 }
