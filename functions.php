@@ -989,7 +989,7 @@ function wpa83368_price_html( $price,$product ){
 	   if ( $product->price && isset( $product->regular_price ) ) {
 		 $from = $product->regular_price;
 		 $to = $product->price;
-		 return '<div class="old-colt"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </del>  | </div><div class="live-colst">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'Our Price</div>';
+		 return '<div class="old-colt"><del>'. ( ( is_numeric( $from ) ) ? woocommerce_price( $from ) : $from ) .' </del>  | </div><div class="live-colst">'.( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) .'</div>';
 	   } else {
 		 $to = $product->price;
 		 return '<div class="live-colst">' . ( ( is_numeric( $to ) ) ? woocommerce_price( $to ) : $to ) . '</div>';
