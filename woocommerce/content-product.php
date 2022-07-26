@@ -58,7 +58,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 			<div class="separator separator-solid"></div>
 			<div class="wrap-content-product">
 
-				<div class="price text-muted bg-light text-center mt-2 d-flex justify-content-center align-items-center flex-column">
+				<div class="price text-muted bg-light text-center mt-2">
 					<div class="d-flex justify-content-center align-items-center bg-light py-2">
 						<?php echo $product->get_price_html(); ?>
 					</div>
