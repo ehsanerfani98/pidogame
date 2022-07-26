@@ -32,7 +32,6 @@ if ($total <= 1) {
 <style>
 	span.page-numbers.current {
 		border: none !important;
-		background: #f33591 !important;
 		color: #fff !important;
 		border-radius: 4px;
 		font-family: IRANSansX !important;
@@ -40,7 +39,6 @@ if ($total <= 1) {
 
 	a.page-numbers {
 		border: none !important;
-		background: #307aca !important;
 		color: #ffffff !important;
 		border-radius: 4px;
 		font-family: IRANSansX !important;
@@ -91,3 +89,8 @@ if ($total <= 1) {
 		
 	<!-- </div>
 </div> -->
+
+
+<script>
+	jQuery('a.page-numbers').addClass('btn btn-primary');
+</script>
