@@ -55,7 +55,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 					</div>
 				</div>
 			</div>
-			<div class="separator separator-solid my-5"></div>
+			<div class="separator separator-solid"></div>
 			<div class="wrap-content-product">
 
 				<div class="price text-center mt-6">
