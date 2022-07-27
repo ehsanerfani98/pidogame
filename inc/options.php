@@ -159,7 +159,7 @@ if( function_exists('acf_add_local_field_group') ):
                     array(
                         'key' => 'field_62dc2b29e72cf',
                         'label' => 'عدم نمایش :',
-                        'name' => 'show_in_products',
+                        'name' => 'not_show_in_products',
                         'type' => 'post_object',
                         'instructions' => 'محصولات یا متغیرهایی را که قصد دارید این فیلد در آن ها نمایش داده نشود انتخاب کنید.',
                         'required' => 0,
