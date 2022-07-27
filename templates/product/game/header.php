@@ -222,14 +222,19 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
 
                                                                         <div class="d-flex flex-column">
-                                                                            <?php $plswb_fields = fx_check(get_the_ID() ,$variation['variation_id']);
+                                                                            <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                                                             if (count($plswb_fields) > 0) :
                                                                             ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
                                                                                     <?php switch ($item['type_field']):
                                                                                         case 'email': ?>
                                                                                             <div class="form-group mb-4">
-                                                                                                <label for="email_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
+                                                                                                <label for="email_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?><button type="button" class="btn btn-icon btn-success" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="left" title="Tooltip on left">
+                                                                                                        <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                                                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                                                                <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                                                            </svg></span>
+                                                                                                    </button></label>
                                                                                                 <input data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-control" type="email" name="ext_email_<?= $variation['variation_id'] . $key ?>" id="ext_email_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
@@ -328,7 +333,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                                
+
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
                                                                     <?php if ($variationProduct->is_on_sale()) : ?>
                                                                         <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
