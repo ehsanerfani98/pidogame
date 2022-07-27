@@ -75,14 +75,18 @@ function fx_check($pid, $vid)
 							$product = wc_get_product($not_variation_id);
 
 							if ($product->is_type('variation')) {
-								var_dump('variation product');
-							} elseif ($product->is_type('variable')) {
-								var_dump('variable product');
-							}
-
-							$pos = array_search($not_variation_id, $variation_ids);
-							if ($pos !== false) {
-								unset($variation_ids[$pos]);
+								$pos = array_search($not_variation_id, $variation_ids);
+								if ($pos !== false) {
+									unset($variation_ids[$pos]);
+								}
+							} else {
+								$variations = new WC_Product_Variable($not_variation_id);
+								foreach ($variations->get_children() as  $vn_id) {
+									$pos = array_search($vn_id, $variation_ids);
+									if ($pos !== false) {
+										unset($variation_ids[$pos]);
+									}
+								}
 							}
 						}
 
