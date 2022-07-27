@@ -60,10 +60,21 @@ function fx_check($pid, $vid)
 
 			foreach ($extra_fields as $item) {
 				if ($item['disable_all_rule_products']) {
-					foreach ($item['show_in_products'] as $show_product) {
+					foreach ($item['show_products_inside_fields'] as $show_product) {
 						$variation_id = $show_product->ID;
-						if ($variation_id == $vid) {
-							$new_extra_fields[] = $item;
+						$product = wc_get_product($variation_id);
+						if ($product->is_type('variation')) {
+							$show_inside_rule_products_ids[] = $variation_id;
+						} else {
+							$variations = new WC_Product_Variable($variation_id);
+							foreach ($variations->get_children() as  $vn_id) {
+								$show_inside_rule_products_ids[] = $vn_id;
+							}
+						}
+						foreach ($show_inside_rule_products_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
 						}
 					}
 				} else {
