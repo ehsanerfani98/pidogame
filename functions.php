@@ -67,7 +67,7 @@ function fx_check($pid, $vid)
 						}
 					}
 				} else {
-					if(count($item['not_show_in_products']) > 0){
+					if (count($item['not_show_in_products']) > 0) {
 
 						foreach ($item['not_show_in_products'] as $not_show_product) {
 							$not_variation_id = $not_show_product->ID;
@@ -82,11 +82,11 @@ function fx_check($pid, $vid)
 								$new_extra_fields[] = $item;
 							}
 						}
-	
-					}
-					foreach ($variation_ids as $variation_id) {
-						if ($variation_id == $vid) {
-							$new_extra_fields[] = $item;
+					} else {
+						foreach ($variation_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
 						}
 					}
 				}
