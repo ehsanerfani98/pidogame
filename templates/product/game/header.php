@@ -360,6 +360,12 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                     در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                                                 </span>
                                                                             </button>
+
+                                                                            <div>
+                                                                                <?= $title ?>
+                                                                                <?= $deliveryTime ?>
+                                                                            </div>
+
                                                                         </div>
                                                                     </form>
                                                                 </div>
