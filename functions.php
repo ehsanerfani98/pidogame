@@ -74,7 +74,7 @@ function fx_check($pid, $vid)
 
 							$product = wc_get_product($not_variation_id);
 
-							if ($product->is_type('simple')) {
+							if ($product->is_type('variation')) {
 								var_dump('simple product');
 							} elseif ($product->is_type('variable')) {
 								var_dump('variable product');
