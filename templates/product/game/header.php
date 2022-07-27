@@ -361,9 +361,9 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                 </span>
                                                                             </button>
 
-                                                                            <div>
-                                                                                <?= $title ?>
-                                                                                <?= $deliveryTime ?>
+                                                                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                                                            <span class="badge badge-light-primary"><?= $title ?></span>
+                                                                            <span class="badge badge-light-primary"><?= $deliveryTime ?></span>
                                                                             </div>
 
                                                                         </div>
