@@ -33,9 +33,6 @@ add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 include_once(get_stylesheet_directory() . '/inc/options.php');
 
 
-$extra_fields = get_field("plswb_fields", 3901);
-
-dd($extra_fields);
 
 
 
@@ -63,7 +60,7 @@ function fx_check($pid, $vid)
 
 
 			foreach ($extra_fields as $item) {
-				var_dump($item['disable_all_rule_products']);
+				var_dump($item['title_field']);
 				if ($item['disable_all_rule_products']) {
 					foreach ($item['show_products_inside_fields'] as $show_product) {
 						$variation_id = $show_product->ID;
