@@ -59,7 +59,7 @@ function fx_check($pid, $vid)
 
 
 			foreach ($extra_fields as $item) {
-				var_dump($item['disable_all_rule_products']);
+				// var_dump($item['disable_all_rule_products']);
 				if ($item['disable_all_rule_products']) {
 					foreach ($item['show_products_inside_fields'] as $show_product) {
 						$variation_id = $show_product->ID;
@@ -116,7 +116,7 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
-			$new_extra_fields[] = $extra_fields;
+			// $new_extra_fields[] = $extra_fields;
 		}
 		wp_reset_postdata();
 	}
