@@ -33,6 +33,10 @@ add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 include_once(get_stylesheet_directory() . '/inc/options.php');
 
 
+$extra_fields = get_field("plswb_fields", 3901);
+
+dd($extra_fields);
+
 
 
 function fx_check($pid, $vid)
