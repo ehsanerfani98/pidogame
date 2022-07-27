@@ -71,6 +71,15 @@ function fx_check($pid, $vid)
 
 						foreach ($item['not_show_in_products'] as $not_show_product) {
 							$not_variation_id = $not_show_product->ID;
+
+							$product = wc_get_product($not_variation_id);
+
+							if ($product->is_type('simple')) {
+								var_dump('simple product');
+							} elseif ($product->is_type('variable')) {
+								var_dump('variable product');
+							}
+
 							$pos = array_search($not_variation_id, $variation_ids);
 							if ($pos !== false) {
 								unset($variation_ids[$pos]);
