@@ -361,17 +361,14 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                 </span>
                                                                             </button>
 
-                                                                            <div class="d-flex flex-column justify-content-center align-items-center">
-                                                                                <span class="badge badge-light-primary"></span>
-                                                                                <span class="badge badge-light-primary"></span>
-                                                                            </div>
+                                                                           
 
-                                                                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                                                        </div>
+
+                                                                        <div class="d-flex justify-content-between align-items-center mt-4">
                                                                                 <span class="badge badge-secondary p-2"><?= $title ?></span>
                                                                                 <span class="badge badge-secondary p-2"><?= $deliveryTime ?></span>
                                                                             </div>
-
-                                                                        </div>
                                                                     </form>
                                                                 </div>
 
