@@ -361,15 +361,16 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                 </span>
                                                                             </button>
 
-                                                                           
+
 
                                                                         </div>
 
-                                                                       
+
                                                                     </form>
                                                                 </div>
 
                                                                 <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center">
                                                                     <?php if ($variationProduct->is_on_sale()) : ?>
                                                                         <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
                                                                         <span class="text-primary fw-boldest fs-4 ss02"><?php echo number_format($variationProduct->sale_price) ?></span>
@@ -392,9 +393,10 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         <span class="fw-bold fs-4 text-gray-600 me-1 ms-2"><?php echo get_woocommerce_currency_symbol() ?></span>
                                                                     <?php endif ?>
                                                                     <div class="d-flex justify-content-between align-items-center mt-4">
-                                                                                <span class="badge badge-secondary p-2"><?= $title ?></span>
-                                                                                <span class="badge badge-secondary p-2"><?= $deliveryTime ?></span>
-                                                                            </div>
+                                                                        <span class="badge badge-secondary p-2"><?= $title ?></span>
+                                                                        <span class="badge badge-secondary p-2"><?= $deliveryTime ?></span>
+                                                                    </div>
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
