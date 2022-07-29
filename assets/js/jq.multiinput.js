@@ -44,9 +44,9 @@ jQuery(document).ready(function ($) {
 
         let fields = $('#wrap-fields').contents().clone();
 
-        $(fields).find('#ext_title').attr('name', 'ext_options[data]' + '[' + unique_id + '][title]').attr('required');
+        $(fields).find('#ext_title').attr({'name': 'ext_options[data]' + '[' + unique_id + '][title]', 'required':'required'});
         $(fields).find('#ext_help').attr('name', 'ext_options[data]' + '[' + unique_id + '][help]');
-        $(fields).find('#ext_type').attr('name', 'ext_options[data]' + '[' + unique_id + '][type]').attr('required');
+        $(fields).find('#ext_type').attr({'name': 'ext_options[data]' + '[' + unique_id + '][type]', 'required':'required'});
         $(fields).find('#ext_price').attr('name', 'ext_options[data]' + '[' + unique_id + '][price]');
         $(fields).find('#ext_value_select').attr('name', 'ext_options[data]' + '[' + unique_id + '][value_select]');
         $(fields).find('#not_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][not_show_products_rules][]');

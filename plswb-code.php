@@ -78,6 +78,7 @@ function view_plswb_extra_options()
                                             <div class="mb-3">
                                                 <label for="ext_type">نوع فیلد <span style="color: red;"> (الزامی) </span></label>
                                                 <select oninvalid="this.setCustomValidity('نوع فیلد را انتخاب کنید.')" oninput="this.setCustomValidity('')" class="form-control" name="" id="ext_type">
+                                                    <option value="">نوع فیلد را انتخاب کنید</option>
                                                     <option value="text">متنی</option>
                                                     <option value="email">ایمیل</option>
                                                     <option value="password">رمز عبور</option>
