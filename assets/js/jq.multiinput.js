@@ -1,0 +1,102 @@
+jQuery(document).ready(function ($) {
+
+
+
+    $('.products_rules').select2({
+
+        placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
+        ajax: {
+            url: rankMath.ajaxurl,
+            data: {
+                'action': 'get_products_plswb',
+            },
+            processResults: function (data) {
+                return {
+                    results: data.items.results
+                }
+            },
+        }
+
+    });
+
+    $('.products_rules_db').select2({
+
+        placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
+        ajax: {
+            url: rankMath.ajaxurl,
+            data: {
+                'action': 'get_products_plswb',
+            },
+            processResults: function (data) {
+                return {
+                    results: data.items.results
+                }
+            },
+        }
+
+    });
+
+
+    $('#btn-new-field').click(function () {
+
+
+        let unique_id = makeid(20);
+
+        let selects = $('.products_rules_pluss');
+        $(selects).each(function () {
+            $(this).select2("destroy");
+        });
+        let fields = $('#wrap-fields').contents().clone();
+
+        $(fields).find('#ext_title').attr('name', 'ext_options[data]' + '[' + unique_id + '][title]').attr('required');
+        $(fields).find('#ext_help').attr('name', 'ext_options[data]' + '[' + unique_id + '][help]');
+        $(fields).find('#ext_type').attr('name', 'ext_options[data]' + '[' + unique_id + '][type]').attr('required');
+        $(fields).find('#ext_price').attr('name', 'ext_options[data]' + '[' + unique_id + '][price]');
+        $(fields).find('#ext_value_select').attr('name', 'ext_options[data]' + '[' + unique_id + '][value_select]');
+        $(fields).find('#not_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][not_show_products_rules][]');
+        $(fields).find('#ext_disable_org_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][disable_org_show_products_rules]');
+        $(fields).find('#inside_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][inside_show_products_rules][]');
+
+        $(fields).insertAfter('#warp-rules');
+        let selects2 = $('.products_rules_db');
+        $(selects2).each(function () {
+            $(this).select2('destroy');
+        });
+        $(selects2).each(function () {
+            $(this).addClass('products_rules_pluss').select2({
+                placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
+                ajax: {
+                    url: rankMath.ajaxurl,
+                    data: {
+                        'action': 'get_products_plswb',
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data.items.results
+                        }
+                    },
+                }
+            });
+        });
+    });
+
+});
+
+function remove_filed(item) {
+    jQuery(item).parents().eq(4).remove();
+}
+
+function close_filed(item) {
+    jQuery(item).parents().eq(3).find('.close-wrap').slideToggle();
+}
+
+function makeid(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
