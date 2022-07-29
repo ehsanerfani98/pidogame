@@ -116,7 +116,7 @@ function view_plswb_extra_options()
                                                 <label for="">عدم نمایش</label>
                                                 <div class="col-lg-12">
 
-                                                    <select class="org_products_not_show_rules products_rules_db form-control" name="" id="not_show_products_rules" multiple="multiple">
+                                                    <select class="org_products_not_show_rules new_select form-control" name="" id="not_show_products_rules" multiple="multiple">
 
                                                     </select>
                                                 </div>
@@ -152,7 +152,7 @@ function view_plswb_extra_options()
                                                     <label for="">محصولات شامل درون فیلدی</label>
                                                     <div class="col-lg-12">
 
-                                                        <select class="org_products_not_show_rules products_rules_db form-control" name="" id="inside_show_products_rules" multiple="multiple">
+                                                        <select class="org_products_not_show_rules new_select form-control" name="" id="inside_show_products_rules" multiple="multiple">
 
                                                         </select>
                                                     </div>
@@ -178,11 +178,20 @@ function view_plswb_extra_options()
                 <div class="plswb-card-body">
                     <label for="">محصولات شامل کلی</label>
                     <select class="org_products_show_rules products_rules form-control" name="org_products_show_rules[]" multiple="multiple">
+
+
                         <?php foreach (get_post_meta(get_the_ID(), 'all_products_show_rules', true) as $pid) :
                             $product = wc_get_product($pid);
+                            if ($product->is_type('variation')) :
+                                $variation = new WC_Product_Variation($pid);
                         ?>
-                            <option selected value="<?= $pid ?>"><?= $product->get_title() . ' | ' . $pid ?></option>
-                        <?php endforeach; ?>
+                                <option selected value="<?= $pid ?>"><?= $variation->get_formatted_name() . ' | ' . $pid ?></option>
+                            <?php else : ?>
+                                <option selected value="<?= $pid ?>"><?= $product->get_title() . ' | ' . $pid ?></option>
+                        <?php
+                            endif;
+                        endforeach; ?>
+
                     </select>
                 </div>
             </div>

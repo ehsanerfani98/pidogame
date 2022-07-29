@@ -42,10 +42,6 @@ jQuery(document).ready(function ($) {
 
         let unique_id = makeid(20);
 
-        let selects = $('.products_rules_pluss');
-        $(selects).each(function () {
-            $(this).select2("destroy");
-        });
         let fields = $('#wrap-fields').contents().clone();
 
         $(fields).find('#ext_title').attr('name', 'ext_options[data]' + '[' + unique_id + '][title]').attr('required');
@@ -57,13 +53,15 @@ jQuery(document).ready(function ($) {
         $(fields).find('#ext_disable_org_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][disable_org_show_products_rules]');
         $(fields).find('#inside_show_products_rules').attr('name', 'ext_options[data]' + '[' + unique_id + '][inside_show_products_rules][]');
 
+
+        $(fields).find('.new_select').addClass('products_rules_pluss');
+
         $(fields).insertAfter('#warp-rules');
-        let selects2 = $('.products_rules_db');
-        $(selects2).each(function () {
-            $(this).select2('destroy');
-        });
-        $(selects2).each(function () {
-            $(this).addClass('products_rules_pluss').select2({
+
+        let selects3 = $('.products_rules_pluss');
+
+        $(selects3).each(function () {
+            $(this).select2({
                 placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
                 ajax: {
                     url: rankMath.ajaxurl,
@@ -78,7 +76,10 @@ jQuery(document).ready(function ($) {
                 }
             });
         });
+
     });
+
+
 
 });
 
