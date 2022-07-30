@@ -47,7 +47,7 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
-
+dd($variation_ids);
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
