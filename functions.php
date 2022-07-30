@@ -29,7 +29,7 @@ function fx_check($pid, $vid)
 		'posts_per_page' => -1,
 	);
 	$fields_plswb = new WP_Query($arg);
-
+dd('test');
 	if ($fields_plswb->have_posts()) {
 		while ($fields_plswb->have_posts()) {
 			$fields_plswb->the_post();
