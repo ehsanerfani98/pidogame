@@ -1133,9 +1133,10 @@ function fx_check($pid, $vid)
 				foreach ($variation_ids as $variation_id) {
 					if ($variation_id == $vid) {
 						$new_extra_fields[] = $item;
+				var_dump($new_extra_fields);
+
 					}
 				}
-				var_dump($new_extra_fields);
 			}
 		}
 	}
