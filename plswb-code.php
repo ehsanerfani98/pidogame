@@ -52,16 +52,24 @@ function view_plswb_extra_options()
                     <div class="plswb-card">
                         <div class="plswb-card-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="ext_title">عنوان فیلد <span style="color: red;"> (الزامی) </span></label>
                                         <input oninvalid="this.setCustomValidity('عنوان فیلد را وارد کنید.')" oninput="this.setCustomValidity('')" type="text" name="" id="ext_title" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="ext_help">متن راهنما</label>
                                         <input type="text" name="" id="ext_help" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <input class="form-check-input" type="checkbox" value="true" name="" id="ext_required">
+                                        <label class="form-check-label" for="ext_required">
+                                            الزامی
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -220,18 +228,26 @@ function view_plswb_extra_options()
                         <div class="plswb-card">
                             <div class="plswb-card-body">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="ext_title">عنوان فیلد <span style="color: red;"> (الزامی) </span></label>
                                             <input required oninvalid="this.setCustomValidity('عنوان فیلد را وارد کنید.')" oninput="this.setCustomValidity('')" type="text" name="<?= 'ext_options[data]' . '[' . $key . '][title]' ?>" value="<?= $item['title'] ?>" id="ext_title" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="mb-3">
                                             <label for="ext_help">متن راهنما</label>
                                             <input type="text" name="<?= 'ext_options[data]' . '[' . $key . '][help]' ?>" value="<?= $item['help'] ?>" id="ext_help" class="form-control">
                                         </div>
                                     </div>
+                                    <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <input class="form-check-input" type="checkbox" value="true" name="<?= 'ext_options[data]' . '[' . $key . '][required]' ?>" id="ext_required">
+                                        <label class="form-check-label" for="ext_required">
+                                            الزامی
+                                        </label>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>

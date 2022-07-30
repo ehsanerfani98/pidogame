@@ -46,6 +46,7 @@ jQuery(document).ready(function ($) {
 
         $(fields).find('#ext_title').attr({'name': 'ext_options[data]' + '[' + unique_id + '][title]', 'required':'required'});
         $(fields).find('#ext_help').attr('name', 'ext_options[data]' + '[' + unique_id + '][help]');
+        $(fields).find('#ext_required').attr('name', 'ext_options[data]' + '[' + unique_id + '][required]');
         $(fields).find('#ext_type').attr({'name': 'ext_options[data]' + '[' + unique_id + '][type]', 'required':'required'});
         $(fields).find('#ext_price').attr('name', 'ext_options[data]' + '[' + unique_id + '][price]');
         $(fields).find('#ext_value_select').attr('name', 'ext_options[data]' + '[' + unique_id + '][value_select]');
