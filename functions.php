@@ -26,7 +26,6 @@ include_once(get_stylesheet_directory() . '/inc/options.php');
 function fx_check($pid, $vid)
 {
 
-dd('g');
 
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
@@ -44,6 +43,8 @@ dd('g');
 			foreach ($display_rules as $product_id) {
 				$product = wc_get_product($product_id);
 				if (!$product->is_type('variable')) {
+dd('g');
+
 					$variations = new WC_Product_Variable($product_id);
 					foreach ($variations->get_children() as  $v_id) {
 						$variation_ids[] = $v_id;
