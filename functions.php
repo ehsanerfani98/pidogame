@@ -35,7 +35,7 @@ function fx_check($pid, $vid)
 			$fields_plswb->the_post();
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
-			dd($display_rules);
+			dd($extra_fields);
 			foreach ($display_rules as $product_id) {
 				$variations = new WC_Product_Variable($product_id);
 				foreach ($variations->get_children() as  $v_id) {
