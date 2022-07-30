@@ -1107,16 +1107,16 @@ function fx_check($pid, $vid)
 								}
 							}
 
-							if($not_variation_id != $vid){
+							if($not_variation_id == $vid){
 								$new_extra_fields[] = $item;
 							}
 						}
 // dd($variation_ids);
-						// foreach ($variation_ids as $variation_id) {
-							// if ($variation_id == $vid) {
-								// $new_extra_fields[] = $item;
-							// }
-						// }
+						foreach ($variation_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
+						}
 					} else {
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
