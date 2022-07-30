@@ -45,6 +45,8 @@ function fx_check($pid, $vid)
 				// 	$variation_ids[] = $v_id;
 				// }
 			}
+							$variations = wc_get_product(3849);
+
 			dd('test');
 
 
