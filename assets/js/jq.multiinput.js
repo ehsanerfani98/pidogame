@@ -20,7 +20,11 @@ jQuery(document).ready(function ($) {
     });
 
     $('.products_rules_db').select2({
-
+        language: {
+            searching: function() {
+                return "در حال جستجو...";
+            }
+        },
         placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
         ajax: {
             url: rankMath.ajaxurl,
