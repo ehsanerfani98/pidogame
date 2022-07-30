@@ -1107,11 +1107,11 @@ function fx_check($pid, $vid)
 								}
 							}
 						}
-dd($variation_ids);
+// dd($variation_ids);
 						foreach ($variation_ids as $variation_id) {
-							if ($variation_id == $vid) {
+							// if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
-							}
+							// }
 						}
 					} else {
 						foreach ($variation_ids as $variation_id) {
