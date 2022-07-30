@@ -1057,7 +1057,6 @@ function fx_check($pid, $vid)
 	$fields_plswb = new WP_Query($arg);
 	if ($fields_plswb->have_posts()) {
 		while ($fields_plswb->have_posts()) {
-			$new_extra_fields = [];
 			$fields_plswb->the_post();
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
@@ -1121,6 +1120,8 @@ function fx_check($pid, $vid)
 							}
 						}
 					} else {
+						$new_extra_fields = [];
+
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
