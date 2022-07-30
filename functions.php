@@ -23,13 +23,14 @@ include_once(get_stylesheet_directory() . '/inc/options.php');
 
 function fx_check($pid, $vid)
 {
+dd('test');
+
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 	);
 	$fields_plswb = new WP_Query($arg);
-dd('test');
 	if ($fields_plswb->have_posts()) {
 		while ($fields_plswb->have_posts()) {
 			$fields_plswb->the_post();
