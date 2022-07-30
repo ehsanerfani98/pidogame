@@ -1059,6 +1059,8 @@ function fx_check($pid, $vid)
 		while ($fields_plswb->have_posts()) {
 			$fields_plswb->the_post();
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
+
+			dd(get_post_meta(get_the_ID(), "plswb_fields", true));
 			$extra_fields[] = get_post_meta(get_the_ID(), "plswb_fields", true);
 
 			foreach ($display_rules as $product_id) {
