@@ -1096,8 +1096,6 @@ function fx_check($pid, $vid)
 							if ($product->is_type('variation')) {
 								$pos = array_search($not_variation_id, $variation_ids);
 								if ($pos !== false) {
-								dd('d');
-
 									unset($variation_ids[$pos]);
 								}
 							} else {
@@ -1110,7 +1108,7 @@ function fx_check($pid, $vid)
 								}
 							}
 						}
-
+dd($variation_ids);
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
