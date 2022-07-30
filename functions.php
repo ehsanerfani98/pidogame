@@ -16,8 +16,9 @@ function mytheme_add_woocommerce_support()
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 include_once(get_stylesheet_directory() . '/inc/options.php');
+$variations = new WC_Product_Variable(3849);
 
-
+dd($variations->get_children());
 
 
 
@@ -110,7 +111,6 @@ function fx_check($pid, $vid)
 	return $new_extra_fields;
 }
 
-dd(fx_check(1, 3850));
 // Get theme mode
 function getThemeMode()
 {
