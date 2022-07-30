@@ -1088,8 +1088,6 @@ function fx_check($pid, $vid)
 					}
 				} else {
 					if (count($item['not_show_products_rules']) > 0) {
-						dd($variation_ids);
-
 						foreach ($item['not_show_products_rules'] as $not_show_product_id) {
 							$not_variation_id = $not_show_product_id;
 
@@ -1109,7 +1107,7 @@ function fx_check($pid, $vid)
 								}
 							}
 						}
-dd($variation_ids);
+dd($variation_ids,$vid);
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
