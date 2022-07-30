@@ -1077,9 +1077,10 @@ function fx_check($pid, $vid)
 		}
 	}
 
-	dd($new_extra_fields);
+	// dd($new_extra_fields);
 
 	foreach ($new_extra_fields as $item) {
+		unset($new_extra_fields);
 		if ($item['disable_org_show_products_rules']) {
 			foreach ($item['inside_show_products_rules'] as $show_product_id) {
 				$variation_id = $show_product_id;
