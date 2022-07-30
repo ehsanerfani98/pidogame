@@ -41,9 +41,10 @@ function fx_check($pid, $vid)
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
 
 			foreach ($display_rules as $product_id) {
-			dd('g');
 
 				$product = wc_get_product($product_id);
+			dd('g');
+
 				if (!$product->is_type('variable')) {
 
 					$variations = new WC_Product_Variable($product_id);
