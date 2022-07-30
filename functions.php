@@ -1070,7 +1070,6 @@ function fx_check($pid, $vid)
 
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
-					$new_extra_fields = [];
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
 						$variation_id = $show_product_id;
 						$product = wc_get_product($variation_id);
@@ -1088,11 +1087,10 @@ function fx_check($pid, $vid)
 							}
 						}
 						$show_inside_rule_products_ids = [];
+
 					}
 				} else {
 					if (count($item['not_show_products_rules']) > 0) {
-
-						$new_extra_fields = [];
 
 						foreach ($item['not_show_products_rules'] as $not_show_product_id) {
 							$not_variation_id = $not_show_product_id;
@@ -1122,7 +1120,6 @@ function fx_check($pid, $vid)
 							}
 						}
 					} else {
-						$new_extra_fields = [];
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
