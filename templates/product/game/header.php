@@ -18,7 +18,6 @@ function fx_check($pid, $vid)
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
 
 			foreach ($display_rules as $product_id) {
-
 				$product = wc_get_product($product_id);
 				if (!$product->is_type('variable')) {
 					$variations = new WC_Product_Variable($product_id);
@@ -27,6 +26,7 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
+            dd($variation_ids);
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
@@ -91,7 +91,7 @@ function fx_check($pid, $vid)
 	return $new_extra_fields;
 }
 
-dd('hffghfgh');
+fx_check(1, 3850);
 
 
 
