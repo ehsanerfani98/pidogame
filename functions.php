@@ -108,6 +108,7 @@ function fx_check($pid, $vid)
 	return $new_extra_fields;
 }
 
+dd(fx_check(3835));
 
 // Get theme mode
 function getThemeMode()
