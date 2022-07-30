@@ -33,9 +33,8 @@ function fx_check($pid, $vid)
 	if ($fields_plswb->have_posts()) {
 		while ($fields_plswb->have_posts()) {
 			$fields_plswb->the_post();
-			$display_rules = get_field("all_products_show_rules", get_the_ID());
-			$extra_fields = get_field("plswb_fields", get_the_ID());
-			dd('test');
+			$display_rules = get_post_meta("all_products_show_rules", get_the_ID());
+			$extra_fields = get_post_meta("plswb_fields", get_the_ID());
 
 			foreach ($display_rules as $product_id) {
 				$variations = new WC_Product_Variable($product_id);
@@ -109,7 +108,6 @@ function fx_check($pid, $vid)
 	return $new_extra_fields;
 }
 
-dd(fx_check(1,3835));
 
 // Get theme mode
 function getThemeMode()
