@@ -1070,8 +1070,9 @@ function fx_check($pid, $vid)
 
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
-					$new_extra_fields = [];
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
+						$new_extra_fields = [];
+
 						$variation_id = $show_product_id;
 						$product = wc_get_product($variation_id);
 						if ($product->is_type('variation')) {
