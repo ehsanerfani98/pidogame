@@ -25,6 +25,9 @@ include_once(get_stylesheet_directory() . '/inc/options.php');
 
 function fx_check($pid, $vid)
 {
+
+dd('g');
+
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
 		'post_status' => 'publish',
@@ -47,7 +50,6 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
-dd($variation_ids);
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
