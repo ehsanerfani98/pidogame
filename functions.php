@@ -38,7 +38,7 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 
-				$variations = wc_get_product($product_id);
+				$variations = wc_get_product(3849);
 
 					// $variations = new WC_Product_Variable($product_id);
 				foreach ($variations->get_children() as  $v_id) {
