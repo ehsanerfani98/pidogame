@@ -1063,11 +1063,9 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 
-				$product = wc_get_product(3849);
-			dd($product->get_children());
+				$product = wc_get_product($product_id);
 
 				if (!$product->is_type('variable')) {
-
 					$variations = new WC_Product_Variable($product_id);
 					foreach ($variations->get_children() as  $v_id) {
 						$variation_ids[] = $v_id;
@@ -1138,4 +1136,4 @@ function fx_check($pid, $vid)
 	return $new_extra_fields;
 }
 
-fx_check(1, 3850);
+// fx_check(1, 3850);
