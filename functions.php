@@ -23,7 +23,6 @@ include_once(get_stylesheet_directory() . '/inc/options.php');
 
 function fx_check($pid, $vid)
 {
-dd('test');
 
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
@@ -109,7 +108,7 @@ dd('test');
 	return $new_extra_fields;
 }
 
-dd(fx_check(3835));
+dd(fx_check(1,3835));
 
 // Get theme mode
 function getThemeMode()
