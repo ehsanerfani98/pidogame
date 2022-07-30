@@ -247,13 +247,15 @@ $type = $product->get_type();
                                 <span class="text-muted fw-bold d-block fs-7 ss02"><?php echo $subtitle ?></span>
                             </div>
                         </div> -->
-                        
+
 
                         <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                            <button type="button" class="btn btn-primary" onclick="open_fields(this)">نمایش گزینه ها</button>
+                        </div>
+                        <div class="align-items-center flex-grow-1 me-2 me-sm-5 wrap_open_fields d-none">
                             <form onsubmit="return extra_fields(event)" action="" method="post">
                                 <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                 <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
-
                                 <div class="d-flex flex-column">
                                     <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                     if (count($plswb_fields) > 0) :
@@ -385,6 +387,7 @@ $type = $product->get_type();
                                             endswitch; ?>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
+
                                     <button type="submit" class="btn btn-primary" id="btn_<?= $variation['variation_id'] ?>">
                                         <span class="indicator-label">
                                             افزودن به سبد خرید
@@ -394,14 +397,11 @@ $type = $product->get_type();
                                         </span>
                                     </button>
 
-
-
                                 </div>
 
 
                             </form>
                         </div>
-
 
 
                         <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
