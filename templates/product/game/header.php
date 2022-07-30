@@ -1,10 +1,5 @@
 <?php
 
-
-
-
-
-
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 global $product;
 
@@ -229,6 +224,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
                                                                         <div class="d-flex flex-column">
                                                                             <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
+                                                                            dd($plswb_fields);
                                                                             if (count($plswb_fields) > 0) :
                                                                             ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
