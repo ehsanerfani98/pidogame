@@ -218,10 +218,12 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                 </div> -->
 
                                                                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                                                    <button type="button" class="btn btn-primary" onclick="open_fields(this)">افزودن به سبد خرید</button>
+                                                                </div>
+                                                                <div class="align-items-center flex-grow-1 me-2 me-sm-5 wrap_open_fields d-none">
                                                                     <form onsubmit="return extra_fields(event)" action="" method="post">
                                                                         <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
-
                                                                         <div class="d-flex flex-column">
                                                                             <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                                                             if (count($plswb_fields) > 0) :
@@ -353,6 +355,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                     endswitch; ?>
                                                                                 <?php endforeach; ?>
                                                                             <?php endif; ?>
+
                                                                             <button type="submit" class="btn btn-primary" id="btn_<?= $variation['variation_id'] ?>">
                                                                                 <span class="indicator-label">
                                                                                     افزودن به سبد خرید
@@ -361,8 +364,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                     در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                                                 </span>
                                                                             </button>
-
-
 
                                                                         </div>
 

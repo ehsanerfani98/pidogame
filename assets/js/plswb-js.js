@@ -72,3 +72,7 @@ function extra_fields(event) {
 
 
 
+function open_fields(item) {
+    jQuery(item).parents().eq(1).find('.wrap_open_fields').removeClass('d-none').addClass('d-flex');
+    jQuery(item).parent().remove();
+}
