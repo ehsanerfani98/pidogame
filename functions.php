@@ -1107,7 +1107,7 @@ function fx_check($pid, $vid)
 								}
 							}
 
-							if($not_variation_id == $vid){
+							if($not_variation_id != $vid){
 								$new_extra_fields[] = $item;
 							}
 						}
