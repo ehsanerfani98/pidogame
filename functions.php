@@ -42,7 +42,7 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 
-				$product = wc_get_product(3850);
+				$product = wc_get_product(3849);
 			dd($product->is_type('variation'));
 
 				if (!$product->is_type('variable')) {
