@@ -42,8 +42,8 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 
-				$product = new WC_Product_Variable('3849');
-			dd($product);
+				$product = new wc_get_product($product_id);
+			dd($product->is_type('variation'));
 
 				if (!$product->is_type('variable')) {
 
