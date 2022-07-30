@@ -1067,6 +1067,7 @@ function fx_check($pid, $vid)
 						$variation_ids[] = $v_id;
 					}
 			}
+
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
 					foreach ($item['inside_show_products_rules'] as $show_product_id) {
@@ -1096,7 +1097,8 @@ function fx_check($pid, $vid)
 							if ($product->is_type('variation')) {
 								$pos = array_search($not_variation_id, $variation_ids);
 								if ($pos !== false) {
-									unset($variation_ids[$pos]);
+									$variation_unset_ids = $variation_ids;
+									unset($variation_unset_ids[$pos]);
 								}
 							} else {
 								$variations = new WC_Product_Variable($not_variation_id);
@@ -1109,13 +1111,12 @@ function fx_check($pid, $vid)
 							}
 						}
 
-						foreach ($variation_ids as $variation_id) {
+						foreach ($variation_unset_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
 							}
 						}
 					} else {
-						dd($variation_ids);
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
