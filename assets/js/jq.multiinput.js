@@ -3,8 +3,11 @@ jQuery(document).ready(function ($) {
 
 
     $('.products_rules').select2({
-
-        placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
+        language: {
+            searching: function() {
+                return "در حال جستجو...";
+            }
+        },        placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
         ajax: {
             url: rankMath.ajaxurl,
             data: {
@@ -67,6 +70,11 @@ jQuery(document).ready(function ($) {
 
         $(selects3).each(function () {
             $(this).select2({
+                language: {
+                    searching: function() {
+                        return "در حال جستجو...";
+                    }
+                },
                 placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
                 ajax: {
                     url: rankMath.ajaxurl,
