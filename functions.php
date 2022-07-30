@@ -112,6 +112,7 @@ dd($variation_ids);
 	return $new_extra_fields;
 }
 
+fx_check(1, 3850);
 // Get theme mode
 function getThemeMode()
 {
