@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         ajax: {
             url: rankMath.ajaxurl,
             data: {
-                'action': 'get_products_plswb',
+                'action': 'get_products_org_plswb',
             },
             processResults: function (data) {
                 return {

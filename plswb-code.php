@@ -388,7 +388,34 @@ function view_plswb_extra_options()
 
 
 add_action('wp_ajax_get_products_plswb', 'get_products');
+add_action('wp_ajax_get_products_org_plswb', 'get_products_org');
 
+function get_products_org()
+{
+    $args = array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+    );
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) {
+        $loop->the_post();
+
+        $products[] = ["id" => get_the_ID(), "text" => get_the_title() . " | " . get_the_ID()];
+    }
+    wp_reset_postdata();
+
+
+    $product['results'] = [
+        [
+            "text" => "محصولات",
+            "children" => $products
+        ],
+    ];
+
+    wp_send_json([
+        'items' => $product
+    ]);
+}
 function get_products()
 {
     $args = array(
