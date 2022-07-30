@@ -44,6 +44,7 @@ global $product;
     </div>
     <div class="col-12 col-md-6 d-block d-lg-none">
         <p class="lh-xl mt-5 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
+        <?php get_template_part('templates/product/item/price') ?>
     </div>
 </div>
 <div class="d-none d-lg-flex row px-12 position-relative" style="margin-top: -160px">
@@ -62,5 +63,6 @@ global $product;
             <?php endif ?>
         </div>
         <p class="lh-xl pt-10 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
+        <?php get_template_part('templates/product/item/price') ?>
     </div>
 </div>

@@ -247,21 +247,28 @@ $type = $product->get_type();
                                 <span class="text-muted fw-bold d-block fs-7 ss02"><?php echo $subtitle ?></span>
                             </div>
                         </div> -->
+                        
+
                         <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
                             <form onsubmit="return extra_fields(event)" action="" method="post">
                                 <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                 <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
 
                                 <div class="d-flex flex-column">
-                                    <?php $plswb_fields = fx_check($variation['variation_id']);
+                                    <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                     if (count($plswb_fields) > 0) :
                                     ?>
                                         <?php foreach ($plswb_fields as $key => $item) : ?>
-                                            <?php switch ($item['type_field']):
+                                            <?php switch ($item['type']):
                                                 case 'email': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="email_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <input data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-control" type="email" name="ext_email_<?= $variation['variation_id'] . $key ?>" id="ext_email_<?= $variation['variation_id'] . $key ?>">
+                                                        <label class="mb-2" for="email_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="email" name="ext_email_<?= $variation['variation_id'] . $key ?>" id="ext_email_<?= $variation['variation_id'] . $key ?>">
                                                     </div>
                                                     <?php
                                                     break;
@@ -269,8 +276,13 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'text': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="text_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <input data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-control" type="text" name="ext_text_<?= $variation['variation_id'] . $key ?>" id="ext_text_<?= $variation['variation_id'] . $key ?>">
+                                                        <label for="text_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="text" name="ext_text_<?= $variation['variation_id'] . $key ?>" id="ext_text_<?= $variation['variation_id'] . $key ?>">
                                                     </div>
                                                     <?php
                                                     break;
@@ -278,8 +290,13 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'password': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="password_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <input data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-control" type="password" name="ext_password_<?= $variation['variation_id'] . $key ?>" id="ext_password_<?= $variation['variation_id'] . $key ?>">
+                                                        <label for="password_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="password" name="ext_password_<?= $variation['variation_id'] . $key ?>" id="ext_password_<?= $variation['variation_id'] . $key ?>">
                                                     </div>
                                                     <?php
                                                     break;
@@ -287,14 +304,19 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'number': ?>
                                                     <div class="form-group mb-4">
-                                                        <label class="d-block mb-2" for="number_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <!-- <input <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-control" type="number" name="number" id=""> -->
+                                                        <label class="d-block mb-2" for="number_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <!-- <input <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="number" name="number" id=""> -->
                                                         <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
-                                                            <button <?= $item['required_field'] ? 'required="required"' : '' ?> type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                            <button <?= $item['required'] ? 'required="required"' : '' ?> type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                                         <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
                                                                     </svg></span></button>
-                                                            <input data-extra-title="<?= $item['title_field'] ?>" id="ext_number_<?= $variation['variation_id'] . $key ?>" name="ext_number_<?= $variation['variation_id'] . $key ?>" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
+                                                            <input data-extra-title="<?= $item['title'] ?>" id="ext_number_<?= $variation['variation_id'] . $key ?>" name="ext_number_<?= $variation['variation_id'] . $key ?>" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
                                                             <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                                         <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
@@ -309,8 +331,13 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'checkbox': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="checkbox_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <input data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                        <label for="checkbox_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
                                                     </div>
                                                     <?php
                                                     break;
@@ -318,11 +345,16 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'select': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <select data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
+                                                        <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
                                                             <option></option>
                                                             <?php
-                                                            $values = explode('#', $item['values_select_field']);
+                                                            $values = explode('#', $item['values_select']);
                                                             foreach ($values as $item) :
                                                             ?>
                                                                 <option value="<?= $item ?>"><?= $item ?></option>
@@ -335,8 +367,13 @@ $type = $product->get_type();
                                                 <?php
                                                 case 'textarea': ?>
                                                     <div class="form-group mb-4">
-                                                        <label for="textarea_<?= $variation['variation_id'] . $key ?>"><?= $item['title_field'] ?> <?= $item['required_field'] ? '<span style="color:red">(الزامی)</span>' : '' ?></label>
-                                                        <textarea data-extra-title="<?= $item['title_field'] ?>" <?= $item['required_field'] ? 'required="required"' : '' ?> name="ext_textarea_<?= $variation['variation_id'] . $key ?>" class="form-control" id="ext_textarea_<?= $variation['variation_id'] . $key ?>" cols="30" rows="5"></textarea>
+                                                        <label for="textarea_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
+                                                            <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                                                                    <path d="M11.276 13.654C11.276 13.2713 11.3367 12.9447 11.458 12.674C11.5887 12.394 11.738 12.1653 11.906 11.988C12.0833 11.8107 12.3167 11.61 12.606 11.386C12.942 11.1247 13.1893 10.896 13.348 10.7C13.5067 10.4947 13.586 10.2427 13.586 9.944C13.586 9.636 13.4833 9.356 13.278 9.104C13.082 8.84267 12.69 8.712 12.102 8.712C11.486 8.712 11.066 8.866 10.842 9.174C10.6273 9.482 10.52 9.82267 10.52 10.196L10.534 10.574H8.826C8.78867 10.3967 8.77 10.2333 8.77 10.084C8.77 9.552 8.90067 9.07133 9.162 8.642C9.42333 8.20333 9.81067 7.858 10.324 7.606C10.8467 7.354 11.4813 7.228 12.228 7.228C13.1987 7.228 13.9687 7.44733 14.538 7.886C15.1073 8.31533 15.392 8.92667 15.392 9.72C15.392 10.168 15.322 10.5507 15.182 10.868C15.042 11.1853 14.874 11.442 14.678 11.638C14.482 11.834 14.2253 12.0533 13.908 12.296C13.544 12.576 13.2733 12.8233 13.096 13.038C12.928 13.2527 12.844 13.528 12.844 13.864V14.326H11.276V13.654ZM11.192 15.222H12.928V17H11.192V15.222Z" fill="black" />
+                                                                </svg></span>
+                                                        </label>
+                                                        <textarea data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> name="ext_textarea_<?= $variation['variation_id'] . $key ?>" class="form-control" id="ext_textarea_<?= $variation['variation_id'] . $key ?>" cols="30" rows="5"></textarea>
                                                     </div>
                                                     <?php
                                                     break;
@@ -356,9 +393,17 @@ $type = $product->get_type();
                                             در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                         </span>
                                     </button>
+
+
+
                                 </div>
+
+
                             </form>
                         </div>
+
+
+
                         <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
                             <?php if ($variationProduct->is_on_sale()) : ?>
                                 <span class="text-muted fw-bold fs-4 me-3 mt-1 ss02 text-decoration-line-through"><?php echo number_format($variationProduct->regular_price) ?></span>
