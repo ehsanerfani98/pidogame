@@ -402,13 +402,11 @@ function get_products_org()
         $loop->the_post();
 
         $products[] = ["id" => get_the_ID(), "text" => get_the_title() . " | " . get_the_ID()];
-
-
     }
     wp_reset_postdata();
 
 
-        $data_products = $products; 
+    $data_products = $products;
 
     if (isset($_POST['search']) && !empty($_POST['search'])) {
 
@@ -420,7 +418,7 @@ function get_products_org()
             }
         }
 
-        $data_products = $products_new; 
+        $data_products = $products_new;
     }
 
     $product['results'] = [
@@ -455,8 +453,8 @@ function get_products()
     }
     wp_reset_postdata();
 
-    $data_products = $products; 
-    $data_variations_products = $variations_products; 
+    $data_products = $products;
+    $data_variations_products = $variations_products;
 
 
     if (isset($_POST['search']) && !empty($_POST['search'])) {
@@ -474,8 +472,8 @@ function get_products()
             }
         }
 
-        $data_products = $products_new; 
-        $data_variations_products = $variations_products_new; 
+        $data_products = $products_new;
+        $data_variations_products = $variations_products_new;
     }
 
 
@@ -497,11 +495,13 @@ function get_products()
 
 add_action('save_post_extra_fields_plswb', function ($post_id) {
 
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
 
-
+    if (empty($_POST['org_products_show_rules']) && empty($_POST['ext_options']['data'])) {
+        return;
+    }
 
     $org_products_show_rules = $_POST['org_products_show_rules'];
     $extra_fields = $_POST['ext_options']['data'];
