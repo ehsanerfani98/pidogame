@@ -1059,9 +1059,6 @@ function fx_check($pid, $vid)
 		while ($fields_plswb->have_posts()) {
 			$fields_plswb->the_post();
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
-
-			dd(get_the_ID());
-			dd(get_post_meta(get_the_ID(), "plswb_fields", true));
 			$extra_fields[] = get_post_meta(get_the_ID(), "plswb_fields", true);
 
 			foreach ($display_rules as $product_id) {
@@ -1080,7 +1077,7 @@ function fx_check($pid, $vid)
 		}
 	}
 
-	dd($extra_fields);
+	// dd($new_extra_fields);
 
 	foreach ($new_extra_fields as $item) {
 		if ($item['disable_org_show_products_rules']) {
