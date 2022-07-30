@@ -39,9 +39,10 @@ function fx_check($pid, $vid)
 			$fields_plswb->the_post();
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
-			dd('g');
 
 			foreach ($display_rules as $product_id) {
+			dd('g');
+
 				$product = wc_get_product($product_id);
 				if (!$product->is_type('variable')) {
 
