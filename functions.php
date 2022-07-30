@@ -1095,8 +1095,9 @@ function fx_check($pid, $vid)
 							$product = wc_get_product($not_variation_id);
 							if ($product->is_type('variation')) {
 								$pos = array_search($not_variation_id, $variation_ids);
-								dd($pos);
 								if ($pos !== false) {
+								dd('d');
+
 									unset($variation_ids[$pos]);
 								}
 							} else {
