@@ -1077,6 +1077,7 @@ function fx_check($pid, $vid)
 		}
 	}
 
+	dd($new_extra_fields);
 
 	foreach ($new_extra_fields as $item) {
 		if ($item['disable_org_show_products_rules']) {
