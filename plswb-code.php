@@ -434,6 +434,7 @@ function get_products_org()
         'items' => $product
     ]);
 }
+
 function get_products()
 {
     $args = array(
@@ -496,10 +497,9 @@ function get_products()
 
 add_action('save_post_extra_fields_plswb', function ($post_id) {
 
-    // if (isset($_POST['ext_options'])) {
-    //     return;
-    // }
-
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
 
 
 
