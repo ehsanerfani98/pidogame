@@ -28,7 +28,6 @@ function fx_check($pid, $vid)
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 	);
-dd('test');
 
 	$fields_plswb = new WP_Query($arg);
 	if ($fields_plswb->have_posts()) {
@@ -36,6 +35,7 @@ dd('test');
 			$fields_plswb->the_post();
 			$display_rules = get_field("all_products_show_rules", get_the_ID());
 			$extra_fields = get_field("plswb_fields", get_the_ID());
+			dd('test');
 
 			foreach ($display_rules as $product_id) {
 				$variations = new WC_Product_Variable($product_id);
