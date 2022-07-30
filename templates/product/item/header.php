@@ -42,10 +42,7 @@ global $product;
             <?php get_template_part('templates/product/item/header-card') ?>
         </div>
     </div>
-    <div class="col-12 col-md-6 d-block d-lg-none">
-        <p class="lh-xl mt-5 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
-        <?php get_template_part('templates/product/item/price') ?>
-    </div>
+   
 </div>
 <div class="d-none d-lg-flex row px-12 position-relative" style="margin-top: -160px">
     <div class="col-lg-5 col-xl-4">
