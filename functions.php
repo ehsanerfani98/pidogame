@@ -1093,7 +1093,7 @@ function fx_check($pid, $vid)
 					}
 				}
 				foreach ($show_inside_rule_products_ids as $variation_id) {
-					if ($variation_id == $vid) {
+					if ($variation_id == $vid && in_array($pid, $display_rules)) {
 						$new_extra_fields[] = $item;
 					}
 				}
@@ -1125,7 +1125,7 @@ function fx_check($pid, $vid)
 				}
 
 				foreach ($variation_ids as $variation_id) {
-					if ($variation_id == $vid) {
+					if ($variation_id == $vid && in_array($pid, $display_rules)) {
 						$new_extra_fields[] = $item;
 					}
 				}
