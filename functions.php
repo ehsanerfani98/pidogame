@@ -16,9 +16,10 @@ function mytheme_add_woocommerce_support()
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 include_once(get_stylesheet_directory() . '/inc/options.php');
-$variations = new WC_Product_Variable(3850);
 
-dd($variations->get_children());
+// $variations = new WC_Product_Variable(3850);
+
+// dd($variations->get_children());
 
 
 
@@ -39,7 +40,7 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 				$product = wc_get_product($product_id);
-				if ($product->is_type('variation')) {
+				if (!$product->is_type('variable')) {
 					$variations = new WC_Product_Variable($product_id);
 					foreach ($variations->get_children() as  $v_id) {
 						$variation_ids[] = $v_id;
