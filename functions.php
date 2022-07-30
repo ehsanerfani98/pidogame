@@ -1045,3 +1045,97 @@ function custom_price_format($price, $product)
 
 
 
+function fx_check($pid, $vid)
+{
+
+	$arg = array(
+		'post_type' => 'extra_fields_plswb',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+	);
+
+	$fields_plswb = new WP_Query($arg);
+	if ($fields_plswb->have_posts()) {
+		while ($fields_plswb->have_posts()) {
+			$fields_plswb->the_post();
+			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
+			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
+
+			foreach ($display_rules as $product_id) {
+
+				$product = wc_get_product(3849);
+			dd($product->get_children());
+
+				if (!$product->is_type('variable')) {
+
+					$variations = new WC_Product_Variable($product_id);
+					foreach ($variations->get_children() as  $v_id) {
+						$variation_ids[] = $v_id;
+					}
+				}
+			}
+			foreach ($extra_fields as $item) {
+				if ($item['disable_org_show_products_rules']) {
+					foreach ($item['inside_show_products_rules'] as $show_product_id) {
+						$variation_id = $show_product_id;
+						$product = wc_get_product($variation_id);
+						if ($product->is_type('variation')) {
+							$show_inside_rule_products_ids[] = $variation_id;
+						} else {
+							$variations = new WC_Product_Variable($variation_id);
+							foreach ($variations->get_children() as  $vn_id) {
+								$show_inside_rule_products_ids[] = $vn_id;
+							}
+						}
+						foreach ($show_inside_rule_products_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
+						}
+					}
+				} else {
+					if (count($item['not_show_products_rules']) > 0) {
+
+						foreach ($item['not_show_products_rules'] as $not_show_product_id) {
+							$not_variation_id = $not_show_product_id;
+
+							$product = wc_get_product($not_variation_id);
+
+							if ($product->is_type('variation')) {
+								$pos = array_search($not_variation_id, $variation_ids);
+								if ($pos !== false) {
+									unset($variation_ids[$pos]);
+								}
+							} else {
+								$variations = new WC_Product_Variable($not_variation_id);
+								foreach ($variations->get_children() as  $vn_id) {
+									$pos = array_search($vn_id, $variation_ids);
+									if ($pos !== false) {
+										unset($variation_ids[$pos]);
+									}
+								}
+							}
+						}
+
+						foreach ($variation_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
+						}
+					} else {
+						foreach ($variation_ids as $variation_id) {
+							if ($variation_id == $vid) {
+								$new_extra_fields[] = $item;
+							}
+						}
+					}
+				}
+			}
+		}
+		wp_reset_postdata();
+	}
+
+	return $new_extra_fields;
+}
+
+fx_check(1, 3850);
