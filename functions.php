@@ -47,7 +47,7 @@ function fx_check($pid, $vid)
 			}
 							$variations = wc_get_product(3849);
 
-			dd($variations);
+			dd($variations->get_children());
 
 
 			foreach ($extra_fields as $item) {
