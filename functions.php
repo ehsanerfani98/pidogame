@@ -1105,7 +1105,8 @@ function fx_check($pid, $vid)
 								foreach ($variations->get_children() as  $vn_id) {
 									$pos = array_search($vn_id, $variation_ids);
 									if ($pos !== false) {
-										unset($variation_ids[$pos]);
+										$variation_unset_ids = $variation_ids;
+										unset($variation_unset_ids[$pos]);
 									}
 								}
 							}
