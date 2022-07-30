@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     $('.products_rules').select2({
 
         placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
-        maximumInputLength: 3,
+        minimumResultsForSearch: -1,
         ajax: {
             url: rankMath.ajaxurl,
             data: {
