@@ -241,13 +241,13 @@ function view_plswb_extra_options()
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <input class="form-check-input" type="checkbox" value="true" name="<?= 'ext_options[data]' . '[' . $key . '][required]' ?>" <?= $item['required'] ? 'checked' : '' ?> id="ext_required">
-                                        <label class="form-check-label" for="ext_required">
-                                            الزامی
-                                        </label>
+                                        <div class="mb-3">
+                                            <input class="form-check-input" type="checkbox" value="true" name="<?= 'ext_options[data]' . '[' . $key . '][required]' ?>" <?= $item['required'] ? 'checked' : '' ?> id="ext_required">
+                                            <label class="form-check-label" for="ext_required">
+                                                الزامی
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -392,6 +392,7 @@ add_action('wp_ajax_get_products_org_plswb', 'get_products_org');
 
 function get_products_org()
 {
+
     $args = array(
         'post_type'      => 'product',
         'posts_per_page' => -1,
@@ -401,14 +402,31 @@ function get_products_org()
         $loop->the_post();
 
         $products[] = ["id" => get_the_ID(), "text" => get_the_title() . " | " . get_the_ID()];
+
+
     }
     wp_reset_postdata();
 
 
+        $data_products = $products; 
+
+    if (isset($_POST['search']) && !empty($_POST['search'])) {
+
+        $input = preg_quote($_POST['search'], '~');
+
+        foreach ($products as  $value) {
+            if (preg_grep('~' . $input . '~', $value)) {
+                $products_new[] = $value;
+            }
+        }
+
+        $data_products = $products_new; 
+    }
+
     $product['results'] = [
         [
             "text" => "محصولات",
-            "children" => $products
+            "children" => $data_products
         ],
     ];
 
@@ -436,15 +454,38 @@ function get_products()
     }
     wp_reset_postdata();
 
+    $data_products = $products; 
+    $data_variations_products = $variations_products; 
+
+
+    if (isset($_POST['search']) && !empty($_POST['search'])) {
+
+        $input = preg_quote($_POST['search'], '~');
+
+        foreach ($products as  $value) {
+            if (preg_grep('~' . $input . '~', $value)) {
+                $products_new[] = $value;
+            }
+        }
+        foreach ($variations_products as  $value) {
+            if (preg_grep('~' . $input . '~', $value)) {
+                $variations_products_new[] = $value;
+            }
+        }
+
+        $data_products = $products_new; 
+        $data_variations_products = $variations_products_new; 
+    }
+
 
     $product['results'] = [
         [
             "text" => "محصولات",
-            "children" => $products
+            "children" => $data_products
         ],
         [
             "text" => "متغیرها",
-            "children" => $variations_products
+            "children" => $data_variations_products
         ]
     ];
 

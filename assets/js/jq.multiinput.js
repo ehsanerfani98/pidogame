@@ -10,9 +10,13 @@ jQuery(document).ready(function ($) {
         },        placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
         ajax: {
             url: rankMath.ajaxurl,
-            data: {
-                'action': 'get_products_org_plswb',
+            data: function (params) {
+                return {
+                  search: params.term,
+                  action: 'get_products_org_plswb'
+                }
             },
+            type: "post",
             processResults: function (data) {
                 return {
                     results: data.items.results
@@ -31,9 +35,13 @@ jQuery(document).ready(function ($) {
         placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
         ajax: {
             url: rankMath.ajaxurl,
-            data: {
-                'action': 'get_products_plswb',
+            data: function (params) {
+                return {
+                  search: params.term,
+                  action: 'get_products_plswb'
+                }
             },
+            type: "post",
             processResults: function (data) {
                 return {
                     results: data.items.results
@@ -78,9 +86,13 @@ jQuery(document).ready(function ($) {
                 placeholder: "محصولات مورد نظر خود را انتخاب کنید.",
                 ajax: {
                     url: rankMath.ajaxurl,
-                    data: {
-                        'action': 'get_products_plswb',
+                    data: function (params) {
+                        return {
+                          search: params.term,
+                          action: 'get_products_plswb'
+                        }
                     },
+                    type: "post",
                     processResults: function (data) {
                         return {
                             results: data.items.results
