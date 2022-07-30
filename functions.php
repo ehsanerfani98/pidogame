@@ -1134,8 +1134,7 @@ function fx_check($pid, $vid)
 		}
 		wp_reset_postdata();
 	}
-	var_dump($new_extra_fields);
-
+	
 	return $new_extra_fields;
 }
 
