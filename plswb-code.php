@@ -242,7 +242,7 @@ function view_plswb_extra_options()
                                     </div>
                                     <div class="col-lg-4">
                                     <div class="mb-3">
-                                        <input class="form-check-input" type="checkbox" value="true" name="<?= 'ext_options[data]' . '[' . $key . '][required]' ?>" id="ext_required">
+                                        <input class="form-check-input" type="checkbox" value="true" name="<?= 'ext_options[data]' . '[' . $key . '][required]' ?>" <?= $item['required'] ? 'checked' : '' ?> id="ext_required">
                                         <label class="form-check-label" for="ext_required">
                                             الزامی
                                         </label>
