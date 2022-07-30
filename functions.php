@@ -41,7 +41,7 @@ function fx_check($pid, $vid)
 				$product = wc_get_product($product_id);
 				if (!$product->is_type('variation')) {
 
-					$variations = new WC_Product_Variable($product_id);
+					// $variations = new WC_Product_Variable($product_id);
 				}
 				var_dump($variations);
 				// foreach ($variations->get_children() as  $v_id) {
