@@ -1073,14 +1073,14 @@ function fx_check($pid, $vid)
 
 	foreach ($extra_fields as $values) {
 		foreach ($values as $item) {
-			$new_extra_fields[] = $item;
+			$all_extra_fields[] = $item;
 		}
 	}
 
 	// dd($new_extra_fields);
 
-	foreach ($new_extra_fields as $item) {
-		unset($new_extra_fields);
+	foreach ($all_extra_fields as $item) {
+		// $new_extra_fields = [];
 		if ($item['disable_org_show_products_rules']) {
 			foreach ($item['inside_show_products_rules'] as $show_product_id) {
 				$variation_id = $show_product_id;
