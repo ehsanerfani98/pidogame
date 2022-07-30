@@ -218,7 +218,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                 </div> -->
 
                                                                 <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
-                                                                    <button type="button" class="btn btn-primary" onclick="open_fields(this)">افزودن به سبد خرید</button>
+                                                                    <button type="button" class="btn btn-primary" onclick="open_fields(this)">نمایش گزینه ها</button>
                                                                 </div>
                                                                 <div class="align-items-center flex-grow-1 me-2 me-sm-5 wrap_open_fields d-none">
                                                                     <form onsubmit="return extra_fields(event)" action="" method="post">
