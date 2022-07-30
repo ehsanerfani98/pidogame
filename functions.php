@@ -1050,9 +1050,6 @@ function fx_check($pid, $vid)
 
 	// $all_extra_fields = [];
 	// $extra_fields = [];
-
-	unset($all_extra_fields);
-	unset($extra_fields);
 	
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
