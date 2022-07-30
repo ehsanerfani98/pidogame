@@ -38,13 +38,14 @@ function fx_check($pid, $vid)
 
 			foreach ($display_rules as $product_id) {
 
+				$product = wc_get_product($product_id);
 
-					$variations = new WC_Product_Variable();
-				// foreach ($variations->get_children() as  $v_id) {
-				// 	$variation_ids[] = $v_id;
-				// }
+					// $variations = new WC_Product_Variable($product_id);
+				foreach ($variations->get_children() as  $v_id) {
+					$variation_ids[] = $v_id;
+				}
 			}
-			dd(' ');
+			// dd(' ');
 
 
 			foreach ($extra_fields as $item) {
