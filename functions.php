@@ -1048,6 +1048,12 @@ function custom_price_format($price, $product)
 function fx_check($pid, $vid)
 {
 
+	// $all_extra_fields = [];
+	// $extra_fields = [];
+
+	unset($all_extra_fields);
+	unset($extra_fields);
+	
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
 		'post_status' => 'publish',
@@ -1077,7 +1083,7 @@ function fx_check($pid, $vid)
 		}
 	}
 
-	dd($variation_ids);
+	// dd($variation_ids);
 
 	foreach ($all_extra_fields as $item) {
 		if ($item['disable_org_show_products_rules']) {
