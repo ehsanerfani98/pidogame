@@ -1135,7 +1135,7 @@ function fx_check($pid, $vid)
 						$new_extra_fields[] = $item;
 					}
 				}
-				var_dump($new_extra_fields)
+				var_dump($new_extra_fields);
 			}
 		}
 	}
