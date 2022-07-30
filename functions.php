@@ -1087,6 +1087,7 @@ function fx_check($pid, $vid)
 							}
 						}
 						$show_inside_rule_products_ids = [];
+						return $new_extra_fields;
 
 					}
 				} else {
@@ -1119,13 +1120,15 @@ function fx_check($pid, $vid)
 								$new_extra_fields[] = $item;
 							}
 						}
+						return $new_extra_fields;
+
 					} else {
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
 							}
 						}
-						var_dump($new_extra_fields);
+						return $new_extra_fields;
 
 					}
 				}
@@ -1134,6 +1137,5 @@ function fx_check($pid, $vid)
 		wp_reset_postdata();
 	}
 
-	return $new_extra_fields;
 }
 
