@@ -1120,8 +1120,7 @@ function fx_check($pid, $vid)
 							}
 						}
 					} else {
-						$new_extra_fields = [];
-
+var_dump($variation_ids);
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid) {
 								$new_extra_fields[] = $item;
