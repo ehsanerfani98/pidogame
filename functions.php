@@ -1144,4 +1144,3 @@ function fx_check($pid, $vid)
 }
 
 
-dd(fx_check(3777, null));
