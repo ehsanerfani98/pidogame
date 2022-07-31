@@ -511,4 +511,3 @@ $type = $product->get_type();
 <?php break;
 endswitch ?>
 
-<div class="rts2"></div>

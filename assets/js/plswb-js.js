@@ -27,8 +27,8 @@ function extra_fields(event) {
     }
 
 // console.log(btn_id);
-    jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
-    // jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
+    // jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
+    jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 
 
     var metaData = {
@@ -62,7 +62,7 @@ function extra_fields(event) {
                 }
             })
 
-            jQuery('#btn_' + btn_id).removeAttr('data-kt-indicator');
+            jQuery('#btn_' + variation_id).removeAttr('data-kt-indicator');
 
 
             // console.log(response);
