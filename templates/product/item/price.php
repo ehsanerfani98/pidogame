@@ -193,7 +193,6 @@ $type = $product->get_type();
                                 </span>
                             </button>
 
-                            <div class="rts"></div>
 
                         </div>
 
@@ -511,3 +510,5 @@ $type = $product->get_type();
         </div>
 <?php break;
 endswitch ?>
+
+<div class="rts2"></div>
