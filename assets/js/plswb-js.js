@@ -26,9 +26,9 @@ function extra_fields(event) {
         }
     }
 
-console.log(btn_id);
-    // jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
-    jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
+// console.log(btn_id);
+    jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
+    // jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 
 
     var metaData = {
