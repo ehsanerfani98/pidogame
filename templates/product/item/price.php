@@ -184,7 +184,7 @@ $type = $product->get_type();
                                 <?php endforeach; ?>
                             <?php endif; ?>
 
-                            <button type="submit" class="btn btn-primary" id="btn_<?= $variation['variation_id'] ?>">
+                            <button type="submit" class="btn btn-primary" id="btn_<?= is_null($variation['variation_id']) ? get_the_ID() : $variation['variation_id'] ?>">
                                 <span class="indicator-label">
                                     افزودن به سبد خرید
                                 </span>
