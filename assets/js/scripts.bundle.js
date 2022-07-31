@@ -2297,3 +2297,5 @@ var KTLayoutSearch = function () {
 KTUtil.onDOMContentLoaded((function () {
     KTLayoutSearch.init()
 }));
+
+
