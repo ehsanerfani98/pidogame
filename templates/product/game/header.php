@@ -370,6 +370,8 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
                                                                     </form>
                                                                 </div>
+                                                                <a role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" class="btn btn-icon btn-primary"><span class="svg-icon svg-icon-1"><svg>...</svg></span></a>
+
 
                                                                 <div class="d-flex flex-column justify-content-center align-items-center">
                                                                     <div class="d-flex align-items-center justify-content-center mt-4 mt-md-2 mt-xl-0">
