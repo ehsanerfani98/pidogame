@@ -2,7 +2,6 @@
 
 function extra_fields(event) {
 
-    console.log('test');
 
     let myform = event.target;
     let fd = new FormData(myform);
