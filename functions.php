@@ -1075,7 +1075,7 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
-dd('s');
+dd($variation_ids);
 
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
