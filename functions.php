@@ -1064,7 +1064,7 @@ function fx_check($pid, $vid)
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
 
 			if (is_null($vid)) {
-				$variation_ids[] = $vid;
+				$variation_ids[] = $pid;
 			} else {
 				foreach ($display_rules as $product_id) {
 					$variations = new WC_Product_Variable($product_id);
