@@ -90,7 +90,8 @@ function view_plswb_extra_options()
                                                     <option value="text">متنی</option>
                                                     <option value="email">ایمیل</option>
                                                     <option value="password">رمز عبور</option>
-                                                    <option value="number">عدد</option>
+                                                    <option value="number">تعدادی</option>
+                                                    <option value="number_char">عدد</option>
                                                     <option value="textarea">توضیحات متنی</option>
                                                     <option value="checkbox">تیک زدنی</option>
                                                     <option value="select">انتخابی</option>
@@ -266,7 +267,8 @@ function view_plswb_extra_options()
                                                         <option <?= $item['type'] == 'text' ? 'selected' : '' ?> value="text">متنی</option>
                                                         <option <?= $item['type'] == 'email' ? 'selected' : '' ?> value="email">ایمیل</option>
                                                         <option <?= $item['type'] == 'password' ? 'selected' : '' ?> value="password">رمز عبور</option>
-                                                        <option <?= $item['type'] == 'number' ? 'selected' : '' ?> value="number">عدد</option>
+                                                        <option <?= $item['type'] == 'number' ? 'selected' : '' ?> value="number">تعدادی</option>
+                                                        <option <?= $item['type'] == 'number_char' ? 'selected' : '' ?> value="number_char">عدد</option>
                                                         <option <?= $item['type'] == 'textarea' ? 'selected' : '' ?> value="textarea">توضیحات متنی</option>
                                                         <option <?= $item['type'] == 'checkbox' ? 'selected' : '' ?> value="checkbox">تیک زدنی</option>
                                                         <option <?= $item['type'] == 'select' ? 'selected' : '' ?> value="select">انتخابی</option>
