@@ -73,8 +73,8 @@ function extra_fields(event) {
 
 
 function open_fields(item) {
-    // jQuery('.show-btn-options').show();
+    jQuery('.show-btn-options').removeClass('d-none');
     jQuery('.wrap_open_fields').removeClass('d-flex').addClass('d-none');
     jQuery(item).parents().eq(1).find('.wrap_open_fields').removeClass('d-none').addClass('d-flex');
-    jQuery(item).parent().hide();
+    jQuery(item).parent().addClass('d-none');
 }
