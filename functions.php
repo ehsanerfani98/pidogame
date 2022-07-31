@@ -1048,7 +1048,7 @@ function custom_price_format($price, $product)
 function fx_check($pid, $vid)
 {
 
-	if(is_null($vid)){
+	if (is_null($vid)) {
 		$vid = $pid;
 	}
 
@@ -1065,12 +1065,17 @@ function fx_check($pid, $vid)
 			$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
 			$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
 
-			foreach ($display_rules as $product_id) {
+			if (is_null($vid)) {
+				$variation_ids[] = $vid;
+			} else {
+				foreach ($display_rules as $product_id) {
 					$variations = new WC_Product_Variable($product_id);
 					foreach ($variations->get_children() as  $v_id) {
 						$variation_ids[] = $v_id;
 					}
+				}
 			}
+
 
 			foreach ($extra_fields as $item) {
 				if ($item['disable_org_show_products_rules']) {
@@ -1091,7 +1096,6 @@ function fx_check($pid, $vid)
 							}
 						}
 						$show_inside_rule_products_ids = [];
-
 					}
 				} else {
 					if (count($item['not_show_products_rules']) > 0) {
@@ -1138,4 +1142,3 @@ function fx_check($pid, $vid)
 
 	return $new_extra_fields;
 }
-
