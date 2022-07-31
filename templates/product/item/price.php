@@ -122,7 +122,7 @@ $type = $product->get_type();
                                                 <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
                                                     <option></option>
                                                     <?php
-                                                    $values = explode('#', $item['values_select']);
+                                                    $values = explode('#', $item['value_select']);
                                                     foreach ($values as $item) :
                                                     ?>
                                                         <option value="<?= $item ?>"><?= $item ?></option>
@@ -349,7 +349,7 @@ $type = $product->get_type();
                                                         <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
                                                             <option></option>
                                                             <?php
-                                                            $values = explode('#', $item['values_select']);
+                                                            $values = explode('#', $item['value_select']);
                                                             foreach ($values as $item) :
                                                             ?>
                                                                 <option value="<?= $item ?>"><?= $item ?></option>

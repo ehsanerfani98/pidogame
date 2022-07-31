@@ -314,8 +314,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                             ?>
                                                                                         <?php
                                                                                         case 'select': 
-                                                                                        
-                                                                                        dd($item['values_select']);
                                                                                         ?>
                                                                                             <div class="form-group mb-4">
                                                                                                 <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
@@ -327,7 +325,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                 <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
                                                                                                     <option></option>
                                                                                                     <?php
-                                                                                                    $values = explode('#', $item['values_select']);
+                                                                                                    $values = explode('#', $item['value_select']);
                                                                                                     foreach ($values as $item) :
                                                                                                     ?>
                                                                                                         <option value="<?= $item ?>"><?= $item ?></option>
