@@ -91,7 +91,7 @@ switch (true) {
         </div>
     </div>
     <?php if ($product->is_in_stock()) : ?>
-        <div class="card-footer py-3 text-center btn-danger bg-opacity-75">
+        <div class="card-footer py-3 text-center bg-danger">
             <a role="button" data-bs-toggle="modal" data-bs-target="#kt_modal_product_buy" class="d-block fw-bolder fs-4 py-2 text-white">مشاهده نکات قبل از خرید</a>
         </div>
     <?php else : ?>
