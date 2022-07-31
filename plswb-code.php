@@ -36,7 +36,7 @@ function view_plswb_extra_options()
 ?>
 
     <div id="wrap-fields" style="display: none;">
-        <div class="col-lg-12 wrap-section-fields">
+        <div class="col-lg-12 wrap-section-fields drag-card">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row px-3">
@@ -206,13 +206,14 @@ function view_plswb_extra_options()
             </div>
         </div>
 
-        <div id="warp-rules" class="col-lg-12 pt-2 px-4">
+        <div id="wrap-rules" class="col-lg-12 pt-2 px-4">
             <button id="btn-new-field" type="button" class="btn btn-success btn-sm">فیلد جدید</button>
         </div>
 
+        <div class="row" id="plswb_sortable">
 
         <?php foreach (get_post_meta(get_the_ID(), 'plswb_fields', true) as $key => $item) : ?>
-            <div class="col-lg-12 wrap-section-fields">
+            <div class="col-lg-12 wrap-section-fields  drag-card">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row px-3">
@@ -374,6 +375,9 @@ function view_plswb_extra_options()
                 </div>
             </div>
         <?php endforeach; ?>
+        </div>
+
+      
 
 
 

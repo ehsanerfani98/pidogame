@@ -57,3 +57,7 @@ div#plswb_extra_options {
     border-radius: 8px;
     margin: 1rem 0;
 }
+
+.drag-card{
+    cursor: move;
+}

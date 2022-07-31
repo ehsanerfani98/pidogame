@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
 
         $(fields).find('.new_select').addClass('products_rules_pluss');
 
-        $(fields).insertAfter('#warp-rules');
+        $('#plswb_sortable').prepend(fields);
 
         let selects3 = $('.products_rules_pluss');
 
@@ -126,3 +126,6 @@ function makeid(length) {
     }
     return result;
 }
+
+
+jQuery( "#plswb_sortable" ).sortable();
