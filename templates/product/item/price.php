@@ -193,6 +193,8 @@ $type = $product->get_type();
                                 </span>
                             </button>
 
+                            <div class="rts"></div>
+
                         </div>
 
 
