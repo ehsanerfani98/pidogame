@@ -1048,9 +1048,7 @@ function custom_price_format($price, $product)
 function fx_check($pid, $vid)
 {
 
-	if (is_null($vid)) {
-		$vid = $pid;
-	}
+	
 
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
@@ -1074,6 +1072,9 @@ function fx_check($pid, $vid)
 						$variation_ids[] = $v_id;
 					}
 				}
+			}
+			if (is_null($vid)) {
+				$vid = $pid;
 			}
 dd($variation_ids);
 
