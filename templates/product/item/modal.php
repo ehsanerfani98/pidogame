@@ -16,7 +16,7 @@ global $product;
                     </span>
                 </div>
             </div>
-            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-0">
                 <div class="mb-13 text-center">
                     <h1 class="mb-3"><?php echo $meta['opt-product-modal-form-title'] ?></h1>
                     <div class="text-muted fw-bold fs-5"><?php echo $meta['opt-product-modal-form-subtitle'] ?></div>
