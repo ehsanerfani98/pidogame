@@ -1048,7 +1048,7 @@ function custom_price_format($price, $product)
 function fx_check($pid, $vid)
 {
 
-	dd($vid);
+	dd($pid);
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
 		'post_status' => 'publish',
