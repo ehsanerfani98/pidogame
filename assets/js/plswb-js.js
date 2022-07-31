@@ -62,7 +62,7 @@ function extra_fields(event) {
                 }
             })
 
-            jQuery('#btn_' + variation_id).removeAttr('data-kt-indicator');
+            jQuery('#btn_' + btn_id).removeAttr('data-kt-indicator');
 
 
             // console.log(response);
