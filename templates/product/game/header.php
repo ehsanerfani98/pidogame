@@ -313,7 +313,10 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                             break;
                                                                                             ?>
                                                                                         <?php
-                                                                                        case 'select': ?>
+                                                                                        case 'select': 
+                                                                                        
+                                                                                        dd($item['values_select']);
+                                                                                        ?>
                                                                                             <div class="form-group mb-4">
                                                                                                 <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
                                                                                                     <span data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="<?= $item['help'] ?>" class="svg-icon svg-icon-muted svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
