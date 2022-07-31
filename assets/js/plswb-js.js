@@ -2,8 +2,6 @@
 
 function extra_fields(event) {
 
-    console.log('test');
-
     let myform = event.target;
     let fd = new FormData(myform);
     let meta_data_cart = [];
@@ -20,13 +18,16 @@ function extra_fields(event) {
         } else {
             if (id == 'variation-id') {
                 variation_id = value;
+                btn_id = value;
             } else if (id == 'product-id') {
                 product_id = value;
+                btn_id = value;
             }
         }
     }
 
-    jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
+
+    jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
 
 
     var metaData = {
