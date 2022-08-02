@@ -1112,7 +1112,7 @@ function fx_check($pid, $vid)
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
 							$show_inside_rule_products_ids[] = $vid;
-							dd($vid);
+							dd($pid);
 
 						}
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
