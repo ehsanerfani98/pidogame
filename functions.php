@@ -1130,7 +1130,7 @@ function fx_check($pid, $vid)
 								$pos = array_search($not_variation_id, $variation_ids);
 								if ($pos !== false) {
 									$variation_unset_ids = $variation_ids;
-									unset($variation_ids[$pos]);
+									unset($variation_unset_ids[$pos]);
 								}
 							} else {
 								$variations = new WC_Product_Variable($not_variation_id);
@@ -1138,13 +1138,13 @@ function fx_check($pid, $vid)
 									$pos = array_search($vn_id, $variation_ids);
 									if ($pos !== false) {
 										$variation_unset_ids = $variation_ids;
-										unset($variation_ids[$pos]);
+										unset($variation_unset_ids[$pos]);
 									}
 								}
 							}
 						}
 
-						foreach ($variation_ids as $variation_id) {
+						foreach ($variation_unset_ids as $variation_id) {
 							if ($variation_id == $vid && in_array($pid, $display_rules)) {
 								$new_extra_fields[] = $item;
 							}
