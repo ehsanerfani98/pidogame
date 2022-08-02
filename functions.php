@@ -972,7 +972,7 @@ function set_cutom_cart_item_price($cart)
 	$cart_content = $cart->get_cart();
 
 
-	dd($cart_content);
+	// dd($cart_content);
 
 	foreach ($cart_content as $cart_item) {
 
