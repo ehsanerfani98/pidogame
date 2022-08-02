@@ -1111,7 +1111,7 @@ function fx_check($pid, $vid)
 							foreach ($variations->get_children() as  $vn_id) {
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
-							$show_inside_rule_products_ids[] = $vid;
+							$show_inside_rule_products_ids[] = $variation_id;
 						}
 						foreach ($show_inside_rule_products_ids as $variation_id) {
 							if ($variation_id == $vid && in_array($pid, $display_rules)) {
