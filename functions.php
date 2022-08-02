@@ -981,12 +981,13 @@ function set_cutom_cart_item_price($cart)
 		foreach ($cart_item['meta_data_cart'] as $value) {
 			if (isset($value['status'])) {
 				$total_price[] = $value['value'];
-				dd($value['value']);
 			}
 		}
 
 		$base_price = $cart_item['data']->get_price();
 		if (isset($total_price) && !empty($total_price)) {
+			dd($total_price);
+
 			$new_total_price = array_sum($total_price) + $base_price;
 		} else {
 			$new_total_price = $base_price;
