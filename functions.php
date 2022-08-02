@@ -1108,10 +1108,12 @@ function fx_check($pid, $vid)
 							$show_inside_rule_products_ids[] = $variation_id;
 						} else {
 							$variations = new WC_Product_Variable($variation_id);
-							foreach ($variations->get_children() as  $vn_id) {
-								$show_inside_rule_products_ids[] = $vn_id;
+							if (!empty($variations->get_children())) {
+								foreach ($variations->get_children() as  $vn_id) {
+									$show_inside_rule_products_ids[] = $vn_id;
+								}
 							}
-							if(empty($variations->get_children())){
+							if (empty($variations->get_children())) {
 								$show_inside_rule_products_ids[] = $vid;
 							}
 						}
