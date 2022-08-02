@@ -1200,7 +1200,7 @@ function fx_check($pid, $vid)
 										unset($variation_unset_ids[$pos]);
 									}
 									foreach ($variation_unset_ids as $variation_id) {
-										if (in_array($pid, $display_rules)) {
+										if (in_array($variation_id, $display_rules)) {
 											$new_extra_fields[] = $item;
 										}
 									}
