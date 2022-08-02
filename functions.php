@@ -1111,7 +1111,9 @@ function fx_check($pid, $vid)
 							foreach ($variations->get_children() as  $vn_id) {
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
-							$show_inside_rule_products_ids[] = $vid;
+							if(empty($variations->get_children())){
+								$show_inside_rule_products_ids[] = $vid;
+							}
 						}
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
 							if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
@@ -1120,7 +1122,7 @@ function fx_check($pid, $vid)
 						}
 						$show_inside_rule_products_ids = [];
 					}
-var_dump($new_extra_fields);
+					// var_dump($new_extra_fields);
 					// $again_new_extra_fields = $new_extra_fields;
 					// unset($new_extra_fields);
 					// foreach ($again_new_extra_fields as $item) {
@@ -1129,7 +1131,7 @@ var_dump($new_extra_fields);
 					// 		foreach ($item['not_show_products_rules'] as $not_show_product_id) {
 					// 			$not_variation_id = $not_show_product_id;
 					// 			$variation_unset_ids = $variation_ids;
-	
+
 					// 			$product = wc_get_product($not_variation_id);
 					// 			if ($product->is_type('variation')) {
 					// 				$pos = array_search($not_variation_id, $variation_ids);
@@ -1138,22 +1140,22 @@ var_dump($new_extra_fields);
 					// 				}
 					// 			} else {
 					// 				$variations = new WC_Product_Variable($not_variation_id);
-									
+
 					// 				foreach ($variations->get_children() as  $vn_id) {
 					// 					$pos = array_search($vn_id, $variation_ids);
 					// 					if ($pos !== false) {
 					// 						unset($variation_unset_ids[$pos]);
 					// 					}
 					// 				}
-									
+
 					// 				$pos = array_search($vid, $variation_ids);
 					// 				if ($pos !== false) {
 					// 					unset($variation_unset_ids[$pos]);
 					// 				}
-	
+
 					// 			}
 					// 		}
-	
+
 					// 		foreach ($variation_unset_ids as $variation_id) {
 					// 			if ($variation_id == $vid && in_array($pid, $display_rules)) {
 					// 				$new_extra_fields[] = $item;
@@ -1184,7 +1186,7 @@ var_dump($new_extra_fields);
 								}
 							} else {
 								$variations = new WC_Product_Variable($not_variation_id);
-								
+
 								foreach ($variations->get_children() as  $vn_id) {
 									$pos = array_search($vn_id, $variation_ids);
 									if ($pos !== false) {
@@ -1196,8 +1198,6 @@ var_dump($new_extra_fields);
 								if ($pos !== false) {
 									unset($variation_unset_ids[$pos]);
 								}
-
-
 							}
 						}
 
