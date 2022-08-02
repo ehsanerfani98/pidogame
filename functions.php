@@ -1133,8 +1133,9 @@ function fx_check($pid, $vid)
 									unset($variation_ids[$pos]);
 								}
 							} else {
-								dd('sas');
 								$variations = new WC_Product_Variable($not_variation_id);
+								dd($variations);
+								
 								foreach ($variations->get_children() as  $vn_id) {
 									$pos = array_search($vn_id, $variation_ids);
 									if ($pos !== false) {
