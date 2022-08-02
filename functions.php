@@ -1112,14 +1112,12 @@ function fx_check($pid, $vid)
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
 							$show_inside_rule_products_ids[] = $vid;
-
 						}
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
-							if ($variation_rule_id == $vid && in_array($pid, $item['inside_show_products_rules'])) {
+							if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
 								$new_extra_fields[] = $item;
 							}
 						}
-
 						$show_inside_rule_products_ids = [];
 					}
 
@@ -1127,6 +1125,7 @@ function fx_check($pid, $vid)
 					unset($new_extra_fields);
 					foreach ($again_new_extra_fields as $item) {
 						if (count($item['not_show_products_rules']) > 0) {
+
 							foreach ($item['not_show_products_rules'] as $not_show_product_id) {
 								$not_variation_id = $not_show_product_id;
 								$variation_unset_ids = $variation_ids;
