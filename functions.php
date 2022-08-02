@@ -1120,7 +1120,7 @@ function fx_check($pid, $vid)
 						}
 						$show_inside_rule_products_ids = [];
 					}
-
+dd($new_extra_fields);
 					// $again_new_extra_fields = $new_extra_fields;
 					// unset($new_extra_fields);
 					// foreach ($again_new_extra_fields as $item) {
