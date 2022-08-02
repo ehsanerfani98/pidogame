@@ -1199,6 +1199,8 @@ function fx_check($pid, $vid)
 									if ($pos !== false) {
 										unset($variation_unset_ids[$pos]);
 									}
+									dd($variation_unset_ids);
+
 								} else {
 									$variations = new WC_Product_Variable($not_variation_id);
 
