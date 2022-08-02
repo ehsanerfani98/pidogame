@@ -1207,7 +1207,10 @@ function fx_check($pid, $vid)
 											$variation_ids_new[] = $v_id;
 										}
 									}
-									$variation_ids_new[] = $pid;
+
+									if($not_show_product_id = $pid){
+										$variation_ids_new[] = $pid;
+									}
 
 									$variation_ids_new = array_unique($variation_ids_new);
 
