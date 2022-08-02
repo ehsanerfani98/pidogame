@@ -986,10 +986,7 @@ function set_cutom_cart_item_price($cart)
 
 		$base_price = $cart_item['data']->get_price();
 		if (isset($total_price) && !empty($total_price)) {
-			// dd((int)$base_price);
-			dd(array_sum($total_price) + (int)$base_price);
-
-			$new_total_price = array_sum($total_price) + $base_price;
+			$new_total_price = array_sum($total_price) + (int)$base_price;
 		} else {
 			$new_total_price = $base_price;
 		}
