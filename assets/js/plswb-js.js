@@ -10,6 +10,7 @@ function extra_fields(event) {
 
     for (var [id, value] of fd.entries()) {
         if (id.startsWith('ext')) {
+            console.log(jQuery('#' + id).is(':checked'));
             let title = jQuery('#' + id).data('extra-title');
             if (jQuery('#' + id).is(':checked')) {
                 meta_data_cart.push({
