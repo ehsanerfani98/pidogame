@@ -1194,19 +1194,23 @@ function fx_check($pid, $vid)
 							} else {
 								$product2 = wc_get_product($not_variation_id);
 								if ($product2->is_type('simple')) {
-									dd('gfdgf');
 									$pos = array_search($pid, $display_rules);
 									$variation_unset_ids_new = $display_rules;
 									if ($pos !== false) {
 										unset($variation_unset_ids_new[$pos]);
 									}
+
+
 									foreach ($variation_unset_ids_new as $product_id) {
 										$variations = new WC_Product_Variable($product_id);
 										foreach ($variations->get_children() as  $v_id) {
 											$variation_ids_new[] = $v_id;
 										}
 									}
+									
 									$variation_ids_new = array_unique($variation_ids_new);
+
+									dd($variation_ids_new);
 
 									foreach ($variation_unset_ids_new as $variation_id_new) {
 										if ($variation_id_new == $vid && in_array($pid, $display_rules)) {
