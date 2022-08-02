@@ -1210,9 +1210,9 @@ function fx_check($pid, $vid)
 									
 									$variation_ids_new = array_unique($variation_ids_new);
 
-									dd($variation_ids_new);
+									// dd($variation_ids_new);
 
-									foreach ($variation_unset_ids_new as $variation_id_new) {
+									foreach ($variation_ids_new as $variation_id_new) {
 										if ($variation_id_new == $vid && in_array($pid, $display_rules)) {
 											$new_extra_fields[] = $item;
 										}
