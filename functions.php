@@ -1115,14 +1115,14 @@ function fx_check($pid, $vid)
 							}
 						}
 						if (!empty($variations->get_children())) {
-							dd('f');
-
+							var_dump($variations->get_children());
 							foreach ($show_inside_rule_products_ids as $variation_rule_id) {
 								if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
 									$new_extra_fields[] = $item;
 								}
 							}
 						} else {
+							dd('f');
 							if (in_array($pid, $display_rules)) {
 								$new_extra_fields[] = $item;
 							}
