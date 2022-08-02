@@ -1117,7 +1117,6 @@ function fx_check($pid, $vid)
 								$show_inside_rule_products_ids[] = $vid;
 							}
 						}
-						var_dump($show_inside_rule_products_ids);
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
 							if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
 								$new_extra_fields[] = $item;
