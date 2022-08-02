@@ -131,7 +131,8 @@ $type = $product->get_type();
                                                             </svg></span>
                                                     <?php endif; ?>
                                                 </label>
-                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                <input value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                <p class="fs-8 text-gray-700 mt-1"><?= number_format($item['price']) . ' تومان ' ?> به مبلغ اصلی اضافه می شود.</p>
                                             </div>
                                             <?php
                                             break;
@@ -389,7 +390,8 @@ $type = $product->get_type();
                                                                     </svg></span>
                                                             <?php endif; ?>
                                                         </label>
-                                                        <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                        <input value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                        <p class="fs-8 text-gray-700 mt-1"><?= number_format($item['price']) . ' تومان ' ?> به مبلغ اصلی اضافه می شود.</p>
                                                     </div>
                                                     <?php
                                                     break;
@@ -510,4 +512,3 @@ $type = $product->get_type();
         </div>
 <?php break;
 endswitch ?>
-

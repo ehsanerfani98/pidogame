@@ -334,7 +334,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                     <?php endif; ?>
                                                                                                 </label>
                                                                                                 <input value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
-                                                                                            <p class="fs-8 text-gray-700 mt-1"><?= number_format($item['price']).' تومان ' ?> به مبلغ اصلی اضافه می شود.</p>
+                                                                                                <p class="fs-8 text-gray-700 mt-1"><?= number_format($item['price']) . ' تومان ' ?> به مبلغ اصلی اضافه می شود.</p>
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
