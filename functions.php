@@ -1123,6 +1123,7 @@ function fx_check($pid, $vid)
 
 					$again_new_extra_fields = $new_extra_fields;
 					unset($new_extra_fields);
+					dd($again_new_extra_fields);
 					foreach ($again_new_extra_fields as $item) {
 						if (count($item['not_show_products_rules']) > 0) {
 dd('dd');
