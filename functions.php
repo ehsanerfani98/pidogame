@@ -1134,7 +1134,6 @@ function fx_check($pid, $vid)
 								}
 							} else {
 								$variations = new WC_Product_Variable($not_variation_id);
-								dd($variation_ids);
 								
 								foreach ($variations->get_children() as  $vn_id) {
 									$pos = array_search($vn_id, $variation_ids);
@@ -1142,6 +1141,8 @@ function fx_check($pid, $vid)
 										unset($variation_unset_ids[$pos]);
 									}
 								}
+								dd($variation_unset_ids);
+
 							}
 						}
 
