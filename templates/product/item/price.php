@@ -513,4 +513,3 @@ $type = $product->get_type();
 <?php break;
 endswitch ?>
 
-<div id="sdfdssdfsd"></div>
