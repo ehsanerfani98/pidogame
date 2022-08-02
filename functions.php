@@ -1107,26 +1107,27 @@ function fx_check($pid, $vid)
 						if ($product->is_type('variation')) {
 							$show_inside_rule_products_ids[] = $variation_id;
 						} else {
-							$variations = new WC_Product_Variable($variation_id);
-							if (!empty($variations->get_children())) {
+							$product2 = wc_get_product($variation_id);
+
+							if ($product2->is_type('simple')) {
+								if ($pid==$variation_id) {
+									$new_extra_fields[] = $item;
+								}	
+							} else {
+								$variations = new WC_Product_Variable($variation_id);
 								foreach ($variations->get_children() as  $vn_id) {
 									$show_inside_rule_products_ids[] = $vn_id;
 								}
-							}
-						}
-						if (!empty($variations->get_children())) {
-							var_dump($variations->get_children());
-							foreach ($show_inside_rule_products_ids as $variation_rule_id) {
-								if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
-									$new_extra_fields[] = $item;
+
+								foreach ($show_inside_rule_products_ids as $variation_rule_id) {
+									if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
+										$new_extra_fields[] = $item;
+									}
 								}
-							}
-						} else {
-							dd($variation_id);
-							if (in_array($pid, $display_rules)) {
-								$new_extra_fields[] = $item;
+	
 							}
 						}
+					
 						$show_inside_rule_products_ids = [];
 					}
 					// var_dump($new_extra_fields);
