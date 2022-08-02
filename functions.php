@@ -1194,7 +1194,7 @@ function fx_check($pid, $vid)
 							} else {
 								$product2 = wc_get_product($not_variation_id);
 								if ($product2->is_type('simple')) {
-									$pos = array_search($pid, $display_rules);
+									$pos = array_search($not_variation_id, $display_rules);
 									$variation_unset_ids_new = $display_rules;
 									if ($pos !== false) {
 										unset($variation_unset_ids_new[$pos]);
