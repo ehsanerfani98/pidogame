@@ -1112,14 +1112,15 @@ function fx_check($pid, $vid)
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
 							$show_inside_rule_products_ids[] = $vid;
-							dd($show_inside_rule_products_ids);
 
 						}
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
-							if ($variation_rule_id == $vid && in_array($pid, $display_rules)) {
+							if ($variation_rule_id == $vid && in_array($pid, $item['inside_show_products_rules'])) {
 								$new_extra_fields[] = $item;
 							}
 						}
+						dd($new_extra_fields);
+
 						$show_inside_rule_products_ids = [];
 					}
 
