@@ -1110,9 +1110,9 @@ function fx_check($pid, $vid)
 							$product2 = wc_get_product($variation_id);
 
 							if ($product2->is_type('simple')) {
-								if ($pid==$variation_id) {
+								if ($pid == $variation_id) {
 									$new_extra_fields[] = $item;
-								}	
+								}
 							} else {
 								$variations = new WC_Product_Variable($variation_id);
 								foreach ($variations->get_children() as  $vn_id) {
@@ -1124,10 +1124,9 @@ function fx_check($pid, $vid)
 										$new_extra_fields[] = $item;
 									}
 								}
-	
 							}
 						}
-					
+
 						$show_inside_rule_products_ids = [];
 					}
 					// var_dump($new_extra_fields);
@@ -1193,18 +1192,27 @@ function fx_check($pid, $vid)
 									unset($variation_unset_ids[$pos]);
 								}
 							} else {
-								$variations = new WC_Product_Variable($not_variation_id);
 
-								foreach ($variations->get_children() as  $vn_id) {
-									$pos = array_search($vn_id, $variation_ids);
+								$product2 = wc_get_product($not_variation_id);
+								if ($product2->is_type('simple')) {
+									$pos = array_search($pid, $variation_ids);
 									if ($pos !== false) {
 										unset($variation_unset_ids[$pos]);
 									}
-								}
+								} else {
+									$variations = new WC_Product_Variable($not_variation_id);
 
-								$pos = array_search($vid, $variation_ids);
-								if ($pos !== false) {
-									unset($variation_unset_ids[$pos]);
+									foreach ($variations->get_children() as  $vn_id) {
+										$pos = array_search($vn_id, $variation_ids);
+										if ($pos !== false) {
+											unset($variation_unset_ids[$pos]);
+										}
+									}
+
+									$pos = array_search($pid, $variation_ids);
+									if ($pos !== false) {
+										unset($variation_unset_ids[$pos]);
+									}
 								}
 							}
 						}
