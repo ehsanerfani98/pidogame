@@ -1199,7 +1199,11 @@ function fx_check($pid, $vid)
 									if ($pos !== false) {
 										unset($variation_unset_ids[$pos]);
 									}
-									dd($variation_unset_ids);
+									foreach ($variation_unset_ids as $variation_id) {
+										if (in_array($pid, $display_rules)) {
+											$new_extra_fields[] = $item;
+										}
+									}
 
 								} else {
 									$variations = new WC_Product_Variable($not_variation_id);
@@ -1215,15 +1219,17 @@ function fx_check($pid, $vid)
 									if ($pos !== false) {
 										unset($variation_unset_ids[$pos]);
 									}
+
+									foreach ($variation_unset_ids as $variation_id) {
+										if ($variation_id == $vid && in_array($pid, $display_rules)) {
+											$new_extra_fields[] = $item;
+										}
+									}
 								}
 							}
 						}
 
-						foreach ($variation_unset_ids as $variation_id) {
-							if ($variation_id == $vid && in_array($pid, $display_rules)) {
-								$new_extra_fields[] = $item;
-							}
-						}
+						
 					} else {
 						foreach ($variation_ids as $variation_id) {
 							if ($variation_id == $vid && in_array($pid, $display_rules)) {
