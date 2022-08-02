@@ -1121,52 +1121,52 @@ function fx_check($pid, $vid)
 						$show_inside_rule_products_ids = [];
 					}
 
-					$again_new_extra_fields = $new_extra_fields;
-					unset($new_extra_fields);
-					foreach ($again_new_extra_fields as $item) {
-						if (count($item['not_show_products_rules']) > 0) {
+					// $again_new_extra_fields = $new_extra_fields;
+					// unset($new_extra_fields);
+					// foreach ($again_new_extra_fields as $item) {
+					// 	if (count($item['not_show_products_rules']) > 0) {
 
-							foreach ($item['not_show_products_rules'] as $not_show_product_id) {
-								$not_variation_id = $not_show_product_id;
-								$variation_unset_ids = $variation_ids;
+					// 		foreach ($item['not_show_products_rules'] as $not_show_product_id) {
+					// 			$not_variation_id = $not_show_product_id;
+					// 			$variation_unset_ids = $variation_ids;
 	
-								$product = wc_get_product($not_variation_id);
-								if ($product->is_type('variation')) {
-									$pos = array_search($not_variation_id, $variation_ids);
-									if ($pos !== false) {
-										unset($variation_unset_ids[$pos]);
-									}
-								} else {
-									$variations = new WC_Product_Variable($not_variation_id);
+					// 			$product = wc_get_product($not_variation_id);
+					// 			if ($product->is_type('variation')) {
+					// 				$pos = array_search($not_variation_id, $variation_ids);
+					// 				if ($pos !== false) {
+					// 					unset($variation_unset_ids[$pos]);
+					// 				}
+					// 			} else {
+					// 				$variations = new WC_Product_Variable($not_variation_id);
 									
-									foreach ($variations->get_children() as  $vn_id) {
-										$pos = array_search($vn_id, $variation_ids);
-										if ($pos !== false) {
-											unset($variation_unset_ids[$pos]);
-										}
-									}
+					// 				foreach ($variations->get_children() as  $vn_id) {
+					// 					$pos = array_search($vn_id, $variation_ids);
+					// 					if ($pos !== false) {
+					// 						unset($variation_unset_ids[$pos]);
+					// 					}
+					// 				}
 									
-									$pos = array_search($vid, $variation_ids);
-									if ($pos !== false) {
-										unset($variation_unset_ids[$pos]);
-									}
+					// 				$pos = array_search($vid, $variation_ids);
+					// 				if ($pos !== false) {
+					// 					unset($variation_unset_ids[$pos]);
+					// 				}
 	
-								}
-							}
+					// 			}
+					// 		}
 	
-							foreach ($variation_unset_ids as $variation_id) {
-								if ($variation_id == $vid && in_array($pid, $display_rules)) {
-									$new_extra_fields[] = $item;
-								}
-							}
-						} else {
-							foreach ($variation_ids as $variation_id) {
-								if ($variation_id == $vid && in_array($pid, $display_rules)) {
-									$new_extra_fields[] = $item;
-								}
-							}
-						}
-					}
+					// 		foreach ($variation_unset_ids as $variation_id) {
+					// 			if ($variation_id == $vid && in_array($pid, $display_rules)) {
+					// 				$new_extra_fields[] = $item;
+					// 			}
+					// 		}
+					// 	} else {
+					// 		foreach ($variation_ids as $variation_id) {
+					// 			if ($variation_id == $vid && in_array($pid, $display_rules)) {
+					// 				$new_extra_fields[] = $item;
+					// 			}
+					// 		}
+					// 	}
+					// }
 
 
 				} else {
