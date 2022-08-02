@@ -11,10 +11,19 @@ function extra_fields(event) {
     for (var [id, value] of fd.entries()) {
         if (id.startsWith('ext')) {
             let title = jQuery('#' + id).data('extra-title');
-            meta_data_cart.push({
-                title: title,
-                value: value
-            });
+            if (jQuery('#' + id).is(':checked')) {
+                meta_data_cart.push({
+                    title: title,
+                    value: value,
+                    status: 'on'
+                });
+            } else {
+                meta_data_cart.push({
+                    title: title,
+                    value: value,
+                });
+            }
+
         } else {
             if (id == 'variation-id') {
                 variation_id = value;
@@ -26,7 +35,7 @@ function extra_fields(event) {
         }
     }
 
-// console.log(btn_id);
+    // console.log(btn_id);
     // jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
     jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 

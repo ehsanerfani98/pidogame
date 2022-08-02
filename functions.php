@@ -858,9 +858,17 @@ function custom_empty_cart_message()
 //نمایش دیتا در سبد خرید
 function add_cf_after_cart_item_name($name_html, $cart_item, $cart_item_key)
 {
+	if (!isset($cart_item['meta_data_cart'])) {
+		return $name_html;
+	}
 	if (!empty($cart_item['meta_data_cart'])) {
 		foreach ($cart_item['meta_data_cart'] as $item) {
-			$name_html .= 		"<br>" . $item['title'] . ' : ' . $item['value'];
+			if (isset($item['status'])) {
+				$val = number_format($item['value']) . ' تومان ';
+			} else {
+				$val = $item['value'];
+			}
+			$name_html .= 		"<br>" . $item['title'] . ' : ' .  $val;
 		}
 	}
 	return $name_html;
@@ -884,15 +892,28 @@ add_filter('woocommerce_cart_item_name', 'add_cf_after_cart_item_name', 10, 3);
 add_action('woocommerce_checkout_create_order_line_item', 'save_cart_item_custom_meta_as_order_item_meta', 10, 4);
 function save_cart_item_custom_meta_as_order_item_meta($cart_item, $cart_item_key, $values, $order)
 {
+	if (!isset($values['meta_data_cart'])) {
+		return;
+	}
 	if (!empty($values['meta_data_cart'])) {
 		foreach ($values['meta_data_cart'] as $item) {
-			$cart_item->update_meta_data($item['title'], $item['value']);
+			if (isset($item['status'])) {
+				$val = number_format($item['value']) . ' تومان ';
+			} else {
+				$val = $item['value'];
+			}
+			$cart_item->update_meta_data($item['title'], $val);
 		}
 	}
 }
 
 
 
+function ti_custom_javascript()
+{
+	wp_enqueue_script('plswb-js', get_template_directory_uri() . '/assets/js/plswb-js.js', '', '', true);
+}
+add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
 
 add_action('wp_ajax_woocommerce_ajax_add_to_cart', 'woocommerce_ajax_add_to_cart');
@@ -936,42 +957,40 @@ function woocommerce_ajax_add_to_cart()
 	wp_die();
 }
 
-
-function ti_custom_javascript()
+add_action('woocommerce_before_calculate_totals', 'set_cutom_cart_item_price', 20, 1);
+function set_cutom_cart_item_price($cart)
 {
-	wp_enqueue_script('plswb-js', get_template_directory_uri() . '/assets/js/plswb-js.js', '', '', true);
+
+
+	if (is_admin() && !defined('DOING_AJAX'))
+		return;
+
+	if (did_action('woocommerce_before_calculate_totals') >= 2)
+		return;
+
+	$cart_content = $cart->get_cart();
+
+	foreach ($cart_content as $cart_item) {
+
+		if (!isset($cart_item['meta_data_cart'])) {
+			return;
+		}
+		foreach ($cart_item['meta_data_cart'] as $value) {
+			if (isset($value['status'])) {
+				$total_price[] = $value['value'];
+			}
+		}
+
+		$base_price = $cart_item['data']->get_price();
+		if (isset($total_price) && !empty($total_price)) {
+			$new_total_price = array_sum($total_price) + $base_price;
+		} else {
+			$new_total_price = $base_price;
+		}
+		$cart_item['data']->set_price($new_total_price);
+		unset($total_price);
+	}
 }
-add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
-
-
-
-
-// add_filter('woocommerce_get_price_html', 'custom_price_format', 100, 2);
-// add_filter( 'woocommerce_variable_price_html', 'custom_price_format', 10, 2 );
-
-// function custom_price_format($price, $product)
-// {
-// 	// return $product->price;
-// 	if ($product->price > 0) {
-// 		if ($product->price && isset($product->regular_price)) {
-// 			$from = $product->regular_price;
-// 			$to = $product->price;
-// 			if ($from == $to) {
-// 				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-// 			}
-// 			if (empty($from)) {
-// 				return '<div class=" mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-// 			}
-// 			return '<div class=" mx-2 fs-5 px-4 py-2"><del>' . ((is_numeric($from)) ? woocommerce_price($from) : $from) . ' </del>  </div><div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-// 		} else {
-// 			$to = $product->price;
-// 			return '<div class="badge badge-success mx-2 fs-5 px-4 py-2">' . ((is_numeric($to)) ? woocommerce_price($to) : $to) . '</div>';
-// 		}
-// 	} else {
-// 		return '<div class="fs-5 px-4 py-2">رایگان</div>';
-// 	}
-// }
-
 
 
 add_filter('woocommerce_get_price_html', 'custom_price_format', 10, 2);
@@ -1048,7 +1067,7 @@ function custom_price_format($price, $product)
 function fx_check($pid, $vid)
 {
 
-	
+
 
 	$arg = array(
 		'post_type' => 'extra_fields_plswb',
@@ -1142,5 +1161,3 @@ function fx_check($pid, $vid)
 
 	return $new_extra_fields;
 }
-
-

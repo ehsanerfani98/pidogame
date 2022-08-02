@@ -333,7 +333,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
