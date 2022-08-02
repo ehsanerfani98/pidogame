@@ -1207,10 +1207,11 @@ function fx_check($pid, $vid)
 											$variation_ids_new[] = $v_id;
 										}
 									}
-									
+									$variation_ids_new[] = $pid;
+
 									$variation_ids_new = array_unique($variation_ids_new);
 
-									var_dump($variation_ids_new);
+									// var_dump($variation_ids_new);
 
 									foreach ($variation_ids_new as $variation_id_new) {
 										if ($variation_id_new == $vid && in_array($pid, $display_rules)) {
