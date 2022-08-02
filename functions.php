@@ -1141,11 +1141,15 @@ function fx_check($pid, $vid)
 										unset($variation_unset_ids[$pos]);
 									}
 								}
-								dd($variation_unset_ids);
+								
+								$pos = array_search($vid, $variation_ids);
+								if ($pos !== false) {
+									unset($variation_unset_ids[$pos]);
+								}
+
 
 							}
 						}
-						dd($variation_unset_ids);
 
 						foreach ($variation_unset_ids as $variation_id) {
 							if ($variation_id == $vid && in_array($pid, $display_rules)) {
