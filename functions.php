@@ -1112,6 +1112,7 @@ function fx_check($pid, $vid)
 								$show_inside_rule_products_ids[] = $vn_id;
 							}
 							$show_inside_rule_products_ids[] = $vid;
+							dd($show_inside_rule_products_ids);
 
 						}
 						foreach ($show_inside_rule_products_ids as $variation_rule_id) {
@@ -1119,7 +1120,6 @@ function fx_check($pid, $vid)
 								$new_extra_fields[] = $item;
 							}
 						}
-						dd($new_extra_fields);
 
 						$show_inside_rule_products_ids = [];
 					}
