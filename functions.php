@@ -1208,7 +1208,7 @@ function fx_check($pid, $vid)
 										}
 									}
 
-									if($not_show_product_id = $pid){
+									if($not_show_product_id == $pid){
 										$variation_ids_new[] = $pid;
 									}
 
