@@ -1122,7 +1122,7 @@ function fx_check($pid, $vid)
 								}
 							}
 						} else {
-							dd('f');
+							dd($variation_id);
 							if (in_array($pid, $display_rules)) {
 								$new_extra_fields[] = $item;
 							}
