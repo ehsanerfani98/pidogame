@@ -972,9 +972,9 @@ function set_cutom_cart_item_price($cart)
 
 
 	foreach ($cart_content as $cart_item) {
-		if (!isset($cart_item['meta_data_cart'])) {
-			return;
-		}
+		// if (!isset($cart_item['meta_data_cart'])) {
+		// 	return;
+		// }
 		foreach ($cart_item['meta_data_cart'] as $value) {
 			if (isset($value['status'])) {
 				$total_price[] = $value['value'];
