@@ -1096,7 +1096,6 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
-			dd('a');
 
 			$all_org_variation_ids = array_unique($all_org_variation_ids);
 			foreach ($extra_fields as $field) {
@@ -1185,6 +1184,7 @@ function fx_check($pid, $vid)
 					}
 				}
 			}
+			dd('b');
 
 			unset($all_org_variation_ids);
 			unset($inside_variation_ids);
