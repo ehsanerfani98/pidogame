@@ -1103,11 +1103,12 @@ function fx_check($pid, $vid)
 
 					foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 						$product = wc_get_product($inside_product_id);
-					dd('c');
-
 						if ($product->is_type('simple')) {
 							$inside_variation_ids[] = $inside_product_id;
 						} else {
+
+					dd('c');
+
 							$inside_variations = new WC_Product_Variable($inside_product_id);
 							foreach ($inside_variations->get_children() as  $inside_v_id) {
 								$inside_variation_ids[] = $inside_v_id;
