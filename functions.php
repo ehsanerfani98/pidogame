@@ -1157,7 +1157,6 @@ function woo_general_init()
 							}
 						}
 					} else {
-
 						if (count($field['not_show_products_rules']) > 0) {
 
 							foreach ($field['not_show_products_rules'] as $not_show_product_id) {
@@ -1176,8 +1175,7 @@ function woo_general_init()
 								}
 							}
 							$not_show_variation_ids = array_unique($not_show_variation_ids);
-
-							$display_rules_ids =  $not_show_variation_ids;
+							$display_rules_ids = array_diff($all_org_variation_ids, $not_show_variation_ids);
 
 							if (is_null($vid)) {
 								if (in_array($pid, $display_rules_ids)) {
@@ -1188,6 +1186,7 @@ function woo_general_init()
 									$created_fields[] = $field;
 								}
 							}
+
 						} else {
 
 							if (is_null($vid)) {
