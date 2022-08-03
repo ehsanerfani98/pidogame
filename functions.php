@@ -1194,7 +1194,7 @@ function fx_check($pid, $vid)
 
 	return $created_fields;
 }
-// dd(fx_check(2751, 2753));
+dd(fx_check(2751, 2753));
 
 }
 
