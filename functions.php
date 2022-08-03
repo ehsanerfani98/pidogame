@@ -1066,7 +1066,8 @@ function custom_price_format($price, $product)
 }
 
 
-
+add_action( 'init', 'woo_general_init' );
+function woo_general_init(){
 function fx_check2($pid, $vid)
 {
 
@@ -1192,8 +1193,9 @@ function fx_check2($pid, $vid)
 
 	return $created_fields;
 }
-
 dd(fx_check2(311, null));
+
+}
 
 
 function fx_check($pid, $vid)
