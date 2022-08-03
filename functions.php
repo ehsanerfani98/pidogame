@@ -1067,7 +1067,7 @@ function custom_price_format($price, $product)
 
 
 
-function fx_check($pid, $vid)
+function fx_check2($pid, $vid)
 {
 
 	unset($created_fields);
@@ -1196,7 +1196,7 @@ function fx_check($pid, $vid)
 
 
 
-function fx_check2($pid, $vid)
+function fx_check($pid, $vid)
 {
 
 	$arg = array(
