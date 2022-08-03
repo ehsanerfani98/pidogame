@@ -1193,7 +1193,7 @@ function fx_check2($pid, $vid)
 	return $created_fields;
 }
 
-
+dd(fx_check2(311, null));
 
 
 function fx_check($pid, $vid)
