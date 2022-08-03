@@ -1176,7 +1176,7 @@ function woo_general_init()
 							}
 							$not_show_variation_ids = array_unique($not_show_variation_ids);
 							$display_rules_ids = array_diff($all_org_variation_ids, $not_show_variation_ids);
-
+							unset($not_show_variation_ids);
 							if (is_null($vid)) {
 								if (in_array($pid, $display_rules_ids)) {
 									$created_fields[] = $field;
@@ -1186,7 +1186,6 @@ function woo_general_init()
 									$created_fields[] = $field;
 								}
 							}
-
 						} else {
 
 							if (is_null($vid)) {
