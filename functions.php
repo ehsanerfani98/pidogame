@@ -1106,9 +1106,8 @@ function fx_check($pid, $vid)
 						if ($product->is_type('simple')) {
 							$inside_variation_ids[] = $inside_product_id;
 						} else {
+							dd($inside_product_id);
 							$inside_variations = new WC_Product_Variable($inside_product_id);
-							dd('bb');
-
 							foreach ($inside_variations->get_children() as  $inside_v_id) {
 								$inside_variation_ids[] = $inside_v_id;
 							}
