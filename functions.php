@@ -1068,7 +1068,7 @@ function custom_price_format($price, $product)
 
 add_action( 'init', 'woo_general_init' );
 function woo_general_init(){
-function fx_check2($pid, $vid)
+function fx_check($pid, $vid)
 {
 
 	unset($created_fields);
@@ -1099,7 +1099,6 @@ function fx_check2($pid, $vid)
 			}
 
 			$all_org_variation_ids = array_unique($all_org_variation_ids);
-
 			foreach ($extra_fields as $field) {
 				if ($field['disable_org_show_products_rules']) {
 
@@ -1145,6 +1144,7 @@ function fx_check2($pid, $vid)
 						}
 					}
 				} else {
+
 					if (count($field['not_show_products_rules']) > 0) {
 
 						foreach ($field['not_show_products_rules'] as $not_show_product_id) {
@@ -1172,6 +1172,7 @@ function fx_check2($pid, $vid)
 							}
 						}
 					} else {
+
 						if (is_null($vid)) {
 							if (in_array($pid, $all_org_variation_ids)) {
 								$created_fields[] = $field;
@@ -1193,12 +1194,11 @@ function fx_check2($pid, $vid)
 
 	return $created_fields;
 }
-dd(fx_check2(311, null));
 
 }
 
 
-function fx_check($pid, $vid)
+function fx_check2($pid, $vid)
 {
 
 	$arg = array(
