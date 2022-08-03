@@ -1152,7 +1152,7 @@ function woo_general_init()
 								$created_fields[] = $field;
 							}
 						} else {
-							if (in_array($vid, $display_rules_ids) && in_array($pid, $display_rules_ids)) {
+							if (in_array($vid, $display_rules_ids)) {
 								$created_fields[] = $field;
 							}
 						}
@@ -1184,7 +1184,7 @@ function woo_general_init()
 									$created_fields[] = $field;
 								}
 							} else {
-								if (in_array($vid, $display_rules_ids) && in_array($pid, $display_rules_ids)) {
+								if (in_array($vid, $display_rules_ids)) {
 									$created_fields[] = $field;
 								}
 							}
@@ -1195,7 +1195,7 @@ function woo_general_init()
 									$created_fields[] = $field;
 								}
 							} else {
-								if (in_array($vid, $all_org_variation_ids) && in_array($pid, $all_org_variation_ids)) {
+								if (in_array($vid, $all_org_variation_ids)) {
 									$created_fields[] = $field;
 								}
 							}
