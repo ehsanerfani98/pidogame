@@ -1100,7 +1100,6 @@ function fx_check($pid, $vid)
 			$all_org_variation_ids = array_unique($all_org_variation_ids);
 			foreach ($extra_fields as $field) {
 				if ($field['disable_org_show_products_rules']) {
-					dd('b');
 
 					foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 						$product = wc_get_product($inside_product_id);
@@ -1113,6 +1112,8 @@ function fx_check($pid, $vid)
 							}
 						}
 					}
+					dd('b');
+
 					$inside_variation_ids = array_unique($inside_variation_ids);
 
 					if (count($field['not_show_products_rules']) > 0) {
