@@ -1213,8 +1213,12 @@ function woo_general_init()
 }
 
 
-// add_action('template_include', 'mcd_set_template');
+add_filter( 'template_include', 'plugin_tweak_template', 99);
 
-function mcd_set_template() {
-    return locate_template('test.php');
+function plugin_tweak_template( $template ) {
+    if ( is_page()) {
+wp_die('ddd');
+        // $template = PLUGIN_DIR_PATH . 'required/templates/portfolio.php';
+    }
+    return $template;
 }
