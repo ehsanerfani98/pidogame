@@ -1225,6 +1225,10 @@ function plugin_tweak_template($template)
 		#left-col {
 			top: 138px !important;
 		}
+
+		#ums-content {
+			background: #f5f8fa !important;
+		}
 	</style>
 <?php
 	$current_page_id = get_the_ID();
