@@ -755,7 +755,7 @@ add_action('woocommerce_add_to_cart', function () {
 			</button>
 			<!--end::Close-->
 		</div>
-<?php
+	<?php
 	});
 });
 
@@ -987,7 +987,7 @@ function set_cutom_cart_item_price($cart)
 		} else {
 			$new_total_price = $base_price;
 		}
-		
+
 		$cart_item['data']->set_price($new_total_price);
 		unset($total_price);
 	}
@@ -1141,7 +1141,6 @@ function woo_general_init()
 							$not_show_variation_ids = array_unique($not_show_variation_ids);
 							$display_rules_ids = array_diff($inside_variation_ids, $not_show_variation_ids);
 							unset($not_show_variation_ids);
-
 						} else {
 							$display_rules_ids = $inside_variation_ids;
 							unset($inside_variation_ids);
@@ -1213,15 +1212,23 @@ function woo_general_init()
 }
 
 
-add_filter( 'template_include', 'plugin_tweak_template', 99);
+add_filter('template_include', 'plugin_tweak_template', 99);
 
-function plugin_tweak_template( $template ) {
+function plugin_tweak_template($template)
+{
+	?>
+	<style>
+		.uk-container.uk-container-expand {
+			display: none !important;
+		}
+	</style>
+<?php
 	$current_page_id = get_the_ID();
 	$db_page_id = 4173;
-    if ( is_page()) {
-		if($current_page_id == $db_page_id){
-			$template = get_template_directory().'/test.php';
+	if (is_page()) {
+		if ($current_page_id == $db_page_id) {
+			$template = get_template_directory() . '/test.php';
 		}
-    }
-    return $template;
+	}
+	return $template;
 }
