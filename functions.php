@@ -1221,6 +1221,10 @@ function plugin_tweak_template($template)
 		#top-head {
 			display: none !important;
 		}
+
+		#left-col {
+			top: 138px !important;
+		}
 	</style>
 <?php
 	$current_page_id = get_the_ID();
