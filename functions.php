@@ -1216,9 +1216,10 @@ function woo_general_init()
 add_filter( 'template_include', 'plugin_tweak_template', 99);
 
 function plugin_tweak_template( $template ) {
+	wp_die(get_the_ID());
+	$db_page_id = 4173;
     if ( is_page()) {
-wp_die('ddd');
-        // $template = PLUGIN_DIR_PATH . 'required/templates/portfolio.php';
+        $template = get_template_directory().'test.php';
     }
     return $template;
 }
