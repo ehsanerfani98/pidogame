@@ -1219,7 +1219,7 @@ function plugin_tweak_template($template)
 	?>
 	<style>
 		.uk-container.uk-container-expand {
-			display: none !important;
+			/* display: none !important; */
 		}
 	</style>
 <?php
