@@ -1213,3 +1213,9 @@ function woo_general_init()
 }
 
 
+add_action('template_include', 'mcd_set_template');
+
+function mcd_set_template() {
+	wp_die('test');
+    return locate_template('templatename.php');
+}
