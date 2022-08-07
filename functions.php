@@ -1220,7 +1220,7 @@ function plugin_tweak_template( $template ) {
 	$db_page_id = 4173;
     if ( is_page()) {
 		if($current_page_id == $db_page_id){
-			$template = get_template_directory().'test.php';
+			$template = get_template_directory(__FILE__).'test.php';
 		}
     }
     return $template;
