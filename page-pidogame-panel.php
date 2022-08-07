@@ -1,4 +1,4 @@
 <?php
 
-echo do_shortcode( 'ums-dashboard' );
+echo do_shortcode( '[ums-dashboard]' );
 
