@@ -987,6 +987,7 @@ function set_cutom_cart_item_price($cart)
 		} else {
 			$new_total_price = $base_price;
 		}
+		
 		$cart_item['data']->set_price($new_total_price);
 		unset($total_price);
 	}
