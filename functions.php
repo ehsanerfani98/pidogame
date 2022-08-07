@@ -1221,6 +1221,8 @@ function plugin_tweak_template( $template ) {
     if ( is_page()) {
 		if($current_page_id == $db_page_id){
 			$template = get_template_directory().'page-test.php';
+			wp_die($template);
+
 		}
     }
     return $template;
