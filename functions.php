@@ -1213,7 +1213,7 @@ function woo_general_init()
 }
 
 
-add_action('template_include', 'mcd_set_template');
+// add_action('template_include', 'mcd_set_template');
 
 function mcd_set_template() {
     return locate_template('test.php');
