@@ -1218,8 +1218,8 @@ function plugin_tweak_template($template)
 {
 	?>
 	<style>
-		.uk-container.uk-container-expand {
-			/* display: none !important; */
+		#top-head {
+			display: none !important;
 		}
 	</style>
 <?php
