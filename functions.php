@@ -1226,7 +1226,7 @@ function plugin_tweak_template($template)
 			top: 138px !important;
 		}
 
-		#ums-content {
+		#ums-content ,#kt_content_container{
 			background: #f5f8fa !important;
 		}
 	</style>
