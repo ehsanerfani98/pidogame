@@ -1216,10 +1216,12 @@ function woo_general_init()
 add_filter( 'template_include', 'plugin_tweak_template', 99);
 
 function plugin_tweak_template( $template ) {
-	wp_die(get_the_ID());
+	$current_page_id = get_the_ID();
 	$db_page_id = 4173;
     if ( is_page()) {
-        $template = get_template_directory().'test.php';
+		if($current_page_id == $db_page_id){
+			$template = get_template_directory().'test.php';
+		}
     }
     return $template;
 }
