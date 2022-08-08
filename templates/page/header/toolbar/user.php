@@ -25,23 +25,7 @@ if (is_user_logged_in()) :
             <div class="separator my-2"></div>
             <?php if (has_nav_menu('header-user-first')) headerFirstUserMenu() ?>
             <div class="separator my-2"></div>
-            <!-- <?php
-            if ($options['opt-header-user-wallet-switcher']) :
-                $userId  = get_current_user_id();
-                $customer = new YITH_YWF_Customer($userId);
-                $fundAv  = apply_filters('yith_show_available_funds', $customer->get_funds());
-            ?>
-                <div class="menu-item px-5 mb-1">
-                    <a target="<?php echo $options['opt-header-user-wallet-link']['target'] ?>" href="<?php echo $options['opt-header-user-wallet-link']['url'] ?>" class="menu-link px-5">
-                        <span class="menu-title position-relative"><?php echo $options['opt-header-user-wallet-link']['text'] ?>
-                            <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0 ss02">
-                                <?php echo wc_price($fundAv) ?>
-                                <img class="w-15px h-15px rounded-1 ms-2" src="<?php echo get_template_directory_uri() ?>/assets/media/flags/iran.svg" />
-                            </span>
-                        </span>
-                    </a>
-                </div>
-            <?php endif ?> -->
+        
             <?php if (has_nav_menu('header-user-second')) headerSecondUserMenu() ?>
             <?php if ($options['opt-header-user-theme-switcher']) : ?>
                 <div class="separator my-2"></div>
