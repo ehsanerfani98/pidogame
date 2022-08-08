@@ -17,13 +17,12 @@ if (is_user_logged_in()) :
                         <div class="fw-bolder d-flex align-items-center fs-5">
                             <?php echo $currentUser->display_name ?>
                             <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?php
-                            foreach (get_option( 'avans_plugin_setting' )['avans_user_levels'] as $key => $value) {
-                                var_dump(do_shortcode( '[avans-user-score]', ignore_html ));
-                                if($value['min_score'] == do_shortcode( '[avans-user-score]', ignore_html )){
-                                    echo $value['level'];
-                                }
-                                }
-                             ?></span>
+                                                                                                        foreach (get_option('avans_plugin_setting')['avans_user_levels'] as $key => $value) {
+                                                                                                            if ($value['min_score'] == do_shortcode('[avans-user-score]', ignore_html)) {
+                                                                                                                echo $value['level'];
+                                                                                                            }
+                                                                                                        }
+                                                                                                        ?></span>
                         </div>
                         <a class="fw-bold text-muted fs-7"><?php echo $currentUser->user_email ?></a>
                     </div>
@@ -33,13 +32,13 @@ if (is_user_logged_in()) :
             <?php if (has_nav_menu('header-user-first')) headerFirstUserMenu() ?>
             <div class="separator my-2"></div>
             <?php
-            if(function_exists('woo_wallet')):
+            if (function_exists('woo_wallet')) :
             ?>
                 <div class="menu-item px-5 mb-1">
-                    <a target="_blank" href="<?= home_url( 'my-account/woo-wallet/' ) ?>" class="menu-link px-5">
+                    <a target="_blank" href="<?= home_url('my-account/woo-wallet/') ?>" class="menu-link px-5">
                         <span class="menu-title position-relative"><?php echo $options['opt-header-user-wallet-link']['text'] ?>
                             <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0 ss02">
-                            <?= woo_wallet()->wallet->get_wallet_balance(get_current_user_id()) ?>
+                                <?= woo_wallet()->wallet->get_wallet_balance(get_current_user_id()) ?>
                                 <img class="w-15px h-15px rounded-1 ms-2" src="<?php echo get_template_directory_uri() ?>/assets/media/flags/iran.svg" />
                             </span>
                         </span>
