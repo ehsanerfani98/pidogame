@@ -46,3 +46,12 @@ span.dashicons.dashicons-list-view {
 .woo-wallet-my-wallet-container .woo-wallet-sidebar {
     background: #f3f3f3 !important;
 }
+
+.woo-wallet-sidebar ul li p {
+    color: #777 !important;
+}
+
+input#woo_wallet_balance_to_add {
+    border: none !important;
+    background: #f1f1f2 !important;
+}
