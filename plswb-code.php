@@ -521,11 +521,11 @@ add_action('save_post_extra_fields_plswb', function ($post_id) {
 function filter_woocommerce_account_orders_columns( $columns ) {
     echo '<pre>', print_r( $columns, 1 ), '</pre>';
     
-    $columns['order-number'] = __( 'New name 1', 'woocommerce' );
-    $columns['order-date'] = __( 'New name 2', 'woocommerce' );
-    $columns['order-status'] = __( 'New name 3', 'woocommerce' );
-    $columns['order-total'] = __( 'New name 4', 'woocommerce' );
-    $columns['order-actions'] = __( 'New name 5', 'woocommerce' );
+    $columns['order-number'] = __( 'شماره سفارش', 'woocommerce' );
+    $columns['order-date'] = __( 'تاریخ', 'woocommerce' );
+    $columns['order-status'] = __( 'وضعیت', 'woocommerce' );
+    $columns['order-total'] = __( 'مجموع', 'woocommerce' );
+    $columns['order-actions'] = __( 'عملیات ها', 'woocommerce' );
 
     return $columns;
 }
