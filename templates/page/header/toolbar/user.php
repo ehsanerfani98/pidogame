@@ -25,6 +25,7 @@ if (is_user_logged_in()) :
                                                                                                         foreach ($arr as $key => $value) {
                                                                                                             if (do_shortcode('[avans-user-score]', ignore_html) >= $value['min_score']) {
                                                                                                                 echo $value['level'];
+                                                                                                                break;
                                                                                                             }
                                                                                                         }
                                                                                                         ?></span>
