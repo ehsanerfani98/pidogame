@@ -77,4 +77,3 @@ function getslug(item) {
 }
 
 
-jQuery('.term-description').addClass('card card-body mt-5');
