@@ -545,7 +545,7 @@ function display_taxonomy_product_archives() {
     global $product;
 
     // HERE below define your custom taxonomy
-    $taxonomy = 'product_cat';
+    $taxonomy = 'product-category';
 
     $terms = wp_get_post_terms( $product->get_id(), $taxonomy, ['fields' => 'names']);
 
