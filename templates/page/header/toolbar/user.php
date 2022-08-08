@@ -18,8 +18,10 @@ if (is_user_logged_in()) :
                             <?php echo $currentUser->display_name ?>
                             <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?php
                                                                                                         $arr = get_option('avans_plugin_setting')['avans_user_levels'];
-                                                                                                        $price = array_column($arr, 'min_score');
-
+                                                                                                        usort($arr, function ($item1, $item2) {
+                                                                                                            return $item2['min_score'] <=> $item1['min_score'];
+                                                                                                        });
+                                                                                                        var_dump($arr);
                                                                                                         var_dump(array_multisort($price, SORT_DESC, $arr));
 
                                                                                                         // foreach (get_option('avans_plugin_setting')['avans_user_levels'] as $key => $value) {
