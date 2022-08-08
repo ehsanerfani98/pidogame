@@ -59,3 +59,10 @@ input#woo_wallet_balance_to_add {
 .woo-wallet-my-wallet-container {
     border: 2px dashed #cbcbcb !important;
 }
+
+p.woo-wallet-price {
+    background: #ffeb59 !important;
+    padding: .5rem !important;
+    border-radius: 6px !important;
+    color: #c7b007 !important;
+}
