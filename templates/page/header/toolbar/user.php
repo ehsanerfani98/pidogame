@@ -17,11 +17,16 @@ if (is_user_logged_in()) :
                         <div class="fw-bolder d-flex align-items-center fs-5">
                             <?php echo $currentUser->display_name ?>
                             <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?php
-                                                                                                        foreach (get_option('avans_plugin_setting')['avans_user_levels'] as $key => $value) {
-                                                                                                            if (do_shortcode('[avans-user-score]', ignore_html) >= $value['min_score']) {
-                                                                                                                echo $value['level'];
-                                                                                                            }
-                                                                                                        }
+                                                                                                        $arr = get_option('avans_plugin_setting')['avans_user_levels'];
+                                                                                                        $price = array_column($arr, 'min_score');
+
+                                                                                                        var_dump(array_multisort($price, SORT_DESC, $arr));
+
+                                                                                                        // foreach (get_option('avans_plugin_setting')['avans_user_levels'] as $key => $value) {
+                                                                                                        //     if (do_shortcode('[avans-user-score]', ignore_html) >= $value['min_score']) {
+                                                                                                        //         echo $value['level'];
+                                                                                                        //     }
+                                                                                                        // }
                                                                                                         ?></span>
                         </div>
                         <a class="fw-bold text-muted fs-7"><?php echo $currentUser->user_email ?></a>
