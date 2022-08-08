@@ -538,3 +538,19 @@ function custom_archive_description(){
     remove_action('woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
     add_action('woocommerce_after_main_content', 'woocommerce_taxonomy_archive_description', 5 );
 }
+
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'display_taxonomy_product_archives', 25 );
+function display_taxonomy_product_archives() {
+    global $product;
+
+    // HERE below define your custom taxonomy
+    $taxonomy = 'product_cat';
+
+    $terms = wp_get_post_terms( $product->get_id(), $taxonomy, ['fields' => 'names']);
+
+    if( ! empty($terms) ) {
+        // Display the term names 
+        echo '<p class="' . $taxonomy . '">' . implode(', ', $terms) . '</p>';
+    }
+}
