@@ -18,7 +18,7 @@ if (is_user_logged_in()) :
                             <?php echo $currentUser->display_name ?>
                             <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?php
                             foreach (get_option( 'avans_plugin_setting' )['avans_user_levels'] as $key => $value) {
-                                var_dump(do_shortcode( '[avans-user-score]', ignore_html );
+                                var_dump(do_shortcode( '[avans-user-score]', ignore_html ));
                                 if($value['min_score'] == do_shortcode( '[avans-user-score]', ignore_html )){
                                     echo $value['level'];
                                 }
