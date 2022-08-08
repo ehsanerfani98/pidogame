@@ -912,6 +912,7 @@ function save_cart_item_custom_meta_as_order_item_meta($cart_item, $cart_item_ke
 function ti_custom_javascript()
 {
 	wp_enqueue_script('plswb-js', get_template_directory_uri() . '/assets/js/plswb-js.js', '', '', true);
+	wp_enqueue_style('plswb-css', get_template_directory_uri() . '/assets/css/plswb-css.css');
 }
 add_action('wp_enqueue_scripts', 'ti_custom_javascript',);
 
