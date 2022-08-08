@@ -16,7 +16,7 @@ if (is_user_logged_in()) :
                     <div class="d-flex flex-column">
                         <div class="fw-bolder d-flex align-items-center fs-5">
                             <?php echo $currentUser->display_name ?>
-                            <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?php do_shortcode( '[avans-user-score]', ignore_html ) ?></span>
+                            <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2 ss02"><?= do_shortcode( '[avans-user-score]', ignore_html ) ?></span>
                         </div>
                         <a class="fw-bold text-muted fs-7"><?php echo $currentUser->user_email ?></a>
                     </div>
