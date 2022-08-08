@@ -1,4 +1,17 @@
-
 .yith_wcwl_wishlist_footer {
+    display: none !important;
+}
+
+.yith-wcwl-add-button .delete_item {
+    border: none !important;
+    background: none !important;
+    color: #ff8989 !important;
+}
+
+.yith-wcwl-add-button a .separator {
+    display: none !important;
+}
+
+.yith-wcwl-add-button a .view-wishlist {
     display: none !important;
 }
