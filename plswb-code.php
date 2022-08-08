@@ -515,13 +515,18 @@ add_action('save_post_extra_fields_plswb', function ($post_id) {
     update_post_meta($post_id, 'all_products_show_rules', $org_products_show_rules);
     update_post_meta($post_id, 'plswb_fields', $extra_fields);
 
-    // $ext_title = $_POST['ext_title'];
-    // $ext_help = $_POST['ext_help'];
-    // $ext_type = $_POST['ext_type'];
-    // $ext_price = $_POST['ext_price'];
-    // $ext_value_select = $_POST['ext_value_select'];
-    // $not_show_products_rules = $_POST['not_show_products_rules'];
-    // $ext_disable_org_show_products_rules = $_POST['ext_disable_org_show_products_rules'];
-    // $inside_show_products_rules = $_POST['inside_show_products_rules'];
-
 });
+
+
+function filter_woocommerce_account_orders_columns( $columns ) {
+    echo '<pre>', print_r( $columns, 1 ), '</pre>';
+    
+    $columns['order-number'] = __( 'New name 1', 'woocommerce' );
+    $columns['order-date'] = __( 'New name 2', 'woocommerce' );
+    $columns['order-status'] = __( 'New name 3', 'woocommerce' );
+    $columns['order-total'] = __( 'New name 4', 'woocommerce' );
+    $columns['order-actions'] = __( 'New name 5', 'woocommerce' );
+
+    return $columns;
+}
+add_filter( 'woocommerce_account_orders_columns', 'filter_woocommerce_account_orders_columns', 10, 1 );
