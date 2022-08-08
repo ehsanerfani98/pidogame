@@ -42,7 +42,7 @@ if (is_user_logged_in()) :
                     </a>
                 </div>
             <?php endif ?>
-            <?php if (has_nav_menu('header-user-second')) headerSecondUserMenu() ?>
+            <!-- <?php if (has_nav_menu('header-user-second')) headerSecondUserMenu() ?> -->
             <?php if ($options['opt-header-user-theme-switcher']) : ?>
                 <div class="separator my-2"></div>
                 <div class="menu-item px-5">
