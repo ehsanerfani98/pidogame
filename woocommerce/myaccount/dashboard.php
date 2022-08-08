@@ -20,7 +20,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-wp_die('sss');
 
 $allowed_html = array(
 	'a' => array(
