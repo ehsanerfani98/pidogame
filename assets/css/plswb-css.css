@@ -66,3 +66,10 @@ p.woo-wallet-price {
     border-radius: 6px !important;
     color: #c7b007 !important;
 }
+
+.woo-wallet-transactions-items li {
+    background: #f3f3f3 !important;
+    padding: .5rem 1rem !important;
+    border-radius: 10px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
+}
