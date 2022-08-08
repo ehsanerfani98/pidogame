@@ -6,6 +6,7 @@
     border: none !important;
     background: none !important;
     color: #ff8989 !important;
+    padding: 0 !important;
 }
 
 .yith-wcwl-add-button .separator {
@@ -14,4 +15,8 @@
 
 .yith-wcwl-add-button .view-wishlist {
     display: none !important;
+}
+
+i.yith-wcwl-icon.fa.fa-heart {
+    margin: 0 !important;
 }
