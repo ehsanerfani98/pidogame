@@ -1212,31 +1212,3 @@ function woo_general_init()
 }
 
 
-add_filter('template_include', 'plugin_tweak_template', 99);
-
-function plugin_tweak_template($template)
-{
-	?>
-	<style>
-		#top-head {
-			display: none !important;
-		}
-
-		#left-col {
-			top: 138px !important;
-		}
-
-		#ums-content ,#kt_content_container{
-			background: #f5f8fa !important;
-		}
-	</style>
-<?php
-	$current_page_id = get_the_ID();
-	$db_page_id = 4173;
-	if (is_page()) {
-		if ($current_page_id == $db_page_id) {
-			$template = get_template_directory() . '/test.php';
-		}
-	}
-	return $template;
-}
