@@ -36,3 +36,13 @@ span.dashicons.dashicons-list-view {
     border-radius: 6px !important;
     color: #19d7d7 !important;
 }
+
+.woo-wallet-sidebar ul li.card {
+    background: #ffffff38 !important;
+    border-radius: 10px !important;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px !important;
+}
+
+.woo-wallet-my-wallet-container .woo-wallet-sidebar {
+    background: #f3f3f3 !important;
+}
