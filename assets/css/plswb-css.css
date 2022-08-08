@@ -8,10 +8,10 @@
     color: #ff8989 !important;
 }
 
-.yith-wcwl-add-button a .separator {
+.yith-wcwl-add-button .separator {
     display: none !important;
 }
 
-.yith-wcwl-add-button a .view-wishlist {
+.yith-wcwl-add-button .view-wishlist {
     display: none !important;
 }
