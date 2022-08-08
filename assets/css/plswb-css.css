@@ -23,10 +23,10 @@ i.yith-wcwl-icon.fa.fa-heart {
 
 span.dashicons.dashicons-plus-alt {
     margin-bottom: 1rem !important;
-    background: #bbffca;
-    padding: .5rem;
-    border-radius: 6px;
-    color: #2ae152;
+    background: #bbffca !important;
+    padding: .5rem !important;
+    border-radius: 6px !important;
+    color: #2ae152 !important;
 }
 
 span.dashicons.dashicons-list-view {
