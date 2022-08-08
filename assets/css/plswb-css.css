@@ -55,3 +55,7 @@ input#woo_wallet_balance_to_add {
     border: none !important;
     background: #f1f1f2 !important;
 }
+
+.woo-wallet-my-wallet-container {
+    border: 2px dashed #cbcbcb !important;
+}
