@@ -11,14 +11,12 @@ get_header();
                 <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
                     <div class="wrap-404">
                         <div class="row">
-                            <div class="card shadow mb-6">
+                            <div class="card mb-6">
                                 <div class="card-body my-3">
-                                    <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center flex-column">
                                         <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
-                                        <div class="d-flex align-items-center justify-content-center flex-column">
                                             <h1 style="font-size: 5rem;margin-bottom: 1rem;">همممم!</h1>
                                             <h3 style="font-size: 2.4rem;">چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
