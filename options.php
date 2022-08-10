@@ -420,6 +420,8 @@ if (class_exists('CSF')) {
 				'type'        => 'select',
 				'title'       => 'محصولات پیشنهادی جهت نمایش در نتایج جستجو',
 				'placeholder' => 'محصولات پیشنهادی را انتخاب کنید.',
+				'chosen'      => true,
+				'multiple'    => true,
 				'options'     => 'post_types',
 				'query_args'  => array(
 					'post_type' => 'product',
