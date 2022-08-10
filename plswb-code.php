@@ -547,13 +547,7 @@ add_action('wp_ajax_set_like_comment_product', 'set_like_comment_product');
 add_action('wp_ajax_nopriv_set_like_comment_product', 'set_like_comment_product');
 function set_like_comment_product()
 {
-    setcookie(
-        $_POST['comment_id'],
-        "isset",
-        time() + (10 * 365 * 24 * 60 * 60),
-        '/',
-        $_SERVER['HTTP_HOST']
-    );
+
 
     if (isset($_COOKIE[$_POST['comment_id']])) {
         $total_like = (int)get_comment_meta($_POST['comment_id'], 'total_like', true) - 1;
@@ -571,6 +565,13 @@ function set_like_comment_product()
             "status" => "unset"
         ]);
     } else {
+        setcookie(
+            $_POST['comment_id'],
+            "isset",
+            time() + (10 * 365 * 24 * 60 * 60),
+            '/',
+            $_SERVER['HTTP_HOST']
+        );
         if (!empty(get_comment_meta($_POST['comment_id'], 'total_like', true))) {
             $total_like = (int)get_comment_meta($_POST['comment_id'], 'total_like', true) + 1;
         } else {
