@@ -59,27 +59,19 @@ get_header();
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
-                                        <!--begin::Dialer-->
-                                        <div class="position-relative w-md-300px" data-kt-dialer="true" data-kt-dialer-min="1000" data-kt-dialer-max="50000" data-kt-dialer-step="1000" data-kt-dialer-prefix="$" data-kt-dialer-decimals="2">
-
-                                            <!--begin::Decrease control-->
-                                            <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
-                                                <span class="svg-icon svg-icon-1"><svg></svg></span>
-                                            </button>
-                                            <!--end::Decrease control-->
-
-                                            <!--begin::Input control-->
-                                            <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly value="$36,000.00" />
-                                            <!--end::Input control-->
-
-                                            <!--begin::Increase control-->
-                                            <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
-                                                <span class="svg-icon svg-icon-1"><svg></svg></span>
-                                            </button>
-                                            <!--end::Increase control-->
+                                        <label for="exampleFormControlInput1" class="required form-label">تعداد</label>
+                                        <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
+                                            <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+                                                    </svg></span></button>
+                                            <input id="" name="" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
+                                            <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
+                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+                                                    </svg></span></button>
                                         </div>
-                                        <!--end::Dialer-->
                                     </div>
                                 </div>
 
