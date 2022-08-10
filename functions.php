@@ -1204,11 +1204,12 @@ function woo_general_init()
 				unset($inside_variation_ids);
 
 			}
+		wp_reset_postdata();
+
 			dd('$l');
 
 		}
 
-		wp_reset_postdata();
 		return $created_fields;
 
 	}
