@@ -224,8 +224,9 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                         <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
                                                                         <div class="d-flex flex-column">juu
-                                                                            <?php $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
-                                                                            
+                                                                            <?php
+                                                                             $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
+                                                                            dd($plswb_fields);
                                                                             if (count($plswb_fields) > 0) :
                                                                             ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
