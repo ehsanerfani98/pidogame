@@ -9,7 +9,7 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
-                    <div class="wrap-404 d-flex flex-column align-items-center">
+                    <div class="wrap-404 d-flex flex-column align-items-center justify-content-center">
                         <div class="card shadow">
                             <div class="card-body my-3">
                                 <div class="d-flex align-items-center justify-content-center">
