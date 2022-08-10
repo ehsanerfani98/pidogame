@@ -1086,142 +1086,142 @@ function woo_general_init()
 				$fields_plswb->the_post();
 				$display_rules = get_post_meta(get_the_ID(), "all_products_show_rules", true);
 				$extra_fields = get_post_meta(get_the_ID(), "plswb_fields", true);
-				// if (!empty($display_rules)) {
-				// 	foreach ($display_rules as $product_id) {
-				// 		$product = wc_get_product($product_id);
-				// 		if ($product->is_type('simple')) {
-				// 			$all_org_variation_ids[] = $product_id;
-				// 		} else {
-				// 			if ($product->is_type('variation')) {
-				// 				$all_org_variation_ids[] = $product_id;
-				// 			} else {
-				// 				$variations = new WC_Product_Variable($product_id);
-				// 				foreach ($variations->get_children() as  $v_id) {
-				// 					$all_org_variation_ids[] = $v_id;
-				// 				}
-				// 			}
-				// 		}
-				// 	}
-				// }
-
-				$all_org_variation_ids = array_unique($all_org_variation_ids);
-				if (!empty($extra_fields)) {
-					foreach ($extra_fields as $field) {
-						if ($field['disable_org_show_products_rules']) {
-
-							foreach ($field['inside_show_products_rules'] as $inside_product_id) {
-								$product = wc_get_product($inside_product_id);
-								if ($product->is_type('simple')) {
-									$inside_variation_ids[] = $inside_product_id;
-								} else {
-									if ($product->is_type('variation')) {
-										$inside_variation_ids[] = $inside_product_id;
-									} else {
-										$inside_variations = new WC_Product_Variable($inside_product_id);
-										foreach ($inside_variations->get_children() as  $inside_v_id) {
-											$inside_variation_ids[] = $inside_v_id;
-										}
-									}
-								}
-							}
-
-							$inside_variation_ids = array_unique($inside_variation_ids);
-
-							if (count($field['not_show_products_rules']) > 0) {
-								if (!empty($field['not_show_products_rules'])) {
-									foreach ($field['not_show_products_rules'] as $not_show_product_id) {
-										$product = wc_get_product($not_show_product_id);
-										if ($product->is_type('simple')) {
-											$not_show_variation_ids[] = $not_show_product_id;
-										} else {
-											if ($product->is_type('variation')) {
-												$not_show_variation_ids[] = $not_show_product_id;
-											} else {
-												$not_show_variations = new WC_Product_Variable($not_show_product_id);
-												if (!empty($not_show_variations->get_children())) {
-													foreach ($not_show_variations->get_children() as  $not_show_v_id) {
-														$not_show_variation_ids[] = $not_show_v_id;
-													}
-												}
-											}
-										}
-									}
-								}
-								$not_show_variation_ids = array_unique($not_show_variation_ids);
-								$display_rules_ids = array_diff($inside_variation_ids, $not_show_variation_ids);
-								unset($not_show_variation_ids);
-							} else {
-								$display_rules_ids = $inside_variation_ids;
-								unset($inside_variation_ids);
-							}
-
-							if (is_null($vid)) {
-								if (in_array($pid, $display_rules_ids)) {
-									$created_fields[] = $field;
-								}
-							} else {
-								if (in_array($vid, $display_rules_ids)) {
-									$created_fields[] = $field;
-								}
-							}
+				if (!empty($display_rules)) {
+					foreach ($display_rules as $product_id) {
+						$product = wc_get_product($product_id);
+						if ($product->is_type('simple')) {
+							$all_org_variation_ids[] = $product_id;
 						} else {
-							if (count($field['not_show_products_rules']) > 0) {
-								if (!empty($field['not_show_products_rules'])) {
-									foreach ($field['not_show_products_rules'] as $not_show_product_id) {
-										$product = wc_get_product($not_show_product_id);
-										if ($product->is_type('simple')) {
-											$not_show_variation_ids[] = $not_show_product_id;
-										} else {
-											if ($product->is_type('variation')) {
-												$not_show_variation_ids[] = $not_show_product_id;
-											} else {
-												$not_show_variations = new WC_Product_Variable($not_show_product_id);
-												foreach ($not_show_variations->get_children() as  $not_show_v_id) {
-													$not_show_variation_ids[] = $not_show_v_id;
-												}
-											}
-										}
-									}
-								}
-
-								$not_show_variation_ids = array_unique($not_show_variation_ids);
-								$display_rules_ids = array_diff($all_org_variation_ids, $not_show_variation_ids);
-								unset($not_show_variation_ids);
-
-								if (is_null($vid)) {
-									if (in_array($pid, $display_rules_ids)) {
-										$created_fields[] = $field;
-									}
-								} else {
-									if (in_array($vid, $display_rules_ids)) {
-										$created_fields[] = $field;
-									}
-								}
+							if ($product->is_type('variation')) {
+								$all_org_variation_ids[] = $product_id;
 							} else {
-
-								if (is_null($vid)) {
-									if (in_array($pid, $all_org_variation_ids)) {
-										$created_fields[] = $field;
-									}
-								} else {
-									if (in_array($vid, $all_org_variation_ids)) {
-										$created_fields[] = $field;
-									}
+								$variations = new WC_Product_Variable($product_id);
+								foreach ($variations->get_children() as  $v_id) {
+									$all_org_variation_ids[] = $v_id;
 								}
 							}
 						}
 					}
 				}
 
+				$all_org_variation_ids = array_unique($all_org_variation_ids);
+				// if (!empty($extra_fields)) {
+				// 	foreach ($extra_fields as $field) {
+				// 		if ($field['disable_org_show_products_rules']) {
+
+				// 			foreach ($field['inside_show_products_rules'] as $inside_product_id) {
+				// 				$product = wc_get_product($inside_product_id);
+				// 				if ($product->is_type('simple')) {
+				// 					$inside_variation_ids[] = $inside_product_id;
+				// 				} else {
+				// 					if ($product->is_type('variation')) {
+				// 						$inside_variation_ids[] = $inside_product_id;
+				// 					} else {
+				// 						$inside_variations = new WC_Product_Variable($inside_product_id);
+				// 						foreach ($inside_variations->get_children() as  $inside_v_id) {
+				// 							$inside_variation_ids[] = $inside_v_id;
+				// 						}
+				// 					}
+				// 				}
+				// 			}
+
+				// 			$inside_variation_ids = array_unique($inside_variation_ids);
+
+				// 			if (count($field['not_show_products_rules']) > 0) {
+				// 				if (!empty($field['not_show_products_rules'])) {
+				// 					foreach ($field['not_show_products_rules'] as $not_show_product_id) {
+				// 						$product = wc_get_product($not_show_product_id);
+				// 						if ($product->is_type('simple')) {
+				// 							$not_show_variation_ids[] = $not_show_product_id;
+				// 						} else {
+				// 							if ($product->is_type('variation')) {
+				// 								$not_show_variation_ids[] = $not_show_product_id;
+				// 							} else {
+				// 								$not_show_variations = new WC_Product_Variable($not_show_product_id);
+				// 								if (!empty($not_show_variations->get_children())) {
+				// 									foreach ($not_show_variations->get_children() as  $not_show_v_id) {
+				// 										$not_show_variation_ids[] = $not_show_v_id;
+				// 									}
+				// 								}
+				// 							}
+				// 						}
+				// 					}
+				// 				}
+				// 				$not_show_variation_ids = array_unique($not_show_variation_ids);
+				// 				$display_rules_ids = array_diff($inside_variation_ids, $not_show_variation_ids);
+				// 				unset($not_show_variation_ids);
+				// 			} else {
+				// 				$display_rules_ids = $inside_variation_ids;
+				// 				unset($inside_variation_ids);
+				// 			}
+
+				// 			if (is_null($vid)) {
+				// 				if (in_array($pid, $display_rules_ids)) {
+				// 					$created_fields[] = $field;
+				// 				}
+				// 			} else {
+				// 				if (in_array($vid, $display_rules_ids)) {
+				// 					$created_fields[] = $field;
+				// 				}
+				// 			}
+				// 		} else {
+				// 			if (count($field['not_show_products_rules']) > 0) {
+				// 				if (!empty($field['not_show_products_rules'])) {
+				// 					foreach ($field['not_show_products_rules'] as $not_show_product_id) {
+				// 						$product = wc_get_product($not_show_product_id);
+				// 						if ($product->is_type('simple')) {
+				// 							$not_show_variation_ids[] = $not_show_product_id;
+				// 						} else {
+				// 							if ($product->is_type('variation')) {
+				// 								$not_show_variation_ids[] = $not_show_product_id;
+				// 							} else {
+				// 								$not_show_variations = new WC_Product_Variable($not_show_product_id);
+				// 								foreach ($not_show_variations->get_children() as  $not_show_v_id) {
+				// 									$not_show_variation_ids[] = $not_show_v_id;
+				// 								}
+				// 							}
+				// 						}
+				// 					}
+				// 				}
+
+				// 				$not_show_variation_ids = array_unique($not_show_variation_ids);
+				// 				$display_rules_ids = array_diff($all_org_variation_ids, $not_show_variation_ids);
+				// 				unset($not_show_variation_ids);
+
+				// 				if (is_null($vid)) {
+				// 					if (in_array($pid, $display_rules_ids)) {
+				// 						$created_fields[] = $field;
+				// 					}
+				// 				} else {
+				// 					if (in_array($vid, $display_rules_ids)) {
+				// 						$created_fields[] = $field;
+				// 					}
+				// 				}
+				// 			} else {
+
+				// 				if (is_null($vid)) {
+				// 					if (in_array($pid, $all_org_variation_ids)) {
+				// 						$created_fields[] = $field;
+				// 					}
+				// 				} else {
+				// 					if (in_array($vid, $all_org_variation_ids)) {
+				// 						$created_fields[] = $field;
+				// 					}
+				// 				}
+				// 			}
+				// 		}
+				// 	}
+				// }
+
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
 			}
-			var_dump($created_fields);
+			// var_dump($created_fields);
 			var_dump('____________________');
 
 			wp_reset_postdata();
 		}
 
-		return $created_fields;
+		// return $created_fields;
 	}
 }
