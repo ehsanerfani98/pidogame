@@ -412,9 +412,19 @@ if (class_exists('CSF')) {
 
 	// Create like search product section
 	CSF::createSection($prefix, array(
-		'id'			=>	'comments',
+		'id'			=>	'search-product-likes',
 		'title'			=>	'جستجوهای پیشنهادی محصولات',
 		'fields'		=>	array(
+			array(
+				'id'          => 'search-product-likes-field',
+				'type'        => 'select',
+				'title'       => 'محصولات پیشنهادی جهت نمایش در نتایج جستجو',
+				'placeholder' => 'محصولات پیشنهادی را انتخاب کنید.',
+				'options'     => 'post_types',
+				'query_args'  => array(
+					'post_type' => 'product',
+				),
+			),
 		)
 	));
 }
