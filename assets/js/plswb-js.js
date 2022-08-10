@@ -102,7 +102,7 @@ function setLikeComment(item) {
         success: function (response) {
 
             $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
-
+            $(item).find('#like-total').html('(2)');
             console.log(response);
         }
     });
