@@ -424,7 +424,7 @@ if (class_exists('CSF')) {
 				'multiple'    => true,
 				'options'     => 'post_types',
 				'query_args'  => array(
-					'post_type' => 'product',
+					'post_type' => 'products',
 				),
 			),
 		)
