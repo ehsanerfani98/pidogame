@@ -100,12 +100,26 @@ function setLikeComment(item, comment_id) {
             comment_id: comment_id,
         },
         success: function (response) {
-            if(response.status == "set"){
+            if (response.status == "set") {
                 $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
-            }else{
+            } else {
                 $(item).removeClass('svg-icon-danger').addClass('svg-icon-muted');
             }
             $(item).parent().find('#like-total').html('(' + response.total + ')');
         }
     });
 }
+
+jQuery('#search-product').change(function (item) {
+    jQuery.ajax({
+        url: woocommerce_params.ajax_url,
+        type: 'post',
+        data: {
+            action: 'search_data_product',
+            keyword: jQuery(item).val()
+        },
+        success: function (data) {
+            jQuery('#productfetch').html(data);
+        }
+    });
+});
