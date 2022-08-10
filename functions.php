@@ -1079,7 +1079,6 @@ function woo_general_init()
 		);
 
 		$fields_plswb = new WP_Query($arg);
-		dd($fields_plswb);
 
 		if ($fields_plswb->have_posts()) {
 			while ($fields_plswb->have_posts()) {
@@ -1103,6 +1102,8 @@ function woo_general_init()
 				}
 
 				$all_org_variation_ids = array_unique($all_org_variation_ids);
+				dd($all_org_variation_ids);
+
 				foreach ($extra_fields as $field) {
 					if ($field['disable_org_show_products_rules']) {
 
