@@ -1202,9 +1202,10 @@ function woo_general_init()
 				}
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
-				dd('$created_fields');
 
 			}
+			dd('$l');
+
 		}
 
 		wp_reset_postdata();
