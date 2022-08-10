@@ -1,5 +1,4 @@
 <?php
-/* Template Name: پرداخت آزاد */
 
 if (isset($_POST['btn-pay'])) {
     $product_id = create_product(array(
