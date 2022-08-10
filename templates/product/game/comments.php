@@ -80,7 +80,7 @@ function echoFirstLevelComment($comment)
 function echoChildrenComment($comment)
 { ?>
     <?php foreach ($comment->get_children() as $comment) : ?>
-        <div class="border border-left-3 rounded p-2 p-lg-6 mb-5 ms-5 ms-lg-10 bg-gray-100" id="comment-<?php echo $comment->comment_ID ?>">
+        <div class="border-dashed border-primary rounded p-2 p-lg-6 mb-5 ms-5 ms-lg-10 bg-gray-100" id="comment-<?php echo $comment->comment_ID ?>">
             <div class="mb-0">
                 <div class="d-flex flex-stack flex-wrap mb-5">
                     <div class="d-flex align-items-center py-1">
