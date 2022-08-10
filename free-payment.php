@@ -54,7 +54,7 @@ get_header();
                                 <div class="col-6">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
-                                        <input type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
+                                        <input style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                     </div>
                                 </div>
                                 <div class="col-6">
