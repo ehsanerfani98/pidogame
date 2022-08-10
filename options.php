@@ -416,9 +416,9 @@ if (class_exists('CSF')) {
 		'title'			=>	'جستجوهای پیشنهادی محصولات',
 		'fields'		=>	array(
 			array(
-				'id'        => 'opt-repeater-2',
+				'id'        => 'search-product-likes_fields',
 				'type'      => 'repeater',
-				'title'     => 'Repeater',
+				'title'     => 'گزینه های پیشنهادی',
 				'fields'    => array(
 
 					array(
