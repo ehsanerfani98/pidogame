@@ -416,17 +416,36 @@ if (class_exists('CSF')) {
 		'title'			=>	'جستجوهای پیشنهادی محصولات',
 		'fields'		=>	array(
 			array(
-				'id'          => 'search-product-likes-field',
-				'type'        => 'select',
-				'title'       => 'محصولات پیشنهادی جهت نمایش در نتایج جستجو',
-				'placeholder' => 'محصولات پیشنهادی را انتخاب کنید.',
-				'chosen'      => true,
-				'multiple'    => true,
-				'options'     => 'post_types',
-				'query_args'  => array(
-					'post_type' => 'product',
+				'id'        => 'opt-repeater-2',
+				'type'      => 'repeater',
+				'title'     => 'Repeater',
+				'fields'    => array(
+			  
+				  array(
+					'id'    => 'opt-text-1',
+					'type'  => 'text',
+					'title' => 'Text',
+				  ),
+			  
+				  array(
+					'id'    => 'opt-text-2',
+					'type'  => 'text',
+					'title' => 'Text',
+				  ),
+			  
 				),
-			),
+				'default'   => array(
+				  array(
+					'opt-text-1' => 'Text 1 default value',
+					'opt-text-2' => 'Text 2 default value',
+				  ),
+				  array(
+					'opt-text-1' => 'Text 1 default value',
+					'opt-text-2' => 'Text 2 default value',
+				  )
+				)
+			  ),
+			  
 		)
 	));
 }
