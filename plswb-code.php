@@ -605,9 +605,10 @@ function search_data_product()
     $the_query = new WP_Query($args);
     remove_filter('posts_where', 'title_filter', 10, 2);
     $i = 0;
-    if ($i < 4) :
-        if ($the_query->have_posts()) :
-            while ($the_query->have_posts()) : $the_query->the_post(); ?>
+    if ($the_query->have_posts()) :
+        while ($the_query->have_posts()) : $the_query->the_post();
+            if ($i < 4) :
+    ?>
                 <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                     <div class="symbol symbol-40px me-4">
                         <?php the_post_thumbnail() ?>
@@ -617,9 +618,10 @@ function search_data_product()
                     </div>
                 </a>
         <?php
-                $i++;
-            endwhile;
-        endif;
+            endif;
+
+            $i++;
+        endwhile;
         wp_reset_postdata();
     endif;
     if (!empty($options)) :
