@@ -127,7 +127,11 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                         خرید برای <?= get_term($option_id)->name ?>
                                     </button>
                                 </h2>
-                               
+                                <div id="<?= get_term($option_id)->slug ?>" class="accordion-collapse collapse <?= get_term($option_id)->slug == 'pc' ? 'show' : '' ?>" aria-labelledby="kt_accordion_1_header_1" data-bs-parent="#kt_accordion_1">
+                                    <div class="accordion-body">
+                                      er
+                                    </div>
+                                </div>
                             </div>
                         <?php
                             $region_options = [];
