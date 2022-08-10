@@ -553,7 +553,7 @@ function set_like_comment_product()
         $total_like = 1;
     }
     update_comment_meta( $_POST['comment_id'], 'total_like', $total_like );
-    // wp_send_json([
-    //     "data" => 
-    // ]);
+    wp_send_json([
+        "total" => get_comment_meta( $_POST['comment_id'], 'total_like', true )
+    ]);
 }
