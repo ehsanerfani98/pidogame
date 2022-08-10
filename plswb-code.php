@@ -617,9 +617,13 @@ function search_data_product()
                         <span class="fs-6 fw-bold"><?php the_title(); ?></span>
                     </div>
                 </a>
+            <?php
+            endif;
+            if ($i < 5) :
+            ?>
+                <a href="" class="btn btn-primary btn-sm">مشاهده بیشتر</a>
         <?php
             endif;
-
             $i++;
         endwhile;
         wp_reset_postdata();
