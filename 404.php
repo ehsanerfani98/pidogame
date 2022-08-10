@@ -10,7 +10,7 @@ get_header();
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
                    <div class="wrap-404">
-                   <div class="card">
+                   <div class="card shadow">
                         <div class="card-body my-3">
                            <div class="d-flex align-items-center justify-content-center">
                            <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
