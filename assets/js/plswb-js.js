@@ -91,13 +91,13 @@ function open_fields(item) {
     jQuery(item).parent().addClass('d-none');
 }
 
-function setLikeComment(item) {
+function setLikeComment(item, comment_id) {
     jQuery.ajax({
         type: "post",
         url: woocommerce_params.ajax_url,
         data: {
             action: 'set_like_comment_product',
-            // comment_id: comment_id,
+            comment_id: comment_id,
         },
         success: function (response) {
 

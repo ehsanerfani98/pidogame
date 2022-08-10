@@ -548,6 +548,6 @@ add_action('wp_ajax_nopriv_set_like_comment_product', 'set_like_comment_product'
 function set_like_comment_product()
 {
     wp_send_json([
-        "data" => "test"
+        "data" => $_POST['comment_id']
     ]);
 }
