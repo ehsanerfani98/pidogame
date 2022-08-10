@@ -607,7 +607,7 @@ function search_data_product()
     $i = 0;
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post();
-            if ($i < 4) :
+            if ($i < 5) :
     ?>
                 <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                     <div class="symbol symbol-40px me-4">
