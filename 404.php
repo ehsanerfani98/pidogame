@@ -11,7 +11,7 @@ get_header();
                 <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
                     <div class="wrap-404">
                         <div class="row">
-                            <div class="card shadow">
+                            <div class="card shadow mb-5">
                                 <div class="card-body my-3">
                                     <div class="d-flex align-items-center justify-content-center">
                                         <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
