@@ -2278,13 +2278,12 @@ var KTLayoutSearch = function () {
                 },
                 success: function (data) {
                     jQuery('.wrap-search-product').html(data);
-                    t.classList.add("d-none"), 3 === i ? (n.classList.add("d-none"), r.classList.remove("d-none")) : (n.classList.remove("d-none"), r.classList.add("d-none")), e.complete()
+                    t.classList.add("d-none"), e.complete()
                 }
             });
         }), 1500)
     },
         p = function (e) {
-            console.log('dddddd');
             t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
         };
     return {
