@@ -259,7 +259,6 @@
                     <!--end::Heading-->
                     <!--begin::Items-->
                     <div class="scroll-y mh-200px mh-lg-325px wrap-search-product">
-                        
                     </div>
                     <!--end::Items-->
                 </div>
