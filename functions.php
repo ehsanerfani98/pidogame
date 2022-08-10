@@ -1156,8 +1156,6 @@ function woo_general_init()
 							}
 						}
 					} else {
-						dd('hjhh');
-
 						if (count($field['not_show_products_rules']) > 0) {
 
 							foreach ($field['not_show_products_rules'] as $not_show_product_id) {
@@ -1202,7 +1200,7 @@ function woo_general_init()
 						}
 					}
 				}
-
+dd($created_fields);
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
 			}
