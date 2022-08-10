@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 <!-- <p class="woocommerce-info"><?php esc_html_e( 'No products were found matching your selection.', 'woocommerce' ); ?></p> -->
-<div class="alert alert-dismissible bg-light-info border-dashed border-1 border-info d-flex flex-column flex-sm-row w-100 p-5 align-items-center mt-2" <?php echo wc_get_notice_data_attr($notice); ?>>
+<div class="alert alert-dismissible bg-light-info border-dashed border-1 border-info d-flex flex-column flex-sm-row w-100 p-5 align-items-center mt-8" <?php echo wc_get_notice_data_attr($notice); ?>>
 		<!--begin::Icon-->
 		<!--begin::Svg Icon | path: icons/duotune/general/gen007.svg-->
 		<span class="svg-icon svg-icon-2hx svg-icon-info me-4 mb-5 mb-sm-0">
