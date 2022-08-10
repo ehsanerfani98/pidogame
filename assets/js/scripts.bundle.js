@@ -2278,7 +2278,7 @@ var KTLayoutSearch = function () {
                 },
                 success: function (data) {
                     jQuery('.wrap-search-product').html(data);
-                    t.classList.add("d-none"), (n.classList.add("d-none"), r.classList.remove("d-none")) , e.complete()
+                    t.classList.add("d-none"), n.classList.add("d-none"), r.classList.remove("d-none") , e.complete()
                 }
             });
         }), 1500)
