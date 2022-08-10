@@ -223,7 +223,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                     <form onsubmit="return extra_fields(event)" action="" method="post">
                                                                         <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
-                                                                        <div class="d-flex flex-column">juu
+                                                                        <div class="d-flex flex-column">
                                                                             <?php
                                                                              $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                                                             if (count($plswb_fields) > 0) :
@@ -341,8 +341,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                             ?>
                                                                                         <?php
                                                                                         case 'select':
-                                                                                            dd('$item'); 
-
                                                                                         ?>
                                                                                             <div class="form-group mb-4">
                                                                                                 <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
