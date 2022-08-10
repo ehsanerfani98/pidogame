@@ -619,13 +619,14 @@ function search_data_product()
                 </a>
             <?php
             endif;
-            if ($i > 5) :
-            ?>
-                <a href="" class="btn btn-primary btn-sm">مشاهده بیشتر</a>
-        <?php
-            endif;
             $i++;
         endwhile;
+
+        if ($i > 5) :
+            ?>
+            <a href="" class="btn btn-primary btn-sm">مشاهده بیشتر</a>
+        <?php
+        endif;
         wp_reset_postdata();
     endif;
     if (!empty($options)) :
