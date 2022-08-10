@@ -22,6 +22,12 @@ get_header();
                         </div>
                     </div>
                    </div>
+                   <div class="card shadow">
+                        <div class="card-body">
+                            <?php do_shortcode( '[recent_products per_page="4" columns="4" orderby="rand" order="rand"]' ); ?>
+                        </div>
+                    </div>
+                   </div>
                 </div>
             </div>
             <?php get_template_part('templates/page/footer/footer') ?>
