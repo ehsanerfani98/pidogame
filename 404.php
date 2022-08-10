@@ -8,18 +8,20 @@ get_header();
             <?php get_template_part('templates/page/header/header') ?>
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
-                <div class="content flex-row-fluid" id="kt_content">
-                    <div class="card">
+                <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
+                   <div class="wrap-404">
+                   <div class="card">
                         <div class="card-body">
                            <div class="d-flex align-items-center justify-content-center">
                            <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
                             <div class="d-flex align-items-center justify-content-center flex-column">
-                                <span>همممم!</span>
-                                <span>چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</span>
+                                <h1>همممم!</h1>
+                                <h3>چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
                             </div>
                            </div>
                         </div>
                     </div>
+                   </div>
                 </div>
             </div>
             <?php get_template_part('templates/page/footer/footer') ?>
