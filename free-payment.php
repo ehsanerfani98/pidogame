@@ -59,7 +59,7 @@ get_header();
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">تعداد</label>
+                                        <label style="width: 100%;" for="exampleFormControlInput1" class="required form-label">تعداد</label>
                                         <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
                                             <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
