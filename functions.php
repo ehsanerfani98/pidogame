@@ -1104,8 +1104,6 @@ function woo_general_init()
 				$all_org_variation_ids = array_unique($all_org_variation_ids);
 				foreach ($extra_fields as $field) {
 					if ($field['disable_org_show_products_rules']) {
-						dd('hjhh');
-
 						foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 							$product = wc_get_product($inside_product_id);
 							if ($product->is_type('simple')) {
@@ -1158,6 +1156,8 @@ function woo_general_init()
 							}
 						}
 					} else {
+						dd('hjhh');
+
 						if (count($field['not_show_products_rules']) > 0) {
 
 							foreach ($field['not_show_products_rules'] as $not_show_product_id) {
