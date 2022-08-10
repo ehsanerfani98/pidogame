@@ -598,7 +598,7 @@ function search_data_product()
         'posts_per_page' => -1,
         'post_status'   => 'publish',
         'orderby' => 'title',
-        'order' => 'DESC',
+        'order' => 'ASC',
         'search_prod_title' => $_POST['keyword'],
     );
     add_filter('posts_where', 'title_filter', 10, 2);
