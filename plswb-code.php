@@ -541,4 +541,4 @@ function custom_archive_description(){
 
 
 // include(get_template_directory().'/inc/lib/wp-ulike/wp-ulike.php');
-include( plugin_dir_path( __FILE__ ) . '/inc/lib/wp-ulike/wp-ulike.php');
+// include( plugin_dir_path( __FILE__ ) . '/inc/lib/wp-ulike/wp-ulike.php');
