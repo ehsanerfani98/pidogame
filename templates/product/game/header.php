@@ -227,9 +227,9 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                             <?php
                                                                              $plswb_fields = fx_check(get_the_ID(), $variation['variation_id']);
                                                                             if (count($plswb_fields) > 0) :
-                                                                                dd('ss');
                                                                             ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
+                                                                                    <?php dd($item); ?>
                                                                                     <?php switch ($item['type']):
                                                                                         case 'email': ?>
                                                                                             <div class="form-group mb-4">
