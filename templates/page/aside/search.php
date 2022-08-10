@@ -20,7 +20,7 @@
             <!--begin::Wrapper-->
             <div data-kt-search-element="wrapper">
                 <!--begin::Form-->
-                <form data-kt-search-element="form" class="w-100 position-relative mb-3" autocomplete="off">
+                <form data-kt-search-element="form" method="get" action="<?= home_url( 'shop/' ) ?>" class="w-100 position-relative mb-3" autocomplete="off">
                     <!--begin::Icon-->
                     <!--begin::Svg Icon-->
                     <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 translate-middle-y ms-0">
