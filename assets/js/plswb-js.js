@@ -91,7 +91,7 @@ function open_fields(item) {
     jQuery(item).parent().addClass('d-none');
 }
 
-function setLikeComment() {
+function setLikeComment(item) {
     jQuery.ajax({
         type: "post",
         url: woocommerce_params.ajax_url,
@@ -101,7 +101,7 @@ function setLikeComment() {
         },
         success: function (response) {
 
-
+            $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
 
             console.log(response);
         }
