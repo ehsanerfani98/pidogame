@@ -57,7 +57,7 @@ get_header();
                                             <input name="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                         </div>
                                     </div>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-6">
                                         <div class="mb-10">
                                             <label style="width: 100%;" for="exampleFormControlInput1" class="form-label">تعداد</label>
                                             <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
@@ -74,7 +74,7 @@ get_header();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-12" style="text-align: left;">
                                         <button class="btn btn-primary" type="submit" name="btn-pay">پرداخت</button>
                                     </div>
                                 </div>
