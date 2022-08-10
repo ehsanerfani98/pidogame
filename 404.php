@@ -11,7 +11,7 @@ get_header();
                 <div class="content flex-row-fluid" id="kt_content">
                    <div class="card">
                     <div class="card-body">
-                        <img src="<?= get_template_directory_uri().'/assets/media/images/Normal.png' ?>" alt="">
+                        <img width="150" src="<?= get_template_directory_uri().'/assets/media/images/Normal.png' ?>" alt="">
                     </div>
                    </div>
                 </div>
