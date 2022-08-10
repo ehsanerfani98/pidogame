@@ -604,6 +604,13 @@ function search_data_product()
     add_filter( 'posts_where', 'title_filter', 10, 2 );
     $the_query = new WP_Query($args);
     remove_filter( 'posts_where', 'title_filter', 10, 2 );
+    function title_filter( $where, &$wp_query ){
+        global $wpdb;
+        if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
+            $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( like_escape( $search_term ) ) . '%\'';
+        }
+        return $where;
+    }
     
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
