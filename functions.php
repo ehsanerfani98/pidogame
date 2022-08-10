@@ -1103,9 +1103,8 @@ function woo_general_init()
 
 				$all_org_variation_ids = array_unique($all_org_variation_ids);
 				foreach ($extra_fields as $field) {
-					dd($all_org_variation_ids);
-
 					if ($field['disable_org_show_products_rules']) {
+						dd('hjhh');
 
 						foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 							$product = wc_get_product($inside_product_id);
