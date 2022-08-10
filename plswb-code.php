@@ -550,7 +550,9 @@ function set_like_comment_product()
     setcookie(
         $_POST['comment_id'],
         "isset",
-        time() + (10 * 365 * 24 * 60 * 60)
+        time() + (10 * 365 * 24 * 60 * 60),
+        '/',
+         $_SERVER['HTTP_HOST']
       );
       
     if(!empty(get_comment_meta( $_POST['comment_id'], 'total_like', true ))){
@@ -564,8 +566,3 @@ function set_like_comment_product()
     ]);
 }
 
-setcookie(
-    'tthfh',
-    "isset",
-    time() + (10 * 365 * 24 * 60 * 60)
-  );
