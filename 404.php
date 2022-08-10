@@ -15,8 +15,8 @@ get_header();
                                 <div class="card-body my-3">
                                 <div class="d-flex align-items-center justify-content-center flex-column">
                                         <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
-                                            <h1 style="font-size: 5rem;margin-bottom: 1rem;">همممم!</h1>
-                                            <h3 style="font-size: 2.4rem;">چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
+                                            <h1 class="text-gray-600" style="font-size: 5rem;margin-bottom: 1rem;">همممم!</h1>
+                                            <h3 class="text-gray-600" style="font-size: 2.4rem;">چیزی پیدا نکردم! یه نگاه به اینا بنداز شاید خوشت بیاد!</h3>
                                     </div>
                                 </div>
                             </div>
