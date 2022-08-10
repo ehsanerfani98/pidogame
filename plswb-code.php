@@ -612,7 +612,7 @@ function search_data_product()
         <?php
         foreach ($options as $item) :
         ?>
-        <a href="<?= $item['ls_link'] ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+        <a href="<? var_dump($item['ls_link']) ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                 <div class="symbol symbol-40px me-4">
                     <img src="<?= $item['ls_image'] ?>" alt="">
                 </div>
