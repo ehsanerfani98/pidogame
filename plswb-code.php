@@ -625,7 +625,7 @@ function search_data_product()
         if ($i > 5) :
             ?>
             <div class="text-center">
-            <a href="" class="text-primary mb-5">مشاهده بیشتر</a>
+            <a href="<?= home_url( 'shop/?s=' ).$_POST['keyword'] ?>" class="text-primary mb-5">نتایج بیشتر</a>
             </div>
             <hr>
         <?php
