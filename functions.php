@@ -755,7 +755,7 @@ add_action('woocommerce_add_to_cart', function () {
 			</button>
 			<!--end::Close-->
 		</div>
-	<?php
+<?php
 	});
 });
 
@@ -1081,15 +1081,11 @@ function woo_general_init()
 
 		$fields_plswb = new WP_Query($arg);
 
+		if ($fields_plswb->have_posts()) {
 		
+		}
+		dd('$l');
 
-
-		
-		dd('$ddl');
-
-		// return $created_fields;
-
+		return $created_fields;
 	}
 }
-
-
