@@ -2277,7 +2277,6 @@ var KTLayoutSearch = function () {
                     keyword: jQuery('#search-product').val()
                 },
                 success: function (data) {
-                    console.log(data);
                     jQuery('.wrap-search-product').html(data);
                     t.classList.add("d-none"), 200 === i ? (n.classList.add("d-none"), r.classList.remove("d-none")) : (n.classList.remove("d-none"), r.classList.add("d-none")), e.complete()
                 }

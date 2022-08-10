@@ -606,11 +606,22 @@ function search_data_product()
         <?php endwhile;
         wp_reset_postdata();
     endif;
-
-    foreach ($options as $item) :
+    if (!empty($options)) :
         ?>
-        <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">محصولات</h3>
+        <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">محصولات پیشنهادی پیدوگیم</h3>
+        <?php
+        foreach ($options as $item) :
+        ?>
+        <a href="<?= $item['ls_link'] ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                <div class="symbol symbol-40px me-4">
+                    <img src="<?= $item['ls_image'] ?>" alt="">
+                </div>
+                <div class="d-flex flex-column justify-content-start fw-bold">
+                    <span class="fs-6 fw-bold"><?= $item['ls_title'] ?></span>
+                </div>
+            </a>
 <?php
-    endforeach;
+        endforeach;
+    endif;
     die();
 }
