@@ -24,11 +24,7 @@ get_header();
                             </div>
                         </div>
                         <div class="row">
-                            <div class="card shadow">
-                                <div class="card-body">
                                     <?= do_shortcode('[recent_products per_page="8" columns="8" orderby="rand" order="rand"]'); ?>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
