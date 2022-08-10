@@ -605,22 +605,21 @@ function search_data_product()
     $the_query = new WP_Query($args);
     remove_filter('posts_where', 'title_filter', 10, 2);
     $i = 0;
-    if ($the_query->have_posts()) :
-        while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                <div class="symbol symbol-40px me-4">
-                    <?php the_post_thumbnail() ?>
-                </div>
-                <div class="d-flex flex-column justify-content-start fw-bold">
-                    <span class="fs-6 fw-bold"><?php the_title(); ?></span>
-                </div>
-            </a>
+    if ($i < 4) :
+        if ($the_query->have_posts()) :
+            while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                    <div class="symbol symbol-40px me-4">
+                        <?php the_post_thumbnail() ?>
+                    </div>
+                    <div class="d-flex flex-column justify-content-start fw-bold">
+                        <span class="fs-6 fw-bold"><?php the_title(); ?></span>
+                    </div>
+                </a>
         <?php
-            if ($i < 4) {
-                break;
-            }
-            $i++;
-        endwhile;
+                $i++;
+            endwhile;
+        endif;
         wp_reset_postdata();
     endif;
     if (!empty($options)) :
