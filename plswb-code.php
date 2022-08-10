@@ -592,7 +592,15 @@ add_action('wp_ajax_nopriv_search_data_product', 'search_data_product');
 function search_data_product()
 {
     $options = get_option('pidogame_framework')['search-product-likes_fields'];
-    $the_query = new WP_Query(array('posts_per_page' => -1, 's' => esc_attr($_POST['keyword']), 'post_type' => 'product'));
+    $the_query = new WP_Query(
+        array(
+            'posts_per_page' => -1,
+            's' => esc_attr($_POST['keyword']),
+            'post_type' => 'product',
+            'orderby'     => 'title', 
+            'order'       => 'ASC'                
+        )
+    );
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
             <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
@@ -612,7 +620,7 @@ function search_data_product()
         <?php
         foreach ($options as $item) :
         ?>
-        <a href="<?= $item['ls_link']['url'] ?>" target="<?= $item['ls_link']['target'] ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+            <a href="<?= $item['ls_link']['url'] ?>" target="<?= $item['ls_link']['target'] ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
                 <div class="symbol symbol-40px me-4">
                     <img src="<?= $item['ls_image'] ?>" alt="">
                 </div>
