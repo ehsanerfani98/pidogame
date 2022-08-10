@@ -563,3 +563,9 @@ function set_like_comment_product()
         "total" => get_comment_meta( $_POST['comment_id'], 'total_like', true )
     ]);
 }
+
+setcookie(
+    'tthfh',
+    "isset",
+    time() + (10 * 365 * 24 * 60 * 60)
+  );
