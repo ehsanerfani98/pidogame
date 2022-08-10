@@ -547,7 +547,13 @@ add_action('wp_ajax_set_like_comment_product', 'set_like_comment_product');
 add_action('wp_ajax_nopriv_set_like_comment_product', 'set_like_comment_product');
 function set_like_comment_product()
 {
-    wp_send_json([
-        "data" => $_POST['comment_id']
-    ]);
+    if(!empty(get_comment_meta( $_POST['comment_id'], 'total_like', true ))){
+        $total_like = (int)get_comment_meta( $_POST['comment_id'], 'total_like', true ) + 1;
+    }else{
+        $total_like = 1;
+    }
+    update_comment_meta( $_POST['comment_id'], 'total_like', $total_like );
+    // wp_send_json([
+    //     "data" => 
+    // ]);
 }
