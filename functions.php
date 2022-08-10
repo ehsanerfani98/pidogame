@@ -1070,7 +1070,6 @@ function woo_general_init()
 {
 	function fx_check($pid, $vid)
 	{
-dd('dd');
 		unset($created_fields);
 
 		$arg = array(
@@ -1080,6 +1079,8 @@ dd('dd');
 		);
 
 		$fields_plswb = new WP_Query($arg);
+		dd($fields_plswb);
+
 		if ($fields_plswb->have_posts()) {
 			while ($fields_plswb->have_posts()) {
 				$fields_plswb->the_post();
