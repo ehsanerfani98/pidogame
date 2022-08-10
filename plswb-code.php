@@ -592,7 +592,7 @@ add_action('wp_ajax_nopriv_search_data_product', 'search_data_product');
 function search_data_product()
 {
     wp_send_json( [
-        "data" => get_option('search-product-likes')
+        "data" => get_option('pidogame_framework')
     ] );
     $the_query = new WP_Query(array('posts_per_page' => -1, 's' => esc_attr($_POST['keyword']), 'post_type' => 'product'));
     if ($the_query->have_posts()) :
