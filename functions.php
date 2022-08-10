@@ -1110,7 +1110,7 @@ function woo_general_init()
 						if ($field['disable_org_show_products_rules']) {
 							foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 								$product = wc_get_product($inside_product_id);
-																var_dump($product->is_type('simple'));
+																var_dump($$inside_product_id,$product->is_type('simple'));
 								// if ($product->is_type('simple')) {
 								// 	$inside_variation_ids[] = $inside_product_id;
 								// } else {
