@@ -409,6 +409,14 @@ if (class_exists('CSF')) {
 			),
 		)
 	));
+
+	// Create like search product section
+	CSF::createSection($prefix, array(
+		'id'			=>	'comments',
+		'title'			=>	'جستجوهای پیشنهادی محصولات',
+		'fields'		=>	array(
+		)
+	));
 }
 
 // Product settings
