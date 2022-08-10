@@ -15,7 +15,7 @@ get_header();
                            <div class="d-flex align-items-center justify-content-center">
                            <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
                             <div class="d-flex align-items-center justify-content-center flex-column">
-                                <h1>همممم!</h1>
+                                <h1 style="font-size: 26px;">همممم!</h1>
                                 <h3>چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
                             </div>
                            </div>
