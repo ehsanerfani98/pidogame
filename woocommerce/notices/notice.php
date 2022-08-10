@@ -41,11 +41,11 @@ if (!$notices) {
 		<!--begin::Content-->
 		<div class="d-flex flex-column pe-0 pe-sm-10">
 			<span>
-<?php echo wc_kses_notice($notice['notice']); ?>
+				<?php echo wc_kses_notice($notice['notice']); ?>
 			</span>
 		</div>
 		<!--end::Content-->
-		
+
 	</div>
 	<!-- <div class="woocommerce-info" <?php echo wc_get_notice_data_attr($notice); ?>>
 		<?php echo wc_kses_notice($notice['notice']); ?>
