@@ -31,66 +31,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
         <?php get_template_part('templates/product/game/header-card') ?>
     </div>
     <div class="col-lg-7 col-xl-8">
-        <div class="row mb-4">
-            <div class="card">
-                <div class="card-body" dir="ltr" style="padding:10px 0px;">
-
-                    <?php
-                    $attachment_ids = $product->get_gallery_image_ids();
-                    ?>
-
-
-                    <?php foreach ($attachment_ids as $attachment_id) : ?>
-                        <div class="mySlides" style="width: 100%;height: 400px;">
-                            <a style="height: 100%" class="d-block overlay" data-fslightbox="lightbox-basic" href="<?= wp_get_attachment_url($attachment_id) ?>">
-                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover min-h-175px" style="border-radius: 8px;background-size: cover; width:100%;height: 100%;background-image:url('<?= wp_get_attachment_url($attachment_id) ?>">
-                                </div>
-                                <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
-                                    <i class="bi bi-eye-fill text-white fs-3x"></i>
-                                </div>
-                            </a>
-                            <!-- <img class="rounded" src="<?= wp_get_attachment_url($attachment_id) ?>" style="width:100%;height: 100%;object-fit: cover;"> -->
-                        </div>
-                    <?php endforeach; ?>
-
-
-                    <?php if ($meta['opt-product-trailer-video']) : ?>
-                        <div class="mySlides" style="width: 100%;height: 400px;">
-                            <video class="rounded" width="100%" height="100%" controls>
-                                <source src="<?= $meta['opt-product-trailer-video'] ?>" type="video/mp4">
-                            </video>
-                        </div>
-                    <?php endif; ?>
-
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
-
-                    <!-- <div class="caption-container">
-                            <p id="caption"></p>
-                        </div> -->
-
-                    <div class="row px-2 pt-4">
-                        <?php
-                        $i = 1;
-                        foreach ($attachment_ids as $attachment_id) : ?>
-                            <div class="column px-1 mb-2" style="width: 20%; height: 75px;">
-                                <img class="demo cursor rounded" src="<?= wp_get_attachment_url($attachment_id) ?>" style="width:100%;height: 100%;object-fit: cover;" onclick="currentSlide(<?= $i++ ?>)" alt="">
-                            </div>
-                        <?php endforeach; ?>
-
-                        <?php
-                        if ($meta['opt-product-trailer-video']) : ?>
-                            <div class="column px-1 mb-2" style="width: 20%; height: 75px;">
-                                <img class="demo cursor rounded" src="<?= $meta['opt-product-trailer-image']['url'] ?>" style="width:100%;height: 100%;object-fit: cover;" onclick="currentSlide(<?= $i++ ?>)" alt="">
-
-                            </div>
-                        <?php endif;
-                        ?>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
 
         <div class="row mb-4">
             <div class="card">
