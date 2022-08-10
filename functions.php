@@ -1085,7 +1085,7 @@ function woo_general_init()
 
 
 		}
-		dd('$sl');
+		dd('$ddl');
 
 		return $created_fields;
 
