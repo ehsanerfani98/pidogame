@@ -111,16 +111,6 @@ function setLikeComment(item, comment_id) {
 }
 
 jQuery('#search-product').change(function (item) {
-    jQuery.ajax({
-        url: woocommerce_params.ajax_url,
-        type: 'post',
-        data: {
-            action: 'search_data_product',
-            keyword: jQuery('#search-product').val()
-        },
-        success: function (data) {
-            jQuery('.wrap-search-product').html(data);
-        }
-    });
+    
 });
 
