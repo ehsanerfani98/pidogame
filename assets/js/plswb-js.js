@@ -119,7 +119,7 @@ jQuery('#search-product').change(function (item) {
             keyword: jQuery(item).val()
         },
         success: function (data) {
-            jQuery('#productfetch').html(data);
+            jQuery('.wrap-search-product').html(data);
         }
     });
 });
