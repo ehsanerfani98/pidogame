@@ -1205,8 +1205,8 @@ function woo_general_init()
 				return $created_fields;
 
 			}
-			wp_reset_postdata();
 		}
+		wp_reset_postdata();
 
 	}
 }
