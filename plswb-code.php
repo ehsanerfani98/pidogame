@@ -591,9 +591,12 @@ add_action('wp_ajax_search_data_product', 'search_data_product');
 add_action('wp_ajax_nopriv_search_data_product', 'search_data_product');
 function search_data_product()
 {
-    if(empty($_POST['keyword'])){
-        return;
-    }
+    wp_send_json( [
+        "data" => $_POST['keyword']
+    ] );
+    // if(empty($_POST['keyword'])){
+    //     return;
+    // }
     $the_query = new WP_Query(array('posts_per_page' => -1, 's' => esc_attr($_POST['keyword']), 'post_type' => 'product'));
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
