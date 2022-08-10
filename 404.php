@@ -9,30 +9,30 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid d-flex justify-content-center" id="kt_content">
-                   <div class="wrap-404">
-                   <div class="card shadow">
-                        <div class="card-body my-3">
-                           <div class="d-flex align-items-center justify-content-center">
-                           <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
-                            <div class="d-flex align-items-center justify-content-center flex-column">
-                                <h1 style="font-size: 5rem;margin-bottom: 1rem;">همممم!</h1>
-                                <h3 style="font-size: 2.4rem;">چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
+                    <div class="wrap-404 d-flex flex-column align-items-center">
+                        <div class="card shadow">
+                            <div class="card-body my-3">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img width="150" src="<?= get_template_directory_uri() . '/assets/media/images/Normal.png' ?>" alt="">
+                                    <div class="d-flex align-items-center justify-content-center flex-column">
+                                        <h1 style="font-size: 5rem;margin-bottom: 1rem;">همممم!</h1>
+                                        <h3 style="font-size: 2.4rem;">چیزی پیدا نکردم! یه نگاه به بازی های زیر بنداز شاید خوشت بیاد!</h3>
+                                    </div>
+                                </div>
                             </div>
-                           </div>
                         </div>
                     </div>
-                   </div>
-                   <div class="card shadow">
+                    <div class="card shadow">
                         <div class="card-body">
-                            <?php do_shortcode( '[recent_products per_page="4" columns="4" orderby="rand" order="rand"]' ); ?>
+                            <?= do_shortcode('[recent_products per_page="4" columns="4" orderby="rand" order="rand"]'); ?>
                         </div>
                     </div>
-                   </div>
                 </div>
             </div>
-            <?php get_template_part('templates/page/footer/footer') ?>
         </div>
+        <?php get_template_part('templates/page/footer/footer') ?>
     </div>
+</div>
 </div>
 <?php get_template_part('templates/page/drawers/drawers') ?>
 <?php get_template_part('templates/page/scrolltop/scrolltop') ?>
