@@ -591,9 +591,7 @@ add_action('wp_ajax_search_data_product', 'search_data_product');
 add_action('wp_ajax_nopriv_search_data_product', 'search_data_product');
 function search_data_product()
 {
-    wp_send_json( [
-        "data" => get_option('pidogame_framework')
-    ] );
+    $options = get_option('pidogame_framework')['search-product-likes_fields'];
     $the_query = new WP_Query(array('posts_per_page' => -1, 's' => esc_attr($_POST['keyword']), 'post_type' => 'product'));
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -609,7 +607,7 @@ function search_data_product()
         wp_reset_postdata();
     endif;
 
-    foreach ($options['search-product-likes_fields'] as $item) :
+    foreach ($options as $item) :
         ?>
         <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">محصولات</h3>
 <?php
