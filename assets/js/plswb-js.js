@@ -101,7 +101,7 @@ function setLikeComment(item, comment_id) {
         },
         success: function (response) {
             $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
-            $(item).parent().find('#like-total').html('(' + response.total + ')');
+            $(item).parent().find('#like-total').html('"(" + response.total + ")"');
         }
     });
 }
