@@ -28,9 +28,94 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
     </div>
 
     <div class="col-lg-5 col-xl-4">
+        <?php get_template_part('templates/product/game/header-card') ?>
     </div>
     <div class="col-lg-7 col-xl-8">
-      
+        <div class="row mb-4">
+            <div class="card">
+                <div class="card-body" dir="ltr" style="padding:10px 0px;">
+
+                    <?php
+                    $attachment_ids = $product->get_gallery_image_ids();
+                    ?>
+
+
+                    <?php foreach ($attachment_ids as $attachment_id) : ?>
+                        <div class="mySlides" style="width: 100%;height: 400px;">
+                            <a style="height: 100%" class="d-block overlay" data-fslightbox="lightbox-basic" href="<?= wp_get_attachment_url($attachment_id) ?>">
+                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover min-h-175px" style="border-radius: 8px;background-size: cover; width:100%;height: 100%;background-image:url('<?= wp_get_attachment_url($attachment_id) ?>">
+                                </div>
+                                <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
+                                    <i class="bi bi-eye-fill text-white fs-3x"></i>
+                                </div>
+                            </a>
+                            <!-- <img class="rounded" src="<?= wp_get_attachment_url($attachment_id) ?>" style="width:100%;height: 100%;object-fit: cover;"> -->
+                        </div>
+                    <?php endforeach; ?>
+
+
+                    <?php if ($meta['opt-product-trailer-video']) : ?>
+                        <div class="mySlides" style="width: 100%;height: 400px;">
+                            <video class="rounded" width="100%" height="100%" controls>
+                                <source src="<?= $meta['opt-product-trailer-video'] ?>" type="video/mp4">
+                            </video>
+                        </div>
+                    <?php endif; ?>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                    <!-- <div class="caption-container">
+                            <p id="caption"></p>
+                        </div> -->
+
+                    <div class="row px-2 pt-4">
+                        <?php
+                        $i = 1;
+                        foreach ($attachment_ids as $attachment_id) : ?>
+                            <div class="column px-1 mb-2" style="width: 20%; height: 75px;">
+                                <img class="demo cursor rounded" src="<?= wp_get_attachment_url($attachment_id) ?>" style="width:100%;height: 100%;object-fit: cover;" onclick="currentSlide(<?= $i++ ?>)" alt="">
+                            </div>
+                        <?php endforeach; ?>
+
+                        <?php
+                        if ($meta['opt-product-trailer-video']) : ?>
+                            <div class="column px-1 mb-2" style="width: 20%; height: 75px;">
+                                <img class="demo cursor rounded" src="<?= $meta['opt-product-trailer-image']['url'] ?>" style="width:100%;height: 100%;object-fit: cover;" onclick="currentSlide(<?= $i++ ?>)" alt="">
+
+                            </div>
+                        <?php endif;
+                        ?>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="notice gift-notice d-flex bg-light-warning rounded border-warning border border-dashed p-5">
+                        <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"></rect>
+                                <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor"></rect>
+                                <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"></rect>
+                            </svg>
+                        </span>
+                        <div class="d-flex flex-stack flex-grow-1">
+                            <div class="fw-bold">
+                                <h4 class="text-gray-900 fw-bolder"><?php echo $meta['opt-product-modal-form-warning-title'] ?></h4>
+                                <div class="fs-6 text-gray-600 mt-2 ss02"><?php echo wpautop($meta['opt-product-modal-form-warning-content']) ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
     </div>
 
     <div class="col-lg-12">
