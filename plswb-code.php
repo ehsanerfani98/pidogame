@@ -595,10 +595,11 @@ function search_data_product()
     $the_query = new WP_Query(
         array(
             'posts_per_page' => -1,
-            's' => esc_attr($_POST['keyword']),
             'post_type' => 'product',
-            'orderby'     => 'title', 
-            'order'       => 'ASC'                
+            'title' => esc_attr($_POST['keyword']),
+            'orderby'     => 'title',
+            'order'       => 'ASC',
+            'post_status' => 'publish',
         )
     );
     if ($the_query->have_posts()) :
