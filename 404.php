@@ -26,7 +26,7 @@ get_header();
                         <div class="row">
                             <div class="card shadow">
                                 <div class="card-body">
-                                    <?= do_shortcode('[recent_products per_page="9" columns="3" orderby="rand" order="rand"]'); ?>
+                                    <?= do_shortcode('[recent_products per_page="8" columns="8" orderby="rand" order="rand"]'); ?>
                                 </div>
                             </div>
                         </div>
