@@ -229,7 +229,6 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                             if (count($plswb_fields) > 0) :
                                                                             ?>
                                                                                 <?php foreach ($plswb_fields as $key => $item) : ?>
-                                                                                    <?php dd($item); ?>
                                                                                     <?php switch ($item['type']):
                                                                                         case 'email': ?>
                                                                                             <div class="form-group mb-4">
@@ -342,6 +341,8 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                             ?>
                                                                                         <?php
                                                                                         case 'select':
+                                                                                            dd('$item'); 
+
                                                                                         ?>
                                                                                             <div class="form-group mb-4">
                                                                                                 <label for="select_<?= $variation['variation_id'] . $key ?>"><?= $item['title'] ?> <?= $item['required'] ? '<span style="color:red">(الزامی)</span>' : '' ?>
