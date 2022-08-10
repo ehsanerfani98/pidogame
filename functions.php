@@ -1084,10 +1084,10 @@ function woo_general_init()
 		
 
 
-		}
+		
 		dd('$ddl');
 
-		return $created_fields;
+		// return $created_fields;
 
 	}
 }
