@@ -3,27 +3,11 @@
 
 if (isset($_POST['btn-pay'])) {
     $product_id = create_product(array(
-        'type'               => '', // Simple product by default
-        'name'               => __("The product title", "woocommerce"),
-        'description'        => __("The product description…", "woocommerce"),
-        'short_description'  => __("The product short description…", "woocommerce"),
-        // 'sku'                => '',
-        'regular_price'      => '5.00', // product price
+        'type'               => '', 
+        'name'               => $_POST['title_product'],
+        'regular_price'      => $_POST['amount'], 
         // 'sale_price'         => '',
-        'reviews_allowed'    => true,
-        'attributes'         => array(
-            // Taxonomy and term name values
-            'pa_color' => array(
-                'term_names' => array('Red', 'Blue'),
-                'is_visible' => true,
-                'for_variation' => false,
-            ),
-            'pa_size' =>  array(
-                'term_names' => array('X Large'),
-                'is_visible' => true,
-                'for_variation' => false,
-            ),
-        ),
+        'reviews_allowed'    => false,
     ));
 }
 
@@ -51,10 +35,16 @@ get_header();
                             </div>
                             <div class="card-footer">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-3">
+                                        <div class="mb-10">
+                                            <label for="exampleFormControlInput1" class="required form-label">عنوان محصول</label>
+                                            <input required name="title_product" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
                                         <div class="mb-10">
                                             <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
-                                            <input name="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
+                                            <input required name="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
