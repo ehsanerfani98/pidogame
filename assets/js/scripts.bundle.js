@@ -2296,6 +2296,7 @@ var KTLayoutSearch = function () {
                     t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
                 }
             });
+            t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
 
         };
     return {
