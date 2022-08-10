@@ -624,7 +624,8 @@ function search_data_product()
 
         if ($i > 5) :
             ?>
-            <a href="" class="text-muted">مشاهده بیشتر</a>
+            <a href="" class="text-primary mb-5">مشاهده بیشتر</a>
+            <hr>
         <?php
         endif;
         wp_reset_postdata();
