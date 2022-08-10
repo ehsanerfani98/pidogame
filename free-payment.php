@@ -41,10 +41,19 @@ get_header();
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
                     <div class="card">
-                    <div class="card-header">
-                    <div class="card-title"><h1><?php the_title() ?></h1></div>
-                    </div>
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h1><?php the_title() ?></h1>
+                            </div>
+                        </div>
                         <div class="card-body">
+                            <?php the_content() ?>
+                        </div>
+                        <div class="card-footer">
+                            <div class="mb-10">
+                                <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
+                                <input type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
+                            </div>
                         </div>
                     </div>
                 </div>
