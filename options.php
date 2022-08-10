@@ -434,13 +434,13 @@ if (class_exists('CSF')) {
 					array(
 						'id'    => 'ls_title',
 						'type'  => 'text',
-						'title' => 'Text',
+						'title' => 'عنوان گزینه پیشنهادی',
 					),
 
 					array(
 						'id'    => 'ls_link',
 						'type'  => 'link',
-						'title' => 'Text',
+						'title' => 'آدزس صفحه محصول',
 					),
 
 				)
