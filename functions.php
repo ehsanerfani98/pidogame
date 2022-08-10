@@ -1200,12 +1200,12 @@ function woo_general_init()
 						}
 					}
 				}
-dd($created_fields);
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
 			}
 			wp_reset_postdata();
 		}
+		dd($created_fields);
 
 		return $created_fields;
 	}
