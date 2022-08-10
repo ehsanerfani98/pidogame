@@ -2284,8 +2284,19 @@ var KTLayoutSearch = function () {
         }), 1500)
     },
         p = function (e) {
-            console.log('dddddd');
-            t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
+            jQuery.ajax({
+                url: woocommerce_params.ajax_url,
+                type: 'post',
+                data: {
+                    action: 'search_data_product',
+                    keyword: jQuery('#search-product').val()
+                },
+                success: function (data) {
+                    jQuery('.wrap-search-product').html(data);
+                    t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
+                }
+            });
+
         };
     return {
         init: function () {
