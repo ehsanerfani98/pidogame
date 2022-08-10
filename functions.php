@@ -1205,7 +1205,7 @@ function woo_general_init()
 
 			}
 		}
-		dd($created_fields);
+		dd('$created_fields');
 
 		wp_reset_postdata();
 		return $created_fields;
