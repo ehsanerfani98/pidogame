@@ -1216,6 +1216,7 @@ function woo_general_init()
 
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
+				var_dump($created_fields);
 			}
 			wp_reset_postdata();
 		}
