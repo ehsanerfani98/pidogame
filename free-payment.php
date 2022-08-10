@@ -54,6 +54,29 @@ get_header();
                                 <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
                                 <input type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                             </div>
+                            <div class="mb-10">
+                                <label for="exampleFormControlInput1" class="required form-label">مبلغ (تومان)</label>
+                                <!--begin::Dialer-->
+                                <div class="position-relative w-md-300px" data-kt-dialer="true" data-kt-dialer-min="1000" data-kt-dialer-max="50000" data-kt-dialer-step="1000" data-kt-dialer-prefix="$" data-kt-dialer-decimals="2">
+
+                                    <!--begin::Decrease control-->
+                                    <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
+                                        <span class="svg-icon svg-icon-1"><svg></svg></span>
+                                    </button>
+                                    <!--end::Decrease control-->
+
+                                    <!--begin::Input control-->
+                                    <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly value="$36,000.00" />
+                                    <!--end::Input control-->
+
+                                    <!--begin::Increase control-->
+                                    <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
+                                        <span class="svg-icon svg-icon-1"><svg></svg></span>
+                                    </button>
+                                    <!--end::Increase control-->
+                                </div>
+                                <!--end::Dialer-->
+                            </div>
                         </div>
                     </div>
                 </div>
