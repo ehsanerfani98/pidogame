@@ -1065,9 +1065,9 @@ function custom_price_format($price, $product)
 }
 
 
-// add_action('init', 'woo_general_init');
-// function woo_general_init()
-// {
+add_action('init', 'woo_general_init');
+function woo_general_init()
+{
 	function fx_check($pid, $vid)
 	{
 		unset($created_fields);
@@ -1202,6 +1202,7 @@ function custom_price_format($price, $product)
 				}
 				unset($all_org_variation_ids);
 				unset($inside_variation_ids);
+		dd($created_fields);
 
 			}
 			wp_reset_postdata();
@@ -1209,6 +1210,6 @@ function custom_price_format($price, $product)
 
 		return $created_fields;
 	}
-// }
+}
 
 
