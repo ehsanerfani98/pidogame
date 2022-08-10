@@ -1110,19 +1110,19 @@ function woo_general_init()
 						if ($field['disable_org_show_products_rules']) {
 							foreach ($field['inside_show_products_rules'] as $inside_product_id) {
 								$product = wc_get_product($inside_product_id);
-								// var_dump(wc_get_product($inside_product_id));
-								// if ($product->is_type('simple')) {
-								// 	$inside_variation_ids[] = $inside_product_id;
-								// } else {
-								// 	if ($product->is_type('variation')) {
-								// 		$inside_variation_ids[] = $inside_product_id;
-								// 	} else {
-								// 		$inside_variations = new WC_Product_Variable($inside_product_id);
-								// 		foreach ($inside_variations->get_children() as  $inside_v_id) {
-								// 			$inside_variation_ids[] = $inside_v_id;
-								// 		}
-								// 	}
-								// }
+								var_dump(wc_get_product($inside_product_id));
+								if ($product->is_type('simple')) {
+									$inside_variation_ids[] = $inside_product_id;
+								} else {
+									if ($product->is_type('variation')) {
+										$inside_variation_ids[] = $inside_product_id;
+									} else {
+										$inside_variations = new WC_Product_Variable($inside_product_id);
+										foreach ($inside_variations->get_children() as  $inside_v_id) {
+											$inside_variation_ids[] = $inside_v_id;
+										}
+									}
+								}
 							}
 
 							// $inside_variation_ids = array_unique($inside_variation_ids);
