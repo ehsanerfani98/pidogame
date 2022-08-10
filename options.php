@@ -422,7 +422,10 @@ if (class_exists('CSF')) {
 				'placeholder' => 'محصولات پیشنهادی را انتخاب کنید.',
 				'chosen'      => true,
 				'multiple'    => true,
-				'options'     => 'product',
+				'options'     => 'post_types',
+				'query_args'  => array(
+					'post_type' => 'product',
+				),
 			),
 		)
 	));
