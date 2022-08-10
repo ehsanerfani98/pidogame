@@ -100,7 +100,11 @@ function setLikeComment(item, comment_id) {
             comment_id: comment_id,
         },
         success: function (response) {
-            $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
+            if(response.status == "set"){
+                $(item).removeClass('svg-icon-muted').addClass('svg-icon-danger');
+            }else{
+                $(item).removeClass('svg-icon-danger').addClass('svg-icon-muted');
+            }
             $(item).parent().find('#like-total').html('(' + response.total + ')');
         }
     });

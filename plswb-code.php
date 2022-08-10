@@ -552,17 +552,28 @@ function set_like_comment_product()
         "isset",
         time() + (10 * 365 * 24 * 60 * 60),
         '/',
-         $_SERVER['HTTP_HOST']
-      );
-      
-    if(!empty(get_comment_meta( $_POST['comment_id'], 'total_like', true ))){
-        $total_like = (int)get_comment_meta( $_POST['comment_id'], 'total_like', true ) + 1;
-    }else{
-        $total_like = 1;
-    }
-    update_comment_meta( $_POST['comment_id'], 'total_like', $total_like );
-    wp_send_json([
-        "total" => get_comment_meta( $_POST['comment_id'], 'total_like', true )
-    ]);
-}
+        $_SERVER['HTTP_HOST']
+    );
 
+    if (isset($_COOKIE[$_POST['comment_id']])) {
+        $total_like = (int)get_comment_meta($_POST['comment_id'], 'total_like', true) - 1;
+        unset($_COOKIE[$_POST['comment_id']]);
+        wp_send_json([
+            "total" => get_comment_meta($_POST['comment_id'], 'total_like', true),
+            "status" => "unset"
+        ]);
+
+    } else {
+        if (!empty(get_comment_meta($_POST['comment_id'], 'total_like', true))) {
+            $total_like = (int)get_comment_meta($_POST['comment_id'], 'total_like', true) + 1;
+        } else {
+            $total_like = 1;
+        }
+        update_comment_meta($_POST['comment_id'], 'total_like', $total_like);
+        wp_send_json([
+            "total" => get_comment_meta($_POST['comment_id'], 'total_like', true),
+            "status" => "set"
+        ]);
+    }
+    
+}
