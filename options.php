@@ -433,16 +433,6 @@ if (class_exists('CSF')) {
 					'title' => 'Text',
 				  ),
 			  
-				),
-				'default'   => array(
-				  array(
-					'opt-text-1' => 'Text 1 default value',
-					'opt-text-2' => 'Text 2 default value',
-				  ),
-				  array(
-					'opt-text-1' => 'Text 1 default value',
-					'opt-text-2' => 'Text 2 default value',
-				  )
 				)
 			  ),
 			  
