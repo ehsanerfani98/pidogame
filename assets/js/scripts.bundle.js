@@ -2269,11 +2269,11 @@ var KTLayoutSearch = function () {
     var e, t, n, i, r, o, a, l, s, u, d, c, m, f = function (e) {
         setTimeout((function () {
             var i = KTUtil.getRandomInt(1, 3);
+            console.log('ddd');
             t.classList.add("d-none"), 3 === i ? (n.classList.add("d-none"), r.classList.remove("d-none")) : (n.classList.remove("d-none"), r.classList.add("d-none")), e.complete()
         }), 1500)
     },
         p = function (e) {
-            console.log('ff');
             t.classList.remove("d-none"), n.classList.add("d-none"), r.classList.add("d-none")
         };
     return {
