@@ -91,6 +91,19 @@ function open_fields(item) {
     jQuery(item).parent().addClass('d-none');
 }
 
-function setLikeComment(){
-    console.log('ss');
+function setLikeComment() {
+    jQuery.ajax({
+        type: "post",
+        url: woocommerce_params.ajax_url,
+        data: {
+            action: 'set_like_comment_product',
+            // comment_id: comment_id,
+        },
+        success: function (response) {
+
+
+
+            console.log(response);
+        }
+    });
 }
