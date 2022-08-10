@@ -1070,7 +1070,6 @@ function woo_general_init()
 {
 	function fx_check($pid, $vid)
 	{
-		dd('$l');
 
 		unset($created_fields);
 
@@ -1210,6 +1209,7 @@ function woo_general_init()
 
 
 		}
+		dd('$sl');
 
 		return $created_fields;
 
