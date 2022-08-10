@@ -110,7 +110,7 @@ function setLikeComment(item, comment_id) {
     });
 }
 
-jQuery('#search-product').change(function (item) {
+// jQuery('#search-product').change(function (item) {
     
-});
+// });
 
