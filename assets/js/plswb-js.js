@@ -124,4 +124,3 @@ jQuery('#search-product').change(function (item) {
     });
 });
 
-

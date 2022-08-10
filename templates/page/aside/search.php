@@ -1,6 +1,6 @@
 <div class="aside-search flex-column-auto pt-5 pt-lg-13" id="kt_aside_search">
     <!--begin::Search-->
-    <div id="" class="d-flex align-items-stretch" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-start">
+    <div id="kt_header_search" class="d-flex align-items-stretch" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-start">
         <!--begin::Search toggle-->
         <div class="d-flex align-items-center" data-kt-search-element="toggle" id="kt_header_search_toggle">
             <div class="btn btn-icon btn-danger btn-circle w-50px h-50px">
