@@ -440,7 +440,7 @@ if (class_exists('CSF')) {
 					array(
 						'id'    => 'ls_link',
 						'type'  => 'link',
-						'title' => 'آدزس صفحه محصول',
+						'title' => 'آدرس صفحه محصول',
 					),
 
 				)
