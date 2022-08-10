@@ -619,7 +619,7 @@ function search_data_product()
                 </a>
             <?php
             endif;
-            if ($i < 5) :
+            if ($i > 5) :
             ?>
                 <a href="" class="btn btn-primary btn-sm">مشاهده بیشتر</a>
         <?php
