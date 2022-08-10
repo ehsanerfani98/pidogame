@@ -557,6 +557,7 @@ function set_like_comment_product()
 
     if (isset($_COOKIE[$_POST['comment_id']])) {
         $total_like = (int)get_comment_meta($_POST['comment_id'], 'total_like', true) - 1;
+        update_comment_meta($_POST['comment_id'], 'total_like', $total_like);
         unset($_COOKIE[$_POST['comment_id']]);
         wp_send_json([
             "total" => get_comment_meta($_POST['comment_id'], 'total_like', true),
