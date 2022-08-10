@@ -624,7 +624,9 @@ function search_data_product()
 
         if ($i > 5) :
             ?>
+            <div class="text-center">
             <a href="" class="text-primary mb-5">مشاهده بیشتر</a>
+            </div>
             <hr>
         <?php
         endif;
