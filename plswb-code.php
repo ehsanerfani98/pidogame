@@ -594,6 +594,14 @@ function search_data_product()
     $the_query = new WP_Query(array('posts_per_page' => -1, 's' => esc_attr($_POST['keyword']), 'post_type' => 'product'));
     if ($the_query->have_posts()) :
         while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <a href="<?php echo esc_url(post_permalink()); ?>" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                <div class="symbol symbol-40px me-4">
+                    <?php the_post_thumbnail() ?>
+                </div>
+                <div class="d-flex flex-column justify-content-start fw-bold">
+                    <span class="fs-6 fw-bold"><?php the_title(); ?></span>
+                </div>
+            </a>
             <div class="d-flex align-items-center mb-5">
                 <div class="symbol symbol-40px me-4">
                     <span class="symbol-label bg-light">
@@ -603,9 +611,6 @@ function search_data_product()
                                 <path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black" />
                             </svg></span>
                     </span>
-                </div>
-                <div class="d-flex flex-column">
-                    <a href="<?php echo esc_url(post_permalink()); ?>" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?php the_title(); ?></a>
                 </div>
             </div>
 <?php endwhile;
