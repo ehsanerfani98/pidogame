@@ -42,7 +42,7 @@ function echoFirstLevelComment($comment)
                                 <?php echo $comment->comment_author ?>
                             </span>
                             <?php if (user_can($comment->user_id, 'manage_options')) : ?>
-                                <span class="badge badge-light-success ms-1">مدیر وب سایت</span>
+                                <span class="badge badge-light-success ms-1">پشتیبانی پیدوگیم</span>
                             <?php else : ?>
                                 <?php global $product; ?>
                                 <?php if (ifCommentIsBuyer($comment, $product)) : ?>
@@ -93,7 +93,7 @@ function echoChildrenComment($comment)
                                     <?php echo $comment->comment_author ?>
                                 </span>
                                 <?php if (user_can($comment->user_id, 'manage_options')) : ?>
-                                    <span class="badge badge-light-success ms-1">مدیر وب سایت</span>
+                                    <span class="badge badge-light-success ms-1">پشتیبانی پیدوگیم</span>
                                 <?php else : ?>
                                     <?php global $product; ?>
                                     <?php if (ifCommentIsBuyer($comment, $product)) : ?>
