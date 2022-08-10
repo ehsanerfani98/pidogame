@@ -605,8 +605,7 @@ function search_data_product()
                     </span>
                 </div>
                 <div class="d-flex flex-column">
-                    <a href="<?php echo esc_url(post_permalink()); ?>" class="fs-6 text-gray-800 text-hover-primary fw-bold">خرید بتل پس فورتنایت</a>
-                    <span class="fs-7 text-muted fw-bold"><?php the_title(); ?></span>
+                    <a href="<?php echo esc_url(post_permalink()); ?>" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?php the_title(); ?></a>
                 </div>
             </div>
 <?php endwhile;
