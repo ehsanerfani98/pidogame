@@ -9,10 +9,11 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
-                    <?php if (have_posts()) : while (have_posts()) : the_post();
-                            the_content();
-                        endwhile;
-                    endif ?>
+                   <div class="card">
+                    <div class="card-body">
+                        <img src="<?= get_template_directory().'assets/media/images/Normal.png' ?>" alt="">
+                    </div>
+                   </div>
                 </div>
             </div>
             <?php get_template_part('templates/page/footer/footer') ?>
