@@ -540,3 +540,4 @@ function custom_archive_description(){
 }
 
 
+include( plugin_dir_path( __FILE__ ) . get_template_directory().'inc/wp-ulike/wp-ulike.php');
