@@ -420,22 +420,32 @@ if (class_exists('CSF')) {
 				'type'      => 'repeater',
 				'title'     => 'Repeater',
 				'fields'    => array(
-			  
-				  array(
-					'id'    => 'opt-text-1',
-					'type'  => 'text',
-					'title' => 'Text',
-				  ),
-			  
-				  array(
-					'id'    => 'opt-text-2',
-					'type'  => 'text',
-					'title' => 'Text',
-				  ),
-			  
+
+					array(
+						'id'           => 'ls_image',
+						'type'         => 'upload',
+						'title'        => 'بارگزاری تصویر',
+						'library'      => 'image',
+						'placeholder'  => '',
+						'button_title' => 'اضافه کردن تصویر',
+						'remove_title' => 'حذف تصویر',
+					),
+
+					array(
+						'id'    => 'ls_title',
+						'type'  => 'text',
+						'title' => 'Text',
+					),
+
+					array(
+						'id'    => 'ls_link',
+						'type'  => 'link',
+						'title' => 'Text',
+					),
+
 				)
-			  ),
-			  
+			),
+
 		)
 	));
 }
