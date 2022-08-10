@@ -627,8 +627,8 @@ function search_data_product()
             <div class="text-center">
             <a href="<?= home_url( 'shop/?s=' ).$_POST['keyword'] ?>" class="text-primary mb-5">نتایج بیشتر</a>
             </div>
-            <hr>
-        <?php
+            <div class="separator separator-solid my-5"></div>
+                    <?php
         endif;
         wp_reset_postdata();
     endif;
