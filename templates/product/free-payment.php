@@ -25,13 +25,13 @@
                                     <input required id="free-title" style="text-align: right;" type="text" class="form-control form-control-solid" placeholder="عنوان محصول را وارد کنید" />
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-3">
                                 <div class="mb-10">
                                     <label for="exampleFormControlInput2" class="required form-label">مبلغ محصول درخواستی (تومان)</label>
                                     <input required id="free-amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                 </div>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <div class="mb-10">
                                     <label for="exampleFormControlInput3" class="form-label">تعداد درخواستی</label>
                                     <br>
