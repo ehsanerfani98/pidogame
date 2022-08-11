@@ -12,6 +12,9 @@ get_header();
                     <div class="row">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                             <div class="col-md-3">
+                                <div class="card">
+                                    .
+                                </div>
                                 <?php the_title() ?>
                             </div>
                     <?php
