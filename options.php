@@ -457,12 +457,8 @@ if (class_exists('CSF')) {
 
 					array(
 						'id'           => 'at_image',
-						'type'         => 'upload',
-						'title'        => 'بارگزاری تصویر',
-						'library'      => 'image',
-						'placeholder'  => '',
-						'button_title' => 'اضافه کردن تصویر',
-						'remove_title' => 'حذف تصویر',
+						'type'         => 'color',
+						'title'        => 'رنگ پس زمینه',
 					),
 
 					array(
