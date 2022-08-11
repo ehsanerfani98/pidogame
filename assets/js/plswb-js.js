@@ -82,8 +82,6 @@ function extra_fields(event) {
 
 }
 
-
-
 function open_fields(item) {
     jQuery('.show-btn-options').removeClass('d-none');
     jQuery('.wrap_open_fields').removeClass('d-flex').addClass('d-none');
@@ -110,4 +108,46 @@ function setLikeComment(item, comment_id) {
     });
 }
 
+jQuery('#free-payment-add-to-cart').click(function (e) { 
+    
+    var title = jQuery('#free-title').val();
+    var amount = jQuery('#free-amount').val();
+    var qty = jQuery('#free-qty').val();
+    var product_id = jQuery('#pid').val();
 
+    var metaData = {
+        title: title,
+        value: amount,
+    };
+
+    var data = {
+        action: 'woocommerce_ajax_add_to_cart_free_payment',
+        product_id: product_id,
+        quantity: qty,
+        meta: metaData
+    };
+
+    jQuery.ajax({
+        type: "post",
+        url: woocommerce_params.ajax_url,
+        data: data,
+        success: function (response) {
+            Swal.fire({
+                text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
+                icon: "success",
+                buttonsStyling: !1,
+                showCancelButton: true,
+                confirmButtonText: "مشاهده سبد خرید",
+                cancelButtonText: "ادامه خرید",
+                customClass: {
+                    confirmButton: "btn btn-primary",
+                    cancelButton: 'btn btn-light'
+                }
+            })
+
+        }
+    });
+
+    return false;
+
+});  
