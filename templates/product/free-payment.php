@@ -39,13 +39,13 @@ $options = get_option('pidogame_framework');
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">مبلغ محصول درخواستی</label>
+                                        <label for="exampleFormControlInput2" class="required form-label">مبلغ محصول درخواستی</label>
                                         <input required id="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">تعداد درخواستی</label>
+                                        <label for="exampleFormControlInput3" class="form-label">تعداد درخواستی</label>
                                         <br>
                                         <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
                                             <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -66,6 +66,7 @@ $options = get_option('pidogame_framework');
 
                                 </div>
                                 <div class="col-lg-2">
+                                <label for="exampleFormControlInput4" class="form-label"></label>
                                     <div class="btn btn-primary">افزودن به سبد خرید</div>
                                 </div>
                             </div>
