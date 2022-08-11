@@ -16,7 +16,7 @@
 
                         ?>
                     </div>
-                    <div class="card-footer bg-secondary border border-primary border-dashed pb-0" style="border: 2px;">
+                    <div style="border: 2px solid;" class="card-footer bg-secondary border-primary border-dashed pb-0" >
                         <input type="hidden" id="pid" value="<?php the_ID() ?>">
                         <div class="row">
                             <div class="col-lg-4">
