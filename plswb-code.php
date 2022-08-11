@@ -667,10 +667,11 @@ add_filter( 'single_template', function( $template ) {
     global $post;
     if ( $post->post_type === 'product' ) {
         $locate_template = locate_template( "single-product-{$post->post_name}.php" );
-        dd($locate_template);
         if ( ! empty( $locate_template ) ) {
             $template = $locate_template;
         }
     }
+    dd($locate_template);
+
     return $template;
 } );
