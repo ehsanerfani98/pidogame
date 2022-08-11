@@ -115,9 +115,13 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
     var qty = jQuery('#free-qty').val();
     var product_id = jQuery('#pid').val();
 
-    var metaData = {
+    var meta_data_cart = {
         title: title,
         value: amount,
+    }
+    
+    var metaData = {
+        meta_data_cart
     };
 
     var data = {
