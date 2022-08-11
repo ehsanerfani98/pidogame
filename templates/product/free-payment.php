@@ -5,9 +5,7 @@ $options = get_option('pidogame_framework');
 get_header();
 ?>
 <div class="d-flex flex-column flex-root">
-    <div class="page d-flex flex-row flex-column-fluid">
-        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-            <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
+            <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
                 <div class="content flex-row-fluid" id="kt_content">
                 <form action="" method="post">
                     <div class="card">
@@ -71,8 +69,6 @@ get_header();
                 </form>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 <?php get_template_part('templates/page/drawers/drawers') ?>
 <?php get_template_part('templates/page/scrolltop/scrolltop') ?>
