@@ -1056,5 +1056,5 @@ function title_filter($where, &$wp_query)
 add_filter("the_content", "plugin_myContentFilter");
 function plugin_myContentFilter($content)
 {
-  return strip_tags(substr($content, 0, 200));
+  return strip_tags(wp_trim_words($content, 200, '...'));
 }
