@@ -1,14 +1,6 @@
 <?php
 
-if (isset($_POST['btn-pay'])) {
-    $product_id = create_product(array(
-        'type'               => '',
-        'name'               => $_POST['title_product'],
-        'regular_price'      => $_POST['amount'],
-        // 'sale_price'         => '',
-        'reviews_allowed'    => false,
-    ));
-}
+
 
 $options = get_option('pidogame_framework');
 
@@ -72,7 +64,7 @@ $options = get_option('pidogame_framework');
                                 </div>
                                 <div class="col-lg-2">
                                 <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">افزودن به سبد خرید</button>
+                                    <button type="submit" name="add-to-cart" value="<?php the_ID() ?>" class="single_add_to_cart_button btn btn-primary">افزودن به سبد خرید</button>
                                 </div>
                             </div>
                         </div>
