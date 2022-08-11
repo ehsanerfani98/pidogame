@@ -662,4 +662,4 @@ function currentSlide(n) {
     }
 }
 
-jQuery('#billing_phone').attr('readonly').addClass('bg-disable');
+jQuery('#billing_phone').attr('readonly', 'readonly').addClass('bg-disable');
