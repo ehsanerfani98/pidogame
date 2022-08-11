@@ -110,16 +110,18 @@ function setLikeComment(item, comment_id) {
 
 jQuery('#free-payment-add-to-cart').click(function (e) { 
     
+    let meta_data_cart = [];
+
     var title = jQuery('#free-title').val();
     var amount = jQuery('#free-amount').val();
     var qty = jQuery('#free-qty').val();
     var product_id = jQuery('#pid').val();
 
-    var meta_data_cart = {
+    meta_data_cart.push({
         title: title,
         value: amount,
         status: 'on'
-    }
+    });
 
     var metaData = {
         meta_data_cart
