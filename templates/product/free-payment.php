@@ -37,7 +37,7 @@ $options = get_option('pidogame_framework');
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-10">
-                                        <label for="exampleFormControlInput2" class="required form-label">مبلغ محصول درخواستی</label>
+                                        <label for="exampleFormControlInput2" class="required form-label">مبلغ محصول درخواستی (تومان)</label>
                                         <input required id="free-amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                     </div>
                                 </div>
