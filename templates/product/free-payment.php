@@ -31,19 +31,19 @@ $options = get_option('pidogame_framework');
                         </div>
                         <div class="card-footer">
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">عنوان محصول درخواستی</label>
                                         <input required id="amount" style="text-align: right;" type="text" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">مبلغ محصول درخواستی</label>
                                         <input required id="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="form-label">تعداد درخواستی</label>
                                         <br>
