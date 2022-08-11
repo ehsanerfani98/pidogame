@@ -5,7 +5,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 
                     <?php
 
-					if (get_post_field('post_name', get_post()) == "free-payment") {
+					if (get_post_field('post_name', get_post()) == "pay") {
 						get_template_part('templates/product/free-payment');
 					}
 					else{
