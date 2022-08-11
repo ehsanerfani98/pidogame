@@ -12,10 +12,23 @@ get_header();
                     <div class="row">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                             <div class="col-md-3">
-                                <div class="card">
-                                    .
-                                </div>
-                                <?php the_title() ?>
+                            <div class="card shadow-sm">
+    <div class="card-header">
+        <h3 class="card-title"><?php the_title() ?></h3>
+        <div class="card-toolbar">
+            <button type="button" class="btn btn-sm btn-light">
+            <?php the_date(  ) ?>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+    <?php the_excerpt() ?>
+    </div>
+    <div class="card-footer bg-primary">
+        <a href="<?php the_permalink(  ) ?>">مشاهده مطلب</a>
+    </div>
+</div>
+                                
                             </div>
                     <?php
                         endwhile;
