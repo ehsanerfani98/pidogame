@@ -31,7 +31,7 @@
                                     <input required id="free-amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-2">
                                 <div class="mb-10">
                                     <label for="exampleFormControlInput3" class="form-label">تعداد درخواستی</label>
                                     <br>
@@ -53,7 +53,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
 
                                 <button type="button" class="btn btn-primary" id="free-payment-add-to-cart">
