@@ -27,7 +27,13 @@ $options = get_option('pidogame_framework');
                             </div>
                         </div>
                         <div class="card-body">
-                            <?php the_content() ?>
+                            <?php
+                            
+                            the_content();
+                            
+                            do_action('woocommerce_single_product_summary');
+
+                            ?>
                         </div>
                         <div class="card-footer">
                             <div class="row">
