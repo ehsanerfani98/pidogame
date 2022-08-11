@@ -3,6 +3,12 @@ $options = get_option('pidogame_framework');
 get_header();
 ?>
 <style>
+    .pagination span{
+        margin: 0 .2rem;
+    }
+    .pagination a{
+        margin: 0 .2rem;
+    }
     .wrap-cart-plswb {
         position: relative;
         border-radius: 10px;
