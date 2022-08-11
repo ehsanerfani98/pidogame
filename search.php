@@ -134,7 +134,7 @@ get_header();
                                                 </div>
                                             </div>
                                             <div class="separator separator-solid"></div>
-                                            <div class="wrap-content-product text-gray-800">
+                                            <div class="wrap-content-product text-gray-700">
                                                 <?php the_excerpt() ?>
                                             </div>
                                         <div class="card-footer py-1 text-center bg-primary bg-opacity-75"><a href="http://test.pidogame.com/product/call-of-duty-mobile-cp/">
