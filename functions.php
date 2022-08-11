@@ -5,6 +5,17 @@ require_once get_theme_file_path() . '/codestar/codestar-framework.php';
 require_once get_theme_file_path() . '/options.php';
 require_once get_theme_file_path() . '/plswb-code.php';
 
+add_filter( 'single_template', function( $template ) {
+    global $post;
+    if ( $post->post_type === 'product' ) {
+        $locate_template = locate_template( "single-product-{$post->post_name}.php" );
+        if ( ! empty( $locate_template ) ) {
+            $template = $locate_template;
+        }
+    }
+
+    return $template;
+} );
 
 define('IMAGES_URL', get_stylesheet_directory_uri() . '/assets/media/images/');
 
