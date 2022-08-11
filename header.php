@@ -59,7 +59,7 @@ $data_alert = get_option('pidogame_framework');
                     <?= $data_alert['at_title'] ?>
                 </h4>
             </div>
-            <a href="" class="btn btn-bg-light">مشاهده</a>
+            <a href="" class="btn btn-light">مشاهده</a>
             <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
                 <span class="svg-icon svg-icon-2x svg-icon-light">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
