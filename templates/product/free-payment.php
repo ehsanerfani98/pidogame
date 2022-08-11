@@ -34,7 +34,7 @@ $options = get_option('pidogame_framework');
                                 <div class="col-lg-6">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">مبلغ محصول درخواستی</label>
-                                        <input style="text-align: right;" type="email" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
+                                        <input id="amount" style="text-align: right;" type="email" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -45,7 +45,7 @@ $options = get_option('pidogame_framework');
                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                         <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
                                                     </svg></span></button>
-                                            <input name="" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
+                                            <input name="" id="qty" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
                                             <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                         <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
