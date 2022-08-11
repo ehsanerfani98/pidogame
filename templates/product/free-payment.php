@@ -30,7 +30,15 @@ $options = get_option('pidogame_framework');
                             <?php the_content() ?>
                         </div>
                         <div class="card-footer">
-                            <?php the_ID() ?>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">مبلغ محصول درخواستی</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
