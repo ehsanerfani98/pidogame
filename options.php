@@ -448,6 +448,37 @@ if (class_exists('CSF')) {
 
 		)
 	));
+	
+	// Create alert section
+	CSF::createSection($prefix, array(
+		'id'			=>	'plswb_alert',
+		'title'			=>	'اعلانات سایت',
+		'fields'		=>	array(
+
+					array(
+						'id'           => 'at_image',
+						'type'         => 'upload',
+						'title'        => 'بارگزاری تصویر',
+						'library'      => 'image',
+						'placeholder'  => '',
+						'button_title' => 'اضافه کردن تصویر',
+						'remove_title' => 'حذف تصویر',
+					),
+
+					array(
+						'id'    => 'at_title',
+						'type'  => 'textarea',
+						'title' => 'متن اعلانات',
+					),
+
+					array(
+						'id'    => 'at_link',
+						'type'  => 'link',
+						'title' => 'لینک',
+					),
+
+		)
+	));
 }
 
 // Product settings
