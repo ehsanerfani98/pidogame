@@ -1,10 +1,6 @@
 <?php
-
-
-
 $options = get_option('pidogame_framework');
-
-
+get_header();
 ?>
 <div class="d-flex flex-column flex-root">
     <div class="page d-flex flex-row flex-column-fluid">
@@ -78,3 +74,5 @@ $options = get_option('pidogame_framework');
 <?php get_template_part('templates/page/drawers/drawers') ?>
 <?php get_template_part('templates/page/scrolltop/scrolltop') ?>
 <?php if ($options['opt-header-notifications-switcher']) get_template_part('templates/page/modals/notification/notification') ?>
+<?php
+get_footer();
