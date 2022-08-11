@@ -135,7 +135,7 @@ get_header();
                                             </div>
                                             <div class="separator separator-solid"></div>
                                             <div class="wrap-content-product text-gray-700">
-                                                <?= wp_trim_words(get_the_content(), 40, '...')  ?>
+                                                <?php the_content() ?>
                                             </div>
                                         <div class="card-footer py-1 text-center bg-primary bg-opacity-75"><a href="http://test.pidogame.com/product/call-of-duty-mobile-cp/">
                                             </a><a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">مشاهده مطلب</a>
