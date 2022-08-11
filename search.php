@@ -4,9 +4,18 @@ get_header();
 ?>
 <style>
     .wrap-cart-plswb {
+        position: relative;
         border-radius: 10px;
         height: auto;
         box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    }
+
+    .plswb-date {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: .4rem 1rem;
+        border-radius: 8px;
     }
 
     .image-cart-plswb {
@@ -123,20 +132,20 @@ get_header();
 
                                     <div class="wrap-cart-plswb card">
 
+                                        <span class="plswb-date text-gray-200"></span>
+                                        <div class="image-cart-plswb">
+                                            <?php the_post_thumbnail() ?>
+                                        </div>
 
-                                            <div class="image-cart-plswb">
-                                                <?php the_post_thumbnail() ?>
+                                        <div class="wrap-content-product mt-2 pb-2">
+                                            <div class="title-cart-plswb">
+                                                <h4><?php the_title() ?></h4>
                                             </div>
-
-                                            <div class="wrap-content-product mt-2 pb-2">
-                                                <div class="title-cart-plswb">
-                                                    <h4><?php the_title() ?></h4>
-                                                </div>
-                                            </div>
-                                            <div class="separator separator-solid"></div>
-                                            <div class="wrap-content-product text-gray-700">
-                                                <?php the_content() ?>
-                                            </div>
+                                        </div>
+                                        <div class="separator separator-solid"></div>
+                                        <div class="wrap-content-product text-gray-700">
+                                            <?php the_content() ?>
+                                        </div>
                                         <div class="card-footer py-1 text-center bg-primary bg-opacity-75"><a href="http://test.pidogame.com/product/call-of-duty-mobile-cp/">
                                             </a><a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">مشاهده مطلب</a>
                                         </div>
