@@ -51,7 +51,7 @@ $data_alert = get_option('pidogame_framework');
             <div class="d-flex flex-column text-light pe-0 pe-sm-10">
                 <h4 class="mb-2 text-light"></h4>
 
-                <h4 class="text-gray-100">
+                <h4 class="text-gray-100 p-1">
                     <?= $data_alert['at_title'] ?>
                 </h4>
             </div>
