@@ -18,7 +18,7 @@ get_header();
 
 
                                             <div class="image-cart-plswb">
-                                                <?php the_post_thumbnail('cart-product-plswb') ?>
+                                                <?php the_post_thumbnail() ?>
                                             </div>
 
                                             <div class="wrap-content-product mt-2 pb-2">
