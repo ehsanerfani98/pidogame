@@ -53,7 +53,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-3" style="text-align: left;">
                                 <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
 
                                 <button type="button" class="btn btn-primary" id="free-payment-add-to-cart">
