@@ -1057,7 +1057,6 @@ add_filter("the_content", "plugin_myContentFilter");
 function plugin_myContentFilter($content)
 {
     if (!is_singular()) {
-
         $content = strip_tags(wp_trim_words($content, 20, '...'));
     }
     return $content;
