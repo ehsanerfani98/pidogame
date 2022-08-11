@@ -43,11 +43,11 @@ $options = get_option('pidogame_framework');
                                         <input required id="amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-2">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="form-label">تعداد درخواستی</label>
                                         <br>
-                                        <div class="position-relative w-100px d-inline-block ml-5" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
+                                        <div class="position-relative w-100px d-inline-block" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="" data-kt-dialer-step="1">
                                             <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                         <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
@@ -60,13 +60,14 @@ $options = get_option('pidogame_framework');
                                                     </svg></span></button>
 
                                         </div>
-                                        <div class="btn btn-primary">افزودن به سبد خرید</div>
 
 
                                     </div>
 
                                 </div>
-
+                                <div class="col-lg-2">
+                                    <div class="btn btn-primary">افزودن به سبد خرید</div>
+                                </div>
                             </div>
                         </div>
                     </div>
