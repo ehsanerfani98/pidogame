@@ -118,7 +118,7 @@ function woocommerce_ajax_add_to_cart_free_payment()
 	// ] );
 
 	// Remember to add $cart_item_data to WC->cart->add_to_cart
-	if (WC()->cart->add_to_cart($product_id, $quantity, null, array(), $cart_item_data) && 'publish' === $product_status) {
+	if (WC()->cart->add_to_cart($product_id, $quantity, $product_id, array(), $cart_item_data) && 'publish' === $product_status) {
 
 		do_action('woocommerce_ajax_added_to_cart', $product_id);
 
