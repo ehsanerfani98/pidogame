@@ -33,7 +33,7 @@ get_header();
                                 <?php the_content() ?>
                             </div>
                             <div class="card-footer">
-                                <?php do_action( 'woocommerce_product_set_stock', $this ); ?>
+                                <?php do_action('woocommerce_single_product_summary'); ?>
                             </div>
                         </div>
                     </form>
