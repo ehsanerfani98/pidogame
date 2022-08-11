@@ -30,6 +30,7 @@ $options = get_option('pidogame_framework');
                             <?php the_content() ?>
                         </div>
                         <div class="card-footer">
+                            <?php the_ID() ?>
                         </div>
                     </div>
                 </form>
