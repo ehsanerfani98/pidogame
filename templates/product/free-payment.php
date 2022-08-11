@@ -34,7 +34,7 @@ $options = get_option('pidogame_framework');
                                 <div class="col-lg-6">
                                     <div class="mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">مبلغ محصول درخواستی</label>
-                                        <input type="email" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
+                                        <input style="text-align: right;" type="email" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید." />
                                     </div>
 
                                 </div>
