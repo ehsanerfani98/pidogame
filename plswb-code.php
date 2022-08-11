@@ -663,14 +663,11 @@ function title_filter($where, &$wp_query)
 }
 
 
-add_filter( 'single_template', function( $template ) {
-    global $post;
-    if ( $post->post_type === 'product' ) {
-        $locate_template = locate_template( "single-product-{$post->post_name}.php" );
-        if ( ! empty( $locate_template ) ) {
-            $template = $locate_template;
-        }
-    }
+add_filter( 'template_include', 'custom_single_product_template_include', 50, 1 );
 
-    return $template;
-} );
+function custom_single_product_template_include( $template ) {
+     if ( is_singular('product')  && (get_the_ID()==4278)) {
+           $template = get_stylesheet_directory() . '/single-product-free-payment.php';
+     } 
+     return $template;
+}
