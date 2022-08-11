@@ -1053,8 +1053,8 @@ function title_filter($where, &$wp_query)
 }
 
 
-function custom_excerpt_length($length)
+add_filter("the_content", "plugin_myContentFilter");
+function plugin_myContentFilter($content)
 {
-    return 20;
+  return substr($content, 0, 300);
 }
-add_filter('content', 'custom_excerpt_length', 999);
