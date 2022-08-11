@@ -35,7 +35,7 @@ $templateDirectoryUri = get_template_directory_uri();
 
 <body id="kt_body" class="<?php echo $bodyClass ?> page-bg header-fixed header-tablet-and-mobile-fixed aside-enabled <?php if ($themeMode == 'dark') echo 'dark-mode' ?>">
 
-    <div class="alert alert-dismissible bg-danger d-flex flex-column flex-sm-row w-100 p-5" style="margin: 0;border-radius: 0;z-index: 114;">
+    <div class="alert alert-dismissible bg-danger d-flex flex-column flex-sm-row w-100 py-2 px-5" style="margin: 0;border-radius: 0;z-index: 114;">
 
     <span class="svg-icon svg-icon-2hx svg-icon-light me-4 mb-5 mb-sm-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
