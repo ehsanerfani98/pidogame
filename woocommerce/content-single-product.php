@@ -5,7 +5,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 
                     <?php
 
-					dd(get_query_var(  ));
+					dd(get_post_field( 'post_name', get_post() ));
 					if(true){
 
 					
