@@ -4,6 +4,7 @@ $bodyClass = implode(' ', $bodyClassArray);
 $templateDirectoryUri = get_template_directory_uri();
 
 $alert = get_option('pidogame_framework')['at_title'];
+$data_alert = get_option('pidogame_framework');
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +52,7 @@ $alert = get_option('pidogame_framework')['at_title'];
                 <h4 class="mb-2 text-light"></h4>
 
                 <h4 class="text-gray-200">
-                    <?= $alert['at_title'] ?>
+                    <?= $data_alert['at_title'] ?>
                 </h4>
             </div>
 
