@@ -55,6 +55,9 @@ $options = get_option('pidogame_framework');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-12" style="text-align: left;">
+                                    <div class="btn btn-primary">افزودن به سبد خرید</div>
+                                </div>
                             </div>
                         </div>
                     </div>
