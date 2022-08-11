@@ -114,7 +114,7 @@ function woocommerce_ajax_add_to_cart_free_payment()
 	$product_status = get_post_status($product_id);
 
 	wp_send_json( [
-		'data' => WC()->cart->add_to_cart($product_id, $quantity, $product_id, array(), $cart_item_data)
+		'data' => WC()->cart->add_to_cart($product_id, $quantity, null, array(), $cart_item_data)
 	] );
 
 	// Remember to add $cart_item_data to WC->cart->add_to_cart
