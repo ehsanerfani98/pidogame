@@ -132,8 +132,8 @@ get_header();
 
                                     <div class="wrap-cart-plswb card">
 
-                                        <span class="plswb-date text-gray-200">
-                                            <?php the_date(  ) ?>
+                                        <span class="plswb-date text-gray-200 bg-light bg-opacity-25">
+                                            <?php the_date() ?>
                                         </span>
                                         <div class="image-cart-plswb">
                                             <?php the_post_thumbnail() ?>
