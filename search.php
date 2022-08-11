@@ -122,7 +122,6 @@ get_header();
                                 <div class="col-md-3 mb-4">
 
                                     <div class="wrap-cart-plswb card">
-                                        <a href="<?php the_permalink() ?>">
 
 
                                             <div class="image-cart-plswb">
@@ -138,7 +137,6 @@ get_header();
                                             <div class="wrap-content-product">
                                                 <?php the_excerpt() ?>
                                             </div>
-                                        </a>
                                         <div class="card-footer py-1 text-center bg-primary bg-opacity-75"><a href="http://test.pidogame.com/product/call-of-duty-mobile-cp/">
                                             </a><a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">مشاهده مطلب</a>
                                         </div>
