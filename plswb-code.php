@@ -671,7 +671,6 @@ add_filter( 'single_template', function( $template ) {
             $template = $locate_template;
         }
     }
-    dd($locate_template);
 
     return $template;
 } );
