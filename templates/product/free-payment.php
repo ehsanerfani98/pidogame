@@ -11,7 +11,6 @@ if (isset($_POST['btn-pay'])) {
 }
 
 $options = get_option('pidogame_framework');
-get_header();
 
 
 ?>
@@ -33,7 +32,6 @@ get_header();
                                 <?php the_content() ?>
                             </div>
                             <div class="card-footer">
-                                <?php do_action('woocommerce_single_product_summary'); ?>
                             </div>
                         </div>
                     </form>
@@ -46,5 +44,3 @@ get_header();
 <?php get_template_part('templates/page/drawers/drawers') ?>
 <?php get_template_part('templates/page/scrolltop/scrolltop') ?>
 <?php if ($options['opt-header-notifications-switcher']) get_template_part('templates/page/modals/notification/notification') ?>
-<?php
-get_footer();
