@@ -110,6 +110,8 @@ function setLikeComment(item, comment_id) {
 
 jQuery('#free-payment-add-to-cart').click(function (e) { 
     
+    jQuery('#free-payment-add-to-cart').attr('data-kt-indicator', 'on');
+
     let meta_data_cart = [];
 
     var title = jQuery('#free-title').val();
@@ -139,6 +141,8 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
         url: woocommerce_params.ajax_url,
         data: data,
         success: function (response) {
+            jQuery('#free-payment-add-to-cart').removeAttr('data-kt-indicator');
+
             Swal.fire({
                 text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
                 icon: "success",
