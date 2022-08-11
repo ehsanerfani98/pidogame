@@ -66,7 +66,7 @@ $options = get_option('pidogame_framework');
 
                                 </div>
                                 <div class="col-lg-2">
-                                <label for="exampleFormControlInput4" class="form-label"></label>
+                                <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
                                     <div class="btn btn-primary">افزودن به سبد خرید</div>
                                 </div>
                             </div>
