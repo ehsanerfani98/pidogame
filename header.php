@@ -4,7 +4,6 @@ $bodyClass = implode(' ', $bodyClassArray);
 $templateDirectoryUri = get_template_directory_uri();
 
 $alert = get_option('pidogame_framework');
-dd($alert);
 ?>
 
 <!DOCTYPE html>
