@@ -39,11 +39,9 @@ function extra_fields(event) {
     // jQuery('#btn_' + btn_id).attr('data-kt-indicator', 'on');
     jQuery('#btn_' + variation_id).attr('data-kt-indicator', 'on');
 
-
     var metaData = {
         meta_data_cart
     };
-
 
     var data = {
         action: 'woocommerce_ajax_add_to_cart',
