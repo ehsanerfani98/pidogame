@@ -4,6 +4,11 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 ?>
 
                     <?php
+
+					dd(get_query_var(  ));
+					if(true){
+
+					
 					$type = $meta['opt-product-type'];
 					switch ($type) {
 						case 'game':
@@ -15,6 +20,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 						case 'item':
 							get_template_part('templates/product/item/item');
 							break;
+					}
 					}
 					?>
      

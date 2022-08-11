@@ -663,11 +663,3 @@ function title_filter($where, &$wp_query)
 }
 
 
-add_filter( 'template_include', 'custom_single_product_template_include', 50, 1 );
-
-function custom_single_product_template_include( $template ) {
-     if ( is_singular('product')  && (get_the_ID()==4278)) {
-           $template = get_stylesheet_directory() . '/single-product-free-payment.php';
-     } 
-     return $template;
-}
