@@ -119,7 +119,7 @@ get_header();
                 <div class="content flex-row-fluid" id="kt_content">
                     <div class="row">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
 
                                     <div class="wrap-cart-plswb card">
                                         <a href="<?php the_permalink() ?>">
