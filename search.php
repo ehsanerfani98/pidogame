@@ -126,7 +126,13 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
+
                     <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+                                <?php if (function_exists('bcn_display')) bcn_display() ?>
+                            </ul>
+                        </div>
                         <?php
                         $args = array(
                             'post_type'        => 'post',
@@ -134,7 +140,7 @@ get_header();
                             'status'         => 'publish',
                         );
                         $query = new WP_Query($args);
-                      
+
 
                         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="col-md-3 mb-5">
