@@ -3,7 +3,7 @@ $bodyClassArray = get_body_class();
 $bodyClass = implode(' ', $bodyClassArray);
 $templateDirectoryUri = get_template_directory_uri();
 
-$alert = get_option('pidogame_framework');
+$alert = get_option('pidogame_framework')['at_title'];
 ?>
 
 <!DOCTYPE html>
