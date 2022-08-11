@@ -270,3 +270,7 @@
 .wrap-404{
 	width: 95%;
 }
+
+.required:after {
+	display: none !important;
+}
