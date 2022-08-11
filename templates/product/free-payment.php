@@ -31,7 +31,6 @@ $options = get_option('pidogame_framework');
                             
                             the_content();
                             
-                            do_action('woocommerce_single_product_summary');
 
                             ?>
                         </div>
