@@ -1074,7 +1074,7 @@ function plugin_myTitleFilter($title)
 
 function prefix_translate_text( $translated_text ) {
 
-	if ( 'Search Results for' === $translated_text ) {
+	if ( 'Search results for' === $translated_text ) {
         $translated_text = 'جستجو برای ';
 	}
 
