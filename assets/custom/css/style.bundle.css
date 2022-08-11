@@ -274,3 +274,7 @@
 .required:after {
 	display: none !important;
 }
+
+.bg-disable {
+    background: #ffe5e5 !important;
+}
