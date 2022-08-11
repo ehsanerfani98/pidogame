@@ -1059,3 +1059,10 @@ function plugin_myContentFilter($content)
     $content = strip_tags(wp_trim_words($content, 20, '...'));
     return $content;
 }
+
+add_filter("the_title", "plugin_myTitleFilter");
+function plugin_myTitleFilter($title)
+{
+    $title = strip_tags(wp_trim_words($title, 6, '...'));
+    return $title;
+}
