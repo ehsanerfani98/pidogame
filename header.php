@@ -2,6 +2,8 @@
 $bodyClassArray = get_body_class();
 $bodyClass = implode(' ', $bodyClassArray);
 $templateDirectoryUri = get_template_directory_uri();
+
+$alert = get_option( 'pidogame_framework' )['plswb_alert'];
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +49,9 @@ $templateDirectoryUri = get_template_directory_uri();
         <div class="d-flex flex-column text-light pe-0 pe-sm-10">
         <h4 class="mb-2 text-light"></h4>
 
-        <h4 class="text-gray-200"><span>تست</span></h4>
+        <h4 class="text-gray-200">
+            <?= $alert['at_title'] ?>
+       </h4>
         </div>
 
         <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
