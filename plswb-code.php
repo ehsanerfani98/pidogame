@@ -1070,3 +1070,14 @@ function plugin_myTitleFilter($title)
     }
     return $title;
 }
+
+
+function prefix_translate_text( $translated_text ) {
+
+	if ( 'Search Results for' === $translated_text ) {
+        $translated_text = 'جستجو برای ';
+	}
+
+    return $translated_text;
+}
+add_filter( 'gettext', 'prefix_translate_text' );
