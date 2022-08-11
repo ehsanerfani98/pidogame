@@ -5,7 +5,7 @@ get_header();
 <div class="d-flex flex-column flex-root">
     <div class="page d-flex flex-row flex-column-fluid">
         <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-            <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
+            <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <div class="content flex-row-fluid" id="kt_content">
                     <form action="" method="post">
                         <div class="card">
