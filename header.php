@@ -59,7 +59,7 @@ $data_alert = get_option('pidogame_framework');
                     <?= $data_alert['at_title'] ?>
                 </h4>
             </div>
-            <?php if (!empty($data_alert['at_link']['target'])) : ?>
+            <?php if (!empty($data_alert['at_link']['url'])) : ?>
                 <a target="<?= $data_alert['at_link']['target'] ?>" href="<?= $data_alert['at_link']['url'] ?>" class="btn btn-light" style="padding: 0.5rem 1rem; height: 32px;">مشاهده</a>
             <?php endif; ?>
             <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
