@@ -118,6 +118,7 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
     var meta_data_cart = {
         title: title,
         value: amount,
+        status: 'on'
     }
 
     var metaData = {
