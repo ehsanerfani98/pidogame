@@ -155,6 +155,7 @@ function set_cutom_cart_item_price($cart)
 		// 	return;
 		// }
 		foreach ($cart_item['meta_data_cart'] as $value) {
+            dd($value);
 			if (isset($value['status'])) {
 				$total_price[] = $value['value'];
 			}
