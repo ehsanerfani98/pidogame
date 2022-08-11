@@ -17,7 +17,6 @@ $options = get_option('pidogame_framework');
 <div class="d-flex flex-column flex-root">
     <div class="page d-flex flex-row flex-column-fluid">
         <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-            <?php get_template_part('templates/page/header/header') ?>
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
@@ -37,7 +36,6 @@ $options = get_option('pidogame_framework');
                     </form>
                 </div>
             </div>
-            <?php get_template_part('templates/page/footer/footer') ?>
         </div>
     </div>
 </div>
