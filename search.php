@@ -127,7 +127,16 @@ get_header();
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
                     <div class="row">
-                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php
+                        $args = array(
+                            'post_type'        => 'post',
+                            'posts_per_page'   => -1,
+                            'status'         => 'publish',
+                        );
+                        $query = new WP_Query($args);
+                      
+
+                        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                                 <div class="col-md-3 mb-5">
 
                                     <div class="wrap-cart-plswb card">
