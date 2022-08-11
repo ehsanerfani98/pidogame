@@ -1,3 +1,5 @@
+
+
 <?php
 $options = get_option('pidogame_framework');
 get_header();
@@ -6,9 +8,8 @@ get_header();
     <div class="page d-flex flex-row flex-column-fluid">
         <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
-                <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
-                    <form action="" method="post">
+                <form action="" method="post">
                         <div class="card">
                             <div class="card-header">
                                 <div class="card-title">
