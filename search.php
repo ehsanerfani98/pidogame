@@ -211,7 +211,18 @@ get_header();
                             </div>
                         <?php
                             wp_reset_postdata();
-                        endif ?>
+
+                        else :
+                        ?>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        هیچ نتیجه ای برای عبارت شما یافت نشد!
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        endif; ?>
                     </div>
                 </div>
             </div>
