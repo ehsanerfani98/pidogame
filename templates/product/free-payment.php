@@ -55,7 +55,6 @@
                             </div>
                             <div class="col-lg-2">
                                 <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
-                                <button type="button" id="free-payment-add-to-cart" class="btn btn-primary">افزودن به سبد خرید</button>
 
                                 <button type="button" class="btn btn-primary" id="free-payment-add-to-cart">
                                     <span class="indicator-label">
