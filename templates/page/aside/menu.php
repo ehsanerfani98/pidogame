@@ -42,7 +42,7 @@
                                                 foreach ($menuitems as $sub2) : ?>
                                                     <?php if ($sub2->menu_item_parent == $sub->ID) : ?>
                                                         <div class="menu-item">
-                                                            <a class="menu-link" href="/shop">
+                                                            <a class="menu-link" href="<?= $sub2->url ?>">
                                                                 <span class="menu-bullet">
                                                                     <span class="bullet bullet-dot"></span>
                                                                 </span>
@@ -56,7 +56,7 @@
                                     <?php endif; ?>
                                 <?php elseif($sub->menu_item_parent == $item->ID) : ?>
                                     <div class="menu-item">
-                                        <a class="menu-link" href="/rules">
+                                        <a class="menu-link" href="<?= $sub->url ?>">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
