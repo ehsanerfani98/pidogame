@@ -278,3 +278,7 @@
 .bg-disable {
     background: #ffe5e5 !important;
 }
+
+.aside .aside-menu .menu>.menu-item>.menu-link .menu-icon {
+    background-color: unset !important;
+}
