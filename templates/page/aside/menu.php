@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                     <?php endif; ?>
-                                <?php elseif($sub->menu_item_parent != $item->ID) : ?>
+                                <?php elseif($sub->menu_item_parent == $item->ID) : ?>
                                     <div class="menu-item">
                                         <a class="menu-link" href="/rules">
                                             <span class="menu-bullet">
