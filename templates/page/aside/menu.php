@@ -9,7 +9,7 @@
             $menu = wp_get_nav_menu_object($locations[$menu_name]);
             $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
             foreach ($menuitems as $item) :
-                if ($item->menu_item_parent == '0') :
+                if ($item->menu_item_parent == 0) :
             ?>
                     <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
                         <span class="menu-link" title="<?= $item->title ?>" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
@@ -25,41 +25,45 @@
                         <div class="menu-sub menu-sub-dropdown w-225px w-lg-275px px-1 py-4">
                             <?php
                             foreach ($menuitems as $sub) : ?>
-                                <?php if ($sub->menu_item_parent == $item->ID) : ?>
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                        <span class="menu-link">
+                                <?php if ($sub->menu_item_parent != 0) : ?>
+                                    <?php if ($sub->menu_item_parent == $item->ID) : ?>
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <span class="menu-link">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title"><?= $sub->title ?></span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                            <div class="menu-sub menu-sub-accordion menu-active-bg">
+                                                <?php
+                                                foreach ($menuitems as $sub2) : ?>
+                                                    <?php if ($sub2->menu_item_parent == $sub->ID) : ?>
+                                                        <div class="menu-item">
+                                                            <a class="menu-link" href="/shop">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                                <span class="menu-title"><?= $sub2->title ?></span>
+                                                            </a>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php else : ?>
+                                    <div class="menu-item">
+                                        <a class="menu-link" href="/rules">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
                                             <span class="menu-title"><?= $sub->title ?></span>
-                                            <span class="menu-arrow"></span>
-                                        </span>
-                                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                                            <?php
-                                            foreach ($menuitems as $sub2) : ?>
-                                                <?php if ($sub2->menu_item_parent == $sub->ID) : ?>
-                                                    <div class="menu-item">
-                                                        <a class="menu-link" href="/shop">
-                                                            <span class="menu-bullet">
-                                                                <span class="bullet bullet-dot"></span>
-                                                            </span>
-                                                            <span class="menu-title"><?= $sub2->title ?></span>
-                                                        </a>
-                                                    </div>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </div>
+                                        </a>
                                     </div>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                            <!-- <div class="menu-item">
-                                <a class="menu-link" href="/rules">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">قوانین فروشگاه</span>
-                                </a>
-                            </div> -->
+
                         </div>
                     </div>
             <?php
