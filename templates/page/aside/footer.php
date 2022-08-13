@@ -33,7 +33,7 @@
                     <div class="menu-item px-3">
                             
                             <a href="<?= $item->url ?>" class="menu-link px-3">
-                            <span class="svg-icon svg-icon-1 svg-icon-lg-2x svg-icon-<?= get_post_meta( $item->ID, 'pidogame_framework_menu', true )['opt-menu-badge-color'] ?> ml-2">
+                            <span class="svg-icon svg-icon-1 svg-icon-lg-2x svg-icon-<?= get_post_meta( $item->ID, 'pidogame_framework_menu', true )['opt-menu-badge-color'] ?>" style="margin-left: 4px;" >
                             <?= get_post_meta( $item->ID, 'pidogame_framework_menu', true )['opt-menu-icon'] ?>
                             </span>
                             <?= $item->title ?>
