@@ -122,7 +122,7 @@ if ($options['opt-header-notifications-switcher']) :
                                     $new_notes[] = [$item->id,$item->date_created->date,$item->content];
                                 }
                             }
-                            var_dump($new_notes);
+                            var_dump($notes);
                             ?>
                             <div class="d-flex flex-stack py-4">
                                 <div class="d-flex align-items-center">
