@@ -9,7 +9,7 @@
             $menu = wp_get_nav_menu_object($locations[$menu_name]);
             $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
             foreach ($menuitems as $item) :
-            if ($item['menu_item_parent'] == 0) :
+            // if ($item['menu_item_parent'] == 0) :
             ?>
                 <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
                     <span class="menu-link" title="صفحات" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             <?php 
-            endif;
+            // endif;
         
         endforeach; ?>
 
