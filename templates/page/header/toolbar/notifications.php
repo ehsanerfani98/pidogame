@@ -105,24 +105,16 @@ if ($options['opt-header-notifications-switcher']) :
                     <div class="tab-pane fade show" id="private-alert" role="tabpanel">
                         <div class="scroll-y mh-325px my-5 px-8">
                             <?php 
-                            foreach (get_all_order() as $order_id) {  
-                                                               
-                                 if(wc_get_order_notes([
-                                    'order_id' => $order_id,
-                                    'type' => 'customer',
-                                 ])){
-                                    $notes[] = wc_get_order_notes([
-                                        'order_id' => $order_id,
-                                        'type' => 'customer',
-                                    ]);
-                                 }
+                            foreach (get_all_order() as $order_id) {
+                                $notes[] = get_private_order_notes($order_id);
                             } 
 
                             foreach ($notes as $values) {
                                 foreach ($values as $item) {
-                                    $new_notes[] = [$item->id,(string)$item->date_created->timezone,$item->content];
+                                    $new_notes[] = [$item['note_id'],$item['note_date'],$item['note_content']];
                                 }
                             }
+
                             var_dump($new_notes);
                             ?>
                             <div class="d-flex flex-stack py-4">
