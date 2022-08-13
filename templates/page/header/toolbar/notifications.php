@@ -115,10 +115,14 @@ if ($options['opt-header-notifications-switcher']) :
                                         'type' => 'customer',
                                     ]);
                                  }
-                                 
-                                // $notes[] = get_private_order_notes($order_id);
                             } 
-                            var_dump($notes);
+
+                            foreach ($customer_note as $values) {
+                                foreach ($values as $item) {
+                                    $new_notes[] = $item['customer_note'];
+                                }
+                            }
+                            var_dump($new_notes);
                             ?>
                             <div class="d-flex flex-stack py-4">
                                 <div class="d-flex align-items-center">
