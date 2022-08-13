@@ -15,7 +15,7 @@
         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px" data-kt-menu="true">
             <!--begin::Menu item-->
             <div class="menu-item px-3">
-                <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">دسترسی سریع</div>
+                <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">شبکه های اجتماعی</div>
             </div>
             <!--end::Menu item-->
             <!--begin::Menu separator-->
