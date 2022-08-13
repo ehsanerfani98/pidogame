@@ -736,12 +736,6 @@ if (class_exists('CSF')) {
 				'title'		=>	'آیکون SVG',
 				'sanitize' 	=> 	false
 			),
-			// Create badge label
-			array(
-				'id'    	=>	'opt-menu-badge',
-				'type'  	=>	'text',
-				'title'		=>	'متن نشان'
-			),
 			// Create badge color
 			array(
 				'id'    		=>	'opt-menu-badge-color',
