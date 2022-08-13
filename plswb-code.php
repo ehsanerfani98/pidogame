@@ -1116,6 +1116,7 @@ function get_private_order_notes($order_id)
     ");
 
     foreach ($results as $note) {
+      dd($note);
         $order_note[]  = array(
             'note_id'      => $note->comment_ID,
             'note_date'    => $note->comment_date,
