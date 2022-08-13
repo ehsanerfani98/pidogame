@@ -1072,13 +1072,14 @@ function plugin_myTitleFilter($title)
 }
 
 
-// function wpb_custom_new_menu()
-// {
-//     register_nav_menu('منوی اصلی');
-// }
-// add_action('init', 'wpb_custom_new_menu');
+function themeaw_setup(){
+    register_nav_menus(array(
+    'header-menu' => 'Header Menu',
+    'footer-menu' => 'Footer Menu'
+   ));
+}
 
-
+add_action('init ', 'themeaw_setup');
 
 
 
