@@ -1079,13 +1079,13 @@ register_nav_menu('main-menu', __('منوی کناری'));
 
 class submenu_Walker extends Walker_Nav_Menu
 {
-    public function start_lvl(&$output, $depth = 0, $args)
+    public function start_lvl(&$output, $depth = 0, $args = array())
     {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<div class=\"dropdowns dropdown--menu\" >\n$indent<ul>\n";
     }
 
-    public function end_lvl(&$output, $depth = 0, $args)
+    public function end_lvl(&$output, $depth = 0, $args = array())
     {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n</div>\n</a>\n</li>\n";
