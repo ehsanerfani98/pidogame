@@ -1082,8 +1082,7 @@ class submenu_Walker extends Walker_Nav_Menu
     public function start_lvl(&$output, $depth = 0, $args = array())
     {
         $indent = str_repeat("\t", $depth);
-        var_dump($indent);
-        $output .= "\n$indent<div class=\"dropdowns dropdown--menu\" >\n$indent<ul>\n";
+        $output .= "\n$indent<div class=\"menu-sub menu-sub-dropdown w-225px w-lg-275px px-1 py-4\" >\n$indent<ul>\n";
     }
 
     public function end_lvl(&$output, $depth = 0, $args = array())
