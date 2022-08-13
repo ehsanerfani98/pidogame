@@ -9,6 +9,7 @@
             $menu = wp_get_nav_menu_object($locations[$menu_name]);
             $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
             foreach ($menuitems as $item) :
+                var_dump($item['menu_item_parent']);
             if ($item['menu_item_parent'] == '0') :
             ?>
                 <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
