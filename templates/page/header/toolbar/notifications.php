@@ -35,11 +35,13 @@ if ($options['opt-header-notifications-switcher']) :
                 </h3>
                 <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab" href="#public-alert" aria-selected="true" role="tab">Alerts</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab" href="#public-alert" aria-selected="true" role="tab">عمومی</a>
                     </li>
+                    <?php if(is_user_logged_in()): ?>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#private-alert" aria-selected="false" role="tab" tabindex="-1">Updates</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#private-alert" aria-selected="false" role="tab" tabindex="-1">خصوصی</a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
             <div class="tab-content">
@@ -99,6 +101,7 @@ if ($options['opt-header-notifications-switcher']) :
                         </div>
                     <?php endif ?>
                 </div>
+                <?php if(is_user_logged_in()): ?>
                 <div class="tab-pane fade show" id="private-alert" role="tabpanel">
                     <div class="scroll-y mh-325px my-5 px-8">
                         <div class="d-flex flex-stack py-4">
@@ -141,6 +144,7 @@ if ($options['opt-header-notifications-switcher']) :
                         </a>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
