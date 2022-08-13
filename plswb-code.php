@@ -1081,6 +1081,7 @@ function themeaw_setup(){
 add_action('init ', 'themeaw_setup');
 
 
+register_nav_menu('main-menu', __('منوی اصلی'));
 
 
 // class submenu_Walker extends Walker_Nav_Menu
