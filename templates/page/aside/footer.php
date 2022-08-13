@@ -1,6 +1,6 @@
 <div class="aside-footer flex-column-auto pb-5 pb-lg-13" id="kt_aside_footer">
     <!--begin::Menu-->
-    <div class="d-flex flex-center w-100 scroll-px" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-dismiss="click" title="دسترسی سریع">
+    <div class="d-flex flex-center w-100 scroll-px" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-dismiss="click" title="شبکه های اجتماعی">
         <button type="button" class="btn btn-icon btn-custom w-50px h-50px" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start">
             <!--begin::Svg Icon-->
             <span class="svg-icon svg-icon-2 svg-icon-lg-1">
