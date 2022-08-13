@@ -117,12 +117,12 @@ if ($options['opt-header-notifications-switcher']) :
                                  }
                             } 
 
-                            foreach ($notes as $values) {
-                                foreach ($values as $item) {
-                                    $new_notes[] = $item['customer_note'];
-                                }
-                            }
-                            var_dump($new_notes);
+                            // foreach ($notes as $values) {
+                            //     foreach ($values as $item) {
+                            //         $new_notes[] = $item['customer_note'];
+                            //     }
+                            // }
+                            // var_dump($new_notes);
                             ?>
                             <div class="d-flex flex-stack py-4">
                                 <div class="d-flex align-items-center">
