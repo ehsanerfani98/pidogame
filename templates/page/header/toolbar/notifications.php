@@ -117,9 +117,9 @@ if ($options['opt-header-notifications-switcher']) :
                                  }
                             } 
 
-                            foreach ($customer_note as $values) {
+                            foreach ($notes as $values) {
                                 foreach ($values as $item) {
-                                    $new_notes[] = $item->customer_note;
+                                    $new_notes[] = $item['customer_note'];
                                 }
                             }
                             var_dump($new_notes);
