@@ -1079,4 +1079,25 @@ register_nav_menu('setting-menu', __('دسترسی سریع'));
 
 
 
+function get_all_order()
+{
+    $customer = wp_get_current_user();
+    // Get all customer orders
+    $customer_orders = get_posts(array(
+        'numberposts' => -1,
+        'meta_key' => '_customer_user',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'meta_value' => get_current_user_id(),
+        'post_type' => wc_get_order_types(),
+        'post_status' => array_keys(wc_get_order_statuses()), 'post_status' => array('wc-processing'),
+    ));
 
+    $Order_Array = []; //
+    foreach ($customer_orders as $customer_order) {
+        $orderq = wc_get_order($customer_order);
+        $Order_Array[] = $orderq->get_id();
+    }
+
+    return $Order_Array;
+}
