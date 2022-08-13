@@ -8,6 +8,9 @@
             $locations = get_nav_menu_locations();
             $menu = wp_get_nav_menu_object($locations[$menu_name]);
             $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
+            foreach ($menuitems as $arr) {
+                $parent_ids[] = $arr->menu_item_parent;
+            }
             foreach ($menuitems as $item) :
                 if ($item->menu_item_parent == 0) :
             ?>
@@ -25,6 +28,7 @@
                         <div class="menu-sub menu-sub-dropdown w-225px w-lg-275px px-1 py-4">
                             <?php
                             foreach ($menuitems as $sub) : ?>
+                                <?php if (in_array($sub->ID, $parent_ids)) : ?>
                                     <?php if ($sub->menu_item_parent == $item->ID) : ?>
                                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <span class="menu-link">
@@ -50,6 +54,7 @@
                                                 <?php endforeach; ?>
                                             </div>
                                         </div>
+                                    <?php endif; ?>
                                 <?php else : ?>
                                     <div class="menu-item">
                                         <a class="menu-link" href="/rules">
