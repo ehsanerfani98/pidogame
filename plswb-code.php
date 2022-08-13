@@ -1074,7 +1074,7 @@ function plugin_myTitleFilter($title)
 
 
 
-register_nav_menu('main-menu', __('منوی اصلی'));
+register_nav_menu('main-menu', __('منوی کناری'));
 
 
 // class submenu_Walker extends Walker_Nav_Menu
