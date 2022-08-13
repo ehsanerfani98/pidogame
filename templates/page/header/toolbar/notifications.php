@@ -110,7 +110,7 @@ if ($options['opt-header-notifications-switcher']) :
                             foreach (get_all_order() as $order_id) {
 
                                 $customer_notes = wc_get_order_notes([
-                                    'order_id' => $order->get_id(),
+                                    'order_id' => $order_id,
                                     'type' => 'customer',
                                 ]);
                                 if ($customer_notes) {
