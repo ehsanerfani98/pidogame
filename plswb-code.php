@@ -1112,11 +1112,10 @@ function get_private_order_notes($order_id)
         SELECT *
         FROM $table_perfixed
         WHERE  `comment_post_ID` = $order_id
-        AND  `comment_type` LIKE  'order_note'
+        AND  `comment_type` !=  'order_note'
     ");
 
     foreach ($results as $note) {
-      dd($note);
         $order_note[]  = array(
             'note_id'      => $note->comment_ID,
             'note_date'    => $note->comment_date,
