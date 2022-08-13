@@ -17,7 +17,7 @@
                     <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-3">
                         <span class="menu-link" title="<?= $item->title ?>" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                             <span class="menu-icon">
-                                <span class="svg-icon svg-icon-1 svg-icon-lg-2x">
+                                <span class="svg-icon svg-icon-1 svg-icon-lg-2x svg-icon-<?= get_post_meta( $item->ID, 'pidogame_framework_menu', true )['opt-menu-badge-color'] ?>">
                                 <?= get_post_meta( $item->ID, 'pidogame_framework_menu', true )['opt-menu-icon'] ?>
 
                                 </span>
