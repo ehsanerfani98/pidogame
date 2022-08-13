@@ -120,6 +120,7 @@ if ($options['opt-header-notifications-switcher']) :
 
                             foreach ($notes as $values) {
                                 foreach ($values as $item) {
+                                    dd($item['date_created']->date);
                                     $new_notes[] = [$item->id,$item['date_created']->date, $item->content];
                                 }
                             }
