@@ -1072,13 +1072,6 @@ function plugin_myTitleFilter($title)
 }
 
 
-function themeaw_setup(){
-    register_nav_menus(array(
-    'plswb-org-menu' => 'منوی اصلی',
-   ));
-}
-
-add_action('init ', 'themeaw_setup');
 
 
 register_nav_menu('main-menu', __('منوی اصلی'));
