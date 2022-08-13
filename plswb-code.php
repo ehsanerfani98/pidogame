@@ -1074,8 +1074,7 @@ function plugin_myTitleFilter($title)
 
 function themeaw_setup(){
     register_nav_menus(array(
-    'header-menu' => 'Header Menu',
-    'footer-menu' => 'Footer Menu'
+    'plswb-org-menu' => 'منوی اصلی',
    ));
 }
 
