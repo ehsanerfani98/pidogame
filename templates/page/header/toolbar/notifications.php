@@ -131,6 +131,13 @@ if ($options['opt-header-notifications-switcher']) :
                             <!--end::Label-->
                         </div>
                     </div>
+                    <div class="d-flex flex-column px-9">
+                        <div class="pt-10 pb-0">
+                            <h3 class="text-dark text-center fw-bolder">f</h3>
+                            <div class="text-center text-gray-600 fw-bold pt-1">e</div>
+                        </div>
+                      
+                    </div>
                 </div>
             </div>
         </div>
