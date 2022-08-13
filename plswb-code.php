@@ -1088,6 +1088,6 @@ class submenu_Walker extends Walker_Nav_Menu
     public function end_lvl(&$output, $depth = 0, $args = array())
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</span>\n</div>\n";
+        $output .= "$indent</span>\n</div>\n</a>\n</li>\n";
     }
 }
