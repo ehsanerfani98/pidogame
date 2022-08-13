@@ -99,9 +99,8 @@ if ($options['opt-header-notifications-switcher']) :
                         </div>
                     <?php endif ?>
                 </div>
-                <div class="tab-pane fade active show" id="private-alert" role="tabpanel">
+                <div class="tab-pane fade show" id="private-alert" role="tabpanel">
                     <div class="scroll-y mh-325px my-5 px-8">
-
                         <div class="d-flex flex-stack py-4">
                             <!--begin::Section-->
                             <div class="d-flex align-items-center">
