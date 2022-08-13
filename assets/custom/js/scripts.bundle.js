@@ -663,3 +663,4 @@ function currentSlide(n) {
 }
 
 jQuery('#billing_phone').prop('readonly', true).addClass('bg-disable');
+jQuery('#billing_email').prop('readonly', true).addClass('bg-disable');
