@@ -28,7 +28,7 @@
                         <div class="menu-sub menu-sub-dropdown w-225px w-lg-275px px-1 py-4">
                             <?php
                             foreach ($menuitems as $sub) : ?>
-                                <?php if (in_array($sub->ID, $parent_ids)) : ?>
+                                <?php if (in_array($sub->ID, $parent_ids) && $sub->menu_item_parent == $item->ID) : ?>
                                     <?php if ($sub->menu_item_parent == $item->ID) : ?>
                                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                             <span class="menu-link">
