@@ -35,18 +35,15 @@ if ($options['opt-header-notifications-switcher']) :
                 </h3>
                 <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab" href="#d" aria-selected="true" role="tab">Alerts</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active" data-bs-toggle="tab" href="#public-alert" aria-selected="true" role="tab">Alerts</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#kt_topbar_notifications_1" aria-selected="false" role="tab" tabindex="-1">Updates</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#kt_topbar_notifications_3" aria-selected="false" role="tab" tabindex="-1">Logs</a>
+                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4" data-bs-toggle="tab" href="#private-alert" aria-selected="false" role="tab" tabindex="-1">Updates</a>
                     </li>
                 </ul>
             </div>
             <div class="tab-content">
-                <div class="tab-pane fade active show" id="kt_topbar_notifications_1" role="tabpanel">
+                <div class="tab-pane fade active show" id="public-alert" role="tabpanel">
                     <?php if ($theQuery->have_posts()) : ?>
                         <div class="scroll-y mh-325px my-5 px-8">
                             <?php while ($theQuery->have_posts()) : $theQuery->the_post();
@@ -101,6 +98,9 @@ if ($options['opt-header-notifications-switcher']) :
                             </div>
                         </div>
                     <?php endif ?>
+                </div>
+                <div class="tab-pane fade active show" id="private-alert" role="tabpanel">
+                private
                 </div>
             </div>
         </div>
