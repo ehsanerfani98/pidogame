@@ -118,13 +118,17 @@ if ($options['opt-header-notifications-switcher']) :
                                 }
                             }
 
+                            $i = 0;
                             foreach ($notes as $values) {
                                 foreach ($values as $item) {
-                                    $new_notes[] = [
-                                        "id" => $item->id, 
-                                        "date" => ((array)$item->date_created)['date'],
-                                         "content" =>$item->content
+                                    if ($i < 5) {
+                                        $new_notes[] = [
+                                            "id" => $item->id,
+                                            "date" => ((array)$item->date_created)['date'],
+                                            "content" => $item->content
                                         ];
+                                    }
+                                    $i++;
                                 }
                             }
 
@@ -147,7 +151,7 @@ if ($options['opt-header-notifications-switcher']) :
                                             <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
                                         </div>
                                     </div>
-                                    <span class="badge badge-light fs-8"><?= wp_date('F j, Y', strtotime($note['date']) , 'Asia/Tehran') ?></span>
+                                    <span class="badge badge-light fs-8"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></span>
                                 </div>
                             <?php endforeach; ?>
 
