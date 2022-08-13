@@ -1082,7 +1082,6 @@ register_nav_menu('setting-menu', __('دسترسی سریع'));
 function get_all_order()
 {
     $customer = wp_get_current_user();
-    // Get all customer orders
     $customer_orders = get_posts(array(
         'numberposts' => -1,
         'meta_key' => '_customer_user',
@@ -1101,4 +1100,28 @@ function get_all_order()
     }
 
     return $Order_Array;
+}
+
+
+function get_private_order_notes($order_id)
+{
+    global $wpdb;
+
+    $table_perfixed = $wpdb->prefix . 'comments';
+    $results = $wpdb->get_results("
+        SELECT *
+        FROM $table_perfixed
+        WHERE  `comment_post_ID` = $order_id
+        AND  `comment_type` LIKE  'order_note'
+    ");
+
+    foreach ($results as $note) {
+        $order_note[]  = array(
+            'note_id'      => $note->comment_ID,
+            'note_date'    => $note->comment_date,
+            'note_author'  => $note->comment_author,
+            'note_content' => $note->comment_content,
+        );
+    }
+    return $order_note;
 }

@@ -104,7 +104,12 @@ if ($options['opt-header-notifications-switcher']) :
                 <?php if (is_user_logged_in()) : ?>
                     <div class="tab-pane fade show" id="private-alert" role="tabpanel">
                         <div class="scroll-y mh-325px my-5 px-8">
-                            <?php var_dump(get_all_order()) ?>
+                            <?php 
+                            foreach (get_all_order() as $order_id) {
+                                $notes[] = get_private_order_notes($order_id);
+                            } 
+                            var_dump($notes);
+                            ?>
                             <div class="d-flex flex-stack py-4">
                                 <div class="d-flex align-items-center">
                                     <div class="symbol symbol-35px me-4">
