@@ -1075,6 +1075,7 @@ function plugin_myTitleFilter($title)
 
 
 register_nav_menu('main-menu', __('منوی کناری'));
+register_nav_menu('setting-menu', __('دسترسی سریع'));
 
 
 

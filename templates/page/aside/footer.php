@@ -21,36 +21,22 @@
             <!--begin::Menu separator-->
             <div class="separator mb-3 opacity-75"></div>
             <!--end::Menu separator-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link px-3">ثبت نام یا ورود</a>
-            </div>
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link px-3">تمام محصولات</a>
-            </div>
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link px-3">پیگیری سفارش</a>
-            </div>
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <a href="#" class="menu-link px-3">قوانین خرید از فروشگاه</a>
-            </div>
-            <!--end::Menu item-->
-            <!--begin::Menu separator-->
-            <div class="separator mt-3 opacity-75"></div>
-            <!--end::Menu separator-->
-            <!--begin::Menu item-->
-            <div class="menu-item px-3">
-                <div class="menu-content px-3 py-3">
-                    <a class="btn btn-primary btn-sm px-4" href="#">کانال تلگرام پیدوگیم</a>
-                </div>
-            </div>
-            <!--end::Menu item-->
+
+            <?php
+            $menu_name = 'setting-menu';
+            $locations = get_nav_menu_locations();
+            $menu = wp_get_nav_menu_object($locations[$menu_name]);
+            $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
+            foreach ($menuitems as $item) :
+                if ($item->menu_item_parent == 0) :
+            ?>
+                    <div class="menu-item px-3">
+                        <a href="<?= $item->url ?>" class="menu-link px-3"><?= $item->title ?></a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+
+
         </div>
         <!--end::Menu 2-->
     </div>
