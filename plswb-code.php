@@ -1155,7 +1155,7 @@ function view_order_note_customer()
                         <?= $note['content'] ?>
                     </td>
                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                        <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y - g:i A', strtotime($note['date']), 'Asia/Tehran') ?></time>
+                        <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y - g:i A', strtotime($note['date'])) ?></time>
 
                     </td>
 
