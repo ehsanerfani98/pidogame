@@ -1186,7 +1186,6 @@ function plswb_check_order()
     <div class="card">
 
     <div class="card-header card-header-stretch">
-        <h3 class="card-title">Title</h3>
         <div class="card-toolbar">
             <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                 <li class="nav-item">
