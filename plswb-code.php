@@ -1169,12 +1169,8 @@ function view_order_note_customer()
 <?php
 }
 
-add_action('init', 'plswb_time');
 
-function plswb_time()
+function plswb_get_date($date)
 {
-    function plswb_get_date($date)
-    {
-        return wp_date('F j, Y - g:i A', strtotime($date));
-    }
+    return wp_date('F j, Y - g:i A', strtotime($date));
 }

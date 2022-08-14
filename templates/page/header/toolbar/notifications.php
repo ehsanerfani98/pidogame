@@ -25,7 +25,7 @@ if ($options['opt-header-notifications-switcher']) :
                     <path d="M19 15V18C19 18.6 18.6 19 18 19H6C5.4 19 5 18.6 5 18V15C6.1 15 7 14.1 7 13V10C7 7.6 8.7 5.6 11 5.1V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V5.1C15.3 5.6 17 7.6 17 10V13C17 14.1 17.9 15 19 15ZM11 10C11 9.4 11.4 9 12 9C12.6 9 13 8.6 13 8C13 7.4 12.6 7 12 7C10.3 7 9 8.3 9 10C9 10.6 9.4 11 10 11C10.6 11 11 10.6 11 10Z" fill="black" />
                 </svg>
             </span>
-            <span class="pulse-ring border-5" ></span>
+            <span class="pulse-ring border-5"></span>
         </div>
         <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
             <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('<?php echo $options['opt-header-notifications-header-image']['url'] ?>')">
@@ -107,9 +107,7 @@ if ($options['opt-header-notifications-switcher']) :
                         <div class="scroll-y mh-325px my-5 px-8">
                             <?php
 
-
                             foreach (get_all_order() as $order_id) {
-
                                 $customer_notes = wc_get_order_notes([
                                     'order_id' => $order_id,
                                     'type' => 'customer',
@@ -119,14 +117,15 @@ if ($options['opt-header-notifications-switcher']) :
                                 }
                             }
 
+
                             $i = 0;
                             foreach ($notes as $key => $values) {
                                 foreach ($values as $item) {
-                                        $new_notes[] = [
-                                            "id" => $item->id,
-                                            "date" => ((array)$item->date_created)['date'],
-                                            "content" => " شماره سفارش $key | " . $item->content
-                                        ];
+                                    $new_notes[] = [
+                                        "id" => $item->id,
+                                        "date" => ((array)$item->date_created)['date'],
+                                        "content" => " شماره سفارش $key | " . $item->content
+                                    ];
                                 }
                             }
 
@@ -137,27 +136,27 @@ if ($options['opt-header-notifications-switcher']) :
                             ?>
 
                             <?php foreach ($new_notes as $note) : ?>
-                            <?php if ($i < 5) : ?>
-                                <div class="d-flex flex-stack py-4">
-                                    <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-35px me-4">
-                                            <span class="symbol-label bg-light-primary">
-                                                <span class="svg-icon svg-icon-2 svg-icon-primary">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <path d="M22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12ZM14.5 4.5C10.4 4.5 7 7.9 7 12C7 16.1 10.4 19.5 14.5 19.5C18.6 19.5 22 16.1 22 12C22 7.9 18.6 4.5 14.5 4.5Z" fill="black" />
-                                                        <path opacity="0.3" d="M22 12C22 16.1 18.6 19.5 14.5 19.5C10.4 19.5 7 16.1 7 12C7 7.9 10.4 4.5 14.5 4.5C18.6 4.5 22 7.9 22 12ZM12 7C9.2 7 7 9.2 7 12C7 14.8 9.2 17 12 17C14.8 17 17 14.8 17 12C17 9.2 14.8 7 12 7Z" fill="black" />
-                                                    </svg>
+                                <?php if ($i < 5) : ?>
+                                    <div class="d-flex flex-stack py-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-primary">
+                                                    <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                            <path d="M22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12ZM14.5 4.5C10.4 4.5 7 7.9 7 12C7 16.1 10.4 19.5 14.5 19.5C18.6 19.5 22 16.1 22 12C22 7.9 18.6 4.5 14.5 4.5Z" fill="black" />
+                                                            <path opacity="0.3" d="M22 12C22 16.1 18.6 19.5 14.5 19.5C10.4 19.5 7 16.1 7 12C7 7.9 10.4 4.5 14.5 4.5C18.6 4.5 22 7.9 22 12ZM12 7C9.2 7 7 9.2 7 12C7 14.8 9.2 17 12 17C14.8 17 17 14.8 17 12C17 9.2 14.8 7 12 7Z" fill="black" />
+                                                        </svg>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
+                                            <div class="mb-0 me-2">
+                                                <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
+                                            </div>
                                         </div>
-                                        <div class="mb-0 me-2">
-                                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
-                                        </div>
+                                        <span class="badge badge-light fs-8"><?= plswb_get_date($note['date']) ?></span>
                                     </div>
-                                    <span class="badge badge-light fs-8"><?= plswb_get_date($note['date']) ?></span>
-                                </div>
-                            <?php endif; ?>
-                            <?php $i++; ?>
+                                <?php endif; ?>
+                                <?php $i++; ?>
                             <?php endforeach; ?>
 
                         </div>
