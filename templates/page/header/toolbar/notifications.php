@@ -15,7 +15,7 @@ if ($options['opt-header-notifications-switcher']) :
     }
 ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
-        <div class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
+        <div class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative pulse-primary" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
             <span class="svg-icon svg-icon-1">
                 <?php if ($importantCounter > 0) : ?>
                     <span class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-warning ss02"><?php echo $importantCounter ?></span>
@@ -25,6 +25,7 @@ if ($options['opt-header-notifications-switcher']) :
                     <path d="M19 15V18C19 18.6 18.6 19 18 19H6C5.4 19 5 18.6 5 18V15C6.1 15 7 14.1 7 13V10C7 7.6 8.7 5.6 11 5.1V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V5.1C15.3 5.6 17 7.6 17 10V13C17 14.1 17.9 15 19 15ZM11 10C11 9.4 11.4 9 12 9C12.6 9 13 8.6 13 8C13 7.4 12.6 7 12 7C10.3 7 9 8.3 9 10C9 10.6 9.4 11 10 11C10.6 11 11 10.6 11 10Z" fill="black" />
                 </svg>
             </span>
+            <span class="pulse-ring border-5"></span>
         </div>
         <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
             <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('<?php echo $options['opt-header-notifications-header-image']['url'] ?>')">
