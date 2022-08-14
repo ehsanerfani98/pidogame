@@ -1186,6 +1186,9 @@ function plswb_check_order()
         .card .card-header {
             justify-content: center !important;
         }
+        .pointer{
+            cursor: pointer;
+        }
     </style>
     <div class="card">
 
