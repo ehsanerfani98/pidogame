@@ -1120,14 +1120,11 @@ function view_order_note_customer()
     $i = 0;
     foreach ($notes as $key => $values) {
         foreach ($values as $item) {
-            if ($i < 20) {
                 $new_notes[] = [
                     "id" => $item->id,
                     "date" => ((array)$item->date_created)['date'],
                     "content" => " شماره سفارش $key | " . $item->content
                 ];
-            }
-            $i++;
         }
     }
 
@@ -1148,7 +1145,7 @@ function view_order_note_customer()
         <tbody>
 
             <?php foreach ($new_notes as $note) : ?>
-
+            <?php if ($i < 20) : ?>
                 <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
                         <?= $note['id'] ?>
@@ -1163,6 +1160,8 @@ function view_order_note_customer()
                     </td>
 
                 </tr>
+            <?php endif; ?>
+            <?php $i++; ?>
             <?php endforeach; ?>
 
         </tbody>
