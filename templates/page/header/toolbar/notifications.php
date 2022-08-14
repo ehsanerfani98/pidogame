@@ -140,24 +140,12 @@ if ($options['opt-header-notifications-switcher']) :
                                 <?php if ($i < 5) : ?>
                                     <div class="d-flex flex-stack py-4">
                                         <div class="d-flex align-items-center">
-                                            <div class="symbol symbol-35px me-4">
-                                                <span class="symbol-label bg-light-primary">
-                                                    <span class="svg-icon svg-icon-2 svg-icon-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                            <path d="M22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12ZM14.5 4.5C10.4 4.5 7 7.9 7 12C7 16.1 10.4 19.5 14.5 19.5C18.6 19.5 22 16.1 22 12C22 7.9 18.6 4.5 14.5 4.5Z" fill="black" />
-                                                            <path opacity="0.3" d="M22 12C22 16.1 18.6 19.5 14.5 19.5C10.4 19.5 7 16.1 7 12C7 7.9 10.4 4.5 14.5 4.5C18.6 4.5 22 7.9 22 12ZM12 7C9.2 7 7 9.2 7 12C7 14.8 9.2 17 12 17C14.8 17 17 14.8 17 12C17 9.2 14.8 7 12 7Z" fill="black" />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </div>
+                                  
                                             <div class="mb-0 me-2">
                                                 <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
                                             </div>
                                         </div>
-                                        <span class="badge badge-light fs-8"><?php
-    wp_timezone('Asi');
-                                        
-                                        echo plswb_get_date($note['date']) ?></span>
+                                        <span class="badge badge-light fs-8"><?= plswb_get_date($note['date']) ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php $i++; ?>
