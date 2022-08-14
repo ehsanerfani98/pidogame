@@ -1191,30 +1191,40 @@ function plswb_check_order()
 
         <div class="card-header card-header-stretch">
             <div class="card-toolbar">
-                <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="">
-                            <h3>مشخصات کاربری</h3>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="">
-                            <h3>شماره سفارش</h3>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="">
-                            <h3>مشاهده وضعیت</h3>
-                        </a>
-                    </li>
-                </ul>
+                <form action="" method="get">
+                    <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
+                        <li class="nav-item">
+                            <a class="nav-link active">
+                                <h3>مشخصات کاربری</h3>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <h3>شماره سفارش</h3>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >
+                                <h3>مشاهده وضعیت</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
 
         <div class="card-body">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
-                    Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+                    <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
+                        مرحله اول
+                    <?php endif; ?>
+
+                    <?php if ($_GET['ch1']) : ?>
+                        مرحله دوم
+                    <?php elseif ($_GET['ch2']) : ?>
+                        مرحله سوم
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
