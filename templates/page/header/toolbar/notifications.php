@@ -15,7 +15,7 @@ if ($options['opt-header-notifications-switcher']) :
     }
 ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
-        <div class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative pulse-primary" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
+        <div class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative pulse-danger" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
             <span class="svg-icon svg-icon-1">
                 <?php if ($importantCounter > 0) : ?>
                     <span class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-warning ss02"><?php echo $importantCounter ?></span>
