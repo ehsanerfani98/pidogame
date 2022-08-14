@@ -13,6 +13,8 @@ if ($options['opt-header-notifications-switcher']) :
             if ($meta['opt-notifications-important'] == true) $importantCounter++;
         }
     }
+    wp_timezone('Asia/Tehran');
+
 ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
         <div class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative pulse  pulse-danger" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
