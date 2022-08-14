@@ -1149,8 +1149,7 @@ function view_order_note_customer()
 
             <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
-                    <a href="https://test.pidogame.com/my-account/view-order/4304/">
-                    <?= $note['id'] ?> </a>
+                    <?= $note['id'] ?> 
 
                 </td>
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
