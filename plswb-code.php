@@ -1124,15 +1124,16 @@ function view_order_note_customer()
                 $new_notes[] = [
                     "id" => $item2->id,
                     "date" => ((array)$item2->date_created)['date'],
-                    "content" => " شماره سفارش $key | ".$item2->content
+                    "content" => " شماره سفارش $key | " . $item2->content
                 ];
             }
             $i++;
         }
     }
 
-    dd($new_notes);
-
+    usort($new_notes, function ($item1, $item2) {
+        return $item2['date'] <=> $item1['date'];
+    });
     ?>
     <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
         <thead>
@@ -1145,22 +1146,22 @@ function view_order_note_customer()
 
         <tbody>
 
-        <?php foreach ($new_notes as $note) : ?>
+            <?php foreach ($new_notes as $note) : ?>
 
-            <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
-                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
-                    <?= $note['id'] ?> 
+                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
+                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
+                        <?= $note['id'] ?>
 
-                </td>
-                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
-                <?= $note['content'] ?>
-                </td>
-                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                    <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></time>
+                    </td>
+                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
+                        <?= $note['content'] ?>
+                    </td>
+                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
+                        <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></time>
 
-                </td>
-                
-            </tr>
+                    </td>
+
+                </tr>
             <?php endforeach; ?>
 
         </tbody>
