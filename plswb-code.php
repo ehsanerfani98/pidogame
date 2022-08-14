@@ -1236,6 +1236,8 @@ function plswb_check_order()
                         <div class="tab-pane show <?= isset($_GET['ch1']) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             مرحله دوم
                             <a href="<?= get_permalink() . '?ch2' ?>" class="btn btn-primary">ادامه</a>
+                            <button onclick="window.history.go(-1)">Back</button>
+
                         </div>
                     <?php endif; ?>
 
