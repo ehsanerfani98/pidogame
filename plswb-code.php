@@ -1225,8 +1225,10 @@ function plswb_check_order()
                                         <input name="ch_email" id="ch_email" type="text" class="form-control form-control-solid" />
                                     </div>
                                 </div>
+                                <div class="col-lg-12" style="text-align: left;">
+                                    <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a>
+                                </div>
                             </div>
-                            <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a>
                         </div>
                     <?php endif; ?>
 
