@@ -1192,10 +1192,10 @@ function plswb_check_order()
                         <a class="nav-link active" data-bs-toggle="tab" href=""><h3>مشخصات کاربری</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="">Link 2</a>
+                        <a class="nav-link" data-bs-toggle="tab" href=""><h3>شماره سفارش</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="">Link 3</a>
+                        <a class="nav-link" data-bs-toggle="tab" href=""><h3>مشاهده وضعیت</h3></a>
                     </li>
                 </ul>
             </div>
