@@ -1178,15 +1178,38 @@ function plswb_get_date($date)
 
 
 
-add_shortcode( 'plswb-check-order', 'plswb_check_order' );
-function plswb_check_order(){
-    ?>
+add_shortcode('plswb-check-order', 'plswb_check_order');
+function plswb_check_order()
+{
+?>
 
-<div class="card">
-    <div class="card-body">
-        تست
+    <div class="card">
+        <div class="card-body">
+            <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_4">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_5">Link 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_6">Link 3</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
+                    Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+                </div>
+                <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
+                    Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit.
+                </div>
+                <div class="tab-pane fade" id="kt_tab_pane_6" role="tabpanel">
+                    Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do.
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 <?php
 }
