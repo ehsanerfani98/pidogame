@@ -1172,5 +1172,5 @@ function view_order_note_customer()
 
 function plswb_get_date($date)
 {
-    return wp_date('F j, Y - g:i A', strtotime($date));
+    return wp_date('F j, Y - H:i', strtotime($date));
 }
