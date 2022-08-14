@@ -1119,12 +1119,12 @@ function view_order_note_customer()
 
     $i = 0;
     foreach ($notes as $key => $values) {
-        foreach ($values as $item2) {
+        foreach ($values as $item) {
             if ($i < 20) {
                 $new_notes[] = [
-                    "id" => $item2->id,
-                    "date" => ((array)$item2->date_created)['date'],
-                    "content" => " شماره سفارش $key | " . $item2->content
+                    "id" => $item->id,
+                    "date" => ((array)$item->date_created)['date'],
+                    "content" => " شماره سفارش $key | " . $item->content
                 ];
             }
             $i++;

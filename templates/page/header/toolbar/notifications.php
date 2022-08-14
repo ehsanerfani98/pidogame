@@ -126,12 +126,16 @@ if ($options['opt-header-notifications-switcher']) :
                                         $new_notes[] = [
                                             "id" => $item->id,
                                             "date" => ((array)$item->date_created)['date'],
-                                            "content" => $item->content." | شماره سفارش $key "
+                                            "content" => " شماره سفارش $key | " . $item->content
                                         ];
                                     }
                                     $i++;
                                 }
                             }
+
+                            usort($new_notes, function ($item1, $item2) {
+                                return $item2['id'] <=> $item1['id'];
+                            });
 
                             ?>
 
