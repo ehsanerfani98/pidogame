@@ -122,7 +122,7 @@ if ($options['opt-header-notifications-switcher']) :
                             $i = 0;
                             foreach ($notes as $key => $values) {
                                 foreach ($values as $item) {
-                                    if ($i < 5) {
+                                    if ($i < 20) {
                                         $new_notes[] = [
                                             "id" => $item->id,
                                             "date" => ((array)$item->date_created)['date'],
