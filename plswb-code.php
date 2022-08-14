@@ -1256,28 +1256,28 @@ function plswb_check_order()
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mb-5">
                                             <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     سفارش یک
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mb-5">
                                             <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     سفارش دو
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mb-5">
                                             <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     سفارش سه
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mb-5">
                                             <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     سفارش چهار
