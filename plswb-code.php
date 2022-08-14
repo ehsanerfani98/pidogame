@@ -1106,10 +1106,6 @@ function get_all_order()
 add_shortcode('order_note_customer', 'view_order_note_customer');
 function view_order_note_customer()
 {
-
-   
-
-
     foreach (get_all_order() as $order_id) {
         $customer_notes = wc_get_order_notes([
             'order_id' => $order_id,
@@ -1120,22 +1116,22 @@ function view_order_note_customer()
         }
     }
 
-    dd($notes);
 
     $i = 0;
     foreach ($notes as $key => $values) {
-        foreach ($values as $item) {
+        foreach ($values as $item2) {
             if ($i < 20) {
                 $new_notes[] = [
-                    "id" => $item->id,
-                    "date" => ((array)$item->date_created)['date'],
-                    "content" => $item->content." | شماره سفارش $key "
+                    "id" => $item2->id,
+                    "date" => ((array)$item2->date_created)['date'],
+                    "content" => " شماره سفارش $key | ".$item2->content
                 ];
             }
             $i++;
         }
     }
 
+    dd($new_notes);
 
     ?>
     <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
