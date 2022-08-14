@@ -1193,17 +1193,17 @@ function plswb_check_order()
             <div class="card-toolbar">
                 <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="!#">
+                        <a class="nav-link active">
                             <h3>مشخصات کاربری</h3>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="!#">
+                        <a class="nav-link">
                             <h3>شماره سفارش</h3>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="!#">
+                        <a class="nav-link">
                             <h3>مشاهده وضعیت</h3>
                         </a>
                     </li>
