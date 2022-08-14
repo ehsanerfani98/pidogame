@@ -1185,32 +1185,26 @@ function plswb_check_order()
 
     <div class="card">
 
-    <div class="card-header card-header-stretch">
-        <div class="card-toolbar">
-            <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_7">Link 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_8">Link 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_9">Link 3</a>
-                </li>
-            </ul>
+        <div class="card-header card-header-stretch">
+            <div class="card-toolbar">
+                <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href=""><h3>مشخصات کاربری</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="">Link 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="">Link 3</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
 
         <div class="card-body">
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content">
                 <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
                     Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
-                </div>
-                <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
-                    Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit.
-                </div>
-                <div class="tab-pane fade" id="kt_tab_pane_6" role="tabpanel">
-                    Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do.
                 </div>
             </div>
         </div>
