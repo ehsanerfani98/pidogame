@@ -1134,6 +1134,7 @@ function view_order_note_customer()
     usort($new_notes, function ($item1, $item2) {
         return $item2['date'] <=> $item1['date'];
     });
+    
     ?>
     <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
         <thead>
