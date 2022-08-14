@@ -1155,7 +1155,7 @@ function view_order_note_customer()
                         <?= $note['content'] ?>
                     </td>
                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                        <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y - g:i A', strtotime($note['date'])) ?></time>
+                        <time datetime="2022-08-13T18:55:39+00:00"><?=plswb_get_date($note['date']) ?></time>
 
                     </td>
 
@@ -1167,4 +1167,8 @@ function view_order_note_customer()
         </tbody>
     </table>
 <?php
+}
+
+function plswb_get_date($date){
+    return wp_date('F j, Y - g:i A', strtotime($date));
 }
