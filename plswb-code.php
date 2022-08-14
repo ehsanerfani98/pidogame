@@ -1138,8 +1138,8 @@ function view_order_note_customer()
         <thead>
             <tr>
                 <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">شناسه اعلان</span></th>
-                <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ</span></th>
                 <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">متن اعلان</span></th>
+                <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ</span></th>
             </tr>
         </thead>
 
@@ -1152,13 +1152,14 @@ function view_order_note_customer()
                     <?= $note['id'] ?> 
 
                 </td>
+                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
+                <?= $note['content'] ?>
+                </td>
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
                     <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></time>
 
                 </td>
-                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
-                <?= $note['content'] ?>
-                </td>
+                
             </tr>
             <?php endforeach; ?>
 
