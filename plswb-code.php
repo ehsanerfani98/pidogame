@@ -1186,34 +1186,35 @@ function plswb_check_order()
         .card .card-header {
             justify-content: center !important;
         }
-        .pointer{
+
+        .pointer {
             cursor: pointer;
         }
     </style>
     <div class="card">
-
-        <div class="card-header card-header-stretch">
-            <div class="card-toolbar">
-                <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
-                    <li class="nav-item">
-                        <a class="nav-link active pointer">
-                            <h3>مشخصات کاربری</h3>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pointer">
-                            <h3>شماره سفارش</h3>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pointer">
-                            <h3>مشاهده وضعیت</h3>
-                        </a>
-                    </li>
-                </ul>
+        <form action="" method="get">
+            <div class="card-header card-header-stretch">
+                <div class="card-toolbar">
+                    <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
+                        <li class="nav-item">
+                            <a class="nav-link active pointer">
+                                <h3>مشخصات کاربری</h3>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pointer">
+                                <h3>شماره سفارش</h3>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pointer">
+                                <h3>مشاهده وضعیت</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-
+        </form>
         <div class="card-body">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
