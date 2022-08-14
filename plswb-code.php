@@ -1175,3 +1175,18 @@ function plswb_get_date($date)
     date_default_timezone_set('Asia/Tehran');
     return wp_date('Y/m/d - H:i', strtotime($date));
 }
+
+
+
+add_shortcode( 'plswb-check-order', 'plswb_check_order' );
+function plswb_check_order(){
+    ?>
+
+<div class="card">
+    <div class="card-body">
+        تست
+    </div>
+</div>
+
+<?php
+}
