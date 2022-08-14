@@ -1255,7 +1255,36 @@ function plswb_check_order()
                         <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             <div class="row">
                                 <div class="col-lg-12">
-
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                    سفارش یک
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                    سفارش دو
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                    سفارش سه
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                    سفارش چهار
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="d-flex align-items-center justify-content-end">
