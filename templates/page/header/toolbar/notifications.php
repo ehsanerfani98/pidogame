@@ -13,7 +13,6 @@ if ($options['opt-header-notifications-switcher']) :
             if ($meta['opt-notifications-important'] == true) $importantCounter++;
         }
     }
-    wp_timezone('Asia/Tehran');
 
 ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
@@ -155,7 +154,10 @@ if ($options['opt-header-notifications-switcher']) :
                                                 <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
                                             </div>
                                         </div>
-                                        <span class="badge badge-light fs-8"><?= plswb_get_date($note['date']) ?></span>
+                                        <span class="badge badge-light fs-8"><?php
+    wp_timezone();
+                                        
+                                        echo plswb_get_date($note['date']) ?></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php $i++; ?>
