@@ -1243,28 +1243,25 @@ function plswb_check_order()
                                     </div>
                                 </div>
                                 <div class="col-lg-12" style="text-align: left;">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <button onclick="window.history.go(-1)" class="btn btn-danger">بازگشت</button>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <a href="<?= get_permalink() . '?ch2' ?>" class="btn btn-primary">ادامه</a>
-                                        </div>
+                                    <div class="d-flex align-items-center">
+                                        <button onclick="window.history.go(-1)" class="btn btn-danger">بازگشت</button>
+                                        <a href="<?= get_permalink() . '?ch2' ?>" class="btn btn-primary">ادامه</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-
-                    <?php if (isset($_GET['ch2'])) : ?>
-                        <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
-                            مرحله سوم
-                        </div>
-                    <?php endif; ?>
-
                 </div>
-            </form>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['ch2'])) : ?>
+                <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
+                    مرحله سوم
+                </div>
+            <?php endif; ?>
+
         </div>
+        </form>
+    </div>
     </div>
 
 <?php
