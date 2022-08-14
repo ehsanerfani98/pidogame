@@ -111,7 +111,7 @@ if ($options['opt-header-notifications-switcher']) :
 
                                 $customer_notes = wc_get_order_notes([
                                     'order_id' => $order_id,
-                                    'type' => 'customer',
+                                    // 'type' => 'customer',
                                 ]);
                                 if ($customer_notes) {
                                     $notes[] = $customer_notes;

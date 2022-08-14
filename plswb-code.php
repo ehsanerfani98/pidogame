@@ -1111,7 +1111,7 @@ function view_order_note_customer()
 
         $customer_notes = wc_get_order_notes([
             'order_id' => $order_id,
-            'type' => 'customer',
+            // 'type' => 'customer',
         ]);
         if ($customer_notes) {
             $notes[] = $customer_notes;
