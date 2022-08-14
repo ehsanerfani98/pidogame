@@ -1214,15 +1214,18 @@ function plswb_check_order()
             </div>
         </div>
         <div class="card-body">
-            <form action="" method="get">
+            <form action="" method="post">
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
                         <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
                             مرحله اول
+                            <a href="<?= home_url( '/?ch1' ) ?>" class="btn btn-primary">ادامه</a>
                         <?php endif; ?>
 
                         <?php if ($_GET['ch1']) : ?>
                             مرحله دوم
+                            <a href="<?= home_url( '/?ch2' ) ?>" class="btn btn-primary">ادامه</a>
+
                         <?php elseif ($_GET['ch2']) : ?>
                             مرحله سوم
                         <?php endif; ?>
