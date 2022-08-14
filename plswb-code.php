@@ -1036,7 +1036,7 @@ function search_data_product()
                     <span class="fs-6 fw-bold"><?= $item['ls_title'] ?></span>
                 </div>
             </a>
-<?php
+    <?php
         endforeach;
     endif;
     die();
@@ -1102,3 +1102,68 @@ function get_all_order()
     return $Order_Array;
 }
 
+
+add_shortcode('order_note_customer', 'view_order_note_customer');
+function view_order_note_customer()
+{
+
+    foreach (get_all_order() as $order_id) {
+
+        $customer_notes = wc_get_order_notes([
+            'order_id' => $order_id,
+            'type' => 'customer',
+        ]);
+        if ($customer_notes) {
+            $notes[] = $customer_notes;
+        }
+    }
+
+    $i = 0;
+    foreach ($notes as $values) {
+        foreach ($values as $item) {
+            if ($i < 20) {
+                $new_notes[] = [
+                    "id" => $item->id,
+                    "date" => ((array)$item->date_created)['date'],
+                    "content" => $item->content
+                ];
+            }
+            $i++;
+        }
+    }
+
+
+    ?>
+    <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+        <thead>
+            <tr>
+                <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">شناسه اعلان</span></th>
+                <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ</span></th>
+                <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">متن اعلان</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <?php foreach ($new_notes as $note) : ?>
+
+            <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
+                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
+                    <a href="https://test.pidogame.com/my-account/view-order/4304/">
+                    <?= $note['id'] ?> </a>
+
+                </td>
+                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
+                    <time datetime="2022-08-13T18:55:39+00:00"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></time>
+
+                </td>
+                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
+                <?= $note['content'] ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+
+        </tbody>
+    </table>
+<?php
+}
