@@ -1118,15 +1118,14 @@ function view_order_note_customer()
         }
     }
 
-    dd($notes);
     $i = 0;
-    foreach ($notes as $values) {
+    foreach ($notes as $key => $values) {
         foreach ($values as $item) {
             if ($i < 20) {
                 $new_notes[] = [
                     "id" => $item->id,
                     "date" => ((array)$item->date_created)['date'],
-                    "content" => $item->content
+                    "content" => $item->content."شماره سفارش $key"
                 ];
             }
             $i++;
