@@ -1223,14 +1223,14 @@ function plswb_check_order()
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($_GET['ch1']) : ?>
+                    <?php if (isset($_GET['ch1'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch1']) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             مرحله دوم
                             <a href="<?= get_permalink() . '?ch2' ?>" class="btn btn-primary">ادامه</a>
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($_GET['ch2']) : ?>
+                    <?php if (isset($_GET['ch2'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             مرحله سوم
                         </div>
