@@ -1107,7 +1107,6 @@ add_shortcode('order_note_customer', 'view_order_note_customer');
 function view_order_note_customer()
 {
 
-    dd(get_all_order());
     foreach (get_all_order() as $order_id) {
         $customer_notes = wc_get_order_notes([
             'order_id' => $order_id,
@@ -1117,6 +1116,8 @@ function view_order_note_customer()
             $notes[$order_id] = $customer_notes;
         }
     }
+
+    dd($notes);
 
     $i = 0;
     foreach ($notes as $key => $values) {
