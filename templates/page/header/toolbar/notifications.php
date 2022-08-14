@@ -114,18 +114,18 @@ if ($options['opt-header-notifications-switcher']) :
                                     // 'type' => 'customer',
                                 ]);
                                 if ($customer_notes) {
-                                    $notes[] = $customer_notes;
+                                    $notes[$order_id] = $customer_notes;
                                 }
                             }
 
                             $i = 0;
-                            foreach ($notes as $values) {
+                            foreach ($notes as $key => $values) {
                                 foreach ($values as $item) {
                                     if ($i < 5) {
                                         $new_notes[] = [
                                             "id" => $item->id,
                                             "date" => ((array)$item->date_created)['date'],
-                                            "content" => $item->content
+                                            "content" => $item->content." | شماره سفارش $key "
                                         ];
                                     }
                                     $i++;
