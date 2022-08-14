@@ -1172,6 +1172,6 @@ function view_order_note_customer()
 
 function plswb_get_date($date)
 {
-    wp_timezone();
+    wp_timezone('Asia/Tehran');
     return wp_date('Y/m/d - H:i', strtotime($date));
 }
