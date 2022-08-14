@@ -133,8 +133,8 @@ if ($options['opt-header-notifications-switcher']) :
                                 }
                             }
 
-                            usort($new_notes, function ($item1, $item2) {
-                                return $item2['id'] <=> $item1['id'];
+                            usort($new_notes, function ($v1, $v2) {
+                                return $v2['id'] <=> $v1['id'];
                             });
 
                             ?>
