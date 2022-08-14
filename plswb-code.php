@@ -1194,17 +1194,17 @@ function plswb_check_order()
                 <form action="" method="get">
                     <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab">
+                            <a class="nav-link active" data-bs-toggle="tab" href="">
                                 <h3>مشخصات کاربری</h3>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab">
+                            <a class="nav-link" data-bs-toggle="tab" href="">
                                 <h3>شماره سفارش</h3>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab">
+                            <a class="nav-link" data-bs-toggle="tab" href="">
                                 <h3>مشاهده وضعیت</h3>
                             </a>
                         </li>
