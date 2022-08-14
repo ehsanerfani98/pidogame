@@ -1114,10 +1114,11 @@ function view_order_note_customer()
             // 'type' => 'customer',
         ]);
         if ($customer_notes) {
-            $notes[] = $customer_notes;
+            $notes[$order_id] = $customer_notes;
         }
     }
 
+    dd($notes);
     $i = 0;
     foreach ($notes as $values) {
         foreach ($values as $item) {
