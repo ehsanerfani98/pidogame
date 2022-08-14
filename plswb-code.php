@@ -1260,6 +1260,7 @@ function plswb_check_order()
                                             <!--begin::Radio group-->
                                             <div data-kt-buttons="true">
 
+                                                <div class="row">
                                                 <div class="col-lg-6">
                                                     <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5">
                                                         <!--end::Description-->
@@ -1371,7 +1372,7 @@ function plswb_check_order()
                                                         <!--end::Price-->
                                                     </label>
                                                 </div>
-
+                                                </div>
 
 
                                             </div>
