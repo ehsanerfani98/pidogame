@@ -1286,7 +1286,7 @@ function plswb_check_order()
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 mt-2">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <button onclick="window.history.go(-1)" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</button>
                                         <a href="<?= get_permalink() ?>" class="btn btn-primary">مشاهده سفارش</a>
