@@ -1192,43 +1192,43 @@ function plswb_check_order()
         }
     </style>
     <div class="card">
-        <form action="" method="get">
-            <div class="card-header card-header-stretch">
-                <div class="card-toolbar">
-                    <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
-                        <li class="nav-item">
-                            <a class="nav-link active pointer">
-                                <h3>مشخصات کاربری</h3>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pointer">
-                                <h3>شماره سفارش</h3>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pointer">
-                                <h3>مشاهده وضعیت</h3>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="card-header card-header-stretch">
+            <div class="card-toolbar">
+                <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
+                    <li class="nav-item">
+                        <a class="nav-link active pointer">
+                            <h3>مشخصات کاربری</h3>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pointer">
+                            <h3>شماره سفارش</h3>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pointer">
+                            <h3>مشاهده وضعیت</h3>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </form>
+        </div>
         <div class="card-body">
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
-                    <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
-                        مرحله اول
-                    <?php endif; ?>
+            <form action="" method="get">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
+                        <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
+                            مرحله اول
+                        <?php endif; ?>
 
-                    <?php if ($_GET['ch1']) : ?>
-                        مرحله دوم
-                    <?php elseif ($_GET['ch2']) : ?>
-                        مرحله سوم
-                    <?php endif; ?>
+                        <?php if ($_GET['ch1']) : ?>
+                            مرحله دوم
+                        <?php elseif ($_GET['ch2']) : ?>
+                            مرحله سوم
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
