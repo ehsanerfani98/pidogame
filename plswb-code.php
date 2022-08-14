@@ -1254,7 +1254,17 @@ function plswb_check_order()
 
                     <?php if (isset($_GET['ch2'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
-                            مرحله سوم
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        <button onclick="window.history.go(-1)" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</button>
+                                        <a href="<?= get_permalink() ?>" class="btn btn-primary">مشاهده سفارش</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     <?php endif; ?>
 
