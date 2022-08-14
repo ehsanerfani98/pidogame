@@ -1219,12 +1219,12 @@ function plswb_check_order()
                     <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
                         <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
                             مرحله اول
-                            <a href="<?= get_permalink( '/?ch1' ) ?>" class="btn btn-primary">ادامه</a>
+                            <a href="<?= get_permalink(  ).'?ch1' ?>" class="btn btn-primary">ادامه</a>
                         <?php endif; ?>
 
                         <?php if ($_GET['ch1']) : ?>
                             مرحله دوم
-                            <a href="<?= get_permalink( '/?ch2' ) ?>" class="btn btn-primary">ادامه</a>
+                            <a href="<?= get_permalink(  ).'?ch2' ?>" class="btn btn-primary">ادامه</a>
 
                         <?php elseif ($_GET['ch2']) : ?>
                             مرحله سوم
