@@ -122,14 +122,12 @@ if ($options['opt-header-notifications-switcher']) :
                             $i = 0;
                             foreach ($notes as $key => $values) {
                                 foreach ($values as $item) {
-                                    if ($i < 20) {
                                         $new_notes[] = [
                                             "id" => $item->id,
                                             "date" => ((array)$item->date_created)['date'],
                                             "content" => " شماره سفارش $key | " . $item->content
                                         ];
                                     }
-                                    $i++;
                                 }
                             }
 
@@ -140,6 +138,7 @@ if ($options['opt-header-notifications-switcher']) :
                             ?>
 
                             <?php foreach ($new_notes as $note) : ?>
+                            <?php if ($i < 5) : ?>
                                 <div class="d-flex flex-stack py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="symbol symbol-35px me-4">
@@ -158,6 +157,8 @@ if ($options['opt-header-notifications-switcher']) :
                                     </div>
                                     <span class="badge badge-light fs-8"><?= wp_date('F j, Y', strtotime($note['date']), 'Asia/Tehran') ?></span>
                                 </div>
+                            <?php endif; ?>
+                            <?php $i++; ?>
                             <?php endforeach; ?>
 
                         </div>
