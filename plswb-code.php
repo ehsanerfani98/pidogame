@@ -1184,19 +1184,25 @@ function plswb_check_order()
 ?>
 
     <div class="card">
-        <div class="card-body">
-            <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
+
+    <div class="card-header card-header-stretch">
+        <h3 class="card-title">Title</h3>
+        <div class="card-toolbar">
+            <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_4">Link 1</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_7">Link 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_5">Link 2</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_8">Link 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_6">Link 3</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_9">Link 3</a>
                 </li>
             </ul>
+        </div>
+    </div>
 
+        <div class="card-body">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
                     Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
