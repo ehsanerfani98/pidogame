@@ -1182,20 +1182,30 @@ add_shortcode('plswb-check-order', 'plswb_check_order');
 function plswb_check_order()
 {
 ?>
-
+    <style>
+        .card .card-header {
+            justify-content: center !important;
+        }
+    </style>
     <div class="card">
 
         <div class="card-header card-header-stretch">
             <div class="card-toolbar">
                 <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href=""><h3>مشخصات کاربری</h3></a>
+                        <a class="nav-link active" data-bs-toggle="tab" href="">
+                            <h3>مشخصات کاربری</h3>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href=""><h3>شماره سفارش</h3></a>
+                        <a class="nav-link" data-bs-toggle="tab" href="">
+                            <h3>شماره سفارش</h3>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href=""><h3>مشاهده وضعیت</h3></a>
+                        <a class="nav-link" data-bs-toggle="tab" href="">
+                            <h3>مشاهده وضعیت</h3>
+                        </a>
                     </li>
                 </ul>
             </div>
