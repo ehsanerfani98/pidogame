@@ -1123,7 +1123,7 @@ function view_order_note_customer()
             $new_notes[] = [
                 "id" => $item->id,
                 "date" => ((array)$item->date_created)['date'],
-                "content" => " شماره سفارش $key | " . $item->content
+                "content" => " سفارش $key | " . $item->content
             ];
         }
     }
