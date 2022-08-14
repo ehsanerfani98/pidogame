@@ -1196,7 +1196,7 @@ function plswb_check_order()
             <div class="card-toolbar">
                 <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
                     <li class="nav-item">
-                        <a class="nav-link active pointer">
+                        <a class="nav-link <?= (!isset($_GET['ch1']) && !isset($_GET['ch2'])) ? 'active' : '' ?> pointer">
                             <h3>مشخصات کاربری</h3>
                         </a>
                     </li>
@@ -1216,17 +1216,20 @@ function plswb_check_order()
         <div class="card-body">
             <form action="" method="post">
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
+                    <div class="tab-pane show <?= (!isset($_GET['ch1']) && !isset($_GET['ch2'])) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                         <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
                             مرحله اول
-                            <a href="<?= get_permalink(  ).'?ch1' ?>" class="btn btn-primary">ادامه</a>
+                            <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a>
                         <?php endif; ?>
-
+                    </div>
+                    <div class="tab-pane show <?= isset($_GET['ch1']) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                         <?php if ($_GET['ch1']) : ?>
                             مرحله دوم
-                            <a href="<?= get_permalink(  ).'?ch2' ?>" class="btn btn-primary">ادامه</a>
-
-                        <?php elseif ($_GET['ch2']) : ?>
+                            <a href="<?= get_permalink() . '?ch2' ?>" class="btn btn-primary">ادامه</a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
+                        <?php if ($_GET['ch2']) : ?>
                             مرحله سوم
                         <?php endif; ?>
                     </div>
