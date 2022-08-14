@@ -1222,7 +1222,7 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="mb-5">
                                         <label for="ch_email">آدرس ایمیل حساب کاربری خود در پیدوگیم را وارد نمایید.</label>
-                                        <input name="ch_email" id="ch_email" type="text" class="form-control form-control-solid" />
+                                        <input name="ch_email" id="ch_email" type="email" class="form-control form-control-solid" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12" style="text-align: left;">
