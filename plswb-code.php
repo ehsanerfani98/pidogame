@@ -1201,12 +1201,12 @@ function plswb_check_order()
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pointer">
+                        <a class="nav-link <?= isset($_GET['ch1']) ? 'active' : '' ?> pointer">
                             <h3>شماره سفارش</h3>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pointer">
+                        <a class="nav-link <?= isset($_GET['ch2']) ? 'active' : '' ?> pointer">
                             <h3>مشاهده وضعیت</h3>
                         </a>
                     </li>
