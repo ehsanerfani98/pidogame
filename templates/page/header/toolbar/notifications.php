@@ -127,7 +127,6 @@ if ($options['opt-header-notifications-switcher']) :
                                             "date" => ((array)$item->date_created)['date'],
                                             "content" => " شماره سفارش $key | " . $item->content
                                         ];
-                                    }
                                 }
                             }
 
