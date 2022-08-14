@@ -1120,11 +1120,11 @@ function view_order_note_customer()
     $i = 0;
     foreach ($notes as $key => $values) {
         foreach ($values as $item) {
-                $new_notes[] = [
-                    "id" => $item->id,
-                    "date" => ((array)$item->date_created)['date'],
-                    "content" => " شماره سفارش $key | " . $item->content
-                ];
+            $new_notes[] = [
+                "id" => $item->id,
+                "date" => ((array)$item->date_created)['date'],
+                "content" => " شماره سفارش $key | " . $item->content
+            ];
         }
     }
 
@@ -1145,23 +1145,23 @@ function view_order_note_customer()
         <tbody>
 
             <?php foreach ($new_notes as $note) : ?>
-            <?php if ($i < 20) : ?>
-                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
-                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
-                        <?= $note['id'] ?>
+                <?php if ($i < 20) : ?>
+                    <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
+                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="شماره سفارش">
+                            <?= $note['id'] ?>
 
-                    </td>
-                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
-                        <?= $note['content'] ?>
-                    </td>
-                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                        <time datetime="2022-08-13T18:55:39+00:00"><?=plswb_get_date($note['date']) ?></time>
+                        </td>
+                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
+                            <?= $note['content'] ?>
+                        </td>
+                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
+                            <time datetime="2022-08-13T18:55:39+00:00"><?= plswb_get_date($note['date']) ?></time>
 
-                    </td>
+                        </td>
 
-                </tr>
-            <?php endif; ?>
-            <?php $i++; ?>
+                    </tr>
+                <?php endif; ?>
+                <?php $i++; ?>
             <?php endforeach; ?>
 
         </tbody>
@@ -1169,6 +1169,12 @@ function view_order_note_customer()
 <?php
 }
 
-function plswb_get_date($date){
-    return wp_date('F j, Y - g:i A', strtotime($date));
+add_action('init', 'plswb_time');
+
+function plswb_time()
+{
+    function plswb_get_date($date)
+    {
+        return wp_date('F j, Y - g:i A', strtotime($date));
+    }
 }
