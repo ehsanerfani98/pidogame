@@ -155,7 +155,7 @@ if ($options['opt-header-notifications-switcher']) :
                                             </div>
                                         </div>
                                         <span class="badge badge-light fs-8"><?php
-    wp_timezone();
+    wp_timezone('Asi');
                                         
                                         echo plswb_get_date($note['date']) ?></span>
                                     </div>
