@@ -1239,7 +1239,7 @@ function plswb_check_order()
                                 <div class="col-lg-4">
                                     <div class="mb-5">
                                         <label for="ch_email">آدرس ایمیل حساب کاربری خود در پیدوگیم را وارد نمایید.</label>
-                                        <input name="ch_email" id="ch_email" type="email" class="form-control form-control-solid" />
+                                        <input name="ch_email" id="ch_email" type="email" class="form-control form-control-solid" value="<?= @$_SESSION['email'] ?>" />
                                     </div>
                                 </div>
                                 <div class="col-lg-4"></div>
@@ -1346,20 +1346,20 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                        <?php if (!empty($item['status'])) : ?>
-                                                            <div class="row mb-5">
-                                                                <div class="col-lg-6">
-                                                                    <div>
-                                                                        <h6>تاریخ :</h6>
-                                                                        <div><?= plswb_get_date($item['date']) ?></div>
+                                                            <?php if (!empty($item['status'])) : ?>
+                                                                <div class="row mb-5">
+                                                                    <div class="col-lg-6">
+                                                                        <div>
+                                                                            <h6>تاریخ :</h6>
+                                                                            <div><?= plswb_get_date($item['date']) ?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <h6>وضعیت :</h6>
+                                                                        <div><?= $item['status'] ?></div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-6">
-                                                                    <h6>وضعیت :</h6>
-                                                                    <div><?= $item['status'] ?></div>
-                                                                </div>
-                                                            </div>
-                                                        <?php endif; ?>
+                                                            <?php endif; ?>
                                                         <?php endforeach; ?>
 
                                                     </div>
@@ -1404,6 +1404,7 @@ function check_email_order()
             "message" => 'ایمیل معتبر نمی باشد!'
         ]);
     } else {
+        $_SESSION['email'] = $_POST['email'];
         wp_send_json([
             "status" => 'valid email',
         ]);
