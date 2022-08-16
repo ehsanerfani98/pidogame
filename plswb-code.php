@@ -1266,7 +1266,7 @@ function plswb_check_order()
                                 <div class="col-lg-4">
                                     <div class="mb-5">
                                         <label for="ch_order_id">شماره سفارش خود را جهت پیگیری وارد نمایید.</label>
-                                        <input name="ch_order_id" id="ch_order_id" type="number" class="form-control form-control-solid" />
+                                        <input name="ch_order_id" id="ch_order_id" type="number" class="form-control form-control-solid" value="<?= @$_SESSION['order_id'] ?>" />
                                     </div>
                                 </div>
                                 <div class="col-lg-4"></div>
@@ -1423,6 +1423,7 @@ function check_id_order()
             "message" => 'سفارشی با این شماره موجود نمی باشد!'
         ]);
     } else {
+        $_SESSION['order_id'] = $_POST['order_id'];
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
             "status" => 'valid order',
