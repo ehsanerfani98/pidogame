@@ -1286,21 +1286,27 @@ function plswb_check_order()
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row">
+                                        <style>
+                                            .badge-me {
+                                                padding: .8rem;
+                                                font-size: 14px;
+                                            }
+                                        </style>
                                         <div class="col-lg-12">
                                             <?php if (isset($_SESSION['order_info'])) :
                                                 $order = $_SESSION['order_info'];
                                                 switch ($order['status']) {
                                                     case 'on-hold':
-                                                        $ms = '<span class="badge badge-warning">در انتظار بررسی</span>';
+                                                        $ms = '<span class="badge badge-me badge-warning">در انتظار بررسی</span>';
                                                         break;
                                                     case 'cancelled':
-                                                        $ms = '<span class="badge badge-danger">لغو شده</span>';
+                                                        $ms = '<span class="badge badge-me badge-danger">لغو شده</span>';
                                                         break;
                                                     case 'processing':
-                                                        $ms = '<span class="badge badge-primary">در حال انجام</span>';
+                                                        $ms = '<span class="badge badge-me badge-primary">در حال انجام</span>';
                                                         break;
                                                     case 'completed':
-                                                        $ms = '<span class="badge badge-success">تکمیل شد</span>';
+                                                        $ms = '<span class="badge badge-me badge-success">تکمیل شد</span>';
                                                         break;
                                                     default:
                                                         # code...
@@ -1308,9 +1314,9 @@ function plswb_check_order()
                                                 }
                                             ?>
                                                 <div class="card shadow my-5">
-                                                 
+
                                                     <div class="card-body">
-                                                    <h4>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
+                                                        <h4>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
 
                                                     </div>
                                                 </div>
