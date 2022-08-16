@@ -1294,7 +1294,20 @@ function plswb_check_order()
                                         </style>
                                         <div class="col-lg-12">
                                             <?php if (isset($_SESSION['order_info'])) :
+
                                                 $order = $_SESSION['order_info'];
+
+                                                $customer_notes = wc_get_order_notes([
+                                                    'order_id' => $order['id'],
+                                                    'type' => 'internal',
+                                                ]);
+
+                                                foreach ($customer_notes as $value) {
+                                                    $status = explode('به', $value->content);
+                                                    $status = explode('تغییر', $status[1]);
+                                                    $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => trim($status[0])];
+                                                }
+
                                                 switch ($order['status']) {
                                                     case 'on-hold':
                                                         $ms = '<span class="badge badge-me badge-warning">در انتظار بررسی</span>';
@@ -1317,7 +1330,9 @@ function plswb_check_order()
 
                                                     <div class="card-body">
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
-
+                                                        <?php foreach ($data_status as $item) : ?>
+                                                            <li><?= $item['date'] . $item['status'] ?></li>
+                                                        <?php endforeach; ?>
                                                     </div>
                                                 </div>
                                             <?php endif; ?>
