@@ -1331,6 +1331,11 @@ function plswb_check_order()
                                                     <div class="card-body">
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
 
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                جزئیات سفارش :
+                                                            </div>
+                                                        </div>
                                                         <?php foreach ($data_status as $item) : ?>
                                                             <div class="row my-4">
 
