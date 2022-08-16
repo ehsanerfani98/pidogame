@@ -181,7 +181,7 @@ jQuery('#check_email').click(function () {
                 jQuery('#alert-message').html(response.message);
                 jQuery('#alert-wrap').slideDown();
             } else {
-                window.location.href(url);
+                window.location.href = url;
             }
             btn.removeAttribute("data-kt-indicator");
         }
