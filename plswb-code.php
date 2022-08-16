@@ -1332,7 +1332,7 @@ function plswb_check_order()
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
 
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <div class="row">
+                                                            <div class="row my-4">
 
                                                                 <div class="col-lg-6">
                                                                     <div>
