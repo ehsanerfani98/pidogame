@@ -1261,7 +1261,7 @@ function plswb_check_order()
 
                     <?php if (isset($_GET['ch1'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch1']) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
-                            <div class="row">
+                            <div class="row text-center">
                                 <div class="col-lg-4"></div>
                                 <div class="col-lg-4">
                                     <div class="mb-5">
