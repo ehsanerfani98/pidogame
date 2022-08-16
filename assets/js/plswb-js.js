@@ -160,3 +160,22 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
     return false;
 
 });  
+
+
+jQuery('#check_email').click(function(){
+    var btn = this;
+    btn.setAttribute("data-kt-indicator", "on");
+
+    jQuery.ajax({
+        type: "post",
+        url: woocommerce_params.ajax_url,
+        data: {
+            action: 'check_email_order',
+            email: jQuery('#ch_email').val()
+        },
+        success: function (response) {
+            btn.removeAttribute("data-kt-indicator");
+        }
+    });
+});
+

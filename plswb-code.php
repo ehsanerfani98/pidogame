@@ -1226,7 +1226,15 @@ function plswb_check_order()
                                     </div>
                                 </div>
                                 <div class="col-lg-12" style="text-align: left;">
-                                    <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a>
+                                    <!-- <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a> -->
+                                    <button type="button" class="btn btn-primary me-10" id="check_email">
+                                        <span class="indicator-label">
+                                            ادامه
+                                        </span>
+                                        <span class="indicator-progress">
+                                            لطفا صبر کنید ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1261,151 +1269,121 @@ function plswb_check_order()
                                             <div data-kt-buttons="true">
 
                                                 <div class="row">
-                                                <div class="col-lg-6">
-                                                    <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5">
-                                                        <!--end::Description-->
-                                                        <div class="d-flex align-items-center me-2">
-                                                            <!--begin::Radio-->
-                                                            <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
-                                                                <input class="form-check-input" type="radio" name="plan" value="startup" />
-                                                            </div>
-                                                            <!--end::Radio-->
-
-                                                            <!--begin::Info-->
-                                                            <div class="flex-grow-1">
-                                                                <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
-                                                                    Startup
-                                                                </h2>
-                                                                <div class="fw-bold opacity-50">
-                                                                    Best for startups
+                                                    <div class="col-lg-6">
+                                                        <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5">
+                                                            <!--end::Description-->
+                                                            <div class="d-flex align-items-center me-2">
+                                                                <!--begin::Radio-->
+                                                                <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
+                                                                    <input class="form-check-input" type="radio" name="plan" value="startup" />
                                                                 </div>
-                                                            </div>
-                                                            <!--end::Info-->
-                                                        </div>
-                                                        <!--end::Description-->
+                                                                <!--end::Radio-->
 
-                                                        <!--begin::Price-->
-                                                        <div class="ms-5">
-                                                            <span class="mb-2">$</span>
-                                                            <span class="fs-2x fw-bolder">
-                                                                39
-                                                            </span>
-                                                            <span class="fs-7 opacity-50">/
-                                                                <span data-kt-element="period">Mon</span>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Price-->
-                                                    </label>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5 active">
-                                                        <!--end::Description-->
-                                                        <div class="d-flex align-items-center me-2">
-                                                            <!--begin::Radio-->
-                                                            <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
-                                                                <input class="form-check-input" type="radio" name="plan" checked="checked" value="advanced" />
-                                                            </div>
-                                                            <!--end::Radio-->
-
-                                                            <!--begin::Info-->
-                                                            <div class="flex-grow-1">
-                                                                <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
-                                                                    Advanced
-                                                                    <span class="badge badge-light-success ms-2 fs-7">Most popular</span>
-                                                                </h2>
-                                                                <div class="fw-bold opacity-50">
-                                                                    Best for 100+ team size
+                                                                <!--begin::Info-->
+                                                                <div class="flex-grow-1">
+                                                                    <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
+                                                                        Startup
+                                                                    </h2>
+                                                                    <div class="fw-bold opacity-50">
+                                                                        Best for startups
+                                                                    </div>
                                                                 </div>
+                                                                <!--end::Info-->
                                                             </div>
-                                                            <!--end::Info-->
-                                                        </div>
-                                                        <!--end::Description-->
+                                                            <!--end::Description-->
 
-                                                        <!--begin::Price-->
-                                                        <div class="ms-5">
-                                                            <span class="mb-2">$</span>
-                                                            <span class="fs-2x fw-bolder">
-                                                                139
-                                                            </span>
-                                                            <span class="fs-7 opacity-50">/
-                                                                <span data-kt-element="period">Mon</span>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Price-->
-                                                    </label>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6">
-                                                        <!--end::Description-->
-                                                        <div class="d-flex align-items-center me-2">
-                                                            <!--begin::Radio-->
-                                                            <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
-                                                                <input class="form-check-input" type="radio" name="plan" value="enterprise" />
+                                                            <!--begin::Price-->
+                                                            <div class="ms-5">
+                                                                <span class="mb-2">$</span>
+                                                                <span class="fs-2x fw-bolder">
+                                                                    39
+                                                                </span>
+                                                                <span class="fs-7 opacity-50">/
+                                                                    <span data-kt-element="period">Mon</span>
+                                                                </span>
                                                             </div>
-                                                            <!--end::Radio-->
+                                                            <!--end::Price-->
+                                                        </label>
+                                                    </div>
 
-                                                            <!--begin::Info-->
-                                                            <div class="flex-grow-1">
-                                                                <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
-                                                                    Enterprise
-                                                                </h2>
-                                                                <div class="fw-bold opacity-50">
-                                                                    Best value for 1000+ team
+                                                    <div class="col-lg-6">
+                                                        <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6 mb-5 active">
+                                                            <!--end::Description-->
+                                                            <div class="d-flex align-items-center me-2">
+                                                                <!--begin::Radio-->
+                                                                <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
+                                                                    <input class="form-check-input" type="radio" name="plan" checked="checked" value="advanced" />
                                                                 </div>
+                                                                <!--end::Radio-->
+
+                                                                <!--begin::Info-->
+                                                                <div class="flex-grow-1">
+                                                                    <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
+                                                                        Advanced
+                                                                        <span class="badge badge-light-success ms-2 fs-7">Most popular</span>
+                                                                    </h2>
+                                                                    <div class="fw-bold opacity-50">
+                                                                        Best for 100+ team size
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Info-->
                                                             </div>
-                                                            <!--end::Info-->
-                                                        </div>
-                                                        <!--end::Description-->
+                                                            <!--end::Description-->
 
-                                                        <!--begin::Price-->
-                                                        <div class="ms-5">
-                                                            <span class="mb-2">$</span>
-                                                            <span class="fs-2x fw-bolder">
-                                                                339
-                                                            </span>
-                                                            <span class="fs-7 opacity-50">/
-                                                                <span data-kt-element="period">Mon</span>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Price-->
-                                                    </label>
+                                                            <!--begin::Price-->
+                                                            <div class="ms-5">
+                                                                <span class="mb-2">$</span>
+                                                                <span class="fs-2x fw-bolder">
+                                                                    139
+                                                                </span>
+                                                                <span class="fs-7 opacity-50">/
+                                                                    <span data-kt-element="period">Mon</span>
+                                                                </span>
+                                                            </div>
+                                                            <!--end::Price-->
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <label class="btn btn-outline btn-outline-dashed d-flex flex-stack text-start p-6">
+                                                            <!--end::Description-->
+                                                            <div class="d-flex align-items-center me-2">
+                                                                <!--begin::Radio-->
+                                                                <div class="form-check form-check-custom form-check-solid form-check-primary me-6">
+                                                                    <input class="form-check-input" type="radio" name="plan" value="enterprise" />
+                                                                </div>
+                                                                <!--end::Radio-->
+
+                                                                <!--begin::Info-->
+                                                                <div class="flex-grow-1">
+                                                                    <h2 class="d-flex align-items-center fs-3 fw-bolder flex-wrap">
+                                                                        Enterprise
+                                                                    </h2>
+                                                                    <div class="fw-bold opacity-50">
+                                                                        Best value for 1000+ team
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Info-->
+                                                            </div>
+                                                            <!--end::Description-->
+
+                                                            <!--begin::Price-->
+                                                            <div class="ms-5">
+                                                                <span class="mb-2">$</span>
+                                                                <span class="fs-2x fw-bolder">
+                                                                    339
+                                                                </span>
+                                                                <span class="fs-7 opacity-50">/
+                                                                    <span data-kt-element="period">Mon</span>
+                                                                </span>
+                                                            </div>
+                                                            <!--end::Price-->
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                                </div>
-
-
                                             </div>
                                             <!--end::Radio group-->
                                         </div>
-                                        <!-- <div class="col-lg-6 mb-5">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    سفارش یک
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 mb-5">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    سفارش دو
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 mb-5">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    سفارش سه
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 mb-5">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    سفارش چهار
-                                                </div>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mt-2">
@@ -1424,4 +1402,14 @@ function plswb_check_order()
     </div>
 
 <?php
+}
+
+
+
+add_action('wp_ajax_nopriv_check_email_order', 'check_email_order');
+function check_email_order()
+{
+    wp_send_json( [
+        "data" => '1'
+    ] );
 }
