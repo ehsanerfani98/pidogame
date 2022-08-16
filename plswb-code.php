@@ -1331,7 +1331,7 @@ function plswb_check_order()
                                                     <div class="card-body">
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <li><?= $item['date'] . $item['status'] ?></li>
+                                                            <li><?= plswb_get_date($item['date']) . $item['status'] ?></li>
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
