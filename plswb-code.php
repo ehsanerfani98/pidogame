@@ -1441,5 +1441,6 @@ function register_my_session()
 }
 
 add_action('init', 'register_my_session');
+session_start();
 
 dd($_SESSION['order_info']);
