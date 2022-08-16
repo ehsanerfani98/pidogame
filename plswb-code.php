@@ -1341,12 +1341,12 @@ function plswb_check_order()
 
                                                                 <div class="col-lg-6">
                                                                     <div>
-                                                                        <h6>تاریخ</h6>
+                                                                        <h6>تاریخ :</h6>
                                                                         <div><?= plswb_get_date($item['date']) ?></div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <h6>وضعیت</h6>
+                                                                    <h6>وضعیت :</h6>
                                                                     <div><?= $item['status'] ?></div>
                                                                 </div>
                                                             </div>
