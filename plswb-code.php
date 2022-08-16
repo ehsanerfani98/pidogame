@@ -1289,12 +1289,9 @@ function plswb_check_order()
                                         <div class="col-lg-12">
                                             <?php
                                             session_start();
-                                            if (isset($_SESSION['order_info'])) : ?>
-                                                <?php 
-                                                                                            session_start();
-
-                                                
-                                                var_dump($_SESSION['order_info']); ?>
+                                            $t = $_SESSION['order_info'];
+                                            if (isset($t)) : ?>
+                                                <?php var_dump($t); ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>
