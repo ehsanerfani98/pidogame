@@ -1235,12 +1235,14 @@ function plswb_check_order()
                     <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
                         <div class="tab-pane show <?= (!isset($_GET['ch1']) && !isset($_GET['ch2'])) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             <div class="row text-center">
+                                <div class="col-lg-3"></div>
                                 <div class="col-lg-6">
                                     <div class="mb-5">
                                         <label for="ch_email">آدرس ایمیل حساب کاربری خود در پیدوگیم را وارد نمایید.</label>
                                         <input name="ch_email" id="ch_email" type="email" class="form-control form-control-solid" />
                                     </div>
                                 </div>
+                                <div class="col-lg-3"></div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12" style="text-align: left;">
