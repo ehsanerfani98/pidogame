@@ -1287,11 +1287,12 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
+                                           ttt
+
                                             <?php
                                             session_start();
                                             $order = $_SESSION['order_info'];
                                              dd($order); ?>
-                                           ttt
                                         </div>
                                     </div>
                                 </div>
