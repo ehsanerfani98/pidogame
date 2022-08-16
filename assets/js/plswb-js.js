@@ -188,3 +188,29 @@ jQuery('#check_email').click(function () {
     });
 });
 
+jQuery('#check_order').click(function () {
+    var btn = this;
+    var url = jQuery(this).data('url');
+    jQuery('#alert-wrap').slideUp();
+
+    btn.setAttribute("data-kt-indicator", "on");
+
+    jQuery.ajax({
+        type: "post",
+        url: woocommerce_params.ajax_url,
+        data: {
+            action: 'check_id_order',
+            order_id: jQuery('#ch_order_id').val(),
+        },
+        success: function (response) {
+            if (response.status == 'invalid order') {
+                jQuery('#alert-message').html(response.message);
+                jQuery('#alert-wrap').slideDown();
+            } else {
+                window.location.href = url;
+            }
+            btn.removeAttribute("data-kt-indicator");
+        }
+    });
+});
+
