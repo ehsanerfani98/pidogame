@@ -180,8 +180,8 @@ jQuery('#check_email').click(function () {
             if (response.status == 'invalid email') {
                 jQuery('#alert-message').html(response.message);
                 jQuery('#alert-wrap').slideDown();
-            }else{
-                window.location.replace(url);
+            } else {
+                window.location.href(url);
             }
             btn.removeAttribute("data-kt-indicator");
         }
