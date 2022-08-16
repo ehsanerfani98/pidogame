@@ -1316,7 +1316,7 @@ function plswb_check_order()
                                                 <div class="card shadow my-5">
 
                                                     <div class="card-body">
-                                                        <h4>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
+                                                        <h4>سفارش <span class="badge badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
 
                                                     </div>
                                                 </div>
