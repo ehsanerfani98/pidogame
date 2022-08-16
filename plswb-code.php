@@ -1287,12 +1287,32 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <?php if(isset($_SESSION['order_info'])): 
+                                            <?php if (isset($_SESSION['order_info'])) :
                                                 $order = $_SESSION['order_info'];
-                                                ?>
+                                                switch ($order['status']) {
+                                                    case 'on-hold':
+                                                        $ms = 'در انتظار بررسی';
+                                                        break;
+                                                    case 'cancelled':
+                                                        $ms = 'لغو شده';
+                                                        break;
+                                                    case 'processing':
+                                                        $ms = 'در حال انجام';
+                                                        break;
+                                                    case 'completed':
+                                                        $ms = 'تکمیل شد';
+                                                        break;
+                                                    default:
+                                                        # code...
+                                                        break;
+                                                }
+                                            ?>
                                                 <div class="card shadow-sm">
+                                                    <div class="card-header">
+                                                        <h3>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h3>
+                                                    </div>
                                                     <div class="card-body">
-<?= $order['status']; ?>
+
                                                     </div>
                                                 </div>
                                             <?php endif; ?>
@@ -1339,7 +1359,7 @@ add_action('wp_ajax_nopriv_check_id_order', 'check_id_order');
 function check_id_order()
 {
     $order = wc_get_order($_POST['order_id']);
-   
+
 
     if (!$order) {
         wp_send_json([
@@ -1355,11 +1375,11 @@ function check_id_order()
 }
 
 
-function register_my_session()             
-{                                          
-    if (!session_id()) {                   
-        session_start();                   
-    }                                      
-}                                          
-                                           
-add_action('init', 'register_my_session'); 
+function register_my_session()
+{
+    if (!session_id()) {
+        session_start();
+    }
+}
+
+add_action('init', 'register_my_session');
