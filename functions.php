@@ -5,8 +5,6 @@ require_once get_theme_file_path() . '/codestar/codestar-framework.php';
 require_once get_theme_file_path() . '/options.php';
 require_once get_theme_file_path() . '/plswb-code.php';
 
-$order = $_SESSION['order_info'];
-dd($order);
 define('IMAGES_URL', get_stylesheet_directory_uri() . '/assets/media/images/');
 
 
