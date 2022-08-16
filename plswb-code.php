@@ -1291,7 +1291,7 @@ function plswb_check_order()
                                             session_start();
                                             $order = $_SESSION['order_info'];
                                              dd($order); ?>
-                                           
+                                           ttt
                                         </div>
                                     </div>
                                 </div>
