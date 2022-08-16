@@ -175,12 +175,13 @@ jQuery('#check_email').click(function () {
         data: {
             action: 'check_email_order',
             email: jQuery('#ch_email').val(),
-            url : url
         },
         success: function (response) {
             if (response.status == 'invalid email') {
                 jQuery('#alert-message').html(response.message);
                 jQuery('#alert-wrap').slideDown();
+            }else{
+                window.location.replace(url);
             }
             btn.removeAttribute("data-kt-indicator");
         }

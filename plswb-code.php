@@ -1432,6 +1432,4 @@ function check_email_order()
         ]);
     }
 
-    wp_redirect($_POST['url']);
-    exit;
 }
