@@ -1287,8 +1287,14 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <?php if(isset($_SESSION['order_info'])): ?>
-                                            <?php var_dump($_SESSION['order_info']); ?>
+                                            <?php if(isset($_SESSION['order_info'])): 
+                                                $order = $_SESSION['order_info'];
+                                                ?>
+                                                <div class="card shadow-sm">
+                                                    <div class="card-body">
+<?= $order['status']; ?>
+                                                    </div>
+                                                </div>
                                             <?php endif; ?>
                                         </div>
                                     </div>
