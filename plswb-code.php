@@ -1424,6 +1424,7 @@ function check_id_order()
         ]);
     } else {
         $_SESSION['order_id'] = $_POST['order_id'];
+
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
             "status" => 'valid order',
@@ -1440,3 +1441,5 @@ function register_my_session()
 }
 
 add_action('init', 'register_my_session');
+
+dd($_SESSION['order_info']);
