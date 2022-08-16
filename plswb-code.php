@@ -1262,12 +1262,16 @@ function plswb_check_order()
                     <?php if (isset($_GET['ch1'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch1']) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
                                     <div class="mb-5">
                                         <label for="ch_order_id">شماره سفارش خود را جهت پیگیری وارد نمایید.</label>
                                         <input name="ch_order_id" id="ch_order_id" type="number" class="form-control form-control-solid" />
                                     </div>
                                 </div>
+                                <div class="col-lg-4"></div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-12">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <a href="<?= get_permalink() ?>" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</a>
