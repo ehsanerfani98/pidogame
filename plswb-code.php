@@ -1336,7 +1336,7 @@ function check_id_order()
         ]);
     } else {
         wp_send_json([
-            "status" => 'valid order',
+            "status" => wc_get_order($_POST['order_id']),
         ]);
     }
 }
