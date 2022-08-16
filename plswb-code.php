@@ -1341,6 +1341,7 @@ function check_id_order()
             "message" => 'سفارشی با این شماره موجود نمی باشد!'
         ]);
     } else {
+        session_start();
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
             "status" => 'valid order',
