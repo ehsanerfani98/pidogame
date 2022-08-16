@@ -1344,7 +1344,7 @@ function check_id_order()
         session_start();
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
-            "status" => 'valid order',
+            "status" => $_SESSION['order_info'],
         ]);
     }
 }
