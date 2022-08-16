@@ -1287,7 +1287,10 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <?php if(isset($_SESSION['order_info'])): ?>
+                                            <?php
+                                                    session_start();
+
+                                             if(isset($_SESSION['order_info'])): ?>
                                             <?php var_dump($_SESSION['order_info']); ?>
                                             <?php endif; ?>
                                         </div>
@@ -1344,7 +1347,7 @@ function check_id_order()
         session_start();
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
-            "status" => $_SESSION['order_info'],
+            "status" => 'valid order',
         ]);
     }
 }
