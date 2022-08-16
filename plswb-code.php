@@ -1351,5 +1351,6 @@ function check_id_order()
         ]);
     }
 }
+session_start();
 
 dd($_SESSION['order_info']);
