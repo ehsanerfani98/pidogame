@@ -1430,6 +1430,10 @@ function check_email_order()
             "status" => 'invalid email',
             "message" => 'ایمیل معتبر نمی باشد!'
         ]);
+    }else{
+        wp_send_json([
+            "status" => 'valid email',
+        ]);
     }
 
 }
