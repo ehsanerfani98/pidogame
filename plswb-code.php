@@ -1234,13 +1234,15 @@ function plswb_check_order()
                 <div class="tab-content">
                     <?php if (!isset($_GET['ch1']) && !isset($_GET['ch2'])) : ?>
                         <div class="tab-pane show <?= (!isset($_GET['ch1']) && !isset($_GET['ch2'])) ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-12">
+                            <div class="row text-center">
+                                <div class="col-lg-6">
                                     <div class="mb-5">
                                         <label for="ch_email">آدرس ایمیل حساب کاربری خود در پیدوگیم را وارد نمایید.</label>
                                         <input name="ch_email" id="ch_email" type="email" class="form-control form-control-solid" />
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-12" style="text-align: left;">
                                     <button data-url="<?= get_permalink() . '?ch1' ?>" type="button" class="btn btn-primary" id="check_email">
                                         <span class="indicator-label">
@@ -1331,7 +1333,7 @@ function plswb_check_order()
 
                                                     <div class="card-body">
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
-<hr>
+                                                        <hr>
                                                         <div class="row" style="margin-top: 2rem;margin-bottom: 1rem;">
                                                             <div class="col-lg-12">
                                                                 <h3>جزئیات سفارش :</h3>
@@ -1339,7 +1341,6 @@ function plswb_check_order()
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
                                                             <div class="row mb-5">
-
                                                                 <div class="col-lg-6">
                                                                     <div>
                                                                         <h6>تاریخ :</h6>
