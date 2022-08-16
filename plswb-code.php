@@ -1330,9 +1330,23 @@ function plswb_check_order()
 
                                                     <div class="card-body">
                                                         <h4>سفارش <span class="badge badge-me badge-secondary"><?= $order['id']; ?></span> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
-                                                        <?php foreach ($data_status as $item) : ?>
-                                                            <li><?= plswb_get_date($item['date']) . $item['status'] ?></li>
-                                                        <?php endforeach; ?>
+
+                                                        <div class="row">
+                                                            <?php foreach ($data_status as $item) : ?>
+
+                                                                <div class="col-lg-6">
+                                                                    <div>
+                                                                        <h6>تاریخ</h6>
+                                                                        <div><?= plswb_get_date($item['date']) ?></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <h6>وضعیت</h6>
+                                                                    <div><?= $item['status'] ?></div>
+                                                                </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+
                                                     </div>
                                                 </div>
                                             <?php endif; ?>
