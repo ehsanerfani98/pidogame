@@ -1333,7 +1333,7 @@ function plswb_check_order()
 
                                                         <div class="row my-5">
                                                             <div class="col-lg-12">
-                                                                جزئیات سفارش :
+                                                                <h3>جزئیات سفارش :</h3>
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
