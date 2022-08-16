@@ -106,8 +106,8 @@ function setLikeComment(item, comment_id) {
     });
 }
 
-jQuery('#free-payment-add-to-cart').click(function (e) { 
-    
+jQuery('#free-payment-add-to-cart').click(function (e) {
+
     jQuery('#free-payment-add-to-cart').attr('data-kt-indicator', 'on');
 
     let meta_data_cart = [];
@@ -159,12 +159,12 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
 
     return false;
 
-});  
+});
 
 
-jQuery('#check_email').click(function(){
+jQuery('#check_email').click(function () {
     var btn = this;
-
+    var url = jQuery(this).data('url');
     jQuery('#alert-wrap').slideUp();
 
     btn.setAttribute("data-kt-indicator", "on");
@@ -174,10 +174,11 @@ jQuery('#check_email').click(function(){
         url: woocommerce_params.ajax_url,
         data: {
             action: 'check_email_order',
-            email: jQuery('#ch_email').val()
+            email: jQuery('#ch_email').val(),
+            url : url
         },
         success: function (response) {
-            if(response.status == 'invalid email'){
+            if (response.status == 'invalid email') {
                 jQuery('#alert-message').html(response.message);
                 jQuery('#alert-wrap').slideDown();
             }

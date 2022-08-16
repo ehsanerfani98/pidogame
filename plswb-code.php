@@ -1214,7 +1214,7 @@ function plswb_check_order()
             </div>
         </div>
         <div class="card-body">
-            
+
             <div style="display: none;" id="alert-wrap">
                 <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                     <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
@@ -1242,8 +1242,7 @@ function plswb_check_order()
                                     </div>
                                 </div>
                                 <div class="col-lg-12" style="text-align: left;">
-                                    <!-- <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a> -->
-                                    <button type="button" class="btn btn-primary" id="check_email">
+                                    <button data-url="<?= get_permalink() . '?ch1' ?>" type="button" class="btn btn-primary" id="check_email">
                                         <span class="indicator-label">
                                             ادامه
                                         </span>
@@ -1432,4 +1431,7 @@ function check_email_order()
             "message" => 'ایمیل معتبر نمی باشد!'
         ]);
     }
+
+    wp_redirect($_POST['url']);
+    exit;
 }
