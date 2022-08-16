@@ -164,6 +164,9 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
 
 jQuery('#check_email').click(function(){
     var btn = this;
+
+    jQuery('#alert-wrap').slideUp();
+
     btn.setAttribute("data-kt-indicator", "on");
 
     jQuery.ajax({
