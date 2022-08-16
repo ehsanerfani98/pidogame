@@ -1290,8 +1290,7 @@ function plswb_check_order()
                                             <?php
                                             session_start();
                                             $order = $_SESSION['order_info'];
-                                            ?>
-                                                <?php dd($order); ?>
+                                             dd($order); ?>
                                            
                                         </div>
                                     </div>
