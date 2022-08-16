@@ -1284,7 +1284,7 @@ function plswb_check_order()
                     <?php if (isset($_GET['ch2'])) : ?>
                         <div class="tab-pane show <?= isset($_GET['ch2'])  ? 'active' : '' ?>" id="kt_tab_pane_4" role="tabpanel">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 text-center">
                                     <div class="row">
                                         <style>
                                             .badge-me {
