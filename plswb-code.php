@@ -1288,10 +1288,9 @@ function plswb_check_order()
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <?php
-                                                    session_start();
-
-                                             if(isset($_SESSION['order_info'])): ?>
-                                            <?php var_dump($_SESSION['order_info']); ?>
+                                            session_start();
+                                            if (isset($_SESSION['order_info'])) : ?>
+                                                <?php var_dump($_SESSION['order_info']); ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -1336,7 +1335,7 @@ add_action('wp_ajax_nopriv_check_id_order', 'check_id_order');
 function check_id_order()
 {
     $order = wc_get_order($_POST['order_id']);
-   
+
 
     if (!$order) {
         wp_send_json([
@@ -1351,6 +1350,3 @@ function check_id_order()
         ]);
     }
 }
-session_start();
-
-dd($_SESSION['order_info']);
