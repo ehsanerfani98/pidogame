@@ -1337,7 +1337,7 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <div class="row my-2">
+                                                            <div class="row mb-5">
 
                                                                 <div class="col-lg-6">
                                                                     <div>
