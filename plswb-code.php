@@ -1232,7 +1232,7 @@ function plswb_check_order()
                                             ادامه
                                         </span>
                                         <span class="indicator-progress">
-                                            لطفا صبر کنید ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        لطفا صبر کنید<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                         </span>
                                     </button>
                                 </div>
@@ -1410,7 +1410,8 @@ add_action('wp_ajax_check_email_order', 'check_email_order');
 add_action('wp_ajax_nopriv_check_email_order', 'check_email_order');
 function check_email_order()
 {
+    email_exists($_POST['email']);
     wp_send_json( [
-        "data" => '1'
+        "data" => email_exists($_POST['email'])
     ] );
 }
