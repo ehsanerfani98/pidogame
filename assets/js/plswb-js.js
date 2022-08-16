@@ -174,6 +174,7 @@ jQuery('#check_email').click(function(){
             email: jQuery('#ch_email').val()
         },
         success: function (response) {
+            console.log(response);
             btn.removeAttribute("data-kt-indicator");
         }
     });
