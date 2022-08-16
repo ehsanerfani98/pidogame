@@ -176,7 +176,6 @@ jQuery('#check_email').click(function(){
         success: function (response) {
             if(response.status == 'invalid email'){
                 jQuery('#alert-message').html(response.message);
-                // jQuery('#alert-wrap').delay(400);
                 jQuery('#alert-wrap').slideDown();
             }
             btn.removeAttribute("data-kt-indicator");
