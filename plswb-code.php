@@ -1287,10 +1287,7 @@ function plswb_check_order()
                                 <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                           ttt
-
                                             <?php
-                                            session_start();
                                             $order = $_SESSION['order_info'];
                                              dd($order); ?>
                                         </div>
@@ -1344,7 +1341,6 @@ function check_id_order()
             "message" => 'سفارشی با این شماره موجود نمی باشد!'
         ]);
     } else {
-        session_start();
         $_SESSION['order_info'] = $order->get_data();
         wp_send_json([
             "status" => 'valid order',
