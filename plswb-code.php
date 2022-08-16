@@ -1307,10 +1307,10 @@ function plswb_check_order()
                                                         break;
                                                 }
                                             ?>
-                                                <div class="card shadow-sm">
+                                                <div class="card shadow my-5">
                                                  
                                                     <div class="card-body">
-                                                    <h3>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h3>
+                                                    <h4>سفارش <?= $order['id']; ?> هم اکنون در وضعیت <?= $ms ?> می باشد.</h4>
 
                                                     </div>
                                                 </div>
