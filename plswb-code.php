@@ -1291,16 +1291,16 @@ function plswb_check_order()
                                                 $order = $_SESSION['order_info'];
                                                 switch ($order['status']) {
                                                     case 'on-hold':
-                                                        $ms = 'در انتظار بررسی';
+                                                        $ms = '<span class="badge badge-warning">در انتظار بررسی</span>';
                                                         break;
                                                     case 'cancelled':
-                                                        $ms = 'لغو شده';
+                                                        $ms = '<span class="badge badge-danger">لغو شده</span>';
                                                         break;
                                                     case 'processing':
-                                                        $ms = 'در حال انجام';
+                                                        $ms = '<span class="badge badge-primary">در حال انجام</span>';
                                                         break;
                                                     case 'completed':
-                                                        $ms = 'تکمیل شد';
+                                                        $ms = '<span class="badge badge-success">تکمیل شد</span>';
                                                         break;
                                                     default:
                                                         # code...
