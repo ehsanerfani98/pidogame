@@ -1227,7 +1227,7 @@ function plswb_check_order()
                                 </div>
                                 <div class="col-lg-12" style="text-align: left;">
                                     <!-- <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-primary">ادامه</a> -->
-                                    <button type="button" class="btn btn-primary me-10" id="check_email">
+                                    <button type="button" class="btn btn-primary" id="check_email">
                                         <span class="indicator-label">
                                             ادامه
                                         </span>
@@ -1406,6 +1406,7 @@ function plswb_check_order()
 
 
 
+add_action('wp_ajax_check_email_order', 'check_email_order');
 add_action('wp_ajax_nopriv_check_email_order', 'check_email_order');
 function check_email_order()
 {
