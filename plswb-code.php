@@ -1432,10 +1432,9 @@ function check_id_order()
                 "message" => 'شماره سفارش متعلق به شما نیست!'
             ]);
         }else{
-            
+
             unset($_SESSION['email']);
             unset($_SESSION['order_id']);
-            unset($_SESSION['order_info']);
 
             wp_send_json([
                 "status" => 'valid order',
