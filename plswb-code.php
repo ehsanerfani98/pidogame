@@ -1260,7 +1260,7 @@ function plswb_check_order()
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="mb-5">
-                                        <label for="ch_order_id">آدرس شماره سفارش خود را جهت پیگیری وارد نمایید.</label>
+                                        <label for="ch_order_id">شماره سفارش خود را جهت پیگیری وارد نمایید.</label>
                                         <input name="ch_order_id" id="ch_order_id" type="number" class="form-control form-control-solid" />
                                     </div>
                                 </div>
