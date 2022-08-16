@@ -1424,8 +1424,15 @@ function check_id_order()
         ]);
     } else {
         $_SESSION['order_id'] = $_POST['order_id'];
-
         $_SESSION['order_info'] = $order->get_data();
+
+        if ($_SESSION['order_info']['billing']['email'] != $_SESSION['email']) {
+            wp_send_json([
+                "status" => 'invalid order',
+                "message" => 'شماره سفارش متعلق به شما نیست!'
+            ]);
+        }
+
         wp_send_json([
             "status" => 'valid order',
         ]);
@@ -1442,5 +1449,3 @@ function register_my_session()
 
 add_action('init', 'register_my_session');
 session_start();
-
-dd($_SESSION['order_info']['billing']['email']);
