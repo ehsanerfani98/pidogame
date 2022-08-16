@@ -1290,7 +1290,11 @@ function plswb_check_order()
                                             <?php
                                             session_start();
                                             if (isset($_SESSION['order_info'])) : ?>
-                                                <?php var_dump($_SESSION['order_info']); ?>
+                                                <?php 
+                                                                                            session_start();
+
+                                                
+                                                var_dump($_SESSION['order_info']); ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>
