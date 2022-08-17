@@ -1314,6 +1314,7 @@ function plswb_check_order()
                                                 foreach ($customer_notes as $value) {
                                                     $status = explode('به', $value->content);
                                                     $status = explode('تغییر', $status[1]);
+                                                    var_dump(trim($status[0]));
                                                     switch (trim($status[0])) {
                                                         case 'در انتظار بررسی':
                                                             $ms = 'on-hold';
