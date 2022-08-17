@@ -1315,6 +1315,7 @@ function plswb_check_order()
                                                     $status = explode('به', $value->content);
                                                     $status = explode('تغییر', $status[1]);
                                                     $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => trim($status[0])];
+                                                    unset($status);
                                                 }
 
                                                 switch ($order['status']) {
@@ -1355,9 +1356,7 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if ($status) :
-                                                                var_dump($status)
-                                                                ?>
+                                                            <?php if (!empty($item['status'])) : ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
@@ -1387,7 +1386,7 @@ function plswb_check_order()
                                 <div class="col-lg-12 ">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</a>
-                                        <a href="<?= home_url( 'wp-admin/post.php?post='.$order['id'].'&action=edit' ) ?>" class="btn btn-primary">مشاهده سفارش</a>
+                                        <a href="<?= home_url('wp-admin/post.php?post=' . $order['id'] . '&action=edit') ?>" class="btn btn-primary">مشاهده سفارش</a>
                                     </div>
                                 </div>
                             </div>
@@ -1442,7 +1441,7 @@ function check_id_order()
                 "status" => 'invalid order',
                 "message" => 'شماره سفارش متعلق به شما نیست!'
             ]);
-        }else{
+        } else {
 
             unset($_SESSION['email']);
             unset($_SESSION['order_id']);
@@ -1451,9 +1450,6 @@ function check_id_order()
                 "status" => 'valid order',
             ]);
         }
-
-        
-       
     }
 }
 
