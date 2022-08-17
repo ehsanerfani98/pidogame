@@ -1441,7 +1441,7 @@ function plswb_check_order()
                                 <div class="col-lg-12 ">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</a>
-                                        <a href="<?= home_url('my-account/view-order/' . $order['id'] ) ?>" class="btn btn-primary">مشاهده سفارش</a>
+                                        <a target="_blank" href="<?= home_url('my-account/view-order/' . $order['id'] ) ?>" class="btn btn-primary">مشاهده سفارش</a>
                                     </div>
                                 </div>
                             </div>
