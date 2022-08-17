@@ -1355,7 +1355,9 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if ($status) : ?>
+                                                            <?php if ($status) :
+                                                                var_dump($status)
+                                                                ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
