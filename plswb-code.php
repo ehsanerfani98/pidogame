@@ -1334,10 +1334,10 @@ function plswb_check_order()
                                                             $ms = 'failed';
                                                             break;
                                                         case 'مسترد شده':
-                                                            $ms = 'مسترد شده';
+                                                            $ms = 'refunded';
                                                             break;
                                                         default:
-                                                            $ms = "refunded";
+                                                            $ms = "";
                                                             break;
                                                     }
                                                     $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => $ms];
