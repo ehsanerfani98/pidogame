@@ -1316,28 +1316,28 @@ function plswb_check_order()
                                                     $status = explode('تغییر', $status[1]);
                                                     switch (trim($status[0])) {
                                                         case 'در انتظار بررسی':
-                                                            $ms = 'در انتظار بررسی';
+                                                            $ms = 'on-hold';
                                                             break;
                                                         case 'لغو شده':
-                                                            $ms = 'لغو شده';
+                                                            $ms = 'cancelled';
                                                             break;
                                                         case 'در حال انجام':
-                                                            $ms = 'در حال انجام';
+                                                            $ms = 'processing';
                                                             break;
                                                         case 'تکمیل شد':
-                                                            $ms = 'تکمیل شد';
+                                                            $ms = 'completed';
                                                             break;
                                                         case 'در انتظار پرداخت':
-                                                            $ms = 'در انتظار پرداخت';
+                                                            $ms = 'pending';
                                                             break;
                                                         case 'ناموفق':
-                                                            $ms = 'ناموفق';
+                                                            $ms = 'failed';
                                                             break;
                                                         case 'مسترد شده':
                                                             $ms = 'مسترد شده';
                                                             break;
                                                         default:
-                                                            $ms = "";
+                                                            $ms = "refunded";
                                                             break;
                                                     }
                                                     $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => $ms];
