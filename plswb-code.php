@@ -1330,6 +1330,15 @@ function plswb_check_order()
                                                     case 'completed':
                                                         $ms = '<span class="badge badge-me badge-success">تکمیل شد</span>';
                                                         break;
+                                                    case 'pending':
+                                                        $ms = '<span class="badge badge-me badge-warning">در انتظار پرداخت</span>';
+                                                        break;
+                                                    case 'failed':
+                                                        $ms = '<span class="badge badge-me badge-danger">ناموفق</span>';
+                                                        break;
+                                                    case 'refunded':
+                                                        $ms = '<span class="badge badge-me badge-danger">مسترد شده</span>';
+                                                        break;
                                                     default:
                                                         # code...
                                                         break;
