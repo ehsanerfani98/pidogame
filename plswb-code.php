@@ -1344,7 +1344,6 @@ function plswb_check_order()
 
                                                     $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => $ms];
                                                 }
-                                                var_dump($data_status);
 
                                                 switch ($order['status']) {
                                                     case 'on-hold':
