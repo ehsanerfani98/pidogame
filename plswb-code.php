@@ -1383,7 +1383,35 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if (!empty($item['status'])) : ?>
+                                                            <?php if (!empty($item['status'])) : 
+                                                                
+                                                                switch ($item['status']) {
+                                                                    case 'on-hold':
+                                                                        $ms = 'در انتظار بررسی';
+                                                                        break;
+                                                                    case 'cancelled':
+                                                                        $ms = 'لغو شده';
+                                                                        break;
+                                                                    case 'processing':
+                                                                        $ms = 'در حال انجام';
+                                                                        break;
+                                                                    case 'completed':
+                                                                        $ms = 'تکمیل شد';
+                                                                        break;
+                                                                    case 'pending':
+                                                                        $ms = 'در انتظار پرداخت';
+                                                                        break;
+                                                                    case 'failed':
+                                                                        $ms = 'ناموفق';
+                                                                        break;
+                                                                    case 'refunded':
+                                                                        $ms = 'مسترد شده';
+                                                                        break;
+                                                                    default:
+                                                                        break;
+                                                                }
+                                                                
+                                                                ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
