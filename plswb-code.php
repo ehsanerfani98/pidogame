@@ -1314,7 +1314,33 @@ function plswb_check_order()
                                                 foreach ($customer_notes as $value) {
                                                     $status = explode('به', $value->content);
                                                     $status = explode('تغییر', $status[1]);
-                                                    $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => trim($status[0])];
+                                                    switch (trim($status[0])) {
+                                                        case 'on-hold':
+                                                            $ms = '<span class="badge badge-me badge-warning">در انتظار بررسی</span>';
+                                                            break;
+                                                        case 'cancelled':
+                                                            $ms = '<span class="badge badge-me badge-danger">لغو شده</span>';
+                                                            break;
+                                                        case 'processing':
+                                                            $ms = '<span class="badge badge-me badge-primary">در حال انجام</span>';
+                                                            break;
+                                                        case 'completed':
+                                                            $ms = '<span class="badge badge-me badge-success">تکمیل شد</span>';
+                                                            break;
+                                                        case 'pending':
+                                                            $ms = '<span class="badge badge-me badge-warning">در انتظار پرداخت</span>';
+                                                            break;
+                                                        case 'failed':
+                                                            $ms = '<span class="badge badge-me badge-danger">ناموفق</span>';
+                                                            break;
+                                                        case 'refunded':
+                                                            $ms = '<span class="badge badge-me badge-danger">مسترد شده</span>';
+                                                            break;
+                                                        default:
+                                                            $ms = "";
+                                                            break;
+                                                    }
+                                                    $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => $ms];
                                                     unset($status);
                                                 }
 
@@ -1356,7 +1382,7 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if (!empty($ms)) : ?>
+                                                            <?php if (!empty($data_status['status'])) : ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
