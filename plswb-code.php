@@ -1315,26 +1315,26 @@ function plswb_check_order()
                                                     $status = explode('به', $value->content);
                                                     $status = explode('تغییر', $status[1]);
                                                     switch (trim($status[0])) {
-                                                        case 'on-hold':
-                                                            $ms = '<span class="badge badge-me badge-warning">در انتظار بررسی</span>';
+                                                        case 'در انتظار بررسی':
+                                                            $ms = 'در انتظار بررسی';
                                                             break;
-                                                        case 'cancelled':
-                                                            $ms = '<span class="badge badge-me badge-danger">لغو شده</span>';
+                                                        case 'لغو شده':
+                                                            $ms = 'لغو شده';
                                                             break;
-                                                        case 'processing':
-                                                            $ms = '<span class="badge badge-me badge-primary">در حال انجام</span>';
+                                                        case 'در حال انجام':
+                                                            $ms = 'در حال انجام';
                                                             break;
-                                                        case 'completed':
-                                                            $ms = '<span class="badge badge-me badge-success">تکمیل شد</span>';
+                                                        case 'تکمیل شد':
+                                                            $ms = 'تکمیل شد';
                                                             break;
-                                                        case 'pending':
-                                                            $ms = '<span class="badge badge-me badge-warning">در انتظار پرداخت</span>';
+                                                        case 'در انتظار پرداخت':
+                                                            $ms = 'در انتظار پرداخت';
                                                             break;
-                                                        case 'failed':
-                                                            $ms = '<span class="badge badge-me badge-danger">ناموفق</span>';
+                                                        case 'ناموفق':
+                                                            $ms = 'ناموفق';
                                                             break;
-                                                        case 'refunded':
-                                                            $ms = '<span class="badge badge-me badge-danger">مسترد شده</span>';
+                                                        case 'مسترد شده':
+                                                            $ms = 'مسترد شده';
                                                             break;
                                                         default:
                                                             $ms = "";
