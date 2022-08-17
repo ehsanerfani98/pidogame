@@ -1341,7 +1341,7 @@ function plswb_check_order()
                                                             $ms = "";
                                                             break;
                                                     }
-var_dump($ms)
+var_dump($ms);
 
                                                     $data_status[] = ["date" => ((array)$value->date_created)['date'], "status" => $ms];
                                                 }
