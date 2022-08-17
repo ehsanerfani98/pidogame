@@ -1341,7 +1341,7 @@ function plswb_check_order()
                                                         $ms = '<span class="badge badge-me badge-danger">مسترد شده</span>';
                                                         break;
                                                     default:
-                                                        # code...
+                                                        $ms = "";
                                                         break;
                                                 }
                                             ?>
@@ -1356,7 +1356,7 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if (!empty($item['status'])) : ?>
+                                                            <?php if (!empty($ms)) : ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
