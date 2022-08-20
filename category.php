@@ -153,10 +153,7 @@ get_header();
 
                         $args = array(
                             'post_type'        => 'post',
-                            'category_name' => $currentCategory,
                             'posts_per_page'   => 12,
-                            'paged' => $paged,
-                            'status'         => 'publish',
                         );
                         $query = new WP_Query($args);
 
