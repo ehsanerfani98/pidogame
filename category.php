@@ -1,6 +1,5 @@
 <?php
 
-dd(get_query_var());
 
 
 $options = get_option('pidogame_framework');
