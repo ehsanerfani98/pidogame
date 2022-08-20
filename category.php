@@ -158,7 +158,7 @@ get_header();
                         $query = new WP_Query($args);
 
 
-                        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                        if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <div class="col-md-3 mb-5">
 
                                     <div class="wrap-cart-plswb card">
