@@ -190,7 +190,7 @@ get_header();
                             <?php
                             endwhile;
                             ?>
-                            <div class="pagination">
+                            <!-- <div class="pagination">
                                 <?php
                                 echo paginate_links(array(
                                     'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
@@ -208,7 +208,7 @@ get_header();
                                     'add_fragment' => '',
                                 ));
                                 ?>
-                            </div>
+                            </div> -->
                         <?php
                             wp_reset_postdata();
 

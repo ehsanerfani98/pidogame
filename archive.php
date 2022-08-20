@@ -156,7 +156,7 @@ get_header();
                         $query = new WP_Query($args);
 
 
-                        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                        if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <div class="col-md-3 mb-5">
 
                                     <div class="wrap-cart-plswb card">
@@ -188,7 +188,7 @@ get_header();
                             <?php
                             endwhile;
                             ?>
-                            <div class="pagination">
+                            <!-- <div class="pagination">
                                 <?php
                                 echo paginate_links(array(
                                     'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
@@ -206,7 +206,7 @@ get_header();
                                     'add_fragment' => '',
                                 ));
                                 ?>
-                            </div>
+                            </div> -->
                         <?php
                             wp_reset_postdata();
 
