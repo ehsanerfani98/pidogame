@@ -1,4 +1,5 @@
 <?php
+
   $category = get_category_by_slug('category-name'); 
 
 dd($category->term_id);

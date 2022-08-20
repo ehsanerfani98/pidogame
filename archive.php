@@ -152,7 +152,6 @@ get_header();
                             'post_type'        => 'post',
                             'posts_per_page'   => 12,
                             'paged' => $paged,
-                            'status'         => 'publish',
                         );
                         $query = new WP_Query($args);
 
