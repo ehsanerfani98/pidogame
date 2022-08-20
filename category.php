@@ -1,6 +1,6 @@
 <?php
 
-dd(get_category_by_slug());
+dd(get_category_by_slug('category-slug')->name);
 
 $options = get_option('pidogame_framework');
 get_header();
