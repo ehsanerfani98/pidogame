@@ -1,4 +1,8 @@
 <?php
+
+dd(get_query_var());
+
+
 $options = get_option('pidogame_framework');
 get_header();
 ?>
@@ -150,6 +154,7 @@ get_header();
 
                         $args = array(
                             'post_type'        => 'post',
+                            'category_name' => $currentCategory,
                             'posts_per_page'   => 12,
                             'paged' => $paged,
                             'status'         => 'publish',
