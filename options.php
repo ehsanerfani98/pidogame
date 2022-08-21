@@ -511,11 +511,11 @@ if (class_exists('CSF')) {
 						'title'       => 'Select',
 						'placeholder' => 'رنگ آیکن',
 						'options'     => array(
-							'bg-light-warning'  => 'نارنجی',
-							'bg-light-primary'  => 'آبی',
-							'bg-light-info'  => 'بنفش',
-							'bg-light-success'  => 'سبز',
-							'bg-light-danger'  => 'قرمز',
+							'warning'  => 'نارنجی',
+							'primary'  => 'آبی',
+							'info'  => 'بنفش',
+							'success'  => 'سبز',
+							'danger'  => 'قرمز',
 						),
 						'default'     => 'bg-light-warning'
 					),
