@@ -48,6 +48,8 @@
                             <!--begin::Svg Icon-->
                             <span class="svg-icon <?= $item['help_color_icon'] ?> svg-icon-2x svg-icon-lg-3x">
                                 <?= $item['help_icon_code'] ?>
+                                <i class="bi bi-alipay"></i>
+
                             </span>
                             <!--end::Svg Icon-->
                         </div>
