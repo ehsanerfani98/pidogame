@@ -502,7 +502,7 @@ if (class_exists('CSF')) {
 						'id'           => 'help_icon_code',
 						'type'         => 'text',
 						'title'        => 'کد آیکن',
-						'sanitize' 	   => false
+						'sanitize' 	   => true
 					),
 
 					array(
