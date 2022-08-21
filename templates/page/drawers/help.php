@@ -3,7 +3,7 @@
     <div class="card shadow-none rounded-0 w-100">
         <!--begin::Header-->
         <div class="card-header" id="kt_help_header">
-            <h5 class="card-title fw-bold text-gray-600">پشتیبانی و راهنما</h5>
+            <h5 class="card-title fw-bold text-gray-600"><?= get_option('pidogame_framework')['help_title_menu_opened'] ?></h5>
             <div class="card-toolbar">
                 <button type="button" class="btn btn-sm btn-icon explore-btn-dismiss me-n5" id="kt_help_close">
                     <!--begin::Svg Icon-->
@@ -39,198 +39,44 @@
                     <!--end::Link-->
                 </div>
                 <!--end::Support-->
-                <!--begin::Link-->
-                <div class="d-flex align-items-center mb-7">
-                    <!--begin::Icon-->
-                    <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-warning">
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-warning svg-icon-2x svg-icon-lg-3x">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="black" />
-                                <path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Icon-->
-                    <!--begin::Info-->
-                    <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
-                        <!--begin::Wrapper-->
-                        <div class="d-flex flex-column me-2 me-lg-5">
-                            <!--begin::Title-->
-                            <a href="#" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1">مستندات و آموزش ها</a>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-7 fs-lg-6">مستندات آموزشی را در ارتباط با محصولات مختلف پیدوگیم را در این قسمت پیدا کنید.</div>
-                            <!--end::Description-->
+
+                <?php if (get_option('pidogame_framework')['plswb_help_menu']) : ?>
+                <?php foreach (get_option('pidogame_framework')['plswb_help_menu'] as $item) : ?>
+                    <div class="d-flex align-items-center mb-7">
+                        <!--begin::Icon-->
+                        <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-warning">
+                            <!--begin::Svg Icon-->
+                            <span class="svg-icon <?= $item['help_color_icon'] ?> svg-icon-2x svg-icon-lg-3x">
+                                <?= $item['help_icon_code'] ?>
+                            </span>
+                            <!--end::Svg Icon-->
                         </div>
-                        <!--end::Wrapper-->
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-gray-400 svg-icon-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
-                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Info-->
-                </div>
-                <!--end::Link-->
-                <!--begin::Link-->
-                <div class="d-flex align-items-center mb-7">
-                    <!--begin::Icon-->
-                    <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-primary">
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-primary svg-icon-2x svg-icon-lg-3x">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z" fill="black" />
-                                <path d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z" fill="black" />
-                                <path opacity="0.3" d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Icon-->
-                    <!--begin::Info-->
-                    <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
-                        <!--begin::Wrapper-->
-                        <div class="d-flex flex-column me-2 me-lg-5">
-                            <!--begin::Title-->
-                            <a href="#" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1">راهنمای استفاده از استیم کی</a>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-7 fs-lg-6">در صورتی که نمی دانید چگونه از استیم کی خود استفاده کنید این مقاله را مطالعه کنید.</div>
-                            <!--end::Description-->
+                        <!--end::Icon-->
+                        <!--begin::Info-->
+                        <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-column me-2 me-lg-5">
+                                <!--begin::Title-->
+                                <a href="<?= $item['help_link']['url'] ?>" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1"><?= $item['help_title'] ?></a>
+                                <!--end::Title-->
+                                <!--begin::Description-->
+                                <div class="text-muted fw-bold fs-7 fs-lg-6"><?= $item['help_content'] ?></div>
+                                <!--end::Description-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Svg Icon-->
+                            <span class="svg-icon svg-icon-gray-400 svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
+                                    <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
                         </div>
-                        <!--end::Wrapper-->
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-gray-400 svg-icon-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
-                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
+                        <!--end::Info-->
                     </div>
-                    <!--end::Info-->
-                </div>
-                <!--end::Link-->
-                <!--begin::Link-->
-                <div class="d-flex align-items-center mb-7">
-                    <!--begin::Icon-->
-                    <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-info">
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-info svg-icon-2x svg-icon-lg-3x">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="black" />
-                                <path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Icon-->
-                    <!--begin::Info-->
-                    <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
-                        <!--begin::Wrapper-->
-                        <div class="d-flex flex-column me-2 me-lg-5">
-                            <!--begin::Title-->
-                            <a href="#" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1">راهنمای خرید از سایت</a>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-7 fs-lg-6">راهنمای قدم به قدم خرید محصول از فروشگاه پیدوگیم</div>
-                            <!--end::Description-->
-                        </div>
-                        <!--end::Wrapper-->
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-gray-400 svg-icon-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
-                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Info-->
-                </div>
-                <!--end::Link-->
-                <!--begin::Link-->
-                <div class="d-flex align-items-center mb-7">
-                    <!--begin::Icon-->
-                    <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-success">
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-success svg-icon-2x svg-icon-lg-3x">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path opacity="0.3" d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z" fill="black" />
-                                <path d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z" fill="black" />
-                                <path opacity="0.3" d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Icon-->
-                    <!--begin::Info-->
-                    <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
-                        <!--begin::Wrapper-->
-                        <div class="d-flex flex-column me-2 me-lg-5">
-                            <!--begin::Title-->
-                            <a href="#" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1">قوانین لغو سفارش پس از ثبت</a>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-7 fs-lg-6">سفارشی دارید که به هر دلیلی می خواهید آن را لغو کنید و وجه خود را دریافت کنید؟ ابتدا این صفحه را مطالعه کنید.</div>
-                            <!--end::Description-->
-                        </div>
-                        <!--end::Wrapper-->
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-gray-400 svg-icon-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
-                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Info-->
-                </div>
-                <!--end::Link-->
-                <!--begin::Link-->
-                <div class="d-flex align-items-center mb-7">
-                    <!--begin::Icon-->
-                    <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-danger">
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-danger svg-icon-2x svg-icon-lg-3x">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M13 9V8C13 7.4 13.4 7 14 7H15C16.7 7 18 5.7 18 4V3C18 2.4 17.6 2 17 2C16.4 2 16 2.4 16 3V4C16 4.6 15.6 5 15 5H14C12.3 5 11 6.3 11 8V9H13Z" fill="black" />
-                                <path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V10C2 9.4 2.4 9 3 9H21C21.6 9 22 9.4 22 10V21C22 21.6 21.6 22 21 22ZM5 12C4.4 12 4 12.4 4 13C4 13.6 4.4 14 5 14C5.6 14 6 13.6 6 13C6 12.4 5.6 12 5 12ZM8 12C7.4 12 7 12.4 7 13C7 13.6 7.4 14 8 14C8.6 14 9 13.6 9 13C9 12.4 8.6 12 8 12ZM11 12C10.4 12 10 12.4 10 13C10 13.6 10.4 14 11 14C11.6 14 12 13.6 12 13C12 12.4 11.6 12 11 12ZM14 12C13.4 12 13 12.4 13 13C13 13.6 13.4 14 14 14C14.6 14 15 13.6 15 13C15 12.4 14.6 12 14 12ZM9 15C8.4 15 8 15.4 8 16C8 16.6 8.4 17 9 17C9.6 17 10 16.6 10 16C10 15.4 9.6 15 9 15ZM12 15C11.4 15 11 15.4 11 16C11 16.6 11.4 17 12 17C12.6 17 13 16.6 13 16C13 15.4 12.6 15 12 15ZM15 15C14.4 15 14 15.4 14 16C14 16.6 14.4 17 15 17C15.6 17 16 16.6 16 16C16 15.4 15.6 15 15 15ZM19 18C18.4 18 18 18.4 18 19C18 19.6 18.4 20 19 20C19.6 20 20 19.6 20 19C20 18.4 19.6 18 19 18ZM7 19C7 18.4 6.6 18 6 18H5C4.4 18 4 18.4 4 19C4 19.6 4.4 20 5 20H6C6.6 20 7 19.6 7 19ZM7 16C7 15.4 6.6 15 6 15H5C4.4 15 4 15.4 4 16C4 16.6 4.4 17 5 17H6C6.6 17 7 16.6 7 16ZM17 14H19C19.6 14 20 13.6 20 13C20 12.4 19.6 12 19 12H17C16.4 12 16 12.4 16 13C16 13.6 16.4 14 17 14ZM18 17H19C19.6 17 20 16.6 20 16C20 15.4 19.6 15 19 15H18C17.4 15 17 15.4 17 16C17 16.6 17.4 17 18 17ZM17 19C17 18.4 16.6 18 16 18H9C8.4 18 8 18.4 8 19C8 19.6 8.4 20 9 20H16C16.6 20 17 19.6 17 19Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Icon-->
-                    <!--begin::Info-->
-                    <div class="d-flex flex-stack flex-grow-1 ms-4 ms-lg-6">
-                        <!--begin::Wrapper-->
-                        <div class="d-flex flex-column me-2 me-lg-5">
-                            <!--begin::Title-->
-                            <a href="#" class="text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1">اکانت استیم من چه ریجنی است؟</a>
-                            <!--end::Title-->
-                            <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-7 fs-lg-6">پیش از خرید بازی استیم باید مطمین شوید سفارش ثبت شده با اکانت شما مطابقت دارد. این مقاله را بررسی کنید.</div>
-                            <!--end::Description-->
-                        </div>
-                        <!--end::Wrapper-->
-                        <!--begin::Svg Icon-->
-                        <span class="svg-icon svg-icon-gray-400 svg-icon-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="black" />
-                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                    </div>
-                    <!--end::Info-->
-                </div>
-                <!--end::Link-->
+                <?php endforeach; ?>
+                <?php endif; ?>
             </div>
             <!--end::Content-->
         </div>

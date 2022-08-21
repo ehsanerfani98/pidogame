@@ -499,7 +499,7 @@ if (class_exists('CSF')) {
 				'title'        => 'ایجاد آیتم',
 				'fields'		=>	array(
 					array(
-						'id'           => 'help_icon',
+						'id'           => 'help_icon_code',
 						'type'         => 'textarea',
 						'title'        => 'کد آیکن',
 					),
