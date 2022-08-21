@@ -448,31 +448,98 @@ if (class_exists('CSF')) {
 
 		)
 	));
-	
+
 	// Create alert section
 	CSF::createSection($prefix, array(
 		'id'			=>	'plswb_alert',
 		'title'			=>	'اعلانات سایت',
 		'fields'		=>	array(
 
+			array(
+				'id'           => 'at_image',
+				'type'         => 'color',
+				'title'        => 'رنگ پس زمینه',
+			),
+
+			array(
+				'id'    => 'at_title',
+				'type'  => 'textarea',
+				'title' => 'متن اعلانات',
+			),
+
+			array(
+				'id'    => 'at_link',
+				'type'  => 'link',
+				'title' => 'لینک',
+			),
+
+		)
+	));
+
+
+	// Create alert section
+	CSF::createSection($prefix, array(
+		'id'			=>	'plswb_help_menu',
+		'title'			=>	'منوی پشتیبانی و راهنمایی',
+		'fields'		=>	array(
+			array(
+				'id'    => 'help_title_button',
+				'type'  => 'text',
+				'title' => 'عنوان دکمه',
+			),
+			array(
+				'id'    => 'help_title_menu_opened',
+				'type'  => 'text',
+				'title' => 'عنوان منو بازشو',
+			),
+
+			array(
+				'id'           => 'help_item_wrap',
+				'type'         => 'repeater',
+				'title'        => 'ایجاد آیتم',
+				'fields'		=>	array(
 					array(
-						'id'           => 'at_image',
-						'type'         => 'color',
-						'title'        => 'رنگ پس زمینه',
+						'id'           => 'help_icon',
+						'type'         => 'textarea',
+						'title'        => 'کد آیکن',
 					),
 
 					array(
-						'id'    => 'at_title',
-						'type'  => 'textarea',
-						'title' => 'متن اعلانات',
+						'id'          => 'help_color_icon',
+						'type'        => 'select',
+						'title'       => 'Select',
+						'placeholder' => 'رنگ آیکن',
+						'options'     => array(
+							'bg-light-warning'  => 'نارنجی',
+							'bg-light-primary'  => 'آبی',
+							'bg-light-info'  => 'بنفش',
+							'bg-light-success'  => 'سبز',
+							'bg-light-danger'  => 'قرمز',
+						),
+						'default'     => 'bg-light-warning'
+					),
+
+
+					array(
+						'id'    => 'help_title',
+						'type'  => 'text',
+						'title' => 'عنوان',
 					),
 
 					array(
-						'id'    => 'at_link',
+						'id'    => 'help_link',
 						'type'  => 'link',
 						'title' => 'لینک',
 					),
 
+					array(
+						'id'    => 'help_content',
+						'type'  => 'textarea',
+						'title' => 'توضیحات',
+					),
+
+				)
+			)
 		)
 	));
 }
