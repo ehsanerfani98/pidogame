@@ -500,9 +500,9 @@ if (class_exists('CSF')) {
 				'fields'		=>	array(
 					array(
 						'id'           => 'help_icon_code',
-						'type'         => 'textarea',
+						'type'         => 'code_editor',
 						'title'        => 'کد آیکن',
-						'sanitize' 	=> 	true
+						'sanitize' 	   => false
 					),
 
 					array(
