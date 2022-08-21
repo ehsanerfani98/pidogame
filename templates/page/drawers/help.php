@@ -40,8 +40,8 @@
                 </div>
                 <!--end::Support-->
 
-                <?php if (get_option('pidogame_framework')['plswb_help_menu']) : ?>
-                <?php foreach (get_option('pidogame_framework')['plswb_help_menu'] as $item) : ?>
+                <?php if (get_option('pidogame_framework')['help_item_wrap']) : ?>
+                <?php foreach (get_option('pidogame_framework')['help_item_wrap'] as $item) : ?>
                     <div class="d-flex align-items-center mb-7">
                         <!--begin::Icon-->
                         <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded bg-light-warning">
