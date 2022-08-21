@@ -500,7 +500,7 @@ if (class_exists('CSF')) {
 				'fields'		=>	array(
 					array(
 						'id'           => 'help_icon_code',
-						'type'         => 'wp_editor',
+						'type'         => 'textarea',
 						'title'        => 'کد آیکن',
 					),
 
