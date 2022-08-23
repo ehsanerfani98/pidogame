@@ -477,7 +477,7 @@ jQuery(function () {
             type: 'GET',
             success: function () {
                 // var current_cart = jQuery('.display-count-display').text();
-                console.log(cartCount);
+                // console.log(cartCount);
 
                 Swal.fire({
                     text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
