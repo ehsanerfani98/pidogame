@@ -73,7 +73,7 @@ do_action('woocommerce_before_cart'); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 	<div class="card">
 		<div class="card-body">
-			<div class="table-responsive">
+			<div class="table-responsive1">
 				<?php do_action('woocommerce_before_cart_table'); ?>
 				<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents table table-striped gy-7 gs-7 table-rounded border" cellspacing="0">
 					<thead>
