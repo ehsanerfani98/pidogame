@@ -87,7 +87,7 @@ function woocommerce_ajax_add_to_cart()
         }
 
         wp_send_json( [
-            "data" => WC_AJAX::get_refreshed_fragments(),
+            // "data" => WC_AJAX::get_refreshed_fragments(),
             "count" => count(WC()->cart->get_cart())
         ] );
         
