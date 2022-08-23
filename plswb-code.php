@@ -1532,7 +1532,6 @@ add_action('wp_head', function () {
 	?>
 	<script>
 		var redirectUrl = <?= "'" . home_url('/cart') . "'" ?>;
-		var cartCount = <?= "'" . count(WC()->cart->get_cart()) . "'" ?>
 	</script>
 <?php
 });
