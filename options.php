@@ -498,13 +498,7 @@ if (class_exists('CSF')) {
 				'type'         => 'repeater',
 				'title'        => 'ایجاد آیتم',
 				'fields'		=>	array(
-					// array(
-					// 	'id'           => 'help_icon_code',
-					// 	'type'         => 'textarea',
-					// 	'title'        => 'کد آیکن',
-					// 	'sanitize' 	   => false
-					// ),
-
+				
 					array(
 						'id'    => 'help_icon_code',
 						'type'  => 'icon',
