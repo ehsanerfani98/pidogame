@@ -506,6 +506,12 @@ if (class_exists('CSF')) {
 					// ),
 
 					array(
+						'id'    => 'help_icon_code',
+						'type'  => 'icon',
+						'title' => 'آیکن',
+					  ),
+
+					array(
 						'id'          => 'help_color_icon',
 						'type'        => 'select',
 						'title'       => 'Select',
