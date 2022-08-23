@@ -1,7 +1,7 @@
 <?php $options = get_option('pidogame_framework') ?>
 <?php if ($options['opt-header-cart-switcher']) : ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
-        <div id="header-cart-btn" class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
+        <div id="header-cart-btn11111111" class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
             <span class="svg-icon svg-icon-1">
                 <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
                     <span id="header-cart-count" class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-primary ss02"><?= count(WC()->cart->get_cart()) ?></span>
@@ -13,11 +13,11 @@
                 </svg>
             </span>
         </div>
-        <div id="header-cart-wrap" class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
+        <!-- <div id="header-cart-wrap" class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true">
             <div id="header-cart-loading" class="text-center py-10">
                 <div class="spinner-border text-primary" role="status"></div>
                 <span class="text-primary d-block mt-2">در حال بررسی...</span>
             </div>
-        </div>
+        </div> -->
     </div>
 <?php endif ?>
