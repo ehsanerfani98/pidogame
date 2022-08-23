@@ -19,57 +19,7 @@
 defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
-<style>
-	.table>tbody>tr>td {
-		vertical-align: middle !important;
-	}
 
-	.plswb-thumbnail {
-		width: 80px;
-		height: 80px;
-	}
-
-	.plswb-thumbnail img {
-		width: 100%;
-		height: 100%;
-		border-radius: 50%;
-		border: 4px solid #a6c0c9;
-		padding: 2px;
-	}
-
-	#coupon_code {
-		display: inline-block;
-		width: 50%;
-	}
-
-	.coupon {
-		display: inline-block;
-	}
-
-	.wrap-footer-cart {
-		display: flex;
-		justify-content: end;
-	}
-
-	.plswb-restore-back {
-		justify-content: space-between !important;
-		align-items: center !important;
-		flex-direction: row !important;
-		width: 100% !important;
-	}
-
-	a.restore-item {
-		border: none !important;
-		background: #009ef7 !important;
-		border-radius: 8px !important;
-		padding: .8rem 1.5rem !important;
-		color: white !important;
-	}
-
-	a.restore-item:hover {
-		background: #0b95e6 !important;
-	}
-</style>
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 	<div class="card">
 		<div class="card-body">
