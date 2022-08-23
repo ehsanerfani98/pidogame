@@ -81,3 +81,24 @@ p.woo-wallet-price {
     border-radius: 6px !important;
     color: #2ae152 !important;
 }
+
+.svg-icon-warning {
+    font-size: 24px;
+    color: #ffc700;
+}
+.svg-icon-primary {
+    font-size: 24px;
+    color: #00a3ff;
+}
+.svg-icon-info {
+    font-size: 24px;
+    color: #7239ea;
+}
+.svg-icon-success {
+    font-size: 24px;
+    color: #50cd89;
+}
+.svg-icon-danger {
+    font-size: 24px;
+    color: #f1416c;
+}
