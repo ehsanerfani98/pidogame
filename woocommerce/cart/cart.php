@@ -75,8 +75,8 @@ do_action('woocommerce_before_cart'); ?>
 	<div class="card-body">
 		<form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 			<?php do_action('woocommerce_before_cart_table'); ?>
-			<div class="">
-				<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents table table-striped gy-7 gs-7 table-rounded border" cellspacing="0">
+			<div class="table-responsive">
+				<table class="table table-striped gy-7 gs-7 table-rounded border" cellspacing="0">
 					<thead>
 						<tr>
 							<th class="product-remove">&nbsp;</th>
