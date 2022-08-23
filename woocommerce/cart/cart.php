@@ -71,7 +71,7 @@ do_action('woocommerce_before_cart'); ?>
 	}
 	
 </style>
-<div class="card">
+<div class="card shop_table shop_table_responsive cart woocommerce-cart-form__contents">
 	<div class="card-body">
 		<form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 			<?php do_action('woocommerce_before_cart_table'); ?>
