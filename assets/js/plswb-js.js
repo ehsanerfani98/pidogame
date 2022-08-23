@@ -134,6 +134,7 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
         meta: metaData
     };
 
+
     jQuery.ajax({
         type: "post",
         url: woocommerce_params.ajax_url,
@@ -152,7 +153,9 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
                     confirmButton: "btn btn-primary",
                     cancelButton: 'btn btn-light'
                 }
-            })
+            }).then(function (e) {
+                if (e.isConfirmed == true) redirectUrl && (location.href = redirectUrl);
+            });
 
         }
     });

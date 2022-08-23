@@ -851,7 +851,13 @@ function custom_empty_cart_message()
 	echo $html . '</div></div>';
 }
 
-
+add_action('wp_head', function(){
+	?>
+	<script>
+		var redirectUrl = <?= "'".home_url( '/cart' )."'" ?>;
+	</script>
+	<?php
+});
 
 
 

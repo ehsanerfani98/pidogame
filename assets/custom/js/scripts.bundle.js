@@ -362,7 +362,7 @@ jQuery(function () {
     $('.plswb-quantity,#kt_modal_product_buy .single_add_to_cart_button').wrapAll('<div class="text-center"></div>');
     $('#kt_modal_product_buy').find('.notice p').last().addClass('mb-0');
     $('.single_add_to_cart_button').append('<span class="price-badge badge badge-light-primary ms-2 ss02"></span>');
-
+    
     // $('#kt_modal_product_buy').find('.single_add_to_cart_button').remove();
     // $('#kt_modal_product_buy').find('.plswb-btn-addtocart').addClass('btn btn-primary ms-2').removeClass('button alt');
     // $('#kt_modal_product_buy').find('.stock').remove();
@@ -481,7 +481,7 @@ jQuery(function () {
                     icon: "success",
                     buttonsStyling: !1,
                     showCancelButton: true,
-                    confirmButtonText: "<a href='" + redirectUrl + "'>مشاهده سبد خرید</a>",
+                    confirmButtonText: "مشاهده سبد خرید",
                     cancelButtonText: "ادامه خرید",
                     customClass: {
                         confirmButton: "btn btn-primary",
