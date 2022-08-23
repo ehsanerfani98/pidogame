@@ -476,7 +476,6 @@ jQuery(function () {
             url: addToCartUrl,
             type: 'GET',
             success: function (res) {
-                console.log(res);
                 // var current_cart = jQuery('.display-count-display').text();
 
                 Swal.fire({
