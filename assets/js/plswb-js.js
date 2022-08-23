@@ -67,7 +67,9 @@ function extra_fields(event) {
                     confirmButton: "btn btn-primary",
                     cancelButton: 'btn btn-light'
                 }
-            })
+            }).then(function (e) {
+                if (e.isConfirmed == true) redirectUrl && (location.href = redirectUrl);
+            });
 
             jQuery('#btn_' + variation_id).removeAttr('data-kt-indicator');
 
