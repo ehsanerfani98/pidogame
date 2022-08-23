@@ -543,6 +543,24 @@ if (class_exists('CSF')) {
 			)
 		)
 	));
+
+	// Create channel section
+	CSF::createSection($prefix, array(
+		'id'			=>	'plswb_channel_menu',
+		'title'			=>	'دکمه کانال',
+		'fields'		=>	array(
+			array(
+				'id'    => 'channel_title_button',
+				'type'  => 'text',
+				'title' => 'عنوان دکمه',
+			),
+			array(
+				'id'    => 'channel_link_button',
+				'type'  => 'link',
+				'title' => 'لینک',
+			),
+		)
+	));
 }
 
 // Product settings
