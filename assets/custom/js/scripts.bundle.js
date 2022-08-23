@@ -471,7 +471,7 @@ jQuery(function () {
         var addToCartDialerElement = $(this).parent().find('[data-kt-dialer="true"]')[0];
         var redirectUrl = $(this).attr("data-kt-redirect-url");
         var addToCartDialerObject = KTDialer.getInstance(addToCartDialerElement);
-
+console.log(redirectUrl);
         var addToCartUrl = $(this).attr('data-url') + '&quantity=' + addToCartDialerObject.getValue();
         $.ajax({
             url: addToCartUrl,
