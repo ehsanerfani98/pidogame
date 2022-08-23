@@ -1526,3 +1526,13 @@ function register_my_session()
 
 add_action('init', 'register_my_session');
 session_start();
+
+
+add_action('wp_head', function () {
+	?>
+	<script>
+		var redirectUrl = <?= "'" . home_url('/cart') . "'" ?>;
+		var cartCount = <?= "'" . count(WC()->cart->get_cart()) . "'" ?>
+	</script>
+<?php
+});

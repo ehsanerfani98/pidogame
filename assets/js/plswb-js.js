@@ -143,7 +143,8 @@ jQuery('#free-payment-add-to-cart').click(function (e) {
         url: woocommerce_params.ajax_url,
         data: data,
         success: function (response) {
-            jQuery('.display-count-display').text(response.count);
+                        // jQuery('.display-count-display').text(response.count);
+console.log(cartCount);
             jQuery('#free-payment-add-to-cart').removeAttr('data-kt-indicator');
             Swal.fire({
                 text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
