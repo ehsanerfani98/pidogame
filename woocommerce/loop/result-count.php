@@ -21,10 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="col-lg-6 col-12">
-	
-<span class="badge badge-light p-5">
-		<?php
+<p class="woocommerce-result-count">
+	<?php
 	// phpcs:disable WordPress.Security
 	if ( 1 === intval( $total ) ) {
 		_e( 'Showing the single result', 'woocommerce' );
@@ -39,5 +37,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	// phpcs:enable WordPress.Security
 	?>
-</span>
-</div>
+</p>
