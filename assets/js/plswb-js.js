@@ -56,7 +56,7 @@ function extra_fields(event) {
         url: woocommerce_params.ajax_url,
         data: data,
         success: function (response) {
-            console.log(response.count);
+            console.log(response);
             Swal.fire({
                 text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
                 icon: "success",
