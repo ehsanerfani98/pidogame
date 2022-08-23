@@ -4,7 +4,7 @@
         <a href="<?= home_url('cart') ?>" id="header-cart-btn11111111" class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
             <span class="svg-icon svg-icon-1">
                 <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
-                    <span id="header-cart-count" class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-primary ss02"><?= count(WC()->cart->get_cart()) ?></span>
+                    <span id="header-cart-count" class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-primary ss02 display-count-display"><?= count(WC()->cart->get_cart()) ?></span>
                 <?php endif ?>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z" fill="currentColor" />
