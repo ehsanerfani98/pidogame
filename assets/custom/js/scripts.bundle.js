@@ -475,7 +475,10 @@ jQuery(function () {
         $.ajax({
             url: addToCartUrl,
             type: 'GET',
-            success: function () {
+            success: function (res) {
+                console.log(res);
+                // var current_cart = jQuery('.display-count-display').text();
+
                 Swal.fire({
                     text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
                     icon: "success",
