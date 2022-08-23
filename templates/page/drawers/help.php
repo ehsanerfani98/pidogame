@@ -81,7 +81,7 @@
                             <div class="d-flex flex-center w-50px h-50px w-lg-75px h-lg-75px flex-shrink-0 rounded <?= $bg ?>">
                                 <!--begin::Svg Icon-->
                                 <span class="svg-icon <?= $fc ?> svg-icon-2x svg-icon-lg-3x">
-                                    <?= $item['help_icon_code'] ?>
+                                    <i class="<?= $item['help_icon_code'] ?>"></i>
                                 </span>
                                 <!--end::Svg Icon-->
                             </div>
