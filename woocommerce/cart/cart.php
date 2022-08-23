@@ -19,12 +19,6 @@
 defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
-<div class="woocommerce">
-<div class="woocommerce-notices-wrapper">
-
-</div>
-</div>
-
 <style>
 	.table>tbody>tr>td {
 		vertical-align: middle !important;
