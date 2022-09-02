@@ -1,4 +1,103 @@
+<style>
+  .plswb-card-yellow {
+    position: relative;
+    width: 320px;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 
+  .plswb-card-yellow::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: <?= $cart_color ?>;
+    transform: skewY(345deg);
+    transition: 0.5s;
+  }
+
+  .plswb-card-yellow:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+  }
+
+  /* .plswb-card-yellow::after {
+    content: "PidoGame";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 5.3em;
+    color: rgba(0, 0, 0, 0.1);
+  } */
+
+  .plswb-card-yellow .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+  }
+
+  .plswb-card-yellow .imgBox img {
+    max-width: 58%;
+  }
+
+  /*
+.plswb-card-yellow:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+  .plswb-card-yellow .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .plswb-card-yellow .contentBox h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .plswb-card-yellow .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .plswb-card-yellow .contentBox .buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: <?= $cart_button_color ?>;
+    border-radius: 30px;
+    transition: 0.5s;
+  }
+
+  .plswb-card-yellow:hover .contentBox .buy {
+    top: 0;
+    opacity: 1;
+  }
+
+  .mouse {
+    height: 300px;
+    width: auto;
+  }
+</style>
 <!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
     <ul class="splide__list"> -->
