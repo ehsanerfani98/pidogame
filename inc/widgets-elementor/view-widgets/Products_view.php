@@ -99,9 +99,9 @@
     width: auto;
   }
 </style>
-<section class="splide" aria-labelledby="carousel-heading">
+<!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
-    <ul class="splide__list">
+    <ul class="splide__list"> -->
       <?php
 
       $args = array(
@@ -125,7 +125,7 @@
 
 
       ?>
-          <li class="splide__slide py-5">
+          <!-- <li class="splide__slide py-5"> -->
             <div class="card plswb-card-yellow">
 
               <div class="imgBox">
@@ -138,7 +138,7 @@
               </div>
 
             </div>
-          </li>
+          <!-- </li> -->
 
       <?php
         endwhile;
@@ -147,10 +147,9 @@
       endif;
       ?>
 
-    </ul>
-
+    <!-- </ul>
   </div>
-</section>
+</section> -->
 
 
 
