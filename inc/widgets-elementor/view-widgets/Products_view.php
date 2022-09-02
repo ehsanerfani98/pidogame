@@ -27,7 +27,8 @@ echo $count."<br>";
       if ($query->have_posts()) :
         while ($query->have_posts()) :
           $query->the_post();
-          
+          $product = wc_get_product(get_the_ID());
+
           the_title( );
 
       ?>
