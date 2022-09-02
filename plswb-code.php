@@ -1549,7 +1549,7 @@ add_action('wp_head', function () {
 
 add_action('wp_footer', function () {
 ?>
-    <script>
+    <!-- <script>
         var splide = new Splide('.splide', {
             direction: 'rtl',
             type: 'loop',
@@ -1574,6 +1574,6 @@ add_action('wp_footer', function () {
         });
 
         splide.mount();
-    </script>
+    </script> -->
 <?php
 });
