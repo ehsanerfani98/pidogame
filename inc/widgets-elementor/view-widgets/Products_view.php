@@ -1,4 +1,9 @@
+<?php
 
+echo $term_id."<br>";
+echo $count."<br>";
+
+?>
 <style>
   .plswb-card-yellow {
     position: relative;
@@ -146,8 +151,7 @@
         wp_reset_postdata();
       endif;
 
-      echo $term_id."<br>";
-      echo $count."<br>";
+     
       ?>
 
     </ul>
