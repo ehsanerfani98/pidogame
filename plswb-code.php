@@ -2,9 +2,9 @@
 
 
 include 'constant.php';
-include get_template_directory().'/inc/match_theme_elementor.php';
-include PLSWB_THEME_PATH.'/inc/widgets-elementor/register_widget_elementor.php';
-include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/controller.php';
+include get_template_directory() . '/inc/match_theme_elementor.php';
+include PLSWB_THEME_PATH . '/inc/widgets-elementor/register_widget_elementor.php';
+include PLSWB_THEME_PATH . '/inc/widgets-elementor/view-widgets/controller.php';
 
 
 //نمایش دیتا در سبد خرید
@@ -93,11 +93,10 @@ function woocommerce_ajax_add_to_cart()
             wc_add_to_cart_message(array($product_id => $quantity), true);
         }
 
-        wp_send_json( [
+        wp_send_json([
             // "data" => WC_AJAX::get_refreshed_fragments(),
             "count" => count(WC()->cart->get_cart())
-        ] );
-        
+        ]);
     } else {
 
         $data = array(
@@ -133,11 +132,10 @@ function woocommerce_ajax_add_to_cart_free_payment()
             wc_add_to_cart_message(array($product_id => $quantity), true);
         }
 
-        wp_send_json( [
+        wp_send_json([
             // "data" => WC_AJAX::get_refreshed_fragments(),
             "count" => count(WC()->cart->get_cart())
-        ] );
-
+        ]);
     } else {
 
         $data = array(
@@ -1398,8 +1396,8 @@ function plswb_check_order()
                                                             </div>
                                                         </div>
                                                         <?php foreach ($data_status as $item) : ?>
-                                                            <?php if (!empty($item['status'])) : 
-                                                                
+                                                            <?php if (!empty($item['status'])) :
+
                                                                 switch ($item['status']) {
                                                                     case 'on-hold':
                                                                         $ms = 'در انتظار بررسی';
@@ -1425,8 +1423,8 @@ function plswb_check_order()
                                                                     default:
                                                                         break;
                                                                 }
-                                                                
-                                                                ?>
+
+                                                            ?>
                                                                 <div class="row mb-5">
                                                                     <div class="col-lg-6">
                                                                         <div>
@@ -1456,7 +1454,7 @@ function plswb_check_order()
                                 <div class="col-lg-12 ">
                                     <div class="d-flex align-items-center justify-content-end">
                                         <a href="<?= get_permalink() . '?ch1' ?>" class="btn btn-danger" style="margin-left: 1rem;">بازگشت</a>
-                                        <a target="_blank" href="<?= home_url('my-account/view-order/' . $order['id'] ) ?>" class="btn btn-primary">مشاهده سفارش</a>
+                                        <a target="_blank" href="<?= home_url('my-account/view-order/' . $order['id']) ?>" class="btn btn-primary">مشاهده سفارش</a>
                                     </div>
                                 </div>
                             </div>
@@ -1536,9 +1534,46 @@ session_start();
 
 
 add_action('wp_head', function () {
-	?>
-	<script>
-		var redirectUrl = <?= "'" . home_url('/cart') . "'" ?>;
-	</script>
+?>
+    <script>
+        var redirectUrl = <?= "'" . home_url('/cart') . "'" ?>;
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.8/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.8/dist/css/splide-core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.8/dist/js/splide.min.js"></script>
+
+
+<?php
+});
+
+add_action('wp_footer', function () {
+?>
+    <script>
+        var splide = new Splide('.splide', {
+            direction: 'rtl',
+            type: 'loop',
+            perPage: 4,
+            perMove: 1,
+            autoWidth: true,
+            pagination: false,
+            gap: '1rem',
+            drag: 'free',
+            snap: true,
+            autoplay: false,
+            breakpoints: {
+                640: {
+                    perPage: 2,
+                    gap: '.7rem',
+                },
+                480: {
+                    perPage: 1,
+                    gap: '.7rem',
+                },
+            },
+        });
+
+        splide.mount();
+    </script>
 <?php
 });

@@ -1,5 +1,5 @@
 <?php
-class SliderThumbnail extends \Elementor\Widget_Base
+class Products extends \Elementor\Widget_Base
 {
 
 	public function get_name()
@@ -9,12 +9,12 @@ class SliderThumbnail extends \Elementor\Widget_Base
 
 	public function get_title()
 	{
-		return esc_html__('اسلایدر آگهی های یونیک', 'elementor-addon');
+		return esc_html__('محصولات', 'elementor-addon');
 	}
 
 	public function get_icon()
 	{
-		return 'eicon-slider-full-screen';
+		return 'eicon-thumbnails-down';
 	}
 
 	public function get_categories()
@@ -24,7 +24,7 @@ class SliderThumbnail extends \Elementor\Widget_Base
 
 	public function get_keywords()
 	{
-		return ['آگهی', 'اسلایدر آگهی'];
+		return ['محصولات'];
 	}
 
 	protected function register_controls()
@@ -61,18 +61,28 @@ class SliderThumbnail extends \Elementor\Widget_Base
 				'options' => $category,
 			]
 		);
+
+
+	
 		$this->add_control(
-			'is_background',
+			'count',
 			[
-				'label' => esc_html__('پس زمینه اصلی', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => array_key_first($category),
-				'options' => [
-					'true' => 'فعال',
-					'false' => 'غیر فعال'
-				],
+				'label' => esc_html__('تعداد محصولات', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::TEXT,
 			]
 		);
+		// $this->add_control(
+		// 	'is_background',
+		// 	[
+		// 		'label' => esc_html__('پس زمینه اصلی', 'elementor-addon'),
+		// 		'type' => \Elementor\Controls_Manager::SELECT,
+		// 		'default' => array_key_first($category),
+		// 		'options' => [
+		// 			'true' => 'فعال',
+		// 			'false' => 'غیر فعال'
+		// 		],
+		// 	]
+		// );
 
 		$this->end_controls_section();
 
@@ -81,24 +91,35 @@ class SliderThumbnail extends \Elementor\Widget_Base
 
 		// Style Tab Start
 
-		// $this->start_controls_section(
-		// 	'section_title_style',
-		// 	[
-		// 		'label' => esc_html__('Title', 'elementor-addon'),
-		// 		'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-		// 	]
-		// );
+		$this->start_controls_section(
+			'section_title_style',
+			[
+				'label' => esc_html__('رنگبندی کارت محصول', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
 
-		// $this->add_control(
-		// 	'title_color',
-		// 	[
-		// 		'label' => esc_html__('Text Color', 'elementor-addon'),
-		// 		'type' => \Elementor\Controls_Manager::COLOR,
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-		// 		],
-		// 	]
-		// );
+		$this->add_control(
+			'cart_color',
+			[
+				'label' => esc_html__('رنگ کارت', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+				],
+			]
+		);
+		
+		$this->add_control(
+			'cart_button_color',
+			[
+				'label' => esc_html__('رنگ دکمه', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+				],
+			]
+		);
 
 		// $this->end_controls_section();
 
@@ -110,7 +131,7 @@ class SliderThumbnail extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 ?>
-			<?= do_shortcode('[slider-thumbnail term_id="' . $settings['category'] . '" is_background="' . $settings['is_background'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '"]') ?>
 <?php
 	}
 }
