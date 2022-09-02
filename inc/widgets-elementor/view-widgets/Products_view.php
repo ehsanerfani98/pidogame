@@ -148,7 +148,7 @@ echo $count."<br>";
 
       <?php
         endwhile;
-        wp_reset_postdata();
+        // wp_reset_postdata();
       endif;
 
      
