@@ -136,7 +136,7 @@
           </div>
 
           <div class="contentBox">
-            <h3 class="text-gray-600"><?php the_title() ?></h3>
+            <h3 class="text-gray-700"><?php the_title() ?></h3>
             <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
             <a href="#" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
           </div>
@@ -160,14 +160,14 @@
 <script>
   var splide = new Splide('.splide_<?= $wid ?>', {
     direction: 'rtl',
-    type: 'loop',
-    perPage: 4,
+    // type: 'loop',
+    perPage: 3,
     perMove: 1,
     autoWidth: true,
     pagination: false,
     gap: '1rem',
     drag: 'free',
-    snap: true,
+    snap: false,
     autoplay: false,
     breakpoints: {
       640: {
