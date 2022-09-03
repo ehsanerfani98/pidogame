@@ -1,4 +1,3 @@
-
 <style>
   .plswb-card-yellow {
     position: relative;
@@ -14,7 +13,6 @@
     top: -50%;
     width: 100%;
     height: 100%;
-    background: <?= $cart_color ?> !important;
     transform: skewY(345deg);
     transition: 0.5s;
   }
@@ -102,56 +100,56 @@
 <!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
     <ul class="splide__list"> -->
-      <div class="row">
-      <?php
+<div class="row">
+  <?php
 
-      $args = array(
-        'post_type'        => 'product',
-        'posts_per_page'   => $count,
-        'tax_query' => array(
-          array(
-            'taxonomy' => 'product_cat',
-            'field' => 'term_id',
-            'terms' => $term_id
-          )
-        )
-      );
-      $query = new WP_Query($args);
-
-
-      if ($query->have_posts()) :
-        while ($query->have_posts()) :
-          $query->the_post();
-          $product = wc_get_product(get_the_ID());
+  $args = array(
+    'post_type'        => 'product',
+    'posts_per_page'   => $count,
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'product_cat',
+        'field' => 'term_id',
+        'terms' => $term_id
+      )
+    )
+  );
+  $query = new WP_Query($args);
 
 
-      ?>
-          <!-- <li class="splide__slide py-5"> -->
-        <div class="col-lg-3">
-        <div class="card plswb-card-yellow">
+  if ($query->have_posts()) :
+    while ($query->have_posts()) :
+      $query->the_post();
+      $product = wc_get_product(get_the_ID());
+  ?>
+  <style>
+    <?= '.cart_color_'.get_the_ID() . '{'. 'background:'. $cart_color .' !important;' . '}'  ?>  
+  </style>
+      <!-- <li class="splide__slide py-5"> -->
+      <div class="col-lg-3">
+        <div class="card plswb-card-yellow cart_color_<?php the_ID() ?>">
 
-<div class="imgBox">
-  <?php the_post_thumbnail() ?>
-</div>
+          <div class="imgBox">
+            <?php the_post_thumbnail() ?>
+          </div>
 
-<div class="contentBox">
-  <h3 class="text-gray-600"><?php the_title() ?></h3>
-  <h2 class="price"><?= number_format($product->get_price()) .' '. get_woocommerce_currency_symbol() ?></h2>
-  <a href="#" class="buy">افزودن به سبد خرید</a>
-</div>
+          <div class="contentBox">
+            <h3 class="text-gray-600"><?php the_title() ?></h3>
+            <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
+            <a href="#" class="buy">افزودن به سبد خرید</a>
+          </div>
 
-</div>
         </div>
-          <!-- </li> -->
+      </div>
+      <!-- </li> -->
 
-      <?php
-        endwhile;
-        wp_reset_postdata();
+  <?php
+    endwhile;
+    wp_reset_postdata();
 
-      endif;
-      ?>
+  endif;
+  ?>
 </div>
-    <!-- </ul>
+<!-- </ul>
   </div>
 </section> -->
-
