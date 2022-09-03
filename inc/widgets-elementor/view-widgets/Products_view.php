@@ -83,7 +83,6 @@
     margin-top: 15px;
     color: #000000;
     text-decoration: none;
-    background: <?= $cart_button_color ?>;
     border-radius: 30px;
     transition: 0.5s;
   }
@@ -99,6 +98,7 @@
   }
 
   <?= '.cart_color_'.$wid.'::before{'. 'background:'. $cart_color  ?>
+  <?= '.buy_'.$wid.'::before{'. 'background:'. $cart_button_color  ?>
 </style>
 <!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
@@ -138,7 +138,7 @@
 <div class="contentBox">
   <h3 class="text-gray-600"><?php the_title() ?></h3>
   <h2 class="price"><?= number_format($product->get_price()) .' '. get_woocommerce_currency_symbol() ?></h2>
-  <a href="#" class="buy">افزودن به سبد خرید</a>
+  <a href="#" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
 </div>
 
 </div>
