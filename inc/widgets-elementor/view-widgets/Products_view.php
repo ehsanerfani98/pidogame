@@ -98,9 +98,9 @@
     width: auto;
   }
 </style>
-<!-- <section class="splide" aria-labelledby="carousel-heading">
+<section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
-    <ul class="splide__list"> -->
+    <ul class="splide__list">
 <?php
 
 $args = array(
@@ -146,6 +146,6 @@ if ($query->have_posts()) :
 endif;
 ?>
 
-<!-- </ul>
+</ul>
   </div>
-</section> -->
+</section>
