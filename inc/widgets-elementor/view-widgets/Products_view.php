@@ -101,51 +101,79 @@
 <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
     <ul class="splide__list">
-<?php
+      <?php
 
-$args = array(
-  'post_type'        => 'product',
-  'posts_per_page'   => $count,
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'product_cat',
-      'field' => 'term_id',
-      'terms' => $term_id
-    )
-  )
-);
-$query = new WP_Query($args);
-
-
-if ($query->have_posts()) :
-  while ($query->have_posts()) :
-    $query->the_post();
-    // $product = wc_get_product(get_the_ID());
+      $args = array(
+        'post_type'        => 'product',
+        'posts_per_page'   => $count,
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'product_cat',
+            'field' => 'term_id',
+            'terms' => $term_id
+          )
+        )
+      );
+      $query = new WP_Query($args);
 
 
-?>
-    <!-- <li class="splide__slide py-5"> -->
-    <div class="card plswb-card-yellow">
+      if ($query->have_posts()) :
+        while ($query->have_posts()) :
+          $query->the_post();
+          // $product = wc_get_product(get_the_ID());
 
-      <div class="imgBox">
-        <?php the_post_thumbnail() ?>
-      </div>
 
-      <div class="contentBox">
-        <h3 class="text-gray-600"><?php the_title() ?></h3>
-        <a href="#" class="buy">افزودن به سبد خرید</a>
-      </div>
+      ?>
+          <!-- <li class="splide__slide py-5"> -->
+          <div class="card plswb-card-yellow">
 
-    </div>
-    <!-- </li> -->
+            <div class="imgBox">
+              <?php the_post_thumbnail() ?>
+            </div>
 
-<?php
-  endwhile;
-  wp_reset_postdata();
+            <div class="contentBox">
+              <h3 class="text-gray-600"><?php the_title() ?></h3>
+              <a href="#" class="buy">افزودن به سبد خرید</a>
+            </div>
 
-endif;
-?>
+          </div>
+          <!-- </li> -->
 
-</ul>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+
+      endif;
+      ?>
+
+    </ul>
   </div>
 </section>
+
+
+<script>
+  var splide = new Splide('.splide', {
+    direction: 'rtl',
+    type: 'loop',
+    perPage: 4,
+    perMove: 1,
+    autoWidth: true,
+    pagination: false,
+    gap: '1rem',
+    drag: 'free',
+    snap: true,
+    autoplay: false,
+    breakpoints: {
+      640: {
+        perPage: 2,
+        gap: '.7rem',
+      },
+      480: {
+        perPage: 1,
+        gap: '.7rem',
+      },
+    },
+  });
+
+  splide.mount();
+</script>
