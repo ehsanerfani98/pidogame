@@ -1,3 +1,5 @@
+<?= $cart_color ?>
+
 <style>
   .plswb-card-yellow {
     position: relative;
