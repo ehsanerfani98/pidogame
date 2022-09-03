@@ -98,7 +98,7 @@
     width: auto;
   }
 
-  <?= 'cart_color_'.$wid.'::before{'. 'background:'. $cart_color  ?>
+  <?= '.cart_color_'.$wid.'::before{'. 'background:'. $cart_color  ?>
 </style>
 <!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
