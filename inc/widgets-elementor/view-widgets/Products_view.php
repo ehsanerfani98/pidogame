@@ -123,7 +123,7 @@
       $product = wc_get_product(get_the_ID());
   ?>
   <style>
-    <?= '.cart_color_'.get_the_ID() . '{'. 'background:'. $cart_color .' !important;' . '}'  ?>  
+    <?= '.cart_color_'.get_the_ID() . '::before{'. 'background:'. $cart_color .' !important;' . '}'  ?>  
   </style>
       <!-- <li class="splide__slide py-5"> -->
       <div class="col-lg-3">
