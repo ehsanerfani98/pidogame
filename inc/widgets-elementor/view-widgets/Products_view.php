@@ -98,9 +98,10 @@
     width: auto;
   }
 </style>
-<section class="splide" aria-labelledby="carousel-heading">
+<!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
-    <ul class="splide__list">
+    <ul class="splide__list"> -->
+      <div class="row">
       <?php
 
       $args = array(
@@ -120,24 +121,27 @@
       if ($query->have_posts()) :
         while ($query->have_posts()) :
           $query->the_post();
-          // $product = wc_get_product(get_the_ID());
+          $product = wc_get_product(get_the_ID());
 
 
       ?>
-          <li class="splide__slide py-5">
-          <div class="card plswb-card-yellow">
+          <!-- <li class="splide__slide py-5"> -->
+        <div class="col-lg-3">
+        <div class="card plswb-card-yellow">
 
-            <div class="imgBox">
-              <?php the_post_thumbnail() ?>
-            </div>
+<div class="imgBox">
+  <?php the_post_thumbnail() ?>
+</div>
 
-            <div class="contentBox">
-              <h3 class="text-gray-600"><?php the_title() ?></h3>
-              <a href="#" class="buy">افزودن به سبد خرید</a>
-            </div>
+<div class="contentBox">
+  <h3 class="text-gray-600"><?php the_title() ?></h3>
+  <h2 class="price"><?= number_format($product->get_price()) .' '. get_woocommerce_currency_symbol() ?></h2>
+  <a href="#" class="buy">افزودن به سبد خرید</a>
+</div>
 
-          </div>
-          </li>
+</div>
+        </div>
+          <!-- </li> -->
 
       <?php
         endwhile;
@@ -145,8 +149,8 @@
 
       endif;
       ?>
-
-    </ul>
+</div>
+    <!-- </ul>
   </div>
-</section>
+</section> -->
 
