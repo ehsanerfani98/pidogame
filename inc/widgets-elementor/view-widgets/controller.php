@@ -18,6 +18,7 @@ class PlswbShorcodes{
     }
 
     function view_Products($param){
+        $wid = rand(0000000000, 9999999999);
         $term_id = $param['term_id'];
         $count = $param['count'];
         $cart_color = $param['cart_color'];
