@@ -98,7 +98,7 @@
   }
 
   <?= '.cart_color_'.$wid.'::before{'. 'background:'. $cart_color.';'  ?>
-  <?= '.buy_'.$wid.'{'. 'background:'. $cart_button_color.';'  ?>
+  <?= '.buy_'.$wid.'{'. 'background:'. $cart_button_color.' !important;'  ?>
 </style>
 <!-- <section class="splide" aria-labelledby="carousel-heading">
   <div class="splide__track">
