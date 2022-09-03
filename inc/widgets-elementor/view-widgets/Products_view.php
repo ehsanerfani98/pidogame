@@ -1,30 +1,3 @@
-<script>
-  var splide = new Splide('.splide', {
-    direction: 'rtl',
-    type: 'loop',
-    perPage: 4,
-    perMove: 1,
-    autoWidth: true,
-    pagination: false,
-    gap: '1rem',
-    drag: 'free',
-    snap: true,
-    autoplay: false,
-    breakpoints: {
-      640: {
-        perPage: 2,
-        gap: '.7rem',
-      },
-      480: {
-        perPage: 1,
-        gap: '.7rem',
-      },
-    },
-  });
-
-  splide.mount();
-</script>
-
 <style>
   .plswb-card-yellow {
     position: relative;
@@ -178,3 +151,29 @@
 </section>
 
 
+<script>
+  var splide = new Splide('.splide', {
+    direction: 'rtl',
+    type: 'loop',
+    perPage: 4,
+    perMove: 1,
+    autoWidth: true,
+    pagination: false,
+    gap: '1rem',
+    drag: 'free',
+    snap: true,
+    autoplay: false,
+    breakpoints: {
+      640: {
+        perPage: 2,
+        gap: '.7rem',
+      },
+      480: {
+        perPage: 1,
+        gap: '.7rem',
+      },
+    },
+  });
+
+  splide.mount();
+</script>
