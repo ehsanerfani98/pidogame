@@ -1,4 +1,3 @@
-<?= $cart_color ?>
 
 <style>
   .plswb-card-yellow {
@@ -15,7 +14,7 @@
     top: -50%;
     width: 100%;
     height: 100%;
-    background: <?= $cart_color ?>;
+    background: <?= $cart_color ?> !important;
     transform: skewY(345deg);
     transition: 0.5s;
   }
