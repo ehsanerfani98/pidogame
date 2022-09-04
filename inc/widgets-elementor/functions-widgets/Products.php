@@ -158,13 +158,13 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'icon_card',
-			[
-				'label' => esc_html__('آیکن کارت', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::ICONS,
-			]
-		);
+		// $this->add_control(
+		// 	'icon_card',
+		// 	[
+		// 		'label' => esc_html__('آیکن کارت', 'elementor-addon'),
+		// 		'type' => \Elementor\Controls_Manager::ICONS,
+		// 	]
+		// );
 
 		$this->add_control(
 			'title_card',
