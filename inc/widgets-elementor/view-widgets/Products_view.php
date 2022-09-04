@@ -340,7 +340,7 @@
     <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
       <div class="splide__track">
         <ul class="splide__list">
-          <?php if($status == 'yes'): ?>
+          <?php if($status_card == 'yes'): ?>
           <li class="splide__slide py-5">
             <div class="d-flex flex-column align-items-center justify-content-center">
               <div>
