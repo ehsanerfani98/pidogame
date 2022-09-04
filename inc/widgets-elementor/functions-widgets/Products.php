@@ -72,7 +72,7 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 		$this->add_control(
-			'is_background',
+			'card_style',
 			[
 				'label' => esc_html__('استایل محصول', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::SELECT,
@@ -131,7 +131,7 @@ class Products extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style']. '"]') ?>
 <?php
 	}
 }

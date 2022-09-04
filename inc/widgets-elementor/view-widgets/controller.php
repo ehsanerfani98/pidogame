@@ -23,6 +23,7 @@ class PlswbShorcodes{
         $count = $param['count'];
         $cart_color = $param['cart_color'];
         $cart_button_color = $param['cart_button_color'];
+        $card_style = $param['card_style'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 

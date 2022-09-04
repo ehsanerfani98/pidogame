@@ -1,3 +1,5 @@
+<?php if($card_style == 'festival'): ?>
+
 <style>
   .plswb-card-yellow {
     position: relative;
@@ -183,3 +185,8 @@
 
   splide.mount();
 </script>
+
+<?php else: ?>
+
+
+<?php endif; ?>
