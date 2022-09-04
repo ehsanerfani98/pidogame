@@ -350,7 +350,7 @@
                 <p><?= $content_card ?></p>
               </div>
               <div>
-                <a href="<?= $link_card ?>"><?= $title_card ?></a>
+                <a target="_blank" href="<?= $link_card ?>"><?= $title_card ?></a>
               </div>
             </div>
           </li>
