@@ -30,6 +30,7 @@ class PlswbShorcodes{
         $icon_card = $param['icon_card'];
         $color_icon_card = $param['color_icon_card'];
         $title_card = $param['title_card'];
+        $color_title_card = $param['color_title_card'];
         $link_card = $param['link_card'];
         $content_card = $param['content_card'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';

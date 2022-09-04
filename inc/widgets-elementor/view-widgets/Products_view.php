@@ -346,7 +346,7 @@
                 <div>
                   <i style="font-size: 6rem;color: <?= $color_icon_card ?>;" class="<?= $icon_card ?>"></i>
                 </div>
-                <div style="font-weight: bold; font-size: 2rem; text-align: center;">
+                <div style="font-weight: bold; font-size: 2rem; text-align: center;color: <?= $color_title_card ?>">
                   <p><?= $content_card ?></p>
                 </div>
                 <div>
