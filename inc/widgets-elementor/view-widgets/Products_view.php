@@ -342,15 +342,15 @@
         <ul class="splide__list">
           <?php if($status_card == 'yes'): ?>
           <li class="splide__slide py-5">
-            <div class="d-flex flex-column align-items-center justify-content-center">
+            <div class="d-flex flex-column align-items-center " style="padding: 0 1.6rem;width: 100%;justify-content: space-evenly">
               <div>
-                <i class="<?= $icon_card ?>"></i>
+                <i style="font-size: ;6rem:color: <?= $color_icon_card ?>;" class="<?= $icon_card ?>"></i>
               </div>
-              <div>
+              <div style="font-weight: bold; font-size: 2rem; text-align: center;">
                 <p><?= $content_card ?></p>
               </div>
               <div>
-                <a target="_blank" href="<?= $link_card ?>"><?= $title_card ?></a>
+                <a class="btn btn-primary" target="_blank" href="<?= $link_card ?>"><?= $title_card ?></a>
               </div>
             </div>
           </li>
