@@ -174,7 +174,7 @@
       direction: 'rtl',
       type: 'loop',
       perPage: 4,
-      perMove: 4,
+      perMove: 1,
       autoWidth: false,
       pagination: false,
       gap: '.5rem',
@@ -183,13 +183,11 @@
       autoplay: false,
       breakpoints: {
         640: {
-          perPage: 1,
-          perMove: 1,
+          perPage: 2,
           gap: '.7rem',
         },
         480: {
           perPage: 1,
-          perMove: 1,
           gap: '.7rem',
         },
       },
@@ -430,7 +428,7 @@
       direction: 'rtl',
       type: 'loop',
       perPage: 4,
-      perMove: 4,
+      perMove: 1,
       autoWidth: false,
       pagination: false,
       gap: '.5rem',
@@ -440,12 +438,10 @@
       breakpoints: {
         640: {
           perPage: 1,
-          perMove: 1,
           gap: '.7rem',
         },
         480: {
           perPage: 1,
-          perMove: 1,
           gap: '.7rem',
         },
       },
