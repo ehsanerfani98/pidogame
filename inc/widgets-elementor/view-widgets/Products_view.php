@@ -208,14 +208,13 @@ if ($query->have_posts()) :
         <?php
         while ($query->have_posts()) :
           global $product;
+          dd($product);
           $query->the_post();
           $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
           <div class="col-lg-3 mb-8">
             <a href="<?php the_permalink() ?>">
               <div class="wrap-cart-plswb card">
-
-
                 <div class="image-cart-plswb">
                   <?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
                     <?php the_post_thumbnail() ?>
