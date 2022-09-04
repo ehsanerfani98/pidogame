@@ -236,11 +236,11 @@ class Products extends \Elementor\Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
-		dd($settings['icon_card']['value']);
+		dd($settings['link_card']);
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" status_card="' . $settings['status_card'] .'" icon_card="' . $settings['icon_card'] .'" title_card="' . $settings['title_card'] . '" content_card="' . $settings['content_card'] .'" link_card="' . $settings['link_card'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" status_card="' . $settings['status_card'] .'" icon_card="' . $settings['icon_card']['value'] .'" title_card="' . $settings['title_card'] . '" content_card="' . $settings['content_card'] .'" link_card="' . $settings['link_card'] . '"]') ?>
 <?php
 	}
 }
