@@ -347,7 +347,7 @@ if ($status_product_ids == 'yes') {
             $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
             <li class="splide__slide py-5">
-              <div style="width: 200px">
+              <div style="width: 250px">
                 <a href="<?php the_permalink() ?>">
                   <div class="wrap-cart-plswb card">
                     <div class="image-cart-plswb">
