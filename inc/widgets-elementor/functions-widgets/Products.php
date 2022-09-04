@@ -131,10 +131,7 @@ class Products extends \Elementor\Widget_Base
 				'label' => esc_html__('انتخاب محصول', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => [
-					"tst"=>"yy",
-					"sadsad"=>"hjfg",
-				],
+				'options' => $product_ids,
 				'default' => [],
 			]
 		);
@@ -186,10 +183,10 @@ class Products extends \Elementor\Widget_Base
 
 	protected function render()
 	{
+		$product_ids = implode(',', $settings['product_ids']);
 		$settings = $this->get_settings_for_display();
-		dd($settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" product_ids="' . $settings['product_ids'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" product_ids="' . $product_ids . '"]') ?>
 <?php
 	}
 }
