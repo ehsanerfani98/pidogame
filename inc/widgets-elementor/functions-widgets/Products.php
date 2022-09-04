@@ -41,9 +41,24 @@ class Products extends \Elementor\Widget_Base
 		foreach ($categories as $item) {
 			$category[$item->term_id] = $item->name;
 		}
+		$args = array(
+			'post_type'        => 'product',
+			'posts_per_page'   => -1,
+			"post_status" => "publish"
+		);
+		$query = new WP_Query($args);
+		if ($query->have_posts()) {
+			while ($query->have_posts()) {
+				$query->the_post();
+				$product_ids[get_the_ID()] = get_the_title();
+			}
+			wp_reset_postdata();
+		}
 
 
 		// Content Tab Start
+
+
 		$this->start_controls_section(
 			'section_category',
 			[
@@ -61,8 +76,6 @@ class Products extends \Elementor\Widget_Base
 				'options' => $category,
 			]
 		);
-
-
 
 		$this->add_control(
 			'count',
@@ -110,22 +123,6 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-
-		$args = array(
-			'post_type'        => 'product',
-			'posts_per_page'   => -1,
-			"post_status" => "publish"
-		);
-		$query = new WP_Query($args);
-		if ($query->have_posts()) {
-			while ($query->have_posts()) {
-				$query->the_post();
-				$product_ids[get_the_ID()] = get_the_title();
-			}
-			wp_reset_postdata();
-		}
-
-
 		$this->add_control(
 			'product_ids',
 			[
@@ -137,7 +134,53 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->end_controls_section();
 
+		/**************/
+
+		$this->start_controls_section(
+			'section_start_card',
+			[
+				'label' => esc_html__('تنظیمات کارت ویژه', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'status_card',
+			[
+				'label' => 'نمایش کارت',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'روشن',
+				'label_off' => 'خاموش',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'icon_card',
+			[
+				'label' => esc_html__('آیکن کارت', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::ICON,
+			]
+		);
+
+		$this->add_control(
+			'title_card',
+			[
+				'label' => esc_html__('عنوان کارت', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::TEXT,
+			]
+		);
+
+		$this->add_control(
+			'content_card',
+			[
+				'label' => esc_html__('متن کارت', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+			]
+		);
 
 		$this->end_controls_section();
 
@@ -188,7 +231,7 @@ class Products extends \Elementor\Widget_Base
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby']. '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '"]') ?>
 <?php
 	}
 }
