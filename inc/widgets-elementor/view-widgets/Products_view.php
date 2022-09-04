@@ -211,7 +211,7 @@ if ($query->have_posts()) :
           global $product;
           $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
-          <div class="col-lg-3 mb-8">
+          <li class="splide__slide py-5">
             <a href="<?php the_permalink() ?>">
               <div class="wrap-cart-plswb card">
                 <div class="image-cart-plswb">
@@ -258,8 +258,7 @@ if ($query->have_posts()) :
 
               </div>
             </a>
-          </div>
-
+          </li>
         <?php
         endwhile;
         wp_reset_postdata();
