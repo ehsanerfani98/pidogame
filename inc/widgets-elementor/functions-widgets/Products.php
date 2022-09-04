@@ -63,7 +63,7 @@ class Products extends \Elementor\Widget_Base
 		);
 
 
-	
+
 		$this->add_control(
 			'count',
 			[
@@ -110,18 +110,26 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
+
+		$args = array(
+			'post_type'        => 'product',
+			'posts_per_page'   => -1,
+		);
+		$query = new WP_Query($args);
+		if ($query->have_posts()) {
+			while ($query->have_posts()) {
+				$query->the_post();
+				$product_ids[get_the_ID()] = get_the_title();
+			}
+		}
 		$this->add_control(
 			'show_elements',
 			[
-				'label' => esc_html__( 'انتخاب محصول', 'plugin-name' ),
+				'label' => esc_html__('انتخاب محصول', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => [
-					'title'  => esc_html__( 'Title', 'plugin-name' ),
-					'description' => esc_html__( 'Description', 'plugin-name' ),
-					'button' => esc_html__( 'Button', 'plugin-name' ),
-				],
-				'default' => [ 'title', 'description' ],
+				'options' => $product_ids,
+				'default' => [],
 			]
 		);
 
@@ -152,7 +160,7 @@ class Products extends \Elementor\Widget_Base
 				],
 			]
 		);
-		
+
 		$this->add_control(
 			'cart_button_color',
 			[
@@ -174,7 +182,7 @@ class Products extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] .'" orderby="' . $settings['orderby'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '"]') ?>
 <?php
 	}
 }
