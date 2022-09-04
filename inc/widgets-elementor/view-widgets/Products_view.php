@@ -208,9 +208,7 @@ if ($query->have_posts()) :
         <?php
         while ($query->have_posts()) :
           $query->the_post();
-
           global $product;
-          dd($product);
           $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
           <div class="col-lg-3 mb-8">
