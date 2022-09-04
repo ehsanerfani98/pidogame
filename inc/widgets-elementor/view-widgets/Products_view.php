@@ -136,7 +136,7 @@
                 <div class="contentBox">
                   <h3 class="text-gray-700"><?php the_title() ?></h3>
                   <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
-                  <a href="#" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
+                  <a href="<?php the_permalink() ?>" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
                 </div>
 
               </div>
