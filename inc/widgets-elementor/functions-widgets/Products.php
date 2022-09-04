@@ -71,18 +71,18 @@ class Products extends \Elementor\Widget_Base
 				'type' => \Elementor\Controls_Manager::TEXT,
 			]
 		);
-		// $this->add_control(
-		// 	'is_background',
-		// 	[
-		// 		'label' => esc_html__('پس زمینه اصلی', 'elementor-addon'),
-		// 		'type' => \Elementor\Controls_Manager::SELECT,
-		// 		'default' => array_key_first($category),
-		// 		'options' => [
-		// 			'true' => 'فعال',
-		// 			'false' => 'غیر فعال'
-		// 		],
-		// 	]
-		// );
+		$this->add_control(
+			'is_background',
+			[
+				'label' => esc_html__('استایل محصول', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'original',
+				'options' => [
+					'original' => 'استایل اصلی',
+					'festival' => 'استایل جشنواره'
+				],
+			]
+		);
 
 		$this->end_controls_section();
 
