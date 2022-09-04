@@ -169,8 +169,16 @@ class Products extends \Elementor\Widget_Base
 		$this->add_control(
 			'title_card',
 			[
-				'label' => esc_html__('عنوان کارت', 'elementor-addon'),
+				'label' => esc_html__('متن مشاهده همه', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::TEXT,
+			]
+		);
+		
+		$this->add_control(
+			'title_card',
+			[
+				'label' => esc_html__('لینک مشاهده همه', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::LINK,
 			]
 		);
 
