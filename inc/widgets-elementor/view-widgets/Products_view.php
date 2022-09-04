@@ -105,25 +105,32 @@
       <ul class="splide__list">
         <!-- <div class="row"> -->
         <?php
+
         if ($status_product_ids == 'yes') {
           $product_ids = explode(',', $product_ids);
+          $args = array(
+            'post_type'        => 'product',
+            'posts_per_page'   => $count,
+            'orderby' => 'meta_value',
+            'order'   => $orderby,
+            'post__in'      => $product_ids,
+          );
         } else {
-          $product_ids = [];
-        }
-        $args = array(
-          'post_type'        => 'product',
-          'posts_per_page'   => $count,
-          'orderby' => 'meta_value',
-          'order'   => $orderby,
-          'post__in'      => $product_ids,
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'product_cat',
-              'field' => 'term_id',
-              'terms' => $term_id
+          $args = array(
+            'post_type'        => 'product',
+            'posts_per_page'   => $count,
+            'orderby' => 'meta_value',
+            'order'   => $orderby,
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'product_cat',
+                'field' => 'term_id',
+                'terms' => $term_id
+              )
             )
-          )
-        );
+          );
+        }
+
         $query = new WP_Query($args);
 
 
@@ -300,18 +307,21 @@
   </style>
   <?php
 
-  if ($status_product_ids == 'yes') {
-    $product_ids = explode(',', $product_ids);
-  } else {
-    $product_ids = [];
-  }
-
+if ($status_product_ids == 'yes') {
+  $product_ids = explode(',', $product_ids);
   $args = array(
     'post_type'        => 'product',
     'posts_per_page'   => $count,
     'orderby' => 'meta_value',
     'order'   => $orderby,
     'post__in'      => $product_ids,
+  );
+} else {
+  $args = array(
+    'post_type'        => 'product',
+    'posts_per_page'   => $count,
+    'orderby' => 'meta_value',
+    'order'   => $orderby,
     'tax_query' => array(
       array(
         'taxonomy' => 'product_cat',
@@ -320,6 +330,8 @@
       )
     )
   );
+}
+
   $query = new WP_Query($args);
 
 
