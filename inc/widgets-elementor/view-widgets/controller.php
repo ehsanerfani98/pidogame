@@ -28,6 +28,7 @@ class PlswbShorcodes{
         $product_ids = $param['product_ids'];
         $status_card = $param['status_card'];
         $icon_card = $param['icon_card'];
+        $color_icon_card = $param['color_icon_card'];
         $title_card = $param['title_card'];
         $link_card = $param['link_card'];
         $content_card = $param['content_card'];
