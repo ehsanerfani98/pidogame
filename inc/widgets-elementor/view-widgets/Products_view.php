@@ -342,7 +342,7 @@
         <ul class="splide__list">
           <?php if ($status_card == 'yes') : ?>
             <li class="splide__slide py-5">
-              <div class="d-flex flex-column align-items-center " style="padding: 0 1.6rem;width: 100%;justify-content: space-evenly">
+              <div class="d-flex flex-column align-items-center " style="padding: 0 1.6rem;height: 100%;justify-content: space-evenly">
                 <div>
                   <i style="font-size: 6rem;color: <?= $color_icon_card ?>;" class="<?= $icon_card ?>"></i>
                 </div>
