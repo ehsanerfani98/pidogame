@@ -98,6 +98,17 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
+		$this->add_control(
+			'show_title',
+			[
+				'label' => 'نمایش بر اساس شناسه محصول',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'روشن',
+				'label_off' => 'خاموش',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
 		$this->end_controls_section();
 
 		// Content Tab End
