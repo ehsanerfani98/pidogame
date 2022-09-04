@@ -121,7 +121,10 @@ class Products extends \Elementor\Widget_Base
 				$query->the_post();
 				$product_ids[get_the_ID()] = get_the_title();
 			}
+			wp_reset_postdata();
 		}
+
+
 		$this->add_control(
 			'product_ids',
 			[
