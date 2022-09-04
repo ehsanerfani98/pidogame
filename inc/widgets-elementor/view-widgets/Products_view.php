@@ -207,9 +207,10 @@ if ($query->have_posts()) :
       <ul class="splide__list">
         <?php
         while ($query->have_posts()) :
+          $query->the_post();
+
           global $product;
           dd($product);
-          $query->the_post();
           $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
           <div class="col-lg-3 mb-8">
