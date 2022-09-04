@@ -162,7 +162,7 @@ class Products extends \Elementor\Widget_Base
 			'icon_card',
 			[
 				'label' => esc_html__('آیکن کارت', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::ICON,
+				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
 
