@@ -236,6 +236,7 @@ class Products extends \Elementor\Widget_Base
 	protected function render()
 	{
 		$settings = $this->get_settings_for_display();
+		dd($settings['icon_card']);
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
