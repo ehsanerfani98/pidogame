@@ -178,7 +178,7 @@ class Products extends \Elementor\Widget_Base
 			'title_card',
 			[
 				'label' => esc_html__('لینک مشاهده همه', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::LINK,
+				'type' => \Elementor\Controls_Manager::URL,
 			]
 		);
 
