@@ -109,7 +109,9 @@
         $args = array(
           'post_type'        => 'product',
           'posts_per_page'   => $count,
-          'tax_query' => array(
+          'orderby' => 'meta_value',
+          'order'   => $orderby,
+                'tax_query' => array(
             array(
               'taxonomy' => 'product_cat',
               'field' => 'term_id',
@@ -295,6 +297,8 @@
   $args = array(
     'post_type'        => 'product',
     'posts_per_page'   => $count,
+    'orderby' => 'meta_value',
+    'order'   => $orderby,
     'tax_query' => array(
       array(
         'taxonomy' => 'product_cat',

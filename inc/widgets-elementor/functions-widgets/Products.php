@@ -71,6 +71,7 @@ class Products extends \Elementor\Widget_Base
 				'type' => \Elementor\Controls_Manager::TEXT,
 			]
 		);
+
 		$this->add_control(
 			'card_style',
 			[
@@ -80,6 +81,19 @@ class Products extends \Elementor\Widget_Base
 				'options' => [
 					'original' => 'استایل اصلی',
 					'festival' => 'استایل جشنواره'
+				],
+			]
+		);
+
+		$this->add_control(
+			'orderby',
+			[
+				'label' => esc_html__('ترتیب نمایش', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'original',
+				'options' => [
+					'ASC' => 'صعودی',
+					'DESC' => 'نزولی'
 				],
 			]
 		);
@@ -131,7 +145,7 @@ class Products extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style']. '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] .'" orderby="' . $settings['orderby'] . '"]') ?>
 <?php
 	}
 }

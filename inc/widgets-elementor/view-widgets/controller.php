@@ -24,6 +24,7 @@ class PlswbShorcodes{
         $cart_color = $param['cart_color'];
         $cart_button_color = $param['cart_button_color'];
         $card_style = $param['card_style'];
+        $orderby = $param['orderby'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 
