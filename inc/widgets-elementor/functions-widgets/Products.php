@@ -47,7 +47,7 @@ class Products extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'section_category',
 			[
-				'label' => esc_html__('دسته بندی', 'elementor-addon'),
+				'label' => esc_html__('تنظیمات محصول', 'elementor-addon'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
