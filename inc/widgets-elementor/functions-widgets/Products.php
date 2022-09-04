@@ -109,6 +109,24 @@ class Products extends \Elementor\Widget_Base
 				'default' => 'no',
 			]
 		);
+
+		$this->add_control(
+			'show_elements',
+			[
+				'label' => esc_html__( 'انتخاب محصول', 'plugin-name' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'multiple' => true,
+				'options' => [
+					'title'  => esc_html__( 'Title', 'plugin-name' ),
+					'description' => esc_html__( 'Description', 'plugin-name' ),
+					'button' => esc_html__( 'Button', 'plugin-name' ),
+				],
+				'default' => [ 'title', 'description' ],
+			]
+		);
+
+
+
 		$this->end_controls_section();
 
 		// Content Tab End

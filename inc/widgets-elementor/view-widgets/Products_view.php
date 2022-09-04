@@ -111,7 +111,8 @@
           'posts_per_page'   => $count,
           'orderby' => 'meta_value',
           'order'   => $orderby,
-                'tax_query' => array(
+          'post__in'      => $product_ids,
+          'tax_query' => array(
             array(
               'taxonomy' => 'product_cat',
               'field' => 'term_id',
@@ -187,118 +188,119 @@
 <?php else : ?>
 
   <style>
-	.wrap-cart-plswb {
-		border-radius: 10px;
-		height: auto;
-		box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-	}
+    .wrap-cart-plswb {
+      border-radius: 10px;
+      height: auto;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    }
 
-	.image-cart-plswb {
-		text-align: center;
-		height: 165px !important;
-	}
+    .image-cart-plswb {
+      text-align: center;
+      height: 165px !important;
+    }
 
-	.image-cart-plswb img {
-		width: 100% !important;
-		height: 100% !important;
-		object-fit: fill;
-	}
+    .image-cart-plswb img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: fill;
+    }
 
-	.image-cart-plswb img {
-		border-top-left-radius: 6px;
-		border-top-right-radius: 6px;
-	}
+    .image-cart-plswb img {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
 
-	.wrap-content-product {
-		padding: 0.6rem 1rem 1rem 1rem;
-	}
+    .wrap-content-product {
+      padding: 0.6rem 1rem 1rem 1rem;
+    }
 
-	.title-cart-plswb h4 {
-		font-size: 12px;
-		color: #999;
-	}
+    .title-cart-plswb h4 {
+      font-size: 12px;
+      color: #999;
+    }
 
-	.icon-device {
-		background: rgb(0 158 247 / 16%);
-		width: 1.4rem;
-		height: 1.2rem;
-		border-radius: 20%;
-		position: relative;
-	}
+    .icon-device {
+      background: rgb(0 158 247 / 16%);
+      width: 1.4rem;
+      height: 1.2rem;
+      border-radius: 20%;
+      position: relative;
+    }
 
-	.icon-device svg {
-		width: 10px;
-		height: 10px;
-		position: absolute;
-		right: 4px;
-		top: 2.2px;
-	}
+    .icon-device svg {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 4px;
+      top: 2.2px;
+    }
 
-	.deavice_name {
-		display: flex;
-		flex-direction: row-reverse;
-		align-items: center;
-		gap: .3rem;
-		flex-wrap: wrap;
-	}
+    .deavice_name {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: .3rem;
+      flex-wrap: wrap;
+    }
 
-	.deavice_name h5 {
-		font-weight: bold;
-		margin: 0;
-		font-size: 12px;
-	}
+    .deavice_name h5 {
+      font-weight: bold;
+      margin: 0;
+      font-size: 12px;
+    }
 
-	.device-cart-plswb {
-		margin-top: 1rem;
-		margin-bottom: .5rem;
-		align-items: center;
-	}
+    .device-cart-plswb {
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+      align-items: center;
+    }
 
-	.platform,
-	.creator {
-		display: flex;
-		flex-direction: column;
-	}
+    .platform,
+    .creator {
+      display: flex;
+      flex-direction: column;
+    }
 
-	.platform .title,
-	.creator .title {
-		font-size: 12px;
-		color: #999;
-		margin-bottom: .5rem;
-	}
+    .platform .title,
+    .creator .title {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: .5rem;
+    }
 
-	.platform .content,
-	.creator .content {
-		font-size: 10px;
-		font-weight: bold;
-	}
+    .platform .content,
+    .creator .content {
+      font-size: 10px;
+      font-weight: bold;
+    }
 
-	.platform .content {
-		background: #fff6de;
-		border-radius: 4px;
-		color: #ffb100;
-		padding: .2rem .4rem;
-	}
+    .platform .content {
+      background: #fff6de;
+      border-radius: 4px;
+      color: #ffb100;
+      padding: .2rem .4rem;
+    }
 
-	.creator .content {
-		background: #deffee;
-		border-radius: 4px;
-		color: #35bb76;
-		padding: .2rem .4rem;
-	}
+    .creator .content {
+      background: #deffee;
+      border-radius: 4px;
+      color: #35bb76;
+      padding: .2rem .4rem;
+    }
 
-	.platform-cart-plswb {
-		display: flex;
-		align-items: center;
-		gap: 4rem;
-	}
-</style>
+    .platform-cart-plswb {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+  </style>
   <?php
   $args = array(
     'post_type'        => 'product',
     'posts_per_page'   => $count,
     'orderby' => 'meta_value',
     'order'   => $orderby,
+    'post__in'      => $product_ids,
     'tax_query' => array(
       array(
         'taxonomy' => 'product_cat',
