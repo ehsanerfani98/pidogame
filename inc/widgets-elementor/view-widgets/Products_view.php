@@ -111,7 +111,7 @@
           'posts_per_page'   => $count,
           'orderby' => 'meta_value',
           'order'   => $orderby,
-          'post__in'      => [20, 25],
+          'post__in'      => $product_ids,
           'tax_query' => array(
             array(
               'taxonomy' => 'product_cat',
@@ -300,7 +300,7 @@
     'posts_per_page'   => $count,
     'orderby' => 'meta_value',
     'order'   => $orderby,
-    'post__in'      => [20, 25],
+    'post__in'      => $product_ids,
     'tax_query' => array(
       array(
         'taxonomy' => 'product_cat',
