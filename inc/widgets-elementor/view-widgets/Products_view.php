@@ -184,10 +184,12 @@
       breakpoints: {
         640: {
           perPage: 1,
+          perMove: 1,
           gap: '.7rem',
         },
         480: {
           perPage: 1,
+          perMove: 1,
           gap: '.7rem',
         },
       },
@@ -438,10 +440,12 @@
       breakpoints: {
         640: {
           perPage: 1,
+          perMove: 1,
           gap: '.7rem',
         },
         480: {
           perPage: 1,
+          perMove: 1,
           gap: '.7rem',
         },
       },
