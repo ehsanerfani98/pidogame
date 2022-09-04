@@ -99,7 +99,7 @@ class Products extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
-			'show_title',
+			'status_product_ids',
 			[
 				'label' => 'نمایش بر اساس شناسه محصول',
 				'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -187,7 +187,7 @@ class Products extends \Elementor\Widget_Base
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" product_ids="' . $product_ids . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby']. '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '"]') ?>
 <?php
 	}
 }

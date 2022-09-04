@@ -26,7 +26,7 @@ class PlswbShorcodes{
         $card_style = $param['card_style'];
         $orderby = $param['orderby'];
         $product_ids = $param['product_ids'];
-        dd($product_ids);
+        $status_product_ids = $param['status_product_ids'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 

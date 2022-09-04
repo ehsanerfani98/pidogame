@@ -105,7 +105,11 @@
       <ul class="splide__list">
         <!-- <div class="row"> -->
         <?php
-
+        if ($status_product_ids == 'yes') {
+          $product_ids = explode(',', $product_ids);
+        } else {
+          $product_ids = [];
+        }
         $args = array(
           'post_type'        => 'product',
           'posts_per_page'   => $count,
@@ -295,6 +299,13 @@
     }
   </style>
   <?php
+
+  if ($status_product_ids == 'yes') {
+    $product_ids = explode(',', $product_ids);
+  } else {
+    $product_ids = [];
+  }
+
   $args = array(
     'post_type'        => 'product',
     'posts_per_page'   => $count,
