@@ -131,7 +131,10 @@ class Products extends \Elementor\Widget_Base
 				'label' => esc_html__('انتخاب محصول', 'plugin-name'),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'multiple' => true,
-				'options' => $product_ids,
+				'options' => [
+					"tst"=>"yy",
+					"sadsad"=>"hjfg",
+				],
 				'default' => [],
 			]
 		);
