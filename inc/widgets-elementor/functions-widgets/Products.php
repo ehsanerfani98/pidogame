@@ -90,7 +90,7 @@ class Products extends \Elementor\Widget_Base
 			[
 				'label' => esc_html__('ترتیب نمایش', 'elementor-addon'),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'default' => 'original',
+				'default' => 'ASC',
 				'options' => [
 					'ASC' => 'صعودی',
 					'DESC' => 'نزولی'
