@@ -411,8 +411,8 @@ if ($status_product_ids == 'yes') {
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
       direction: 'rtl',
-      // type: 'loop',
-      perPage: 3,
+      type: 'loop',
+      perPage: 4,
       perMove: 1,
       autoWidth: true,
       pagination: false,
@@ -422,7 +422,7 @@ if ($status_product_ids == 'yes') {
       autoplay: false,
       breakpoints: {
         640: {
-          perPage: 2,
+          perPage: 1,
           gap: '.7rem',
         },
         480: {
