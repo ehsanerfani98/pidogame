@@ -307,30 +307,30 @@
   </style>
   <?php
 
-if ($status_product_ids == 'yes') {
-  $product_ids = explode(',', $product_ids);
-  $args = array(
-    'post_type'        => 'product',
-    'posts_per_page'   => $count,
-    'orderby' => 'meta_value',
-    'order'   => $orderby,
-    'post__in'      => $product_ids,
-  );
-} else {
-  $args = array(
-    'post_type'        => 'product',
-    'posts_per_page'   => $count,
-    'orderby' => 'meta_value',
-    'order'   => $orderby,
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'product_cat',
-        'field' => 'term_id',
-        'terms' => $term_id
+  if ($status_product_ids == 'yes') {
+    $product_ids = explode(',', $product_ids);
+    $args = array(
+      'post_type'        => 'product',
+      'posts_per_page'   => $count,
+      'orderby' => 'meta_value',
+      'order'   => $orderby,
+      'post__in'      => $product_ids,
+    );
+  } else {
+    $args = array(
+      'post_type'        => 'product',
+      'posts_per_page'   => $count,
+      'orderby' => 'meta_value',
+      'order'   => $orderby,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'product_cat',
+          'field' => 'term_id',
+          'terms' => $term_id
+        )
       )
-    )
-  );
-}
+    );
+  }
 
   $query = new WP_Query($args);
 
@@ -340,6 +340,21 @@ if ($status_product_ids == 'yes') {
     <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
       <div class="splide__track">
         <ul class="splide__list">
+          <?php if($status == 'yes'): ?>
+          <li class="splide__slide py-5">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+              <div>
+                <i class="<?= $icon_card ?>"></i>
+              </div>
+              <div>
+                <p><?= $content_card ?></p>
+              </div>
+              <div>
+                <a href="<?= $link_card ?>"><?= $title_card ?></a>
+              </div>
+            </div>
+          </li>
+          <?php endif; ?>
           <?php
           while ($query->have_posts()) :
             $query->the_post();
