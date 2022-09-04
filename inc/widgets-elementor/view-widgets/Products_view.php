@@ -414,7 +414,7 @@ if ($status_product_ids == 'yes') {
       type: 'loop',
       perPage: 4,
       perMove: 1,
-      autoWidth: true,
+      autoWidth: false,
       pagination: false,
       gap: '1rem',
       drag: 'free',
