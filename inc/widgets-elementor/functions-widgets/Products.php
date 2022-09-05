@@ -112,6 +112,18 @@ class Products extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'display_auto',
+			[
+				'label' => 'نمایش خودکار',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'روشن',
+				'label_off' => 'خاموش',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+		
+		$this->add_control(
 			'display_column',
 			[
 				'label' => 'نمایش تک ستون',
@@ -207,7 +219,7 @@ class Products extends \Elementor\Widget_Base
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" display_column="' . $settings['display_column'] . '" count_column="' . $settings['count_column'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" display_column="' . $settings['display_column'] . '" count_column="' . $settings['count_column'] .  '" display_auto="' . $settings['display_auto'] . '"]') ?>
 <?php
 	}
 }

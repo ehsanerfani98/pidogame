@@ -29,6 +29,7 @@ class PlswbShorcodes{
         $status_product_ids = $param['status_product_ids'];
         $display_column = $param['display_column'];
         $count_column = $param['count_column'];
+        $display_auto = $param['display_auto'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 
