@@ -172,12 +172,12 @@
     <script>
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
-        // type: 'loop',
+        type: 'loop',
         rewind: true,
         pagination: false,
         gap: '.5rem',
         drag: 'free',
-        snap: true,
+        snap: false,
         autoplay: false,
         breakpoints: {
           640: {
@@ -478,14 +478,14 @@
     <script>
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
-        // type: 'loop',
+        type: 'loop',
         perPage: 4,
         perMove: 1,
         autoWidth: true,
         pagination: false,
         gap: '.5rem',
         drag: 'free',
-        snap: true,
+        snap: false,
         autoplay: false,
         breakpoints: {
           640: {
