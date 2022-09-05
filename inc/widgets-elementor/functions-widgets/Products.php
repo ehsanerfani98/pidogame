@@ -195,7 +195,7 @@ class Products extends \Elementor\Widget_Base
 
 	
 
-		// $this->end_controls_section();
+		$this->end_controls_section();
 
 		// Style Tab End
 
