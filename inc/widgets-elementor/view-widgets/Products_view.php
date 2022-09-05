@@ -172,9 +172,16 @@
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
       direction: 'rtl',
-      type  : 'loop',
-  rewind: true,
-
+      type: 'loop',
+      rewind: true,
+      perPage: 4,
+      perMove: 1,
+      autoWidth: true,
+      pagination: false,
+      gap: '.5rem',
+      drag: 'free',
+      snap: true,
+      autoplay: false,
       breakpoints: {
         640: {
           perPage: 1,
@@ -420,9 +427,16 @@
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
       direction: 'rtl',
-      type  : 'loop',
-  rewind: true,
-
+      type: 'loop',
+      rewind: true,
+      perPage: 4,
+      perMove: 1,
+      autoWidth: true,
+      pagination: false,
+      gap: '.5rem',
+      drag: 'free',
+      snap: true,
+      autoplay: false,
       breakpoints: {
         640: {
           perPage: 1,

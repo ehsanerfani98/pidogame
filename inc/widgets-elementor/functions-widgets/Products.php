@@ -111,13 +111,13 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'display_column',
-			[
-				'label' => 'تعداد ستون',
-				'type' => \Elementor\Controls_Manager::NUMBER,
-			]
-		);
+		// $this->add_control(
+		// 	'display_column',
+		// 	[
+		// 		'label' => 'تعداد ستون',
+		// 		'type' => \Elementor\Controls_Manager::NUMBER,
+		// 	]
+		// );
 
 		$this->add_control(
 			'status_product_ids',
@@ -269,7 +269,7 @@ class Products extends \Elementor\Widget_Base
 
 		$product_ids = implode(',', $settings['product_ids']);
 ?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" status_card="' . $settings['status_card'] . '" icon_card="' . $settings['icon_card']['value'] . '" title_card="' . $settings['title_card'] . '" content_card="' . $settings['content_card'] . '" link_card="' . $settings['link_card']['url'] . '" color_icon_card="' . $settings['color_icon_card']  . '" color_title_card="' . $settings['color_title_card'] . '" display_column="' . $settings['display_column'] . '"]') ?>
+			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" status_card="' . $settings['status_card'] . '" icon_card="' . $settings['icon_card']['value'] . '" title_card="' . $settings['title_card'] . '" content_card="' . $settings['content_card'] . '" link_card="' . $settings['link_card']['url'] . '" color_icon_card="' . $settings['color_icon_card']  . '" color_title_card="' . $settings['color_title_card'] . '"]') ?>
 <?php
 	}
 }
