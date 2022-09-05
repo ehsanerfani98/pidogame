@@ -156,61 +156,7 @@ class Products extends \Elementor\Widget_Base
 
 		$this->end_controls_section();
 
-		/**************/
 
-		$this->start_controls_section(
-			'section_start_card',
-			[
-				'label' => esc_html__('تنظیمات کارت ویژه', 'elementor-addon'),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-		$this->add_control(
-			'status_card',
-			[
-				'label' => 'نمایش کارت',
-				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => 'روشن',
-				'label_off' => 'خاموش',
-				'return_value' => 'yes',
-				'default' => 'no',
-			]
-		);
-
-		$this->add_control(
-			'icon_card',
-			[
-				'label' => esc_html__('آیکن کارت', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::ICONS,
-			]
-		);
-
-		$this->add_control(
-			'title_card',
-			[
-				'label' => esc_html__('متن مشاهده همه', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::TEXT,
-			]
-		);
-
-		$this->add_control(
-			'link_card',
-			[
-				'label' => esc_html__('لینک مشاهده همه', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::URL,
-			]
-		);
-
-		$this->add_control(
-			'content_card',
-			[
-				'label' => esc_html__('متن کارت', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
-			]
-		);
-
-		$this->end_controls_section();
 
 		// Content Tab End
 
@@ -247,27 +193,7 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'color_icon_card',
-			[
-				'label' => esc_html__('رنگ آیکن', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'color_title_card',
-			[
-				'label' => esc_html__('رنگ متن کارت ویژه', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
-				],
-			]
-		);
+	
 
 		// $this->end_controls_section();
 
