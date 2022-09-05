@@ -388,7 +388,7 @@
             $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
           ?>
             <li class="splide__slide py-5">
-              <div style="width: 275px">
+              <div>
                 <a href="<?php the_permalink() ?>">
                   <div class="wrap-cart-plswb card">
                     <div class="image-cart-plswb">
