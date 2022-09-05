@@ -298,5 +298,8 @@
 
 
 .card-footer:last-child {
-    border-radius: 0 0 calc(0.8rem - 2px) calc(.8rem - 1px) !important;
+    border-radius: unset !important;
+}
+.wrap-cart-plswb{
+	overflow: hidden !important;
 }
