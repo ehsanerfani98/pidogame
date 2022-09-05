@@ -35,7 +35,6 @@ class PlswbShorcodes{
         $link_card = $param['link_card'];
         $content_card = $param['content_card'];
         $display_column = $param['display_column'];
-        dd($display_column);
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 

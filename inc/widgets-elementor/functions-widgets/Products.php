@@ -115,7 +115,7 @@ class Products extends \Elementor\Widget_Base
 			'display_column',
 			[
 				'label' => 'تعداد ستون',
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\Controls_Manager::NUMBER,
 			]
 		);
 
