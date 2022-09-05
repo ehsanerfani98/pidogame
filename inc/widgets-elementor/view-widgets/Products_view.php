@@ -172,7 +172,7 @@
     <script>
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
-        type: 'loop',
+        // type: 'loop',
         rewind: true,
         pagination: false,
         gap: '.5rem',
@@ -478,7 +478,7 @@
     <script>
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
-        type: 'loop',
+        // type: 'loop',
         perPage: 4,
         perMove: 1,
         autoWidth: true,
