@@ -198,7 +198,7 @@
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
         type: 'loop',
-        perPage: 4,
+        perPage: 3,
         perMove: 1,
         rewind : true,
         // autoWidth: true,
@@ -480,7 +480,7 @@
       var splide = new Splide('.splide_<?= $wid ?>', {
         direction: 'rtl',
         type: 'loop',
-        perPage: 4,
+        perPage: 3,
         perMove: 1,
         rewind : true,
         // autoWidth: true,
