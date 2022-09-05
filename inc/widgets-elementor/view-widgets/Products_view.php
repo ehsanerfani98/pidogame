@@ -183,7 +183,7 @@
       autoplay: false,
       breakpoints: {
         640: {
-          perPage: 2,
+          perPage: 1,
           gap: '.7rem',
         },
         480: {
