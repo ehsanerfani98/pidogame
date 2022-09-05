@@ -171,11 +171,9 @@
 
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'ttb',
-  height   : '10rem',
-  wheel    : true,
-      // direction: 'rtl',
+      direction: 'rtl',
       type: 'loop',
+      rewind: true,
       perPage: <?= $display_column ?>,
       perMove: 1,
       autoWidth: true,
@@ -427,11 +425,7 @@
 
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'ttb',
-  height   : '10rem',
-  wheel    : true,
-
-      // direction: 'rtl',
+      direction: 'rtl',
       type: 'loop',
       perPage: <?= $display_column ?>,
       perMove: 1,
