@@ -171,9 +171,12 @@
 
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'rtl',
-      // type: 'loop',
-      perPage: 1,
+      direction: 'ttb',
+  height   : '10rem',
+  wheel    : true,
+      // direction: 'rtl',
+      type: 'loop',
+      perPage: <?= $display_column ?>,
       perMove: 1,
       autoWidth: true,
       pagination: false,
@@ -424,9 +427,13 @@
 
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'rtl',
-      // type: 'loop',
-      perPage: 1,
+      direction: 'ttb',
+  height   : '10rem',
+  wheel    : true,
+
+      // direction: 'rtl',
+      type: 'loop',
+      perPage: <?= $display_column ?>,
       perMove: 1,
       autoWidth: true,
       pagination: false,
