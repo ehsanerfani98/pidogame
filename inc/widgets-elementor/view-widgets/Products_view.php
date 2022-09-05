@@ -172,7 +172,7 @@
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
       direction: 'rtl',
-      type  : 'fade',
+      type  : 'loop',
   rewind: true,
 
       breakpoints: {
@@ -420,7 +420,7 @@
   <script>
     var splide = new Splide('.splide_<?= $wid ?>', {
       direction: 'rtl',
-      type  : 'fade',
+      type  : 'loop',
   rewind: true,
 
       breakpoints: {
