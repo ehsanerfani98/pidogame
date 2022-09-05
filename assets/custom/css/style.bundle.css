@@ -295,3 +295,8 @@
 .menu.menu-sub.menu-sub-dropdown.menu-column.menu-rounded.menu-gray-800.menu-state-bg-light-primary.fw-bold.w-200px.show {
     padding-bottom: 1rem !important;
 }
+
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(0.8rem - 2px) calc(.8rem - 1px) !important;
+}
