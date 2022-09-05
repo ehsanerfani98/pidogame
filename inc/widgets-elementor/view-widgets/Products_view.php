@@ -168,34 +168,59 @@
     </div>
   </section>
 
-
-  <script>
-    var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'rtl',
-      type: 'loop',
-      rewind: true,
-      perPage: 4,
-      perMove: 1,
-      // autoWidth: true,
-      pagination: false,
-      gap: '.5rem',
-      drag: 'free',
-      snap: true,
-      autoplay: false,
-      breakpoints: {
-        640: {
-          perPage: 1,
-          gap: '.7rem',
+  <? if ($display_column == 'yes') : ?>
+    <script>
+      var splide = new Splide('.splide_<?= $wid ?>', {
+        direction: 'rtl',
+        type: 'loop',
+        rewind: true,
+        pagination: false,
+        gap: '.5rem',
+        drag: 'free',
+        snap: true,
+        autoplay: false,
+        breakpoints: {
+          640: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+          480: {
+            perPage: 1,
+            gap: '.7rem',
+          },
         },
-        480: {
-          perPage: 1,
-          gap: '.7rem',
-        },
-      },
-    });
+      });
 
-    splide.mount();
-  </script>
+      splide.mount();
+    </script>
+  <?php else : ?>
+    <script>
+      var splide = new Splide('.splide_<?= $wid ?>', {
+        direction: 'rtl',
+        type: 'loop',
+        perPage: 4,
+        perMove: 1,
+        autoWidth: true,
+        pagination: false,
+        gap: '.5rem',
+        drag: 'free',
+        snap: true,
+        autoplay: false,
+        breakpoints: {
+          640: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+          480: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+        },
+      });
+
+      splide.mount();
+    </script>
+  <?php endif; ?>
 
 <?php else : ?>
 
@@ -424,31 +449,58 @@
   endif;
   ?>
 
-  <script>
-    var splide = new Splide('.splide_<?= $wid ?>', {
-      direction: 'rtl',
-      type: 'loop',
-      rewind: true,
-      perPage: 4,
-      perMove: 1,
-      // autoWidth: true,
-      pagination: false,
-      gap: '.5rem',
-      drag: 'free',
-      snap: true,
-      autoplay: false,
-      breakpoints: {
-        640: {
-          perPage: 1,
-          gap: '.7rem',
+  <? if ($display_column == 'yes') : ?>
+    <script>
+      var splide = new Splide('.splide_<?= $wid ?>', {
+        direction: 'rtl',
+        type: 'loop',
+        rewind: true,
+        pagination: false,
+        gap: '.5rem',
+        drag: 'free',
+        snap: true,
+        autoplay: false,
+        breakpoints: {
+          640: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+          480: {
+            perPage: 1,
+            gap: '.7rem',
+          },
         },
-        480: {
-          perPage: 1,
-          gap: '.7rem',
-        },
-      },
-    });
+      });
 
-    splide.mount();
-  </script>
+      splide.mount();
+    </script>
+  <?php else : ?>
+    <script>
+      var splide = new Splide('.splide_<?= $wid ?>', {
+        direction: 'rtl',
+        type: 'loop',
+        perPage: 4,
+        perMove: 1,
+        autoWidth: true,
+        pagination: false,
+        gap: '.5rem',
+        drag: 'free',
+        snap: true,
+        autoplay: false,
+        breakpoints: {
+          640: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+          480: {
+            perPage: 1,
+            gap: '.7rem',
+          },
+        },
+      });
+
+      splide.mount();
+    </script>
+  <?php endif; ?>
+
 <?php endif; ?>
