@@ -27,6 +27,7 @@ class PlswbShorcodes{
         $orderby = $param['orderby'];
         $product_ids = $param['product_ids'];
         $status_card = $param['status_card'];
+        $status_product_ids = $param['status_product_ids'];
         $icon_card = $param['icon_card'];
         $color_icon_card = $param['color_icon_card'];
         $title_card = $param['title_card'];
