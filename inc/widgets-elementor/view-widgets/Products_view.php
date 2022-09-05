@@ -177,7 +177,7 @@
         pagination: false,
         gap: '.5rem',
         drag: 'free',
-        snap: false,
+        snap: true,
         autoplay: false,
         breakpoints: {
           640: {
@@ -485,7 +485,7 @@
         pagination: false,
         gap: '.5rem',
         drag: 'free',
-        snap: false,
+        snap: true,
         autoplay: false,
         breakpoints: {
           640: {
