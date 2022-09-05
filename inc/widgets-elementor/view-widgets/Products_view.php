@@ -367,21 +367,6 @@
     <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
       <div class="splide__track">
         <ul class="splide__list">
-          <?php if ($status_card == 'yes') : ?>
-            <li class="splide__slide py-5">
-              <div class="d-flex flex-column align-items-center " style="padding: 0 1.6rem;height: 100%;justify-content: space-evenly">
-                <div>
-                  <i style="font-size: 6rem;color: <?= $color_icon_card ?>;" class="<?= $icon_card ?>"></i>
-                </div>
-                <div style="font-weight: bold; font-size: 2rem; text-align: center;color: <?= $color_title_card ?>">
-                  <p><?= $content_card ?></p>
-                </div>
-                <div>
-                  <a class="btn btn-primary" target="_blank" href="<?= $link_card ?>"><?= $title_card ?></a>
-                </div>
-              </div>
-            </li>
-          <?php endif; ?>
           <?php
           while ($query->have_posts()) :
             $query->the_post();
