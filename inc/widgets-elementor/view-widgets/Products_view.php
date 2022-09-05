@@ -428,6 +428,7 @@
       direction: 'rtl',
       type: 'loop',
       perPage: <?= $display_column ?>,
+      rewind: true,
       perMove: 1,
       autoWidth: true,
       pagination: false,
