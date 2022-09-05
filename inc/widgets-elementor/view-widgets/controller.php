@@ -30,6 +30,7 @@ class PlswbShorcodes{
         $display_column = $param['display_column'];
         $count_column = $param['count_column'];
         $display_auto = $param['display_auto'];
+        $status_slider = $param['status_slider'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
     }
 

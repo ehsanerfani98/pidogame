@@ -178,7 +178,7 @@
         gap: '.5rem',
         drag: 'free',
         snap: true,
-        autoplay: <?= $display_auto == 'yes' ? true : false ?>,
+        autoplay: <?= $display_auto == 'yes' ? 'true' : 'false' ?>,
         breakpoints: {
           640: {
             perPage: 1,
@@ -206,7 +206,7 @@
         gap: '.5rem',
         drag: 'free',
         snap: true,
-        autoplay: <?= $display_auto == 'yes' ? true : false ?>,
+        autoplay: <?= $display_auto == 'yes' ? 'true' : 'false' ?>,
         breakpoints: {
           640: {
             perPage: 1,
@@ -445,7 +445,7 @@
         gap: '.5rem',
         drag: 'free',
         snap: true,
-        autoplay: <?= $display_auto == 'yes' ? true : false ?>,
+        autoplay: <?= $display_auto == 'yes' ? 'true' : 'false' ?>,
         breakpoints: {
           640: {
             perPage: 1,
@@ -473,7 +473,7 @@
         gap: '.5rem',
         drag: 'free',
         snap: true,
-        autoplay: <?= $display_auto == 'yes' ? true : false ?>,
+        autoplay: <?= $display_auto == 'yes' ? 'true' : 'false' ?>,
         breakpoints: {
           640: {
             perPage: 1,
