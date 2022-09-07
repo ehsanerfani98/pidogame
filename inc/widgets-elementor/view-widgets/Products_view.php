@@ -431,7 +431,7 @@ if ($card_style == 'festival') : ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
-                        <div class="sale-plswb bg-danger">
+                        <div class="sale-plswb bg-danger text-white">
                         <?php 
                         $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100) ;
                         echo $percentage.'%';
