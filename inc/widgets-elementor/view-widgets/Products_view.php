@@ -448,8 +448,8 @@ if ($card_style == 'festival') : ?>
                             $futureDate = new DateTime($salesPriceDateTo);
                             $interval = $futureDate->diff($now);
                             $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
-                            <span class=" start-50 translate-middle badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
-                            <span class=" start-75 translate-middle-y badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                            <span class="d-block d-xl-none position-absolute top-0 start-50 translate-middle badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                            <span class="top-0 start-75 translate-middle-y badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
                           <?php endif ?>
                           <div class="price text-gray-700 bg-light text-center mt-2 rounded">
                             <div class="d-flex justify-content-center align-items-center bg-light py-2">
