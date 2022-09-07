@@ -442,7 +442,6 @@ if ($card_style == 'festival') : ?>
                           <?php
                           endif;
                         } else {
-                          if(!empty($product->get_available_variations())){
                           $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
                           if ($percentage != 0) :
                           ?>
@@ -451,7 +450,7 @@ if ($card_style == 'festival') : ?>
                             </div>
                         <?php
                           endif;
-                        }}
+                        }
                         ?>
 
                         <div class="image-cart-plswb">
@@ -484,7 +483,10 @@ if ($card_style == 'festival') : ?>
                           if ($product->is_type('simple')) {
                             $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
                           } else {
-                            $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                            if (!empty(new WC_Product_Variable(get_the_ID()))) {
+
+                              $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                            }
                           }
                           if ($salesPriceTo) :
                             $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
