@@ -469,6 +469,7 @@ if ($card_style == 'festival') : ?>
                           $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
 
                           } elseif ($product->is_type('variation')) {
+                            dd($product->get_available_variations()[0]['variation_id']);
                           $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
 
                           }
