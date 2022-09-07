@@ -466,6 +466,7 @@ if ($card_style == 'festival') : ?>
 
                           <?php $salesPriceTo = null;
                           $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+                          var_dump($salesPriceTo);
                           if ($salesPriceTo) :
                             $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
                             $now = new DateTime();
