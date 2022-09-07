@@ -102,73 +102,91 @@ if ($card_style == 'festival') : ?>
 
     <?= '.cart_color_' . $wid . '::before{' . 'background:' . $cart_color . ';}'  ?><?= '.buy_' . $wid . '{' . 'background:' . $cart_button_color . ' !important;}'  ?>
   </style>
-  <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <!-- <div class="row"> -->
-        <?php
+  <? if ($status_slider != 'yes') : ?>
+    <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
+      <div class="splide__track">
+        <ul class="splide__list">
+        <?php endif; ?>
+        <? if ($status_slider == 'yes') : ?>
+          <div class="row">
+          <?php endif; ?>
+          <?php
 
-        if ($status_product_ids == 'yes') {
-          $product_ids = explode(',', $product_ids);
-          $args = array(
-            'post_type'        => 'product',
-            'posts_per_page'   => $count,
-            'orderby' => 'meta_value',
-            'order'   => $orderby,
-            'post__in'      => $product_ids,
-          );
-        } else {
-          $args = array(
-            'post_type'        => 'product',
-            'posts_per_page'   => $count,
-            'orderby' => 'meta_value',
-            'order'   => $orderby,
-            'tax_query' => array(
-              array(
-                'taxonomy' => 'product_cat',
-                'field' => 'term_id',
-                'terms' => $term_id
+          if ($status_product_ids == 'yes') {
+            $product_ids = explode(',', $product_ids);
+            $args = array(
+              'post_type'        => 'product',
+              'posts_per_page'   => $count,
+              'orderby' => 'meta_value',
+              'order'   => $orderby,
+              'post__in'      => $product_ids,
+            );
+          } else {
+            $args = array(
+              'post_type'        => 'product',
+              'posts_per_page'   => $count,
+              'orderby' => 'meta_value',
+              'order'   => $orderby,
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'product_cat',
+                  'field' => 'term_id',
+                  'terms' => $term_id
+                )
               )
-            )
-          );
-        }
+            );
+          }
 
-        $query = new WP_Query($args);
+          $query = new WP_Query($args);
 
 
-        if ($query->have_posts()) :
-          while ($query->have_posts()) :
-            $query->the_post();
-            $product = wc_get_product(get_the_ID());
-        ?>
-            <li class="splide__slide py-5">
-              <!-- <div class="col-lg-3"> -->
-              <div class="card plswb-card-yellow cart_color_<?= $wid ?>">
+          if ($query->have_posts()) :
+            while ($query->have_posts()) :
+              $query->the_post();
+              $product = wc_get_product(get_the_ID());
+          ?>
+              <? if ($status_slider != 'yes') : ?>
+                <li class="splide__slide py-5">
+                <?php endif; ?>
+                <? if ($status_slider == 'yes') : ?>
+                  <div class="col-lg-3">
+                  <?php endif; ?>
+                  <div class="card plswb-card-yellow cart_color_<?= $wid ?>">
 
-                <div class="imgBox">
-                  <?php the_post_thumbnail() ?>
-                </div>
+                    <div class="imgBox">
+                      <?php the_post_thumbnail() ?>
+                    </div>
 
-                <div class="contentBox">
-                  <h3 class="text-gray-700"><?php the_title() ?></h3>
-                  <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
-                  <a href="<?php the_permalink() ?>" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
-                </div>
+                    <div class="contentBox">
+                      <h3 class="text-gray-700"><?php the_title() ?></h3>
+                      <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
+                      <a href="<?php the_permalink() ?>" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
+                    </div>
 
-              </div>
-              <!-- </div> -->
-            </li>
+                  </div>
+                  <? if ($status_slider == 'yes') : ?>
+                  </div>
+                <?php endif; ?>
+                <? if ($status_slider != 'yes') : ?>
+                </li>
+              <?php endif; ?>
 
-        <?php
-          endwhile;
-          wp_reset_postdata();
 
-        endif;
-        ?>
-        <!-- </div> -->
-      </ul>
-    </div>
-  </section>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+
+          endif;
+          ?>
+          <? if ($status_slider == 'yes') : ?>
+          </div>
+        <?php endif; ?>
+
+        <? if ($status_slider != 'yes') : ?>
+        </ul>
+      </div>
+    </section>
+  <?php endif; ?>
 
   <? if ($status_slider != 'yes') : ?>
     <? if ($display_column == 'yes') : ?>
