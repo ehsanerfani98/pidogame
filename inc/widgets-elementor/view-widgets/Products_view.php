@@ -119,7 +119,7 @@ if ($card_style == 'festival') : ?>
               'posts_per_page'   => $count,
               'orderby' => array(
                 'meta_value'      => $orderby,
-                'meta_value_num' => $status_product
+                'total_sales' => $orderby
               ),
               'post__in'      => $product_ids,
             );
@@ -129,7 +129,7 @@ if ($card_style == 'festival') : ?>
               'posts_per_page'   => $count,
               'orderby' => array(
                 'meta_value'      => $orderby,
-                'meta_value_num' => $status_product
+                'total_sales' => $orderby
               ),
               'tax_query' => array(
                 array(
@@ -367,8 +367,8 @@ if ($card_style == 'festival') : ?>
       'posts_per_page'   => $count,
       'orderby' => array(
         'meta_value'      => $orderby,
-        'meta_value_num' => $status_product
-      ),
+        'total_sales' => $orderby
+),
       'post__in'      => $product_ids,
     );
   } else {
@@ -377,8 +377,8 @@ if ($card_style == 'festival') : ?>
       'posts_per_page'   => $count,
       'orderby' => array(
         'meta_value'      => $orderby,
-        'meta_value_num' => $status_product
-      ),
+        'total_sales' => $orderby
+),
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
