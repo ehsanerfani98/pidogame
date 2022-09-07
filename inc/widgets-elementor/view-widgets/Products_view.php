@@ -415,6 +415,13 @@ if ($card_style == 'festival') : ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
+                        <div>
+                        <?php 
+                        $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100) ;
+                        echo $percentage;
+                        ?>
+
+                        </div>
                         <div class="image-cart-plswb">
                           <?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
                             <?php the_post_thumbnail() ?>
@@ -440,6 +447,7 @@ if ($card_style == 'festival') : ?>
                         </div>
                         <div class="separator separator-solid"></div>
                         <div class="wrap-content-product">
+
                           <?php $salesPriceTo = null;
                           $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
                           if ($salesPriceTo) :
