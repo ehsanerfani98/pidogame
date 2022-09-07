@@ -391,78 +391,86 @@ if ($card_style == 'festival') : ?>
         <div class="splide__track">
           <ul class="splide__list">
           <?php endif; ?>
-          <?php
-          while ($query->have_posts()) :
-            $query->the_post();
-            global $product;
-            $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
-          ?>
-            <? if ($status_slider != 'yes') : ?>
-              <li class="splide__slide py-5">
-                <div>
-                <?php endif; ?>
-                <? if ($status_slider == 'yes') : ?>
-                  <div class="col-lg-3 mb-5">
+          <? if ($status_slider == 'yes') : ?>
+            <div class="row">
+            <?php endif; ?>
+            <?php
+            while ($query->have_posts()) :
+              $query->the_post();
+              global $product;
+              $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
+            ?>
+              <? if ($status_slider != 'yes') : ?>
+                <li class="splide__slide py-5">
+                  <div>
                   <?php endif; ?>
-                  <a href="<?php the_permalink() ?>">
-                    <div class="wrap-cart-plswb card">
-                      <div class="image-cart-plswb">
-                        <?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
-                          <?php the_post_thumbnail() ?>
+
+                  <? if ($status_slider == 'yes') : ?>
+                    <div class="col-lg-3 mb-5">
+                    <?php endif; ?>
+
+                    <a href="<?php the_permalink() ?>">
+                      <div class="wrap-cart-plswb card">
+                        <div class="image-cart-plswb">
+                          <?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
+                            <?php the_post_thumbnail() ?>
+                          <?php else : ?>
+                            <img class="no-image" src="<?= IMAGES_URL . 'no-image-found.png' ?>" alt="">
+                          <?php endif; ?>
+                        </div>
+
+                        <div class="wrap-content-product mt-2 pb-2">
+                          <div class="title-cart-plswb">
+                            <h4><?php the_title() ?></h4>
+                          </div>
+
+                          <div class="device-cart-plswb">
+                            <div class="deavice_name">
+                              <span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                  <path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
+                                  <path opacity="0.3" d="M3 4L11 12L3 20H7L14.3 12.7C14.7 12.3 14.7 11.7 14.3 11.3L7 4H3Z" fill="black" />
+                                </svg></span>
+                              <h5><?= $meta['opt-product-subtitle'] ?></h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="separator separator-solid"></div>
+                        <div class="wrap-content-product">
+
+                          <div class="price text-gray-700 bg-light text-center mt-2 rounded">
+                            <div class="d-flex justify-content-center align-items-center bg-light py-2">
+                              <?php echo $product->get_price_html(); ?>
+                            </div>
+                          </div>
+                        </div>
+                        <?php if ($product->is_in_stock()) : ?>
+                          <div class="card-footer py-1 text-center bg-primary bg-opacity-75">
+                            <a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
+                          </div>
                         <?php else : ?>
-                          <img class="no-image" src="<?= IMAGES_URL . 'no-image-found.png' ?>" alt="">
-                        <?php endif; ?>
-                      </div>
-
-                      <div class="wrap-content-product mt-2 pb-2">
-                        <div class="title-cart-plswb">
-                          <h4><?php the_title() ?></h4>
-                        </div>
-
-                        <div class="device-cart-plswb">
-                          <div class="deavice_name">
-                            <span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
-                                <path opacity="0.3" d="M3 4L11 12L3 20H7L14.3 12.7C14.7 12.3 14.7 11.7 14.3 11.3L7 4H3Z" fill="black" />
-                              </svg></span>
-                            <h5><?= $meta['opt-product-subtitle'] ?></h5>
+                          <div class="card-footer py-1 text-center bg-danger bg-opacity-75">
+                            <a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
                           </div>
-                        </div>
-                      </div>
-                      <div class="separator separator-solid"></div>
-                      <div class="wrap-content-product">
+                        <?php endif ?>
 
-                        <div class="price text-gray-700 bg-light text-center mt-2 rounded">
-                          <div class="d-flex justify-content-center align-items-center bg-light py-2">
-                            <?php echo $product->get_price_html(); ?>
-                          </div>
-                        </div>
-                      </div>
-                      <?php if ($product->is_in_stock()) : ?>
-                        <div class="card-footer py-1 text-center bg-primary bg-opacity-75">
-                          <a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
-                        </div>
-                      <?php else : ?>
-                        <div class="card-footer py-1 text-center bg-danger bg-opacity-75">
-                          <a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
-                        </div>
-                      <?php endif ?>
-
-                  </a>
+                    </a>
+                    <? if ($status_slider == 'yes') : ?>
+                    </div>
+                  <?php endif; ?>
                   <? if ($status_slider == 'yes') : ?>
                   </div>
                 <?php endif; ?>
 
                 <? if ($status_slider != 'yes') : ?>
-                </div>
-              </li>
-            <?php endif; ?>
+            </div>
+            </li>
+          <?php endif; ?>
 
-            <?php
-          endwhile;
-          wp_reset_postdata();
-            ?>]
-            <? if ($status_slider != 'yes') : ?>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+          ?>]
+          <? if ($status_slider != 'yes') : ?>
           </ul>
         </div>
       </section>
