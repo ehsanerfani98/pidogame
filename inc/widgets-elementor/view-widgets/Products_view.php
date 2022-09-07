@@ -465,11 +465,13 @@ if ($card_style == 'festival') : ?>
                         <div class="wrap-content-product">
 
                           <?php $salesPriceTo = null;
-                          // if(!empty($product->get_available_variations())){
-                          //   dd('dd');
-                          // }else{
-                          //   dd('jj');
-                          // }
+                                          $product_s = wc_get_product( get_the_ID() ); 
+
+                          if(!empty($product_s->get_available_variations())){
+                            dd('dd');
+                          }else{
+                            dd('jj');
+                          }
                           // $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
                           // $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
                           if ($salesPriceTo) :
