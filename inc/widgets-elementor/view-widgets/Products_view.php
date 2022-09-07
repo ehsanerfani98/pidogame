@@ -433,8 +433,14 @@ if ($card_style == 'festival') : ?>
                       <div class="wrap-cart-plswb card">
                         <div class="sale-plswb bg-danger text-white">
                           <?php
-                          $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
-                          echo $percentage . '%';
+                          if ($product->is_type('simple')) {
+
+                            $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
+                            echo $percentage . '%';
+                          } else {
+                            $percentage = intval((($product->get_available_variations()[0]->get_regular_price() - $product->get_available_variations()[0]->get_sale_price()) / $product->get_available_variations()[0]->get_regular_price()) * 100);
+                            echo $percentage . '%';
+                          }
                           ?>
 
                         </div>
@@ -466,11 +472,9 @@ if ($card_style == 'festival') : ?>
 
                           <?php $salesPriceTo = null;
                           if ($product->is_type('simple')) {
-                          $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
-
-                          } else{
-                          $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
-
+                            $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+                          } else {
+                            $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
                           }
                           if ($salesPriceTo) :
                             $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
