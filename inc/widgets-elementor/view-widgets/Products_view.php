@@ -227,11 +227,7 @@ if ($card_style == 'festival') : ?>
     </script>
   <?php endif; ?>
 
-<?php else :
-  
-  dd('ddd');
-  
-  ?>
+<?php else : ?>
 
   <style>
     .wrap-cart-plswb {
@@ -352,6 +348,7 @@ if ($card_style == 'festival') : ?>
       'post__in'      => $product_ids,
     );
   } else {
+    dd('kl');
     $args = array(
       'post_type'        => 'product',
       'posts_per_page'   => $count,
