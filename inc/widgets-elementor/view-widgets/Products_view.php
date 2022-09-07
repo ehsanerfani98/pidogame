@@ -348,7 +348,6 @@ if ($card_style == 'festival') : ?>
       'post__in'      => $product_ids,
     );
   } else {
-    dd('kl');
     $args = array(
       'post_type'        => 'product',
       'posts_per_page'   => $count,
@@ -368,6 +367,7 @@ if ($card_style == 'festival') : ?>
 
 
   if ($query->have_posts()) :
+    dd('asdfdsfdsf');
   ?>
     <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
       <div class="splide__track">
