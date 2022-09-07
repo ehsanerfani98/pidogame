@@ -230,8 +230,21 @@ class Products extends \Elementor\Widget_Base
 		$settings = $this->get_settings_for_display();
 
 		$product_ids = implode(',', $settings['product_ids']);
-?>
-			<?= do_shortcode('[plswb-products term_id="' . $settings['category'] . '" count="' . $settings['count'] . '" cart_color="' . $settings['cart_color'] . '" cart_button_color="' . $settings['cart_button_color'] . '" card_style="' . $settings['card_style'] . '" orderby="' . $settings['orderby'] . '" status_product_ids="' . $settings['status_product_ids'] . '" product_ids="' . $product_ids . '" display_column="' . $settings['display_column'] . '" count_column="' . $settings['count_column'] .  '" display_auto="' . $settings['display_auto'] . '" status_slider="' . $settings['status_slider'] .'"]') ?>
-<?php
+
+		$wid = rand(0000000000, 9999999999);
+        $term_id = $settings['term_id'];
+        $count = $settings['count'];
+        $cart_color = $settings['cart_color'];
+        $cart_button_color = $settings['cart_button_color'];
+        $card_style = $settings['card_style'];
+        $orderby = $settings['orderby'];
+        $product_ids = $settings['product_ids'];
+        $status_product_ids = $settings['status_product_ids'];
+        $display_column = $settings['display_column'];
+        $count_column = $settings['count_column'];
+        $display_auto = $settings['display_auto'];
+        $status_slider = $settings['status_slider'];
+        include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
+
 	}
 }
