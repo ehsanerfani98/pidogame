@@ -1,9 +1,3 @@
-<ul>
-  <li>defds</li>
-  <li>defds</li>
-  <li>defds</li>
-  <li>defds</li>
-</ul>
 
 <?php 
 
