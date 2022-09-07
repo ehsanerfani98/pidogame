@@ -149,7 +149,7 @@ if ($card_style == 'festival') : ?>
                 <li class="splide__slide py-5">
                 <?php endif; ?>
                 <? if ($status_slider == 'yes') : ?>
-                  <div class="col-lg-3">
+                  <div class="col-lg-3 mb-4">
                   <?php endif; ?>
                   <div class="card plswb-card-yellow cart_color_<?= $wid ?>">
 
