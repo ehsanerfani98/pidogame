@@ -178,7 +178,7 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-		$this->end_controls_section();
+		// $this->end_controls_section();
 
 
 
@@ -187,13 +187,13 @@ class Products extends \Elementor\Widget_Base
 
 		// Style Tab Start
 
-		$this->start_controls_section(
-			'section_title_style',
-			[
-				'label' => esc_html__('رنگبندی کارت محصول', 'elementor-addon'),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
+		// $this->start_controls_section(
+		// 	'section_title_style',
+		// 	[
+		// 		'label' => esc_html__('رنگبندی کارت محصول', 'elementor-addon'),
+		// 		'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+		// 	]
+		// );
 
 		$this->add_control(
 			'cart_color',
