@@ -350,16 +350,10 @@ if ($card_style == 'festival') : ?>
   } else {
     $args = array(
       'post_type'        => 'product',
-      'posts_per_page'   => $count,
+      'posts_per_page'   => 2,
       'orderby' => 'meta_value',
-      'order'   => $orderby,
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'product_cat',
-          'field' => 'term_id',
-          'terms' => $term_id
-        )
-      )
+      'order'   => 'desc',
+     
     );
   }
 
