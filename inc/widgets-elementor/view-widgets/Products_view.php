@@ -1,5 +1,6 @@
 <?php 
-dd('ff');
+
+dd($card_style);
 if ($card_style == 'festival') : ?>
 
   <style>
