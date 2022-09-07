@@ -442,7 +442,7 @@ if ($card_style == 'festival') : ?>
                           <?php
                           endif;
                         } else {
-                          if(!empty($product->is_type('variation'))){
+                          if(!empty($product->is_type('variable'))){
                           $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
                           if ($percentage != 0) :
                           ?>
