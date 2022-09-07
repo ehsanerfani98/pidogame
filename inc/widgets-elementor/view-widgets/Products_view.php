@@ -1,6 +1,13 @@
+<ul>
+  <li>defds</li>
+  <li>defds</li>
+  <li>defds</li>
+  <li>defds</li>
+</ul>
+
 <?php 
 
-dd($card_style);
+
 if ($card_style == 'festival') : ?>
 
   <style>
