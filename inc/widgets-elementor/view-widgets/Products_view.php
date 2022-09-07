@@ -431,28 +431,18 @@ if ($card_style == 'festival') : ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
-                        <?php
-                        if ($product->is_type('simple')) {
-                          $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
-                          if ($percentage != 0) :
-                        ?>
-                            <div class="sale-plswb bg-danger text-white">
-                              <?= $percentage . '%'; ?>
-                            </div>
+                        <div class="sale-plswb bg-danger text-white">
                           <?php
-                          endif;
-                        } else {
-                          $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
-                          if ($percentage != 0) :
+                          if ($product->is_type('simple')) {
+                            $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
+                            echo $percentage . '%';
+                          } else {
+                            $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
+                            echo $percentage . '%';
+                          }
                           ?>
-                            <div class="sale-plswb bg-danger text-white">
-                              <?= $percentage . '%'; ?>
-                            </div>
-                        <?php
-                          endif;
-                        }
-                        ?>
 
+                        </div>
                         <div class="image-cart-plswb">
                           <?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
                             <?php the_post_thumbnail() ?>
