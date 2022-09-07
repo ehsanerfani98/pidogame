@@ -1549,6 +1549,12 @@ add_action('wp_head', function () {
 
 add_action('wp_footer', function () {
 ?>
-   
+
 <?php
+});
+
+
+
+add_shortcode('plswb_breadcrumb', function () {
+    if (function_exists('bcn_display')) bcn_display();
 });
