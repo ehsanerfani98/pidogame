@@ -435,7 +435,7 @@ if ($card_style == 'festival') : ?>
                         <div class="sale-plswb">
                         <?php 
                         $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100) ;
-                        echo $percentage;
+                        echo $percentage.'%';
                         ?>
 
                         </div>
