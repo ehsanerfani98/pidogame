@@ -244,6 +244,7 @@ class Products extends \Elementor\Widget_Base
         $count_column = $settings['count_column'];
         $display_auto = $settings['display_auto'];
         $status_slider = $settings['status_slider'];
+		dd('ff');
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
 
 	}
