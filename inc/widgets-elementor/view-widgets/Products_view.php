@@ -356,20 +356,20 @@ if ($card_style == 'festival') : ?>
       gap: 4rem;
     }
 
-    .sale-plswb{
+    .sale-plswb {
       position: absolute;
-    top: 10px;
-    z-index: 10;
-    left: 10px;
-    width: 60px;
-    height: 35px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-    border: 2px solid #ffffff;
+      top: 10px;
+      z-index: 10;
+      left: 10px;
+      width: 60px;
+      height: 35px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      border: 2px solid #ffffff;
     }
   </style>
   <?php
@@ -432,10 +432,10 @@ if ($card_style == 'festival') : ?>
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
                         <div class="sale-plswb bg-danger text-white">
-                        <?php 
-                        $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100) ;
-                        echo $percentage.'%';
-                        ?>
+                          <?php
+                          $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
+                          echo $percentage . '%';
+                          ?>
 
                         </div>
                         <div class="image-cart-plswb">
@@ -465,7 +465,9 @@ if ($card_style == 'festival') : ?>
                         <div class="wrap-content-product">
 
                           <?php $salesPriceTo = null;
-                          $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+
+                          $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                          // $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
                           var_dump($salesPriceTo);
                           if ($salesPriceTo) :
                             $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
@@ -474,7 +476,7 @@ if ($card_style == 'festival') : ?>
                             $interval = $futureDate->diff($now);
                             $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
                             <div class="text-center">
-                            <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                              <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
                             </div>
                           <?php endif ?>
                           <div class="price text-gray-700 bg-light text-center mt-2 rounded">
@@ -506,11 +508,11 @@ if ($card_style == 'festival') : ?>
             </li>
           <?php endif; ?>
 
-          <?php
+        <?php
             endwhile;
             wp_reset_postdata();
-          ?>
-          <? if ($status_slider != 'yes') : ?>
+        ?>
+        <? if ($status_slider != 'yes') : ?>
           </ul>
         </div>
       </section>
