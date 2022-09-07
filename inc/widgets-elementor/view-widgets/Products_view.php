@@ -357,12 +357,12 @@ if ($card_style == 'festival') : ?>
     }
 
     .sale-plswb{
-    position: absolute;
-    top: 0;
+      position: absolute;
+    top: 10px;
     z-index: 10;
     left: 10px;
     background: #88ff2e;
-    width: 35px;
+    width: 60px;
     height: 35px;
     border-radius: 50px;
     display: flex;
@@ -371,6 +371,7 @@ if ($card_style == 'festival') : ?>
     color: #328d14;
     font-weight: bold;
     font-size: 14px;
+    border: 2px solid #ffffff;
     }
   </style>
   <?php
