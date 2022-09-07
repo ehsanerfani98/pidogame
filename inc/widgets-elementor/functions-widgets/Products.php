@@ -105,7 +105,7 @@ class Products extends \Elementor\Widget_Base
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'' => 'پیشفرض',
+					'' => 'جدیدترین ها',
 					'total_sales' => 'پر فروش ترین ها', 
 					'_wc_average_rating' => 'محبوب ترین ها' 
 				],
