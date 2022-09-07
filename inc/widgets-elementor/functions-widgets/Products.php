@@ -99,6 +99,19 @@ class Products extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'status_product',
+			[
+				'label' => esc_html__('نوع محصول', 'elementor-addon'),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => '',
+				'options' => [
+					'' => 'پیشفرض',
+					'پر فروش ترین ها' => 'total_sales'
+				],
+			]
+		);
+
+		$this->add_control(
 			'orderby',
 			[
 				'label' => esc_html__('ترتیب نمایش', 'elementor-addon'),
@@ -242,6 +255,7 @@ class Products extends \Elementor\Widget_Base
         $count_column = $settings['count_column'];
         $display_auto = $settings['display_auto'];
         $status_slider = $settings['status_slider'];
+        $status_product = $settings['status_product'];
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
 	}
 }
