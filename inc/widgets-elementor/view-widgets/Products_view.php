@@ -355,6 +355,23 @@ if ($card_style == 'festival') : ?>
       align-items: center;
       gap: 4rem;
     }
+
+    .sale-plswb{
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    left: 10px;
+    background: #88ff2e;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #328d14;
+    font-weight: bold;
+    font-size: 14px;
+    }
   </style>
   <?php
 
@@ -415,7 +432,7 @@ if ($card_style == 'festival') : ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
-                        <div>
+                        <div class="sale-plswb">
                         <?php 
                         $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100) ;
                         echo $percentage;
