@@ -348,12 +348,19 @@ if ($card_style == 'festival') : ?>
       'post__in'      => $product_ids,
     );
   } else {
+    dd($count);
     $args = array(
       'post_type'        => 'product',
-      'posts_per_page'   => 2,
+      'posts_per_page'   => $count,
       'orderby' => 'meta_value',
-      'order'   => 'desc',
-     
+      'order'   => $orderby,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'product_cat',
+          'field' => 'term_id',
+          'terms' => $term_id
+        )
+      )
     );
   }
 
