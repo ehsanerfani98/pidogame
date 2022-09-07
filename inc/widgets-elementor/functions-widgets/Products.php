@@ -106,7 +106,7 @@ class Products extends \Elementor\Widget_Base
 				'default' => '',
 				'options' => [
 					'' => 'پیشفرض',
-					'پر فروش ترین ها' => 'total_sales'
+					'total_sales' => 'پر فروش ترین ها' 
 				],
 			]
 		);
