@@ -230,7 +230,7 @@ class Products extends \Elementor\Widget_Base
 		$settings = $this->get_settings_for_display();
 
 		$wid = rand(0000000000, 9999999999);
-        $term_id = $settings['term_id'];
+        $term_id = $settings['category'];
         $count = $settings['count'];
         $cart_color = $settings['cart_color'];
         $cart_button_color = $settings['cart_button_color'];
@@ -242,7 +242,6 @@ class Products extends \Elementor\Widget_Base
         $count_column = $settings['count_column'];
         $display_auto = $settings['display_auto'];
         $status_slider = $settings['status_slider'];
-		dd($settings);
         include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
 	}
 }
