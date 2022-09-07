@@ -442,7 +442,10 @@ if ($card_style == 'festival') : ?>
                           <?php
                           endif;
                         } else {
-                          // $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
+                          if (!empty(new WC_Product_Variable(get_the_ID()))) {
+
+                          $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
+                          }
                           if ($percentage != 0) :
                           ?>
                             <div class="sale-plswb bg-danger text-white">
@@ -485,7 +488,7 @@ if ($card_style == 'festival') : ?>
                           } else {
                             if (!empty(new WC_Product_Variable(get_the_ID()))) {
 
-                              // $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                              $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
                             }
                           }
                           if ($salesPriceTo) :
