@@ -7,7 +7,6 @@ if ($card_style == 'festival') : ?>
   <style>
     .plswb-card-yellow {
       position: relative;
-      width: 320px;
       height: auto;
       border-radius: 20px;
       overflow: hidden;
