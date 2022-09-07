@@ -348,7 +348,7 @@ if ($card_style == 'festival') : ?>
       'post__in'      => $product_ids,
     );
   } else {
-    dd($count);
+    dd($orderby);
     $args = array(
       'post_type'        => 'product',
       'posts_per_page'   => $count,
