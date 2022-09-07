@@ -128,7 +128,7 @@ if ($card_style == 'festival') : ?>
               'posts_per_page'   => $count,
               'meta_key' => $status_product,
               'orderby' => 'meta_value_num',
-                    'order'   => $orderby,
+              'order'   => $orderby,
               'tax_query' => array(
                 array(
                   'taxonomy' => 'product_cat',
@@ -365,7 +365,7 @@ if ($card_style == 'festival') : ?>
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
       'orderby' => 'meta_value_num',
-    'order'   => $orderby,
+      'order'   => $orderby,
       'post__in'      => $product_ids,
     );
   } else {
@@ -374,7 +374,7 @@ if ($card_style == 'festival') : ?>
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
       'orderby' => 'meta_value_num',
-    'order'   => $orderby,
+      'order'   => $orderby,
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
@@ -440,7 +440,17 @@ if ($card_style == 'festival') : ?>
                         </div>
                         <div class="separator separator-solid"></div>
                         <div class="wrap-content-product">
-
+                          <?php $salesPriceTo = null;
+                          $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+                          if ($salesPriceTo) :
+                            $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
+                            $now = new DateTime();
+                            $futureDate = new DateTime($salesPriceDateTo);
+                            $interval = $futureDate->diff($now);
+                            $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
+                            <span class="d-block d-xl-none position-absolute top-0 start-50 translate-middle badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                            <span class="d-none d-xl-block position-absolute top-0 start-75 translate-middle-y badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                          <?php endif ?>
                           <div class="price text-gray-700 bg-light text-center mt-2 rounded">
                             <div class="d-flex justify-content-center align-items-center bg-light py-2">
                               <?php echo $product->get_price_html(); ?>
