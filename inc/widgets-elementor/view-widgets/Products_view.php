@@ -227,7 +227,11 @@ if ($card_style == 'festival') : ?>
     </script>
   <?php endif; ?>
 
-<?php else : ?>
+<?php else :
+  
+  dd('ddd');
+  
+  ?>
 
   <style>
     .wrap-cart-plswb {
