@@ -1,4 +1,6 @@
-<?php if ($card_style == 'festival') : ?>
+<?php 
+dd('ff');
+if ($card_style == 'festival') : ?>
 
   <style>
     .plswb-card-yellow {
