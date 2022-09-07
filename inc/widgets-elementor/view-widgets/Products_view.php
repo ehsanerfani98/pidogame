@@ -485,7 +485,7 @@ if ($card_style == 'festival') : ?>
                           } else {
                             if (!empty(new WC_Product_Variable(get_the_ID()))) {
 
-                              $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                              // $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
                             }
                           }
                           if ($salesPriceTo) :
