@@ -434,12 +434,10 @@ if ($card_style == 'festival') : ?>
                         <div class="sale-plswb bg-danger text-white">
                           <?php
                           if ($product->is_type('simple')) {
-
                             $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
                             echo $percentage . '%';
                           } else {
-                            dd($product->get_available_variations()[0]);
-                            $percentage = intval((($product->get_available_variations()[0]->get_regular_price() - $product->get_available_variations()[0]->get_sale_price()) / $product->get_available_variations()[0]->get_regular_price()) * 100);
+                            $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
                             echo $percentage . '%';
                           }
                           ?>
