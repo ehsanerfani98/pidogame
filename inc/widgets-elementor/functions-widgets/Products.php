@@ -106,8 +106,9 @@ class Products extends \Elementor\Widget_Base
 				'default' => '',
 				'options' => [
 					'' => 'جدیدترین ها',
-					'total_sales' => 'پر فروش ترین ها', 
-					'_wc_average_rating' => 'محبوب ترین ها' 
+					'total_sales' => 'پر فروش ترین ها',
+					'_wc_average_rating' => 'محبوب ترین ها',
+					'_sale_price' => 'محصولات تخفیف خورده'
 				],
 			]
 		);
@@ -148,7 +149,7 @@ class Products extends \Elementor\Widget_Base
 				'default' => 'no',
 			]
 		);
-		
+
 		$this->add_control(
 			'display_column',
 			[
@@ -231,7 +232,7 @@ class Products extends \Elementor\Widget_Base
 			]
 		);
 
-	
+
 
 		$this->end_controls_section();
 
@@ -244,19 +245,19 @@ class Products extends \Elementor\Widget_Base
 		$settings = $this->get_settings_for_display();
 
 		$wid = rand(0000000000, 9999999999);
-        $term_id = $settings['category'];
-        $count = $settings['count'];
-        $cart_color = $settings['cart_color'];
-        $cart_button_color = $settings['cart_button_color'];
-        $card_style = $settings['card_style'];
-        $orderby = $settings['orderby'];
-        $product_ids = implode(',', $settings['product_ids']);
-        $status_product_ids = $settings['status_product_ids'];
-        $display_column = $settings['display_column'];
-        $count_column = $settings['count_column'];
-        $display_auto = $settings['display_auto'];
-        $status_slider = $settings['status_slider'];
-        $status_product = $settings['status_product'];
-        include PLSWB_THEME_PATH.'/inc/widgets-elementor/view-widgets/Products_view.php';
+		$term_id = $settings['category'];
+		$count = $settings['count'];
+		$cart_color = $settings['cart_color'];
+		$cart_button_color = $settings['cart_button_color'];
+		$card_style = $settings['card_style'];
+		$orderby = $settings['orderby'];
+		$product_ids = implode(',', $settings['product_ids']);
+		$status_product_ids = $settings['status_product_ids'];
+		$display_column = $settings['display_column'];
+		$count_column = $settings['count_column'];
+		$display_auto = $settings['display_auto'];
+		$status_slider = $settings['status_slider'];
+		$status_product = $settings['status_product'];
+		include PLSWB_THEME_PATH . '/inc/widgets-elementor/view-widgets/Products_view.php';
 	}
 }
