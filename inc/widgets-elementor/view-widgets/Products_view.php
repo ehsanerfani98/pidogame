@@ -442,7 +442,7 @@ if ($card_style == 'festival') : ?>
                           <?php
                           endif;
                         } else {
-                          $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
+                          // $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
                           if ($percentage != 0) :
                           ?>
                             <div class="sale-plswb bg-danger text-white">
