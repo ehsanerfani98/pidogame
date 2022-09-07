@@ -229,8 +229,6 @@ class Products extends \Elementor\Widget_Base
 	{
 		$settings = $this->get_settings_for_display();
 
-		$product_ids = implode(',', $settings['product_ids']);
-
 		$wid = rand(0000000000, 9999999999);
         $term_id = $settings['term_id'];
         $count = $settings['count'];
@@ -238,7 +236,7 @@ class Products extends \Elementor\Widget_Base
         $cart_button_color = $settings['cart_button_color'];
         $card_style = $settings['card_style'];
         $orderby = $settings['orderby'];
-        $product_ids = $settings['product_ids'];
+        $product_ids = implode(',', $settings['product_ids']);
         $status_product_ids = $settings['status_product_ids'];
         $display_column = $settings['display_column'];
         $count_column = $settings['count_column'];
