@@ -1556,5 +1556,11 @@ add_action('wp_footer', function () {
 
 
 add_shortcode('plswb_breadcrumb', function () {
-    if (function_exists('bcn_display')) bcn_display();
+?>
+    <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
+        <?php
+        if (function_exists('bcn_display')) bcn_display();
+        ?>
+    </ul>
+<?php
 });
