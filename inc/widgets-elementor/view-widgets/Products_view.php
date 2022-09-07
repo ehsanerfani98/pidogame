@@ -467,11 +467,7 @@ if ($card_style == 'festival') : ?>
                           <?php $salesPriceTo = null;
                                           $product_s = wc_get_product( get_the_ID() ); 
 
-                          if(!empty($product_s->get_available_variations())){
-                            dd('dd');
-                          }else{
-                            dd('jj');
-                          }
+                        dd($product_s->get_available_variations());
                           // $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
                           // $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
                           if ($salesPriceTo) :
