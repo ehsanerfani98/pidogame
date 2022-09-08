@@ -444,7 +444,7 @@ if ($card_style == 'festival') : ?>
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
                             foreach ($product->get_available_variations() as $variation) {
-                              $variation_price = get_variation_price_by_id($variation['variation_id']);
+                              $variation_price = get_variation_price_by_id($product->ID ,$variation['variation_id']);
                               $price = $variation_price->display_regular_price;
                               $sale_price  = $variation_price->display_price;
 
