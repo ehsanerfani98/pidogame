@@ -443,11 +443,9 @@ if ($card_style == 'festival') : ?>
                           endif;
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
-
-                            foreach ((new WC_Product_Variable(get_the_ID()))->get_children() as $vid) {
-                              $p = wc_get_product($vid);
-                              $price = $p->get_variation_regular_price();
-                              $sale_price = $p->get_variation_sale_price();
+                            foreach ($product->get_available_variations() as $variation) {
+                              $price = $variation->get_regular_price();
+                              $sale_price = $variation->get_sale_price();
                               $percentage = intval((($price - $sale_price) / $sale_price) * 100);
                               $percents[] = $percentage;
                             }
