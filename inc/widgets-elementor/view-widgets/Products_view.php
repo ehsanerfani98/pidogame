@@ -444,15 +444,16 @@ if ($card_style == 'festival') : ?>
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
                             foreach ($product->get_available_variations() as $variation) {
-                              $variationProduct = new WC_Product_Variation($variation['variation_id']);
-                              if ($variationProduct->is_on_sale()) {
-                                $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
-                                $percents[] = $percentage;
+                              if (get_term($option_id)->slug == $variation['attributes']['attribute_pa_device']) {
+                                $variationProduct = new WC_Product_Variation($variation['variation_id']);
+                                if ($variationProduct->is_on_sale()) {
+                                  $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
+                                  $percents[] = $percentage;
+                                }
                               }
                             }
 
-                            $percentage = (array_unique($percents));
-                            var_dump($percentage);
+                            $percentage = max(array_unique($percents));
                           }
                           if ($percentage != 0) :
                           ?>
