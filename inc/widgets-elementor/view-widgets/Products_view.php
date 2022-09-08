@@ -444,12 +444,15 @@ if ($card_style == 'festival') : ?>
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
 
-                            var_dump((new WC_Product_Variable(get_the_ID()))->get_children());
-                            $sale_price = $product->get_variation_sale_price('max', true);
+                            foreach ((new WC_Product_Variable(get_the_ID()))->get_children() as $vid) {
+                              $p = wc_get_product($vid);
+                              $price = $p->get_regular_price();
+                              $sale_price = $p->get_sale_price();
+                              $percentage = intval((($sale_price - $price) / $sale_price) * 100);
+                              $percents[] = $percentage;
+                            }
 
-                            $regular_sale_price = $product->get_variation_regular_price('max', true);
-
-                            $percentage = intval((($regular_sale_price - $sale_price) / $regular_sale_price) * 100);
+                            var_dump($percents);
                           }
                           if ($percentage != 0) :
                           ?>
@@ -533,17 +536,17 @@ if ($card_style == 'festival') : ?>
                 <?php endif; ?>
 
                 <? if ($status_slider != 'yes') : ?>
-            </li>
-          <?php endif; ?>
+                </li>
+              <?php endif; ?>
 
-        <?php
+            <?php
             endwhile;
             wp_reset_postdata();
-        ?>
-        <? if ($status_slider == 'yes') : ?>
-        </div>
-    <?php endif; ?>
-        <? if ($status_slider != 'yes') : ?>
+            ?>
+            <? if ($status_slider == 'yes') : ?>
+            </div>
+          <?php endif; ?>
+          <? if ($status_slider != 'yes') : ?>
           </ul>
         </div>
       </section>
