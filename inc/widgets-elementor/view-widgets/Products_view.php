@@ -443,8 +443,11 @@ if ($card_style == 'festival') : ?>
                           endif;
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
+                            $sale_price = $product->get_variation_sale_price('max', true);
 
-                          $percentage = intval((($product->get_available_variations()[0]['display_regular_price'] - $product->get_available_variations()[0]['display_price']) / $product->get_available_variations()[0]['display_regular_price']) * 100);
+                            $regular_sale_price = $product->get_variation_regular_price('max', true);
+
+                            $percentage = intval((($regular_sale_price - $sale_price) / $regular_sale_price) * 100);
                           }
                           if ($percentage != 0) :
                           ?>
