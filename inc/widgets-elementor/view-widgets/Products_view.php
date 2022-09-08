@@ -521,15 +521,16 @@ if ($card_style == 'festival') : ?>
                         <?php endif ?>
 
                     </a>
+
                     <? if ($status_slider == 'yes') : ?>
                     </div>
                   <?php endif; ?>
+
                   <? if ($status_slider == 'yes') : ?>
                   </div>
                 <?php endif; ?>
 
                 <? if ($status_slider != 'yes') : ?>
-            </div>
             </li>
           <?php endif; ?>
 
@@ -537,6 +538,9 @@ if ($card_style == 'festival') : ?>
             endwhile;
             wp_reset_postdata();
         ?>
+        <? if ($status_slider == 'yes') : ?>
+        </div>
+    <?php endif; ?>
         <? if ($status_slider != 'yes') : ?>
           </ul>
         </div>

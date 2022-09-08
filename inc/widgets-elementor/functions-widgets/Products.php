@@ -81,7 +81,7 @@ class Products extends \Elementor\Widget_Base
 			'count',
 			[
 				'label' => esc_html__('تعداد محصولات', 'elementor-addon'),
-				'type' => \Elementor\Controls_Manager::TEXT,
+				'type' => \Elementor\Controls_Manager::NUMBER,
 			]
 		);
 
