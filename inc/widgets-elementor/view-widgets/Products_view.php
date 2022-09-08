@@ -448,7 +448,7 @@ if ($card_style == 'festival') : ?>
                               $p = wc_get_product($vid);
                               $price = $p->get_regular_price();
                               $sale_price = $p->get_sale_price();
-                              $percentage = intval((($sale_price - $price) / $sale_price) * 100);
+                              $percentage = intval((($price - $sale_price) / $sale_price) * 100);
                               $percents[] = $percentage;
                             }
 
