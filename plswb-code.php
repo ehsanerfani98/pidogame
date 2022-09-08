@@ -187,115 +187,70 @@ function set_cutom_cart_item_price($cart)
     }
 }
 
-// add_filter('woocommerce_get_price_html', 'custom_price_format', 10, 2);
-// add_filter('woocommerce_variable_price_html', 'custom_price_format', 10, 2);
-// function custom_price_format($price, $product)
-// {
+add_filter('woocommerce_get_price_html', 'custom_price_format', 10, 2);
+add_filter('woocommerce_variable_price_html', 'custom_price_format', 10, 2);
+function custom_price_format($price, $product)
+{
 
-//     // 1. Variable products
-//     if ($product->is_type('variable')) {
+    if ($product->is_type('variable')) {
 
-//         // Searching for the default variation
-//         $default_attributes = $product->get_default_attributes();
-//         // Loop through available variations
-//         foreach ($product->get_available_variations() as $variation) {
-//             $found = true; // Initializing
-//             // Loop through variation attributes
-//             foreach ($variation['attributes'] as $key => $value) {
-//                 $taxonomy = str_replace('attribute_', '', $key);
-//                 // Searching for a matching variation as default
-//                 if (isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value) {
-//                     $found = false;
-//                     break;
-//                 }
-//             }
-//             // When it's found we set it and we stop the main loop
-//             if ($found) {
-//                 $default_variaton = $variation;
-//                 break;
-//             } // If not we continue
-//             else {
-//                 continue;
-//             }
-//         }
-//         // Get the default variation prices or if not set the variable product min prices
-//         // $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
-//         // $sale_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_sale_price( 'min', true );
-//         $regular_price = $product->get_variation_regular_price('min', true);
-//         $sale_price = $product->get_variation_sale_price('max', true);
-//     }
-//     // 2. Other products types
-//     else {
-//         $regular_price = $product->get_regular_price();
-//         $sale_price    = $product->get_sale_price();
-//     }
-
-//     // Formatting the price
-//     if ($regular_price !== $sale_price && $product->is_on_sale()) {
-
-
-
-//         // Percentage calculation and text
-//         $percentage = round(($regular_price - $sale_price) / $regular_price * 100) . '%';
-//         $percentage_txt = __(' Save', 'woocommerce') . ' ' . $percentage;
-
-//         // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
-//         $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
-//     } else {
-//         if ($sale_price == 0) {
-//             if ($regular_price == 0) {
-//                 $price = '<div class=" fs-5 px-4 py-2">' . 'رایگان' . '</div>';
-//                 return $price;
-//             }
-
-//             $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div>';
-//             return $price;
-//         }
-//         $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
-//     }
-//     return $price;
-// }
-
-
-
-// For variable product
-add_filter( 'woocommerce_variable_price_html', 'variable_prices_range_formatted', 100, 2 );
-function variable_prices_range_formatted( $price, $product ){
-    global $woocommerce_loop;
-    // Not on single products
-    if ( ( is_product() && isset($woocommerce_loop['name']) && ! empty($woocommerce_loop['name']) ) || ! is_product() )
-    {
-        // For on sale variable product
-        if ( $product->is_on_sale()  )
-        {
-            $regular_price_min = $product->get_variation_regular_price( 'min', true );
-            $regular_price_max = $product->get_variation_regular_price( 'max', true );
-
-            $active_price_min = $product->get_variation_price( 'min', true );
-            $active_price_max = $product->get_variation_price( 'max', true );
-
-            if ( $regular_price_min !== $active_price_min || $regular_price_max !== $active_price_max )
-            {
-                // Regular price range (for <del> html tag)
-                if( $regular_price_min !== $regular_price_max ) {
-                    $regular_price_del_html = sprintf( '<del>%s a %s</del>', wc_price($regular_price_min), wc_price($regular_price_max) );
-                } else {
-                    $regular_price_del_html = sprintf( '<del>%s</del>', wc_price($regular_price_min) );
+        $default_attributes = $product->get_default_attributes();
+        foreach ($product->get_available_variations() as $variation) {
+            $found = true; 
+            foreach ($variation['attributes'] as $key => $value) {
+                $taxonomy = str_replace('attribute_', '', $key);
+                if (isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value) {
+                    $found = false;
+                    break;
                 }
-
-                // Active price range (for <ins> html tag)
-                if( $active_price_min !== $active_price_max ) {
-                    $active_price_ins_html = sprintf( '<ins>%s a %s</ins>', wc_price($active_price_min), wc_price($active_price_max) );
-                } else {
-                    $active_price_ins_html = sprintf( '<ins>%s</ins>', wc_price($active_price_min) );
-                }
-
-                $price = sprintf( '<p class="teste">%s %s</p>', $regular_price_del_html, $active_price_ins_html );
+            }
+            if ($found) {
+                $default_variaton = $variation;
+                break;
+            }
+            else {
+                continue;
             }
         }
+        $regular_price = $product->get_variation_regular_price('min', true);
+        $sale_price = $product->get_variation_sale_price('max', true);
+
+        $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+
+        return $price;
+
     }
-    return $price;
+    else {
+        $regular_price = $product->get_regular_price();
+        $sale_price    = $product->get_sale_price();
+
+
+        if ($regular_price !== $sale_price && $product->is_on_sale()) {
+            $percentage = round(($regular_price - $sale_price) / $regular_price * 100) . '%';
+            $percentage_txt = __(' Save', 'woocommerce') . ' ' . $percentage;
+    
+            // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
+            $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        } else {
+            if ($sale_price == 0) {
+                if ($regular_price == 0) {
+                    $price = '<div class=" fs-5 px-4 py-2">' . 'رایگان' . '</div>';
+                    return $price;
+                }
+                $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div>';
+                return $price;
+            }
+        }
+        $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        return $price;
+
+    }
+
+
 }
+
+
+
 
 add_action('init', 'woo_general_init');
 function woo_general_init()
