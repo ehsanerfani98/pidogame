@@ -196,7 +196,7 @@ function custom_price_format($price, $product)
 
         $default_attributes = $product->get_default_attributes();
         foreach ($product->get_available_variations() as $variation) {
-            $found = true; 
+            $found = true;
             foreach ($variation['attributes'] as $key => $value) {
                 $taxonomy = str_replace('attribute_', '', $key);
                 if (isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value) {
@@ -207,20 +207,21 @@ function custom_price_format($price, $product)
             if ($found) {
                 $default_variaton = $variation;
                 break;
-            }
-            else {
+            } else {
                 continue;
             }
         }
-        $regular_price = $product->get_variation_regular_price('min', true);
-        $sale_price = $product->get_variation_sale_price('max', true);
-
+        if ($product->is_on_sale()) {
+            $regular_price = $product->get_variation_sale_price('min', true);
+            $sale_price = $product->get_variation_sale_price('max', true);
+        } else {
+            $regular_price = $product->get_variation_regular_price('min', true);
+            $sale_price = $product->get_variation_regular_price('max', true);
+        }
         $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
 
         return $price;
-
-    }
-    else {
+    } else {
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
 
@@ -228,7 +229,7 @@ function custom_price_format($price, $product)
         if ($regular_price !== $sale_price && $product->is_on_sale()) {
             $percentage = round(($regular_price - $sale_price) / $regular_price * 100) . '%';
             $percentage_txt = __(' Save', 'woocommerce') . ' ' . $percentage;
-    
+
             // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
             $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
         } else {
@@ -243,10 +244,7 @@ function custom_price_format($price, $product)
         }
         $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
         return $price;
-
     }
-
-
 }
 
 
