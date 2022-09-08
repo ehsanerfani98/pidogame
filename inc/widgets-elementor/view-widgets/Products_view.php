@@ -452,6 +452,7 @@ if ($card_style == 'festival') : ?>
                             }
 
                             $percentage = max(array_unique($percents));
+                            var_dump($percentage);
                           }
                           if ($percentage != 0) :
                           ?>
