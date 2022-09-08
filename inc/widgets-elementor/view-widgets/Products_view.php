@@ -443,6 +443,8 @@ if ($card_style == 'festival') : ?>
                           endif;
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
+
+                            dd((new WC_Product_Variable(get_the_ID()))->get_children());
                             $sale_price = $product->get_variation_sale_price('max', true);
 
                             $regular_sale_price = $product->get_variation_regular_price('max', true);
