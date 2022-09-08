@@ -1560,7 +1560,6 @@ add_shortcode('plswb_breadcrumb', function () {
 });
 
 
-/ Get Woocommerce variation price based on product ID
 function get_variation_price_by_id($product_id, $variation_id){
 	$currency_symbol = get_woocommerce_currency_symbol();
 	$product = new WC_Product_Variable($product_id);
