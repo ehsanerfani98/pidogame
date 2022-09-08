@@ -437,9 +437,7 @@ if ($card_style == 'festival') : ?>
                           if ($percentage != 0) :
                         ?>
                             <div class="sale-plswb bg-danger text-white">
-                            <?php echo wc_price( wc_get_price_including_tax( $product ) ); ?>
-
-                              <!-- <?= $percentage . '%'; ?> -->
+                              <?= $percentage . '%'; ?>
                             </div>
                           <?php
                           endif;
@@ -451,9 +449,7 @@ if ($card_style == 'festival') : ?>
                           if ($percentage != 0) :
                           ?>
                             <div class="sale-plswb bg-danger text-white">
-                            <?php echo wc_price( wc_get_price_including_tax( $product ) ); ?>
-
-                              <!-- <?= $percentage . '%'; ?> -->
+                              <?= $percentage . '%'; ?>
                             </div>
                         <?php
                           endif;
