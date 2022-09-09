@@ -562,7 +562,7 @@ if ($card_style == 'festival') : ?>
 
                     <? if ($status_slider == 'yes') : ?>
                     </div>
-                  <?php endif; ?>
+                    <?php endif; ?>
 
                   <? if ($status_slider != 'yes') : ?>
                   </div>
