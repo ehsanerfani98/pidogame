@@ -440,7 +440,7 @@ if ($card_style == 'festival') : ?>
                           if ($product->is_type('simple')) {
                             $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
                            var_dump($percentage);
-                            if ($percentage != 0) :
+                            if ($percentage != 0 && $percentage != 100) :
                           ?>
                               <div class="sale-plswb bg-danger text-white">
                                 <?= $percentage . '%'; ?>
