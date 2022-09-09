@@ -474,11 +474,17 @@ if ($card_style == 'festival') : ?>
                           <?php endif; ?>
                         </div>
 
+                        <? if ($rule_title_fa != 'yes' || $rule_title_en != 'yes') : ?>
+
                         <div class="wrap-content-product mt-2 pb-2">
+
+                        <? if ($rule_title_fa != 'yes') : ?>
                           <div class="title-cart-plswb">
                             <h4><?php the_title() ?></h4>
                           </div>
+                          <?php endif; ?>
 
+                          <? if ($rule_title_en != 'yes') : ?>
                           <div class="device-cart-plswb">
                             <div class="deavice_name">
                               <span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -488,7 +494,9 @@ if ($card_style == 'festival') : ?>
                               <h5><?= $meta['opt-product-subtitle'] ?></h5>
                             </div>
                           </div>
+                          <?php endif; ?>
                         </div>
+                        <?php endif; ?>
 
 
                         <? if ($rule_price != 'yes' || $rule_timer_off != 'yes') : ?>
