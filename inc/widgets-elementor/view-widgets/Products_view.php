@@ -498,24 +498,28 @@ if ($card_style == 'festival') : ?>
 
                         <div class="wrap-content-product">
 
-                          <?php $salesPriceTo = null;
-                          if ($product->is_type('simple')) {
-                            $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
-                          } else {
-                            if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
+                          <? if ($rule_timer_off != 'yes') : ?>
 
-                              $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                            <?php $salesPriceTo = null;
+                            if ($product->is_type('simple')) {
+                              $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+                            } else {
+                              if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
+
+                                $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                              }
                             }
-                          }
-                          if ($salesPriceTo) :
-                            $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
-                            $now = new DateTime();
-                            $futureDate = new DateTime($salesPriceDateTo);
-                            $interval = $futureDate->diff($now);
-                            $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
-                            <div class="text-center">
-                              <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
-                            </div>
+                            if ($salesPriceTo) :
+                              $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
+                              $now = new DateTime();
+                              $futureDate = new DateTime($salesPriceDateTo);
+                              $interval = $futureDate->diff($now);
+                              $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
+                              <div class="text-center">
+                                <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                              </div>
+                            <?php endif; ?>
+
                           <?php endif; ?>
 
                           <? if ($rule_price != 'yes') : ?>
