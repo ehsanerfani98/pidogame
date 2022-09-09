@@ -567,7 +567,7 @@ if ($card_style == 'festival') : ?>
                   <? if ($status_slider != 'yes') : ?>
                   </div>
                 </li>
-                <?php endif; ?>
+              <?php endif; ?>
 
             <?php
             endwhile;
@@ -584,8 +584,7 @@ if ($card_style == 'festival') : ?>
       </section>
     <?php endif; ?>
 
-  <?php endif;
-  ?>
+  <?php endif; ?>
 
   <? if ($status_slider != 'yes') : ?>
     <? if ($display_column == 'yes') : ?>
