@@ -511,11 +511,15 @@ if ($card_style == 'festival') : ?>
                               <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
                             </div>
                           <?php endif ?>
+
+                          <? if ($rule_price == 'no') : ?>
                           <div class="price text-gray-700 bg-light text-center mt-2 rounded">
                             <div class="d-flex justify-content-center align-items-center bg-light py-2">
                               <?php echo $product->get_price_html(); ?>
                             </div>
                           </div>
+                          <?php endif ?>
+
                         </div>
                         <?php if ($product->is_in_stock()) : ?>
                           <div class="card-footer py-1 text-center bg-primary bg-opacity-75">

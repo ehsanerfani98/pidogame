@@ -339,6 +339,16 @@ class Products extends \Elementor\Widget_Base
 		$display_auto = $settings['display_auto'];
 		$status_slider = $settings['status_slider'];
 		$status_product = $settings['status_product'];
+
+
+		//parameter rule
+		$rule_price = $settings['rule_price'];
+		$rule_title_fa = $settings['rule_title_fa'];
+		$rule_title_en = $settings['rule_title_en'];
+		$rule_button = $settings['rule_button'];
+		$rule_percent = $settings['rule_percent'];
+		$rule_timer_off = $settings['rule_timer_off'];
+
 		include PLSWB_THEME_PATH . '/inc/widgets-elementor/view-widgets/Products_view.php';
 	}
 }
