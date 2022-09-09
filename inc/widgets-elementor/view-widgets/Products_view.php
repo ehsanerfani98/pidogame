@@ -412,9 +412,7 @@ if ($card_style == 'festival') : ?>
           <ul class="splide__list">
           <?php endif; ?>
 
-          <? if ($status_slider == 'yes') : ?>
             <div class="row">
-            <?php endif; ?>
 
             <?php
             while ($query->have_posts()) :
@@ -428,9 +426,7 @@ if ($card_style == 'festival') : ?>
                   <div>
                   <?php endif; ?>
 
-                  <? if ($status_slider == 'yes') : ?>
                     <div class="col-lg-3 mb-5">
-                    <?php endif; ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
@@ -560,9 +556,7 @@ if ($card_style == 'festival') : ?>
 
                     </a>
 
-                    <!-- <? if ($status_slider == 'yes') : ?> -->
                     </div>
-                  <!-- <?php endif; ?> -->
 
                   <? if ($status_slider != 'yes') : ?>
                   </div>
@@ -574,9 +568,7 @@ if ($card_style == 'festival') : ?>
             wp_reset_postdata();
             ?>
 
-            <? if ($status_slider == 'yes') : ?>
             </div>
-          <?php endif; ?>
 
           <? if ($status_slider != 'yes') : ?>
           </ul>
