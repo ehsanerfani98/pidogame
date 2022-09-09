@@ -476,26 +476,26 @@ if ($card_style == 'festival') : ?>
 
                         <? if ($rule_title_fa != 'yes' || $rule_title_en != 'yes') : ?>
 
-                        <div class="wrap-content-product mt-2 pb-2">
+                          <div class="wrap-content-product mt-2 pb-2">
 
-                        <? if ($rule_title_fa != 'yes') : ?>
-                          <div class="title-cart-plswb">
-                            <h4><?php the_title() ?></h4>
-                          </div>
-                          <?php endif; ?>
+                            <? if ($rule_title_fa != 'yes') : ?>
+                              <div class="title-cart-plswb">
+                                <h4><?php the_title() ?></h4>
+                              </div>
+                            <?php endif; ?>
 
-                          <? if ($rule_title_en != 'yes') : ?>
-                          <div class="device-cart-plswb">
-                            <div class="deavice_name">
-                              <span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
-                                  <path opacity="0.3" d="M3 4L11 12L3 20H7L14.3 12.7C14.7 12.3 14.7 11.7 14.3 11.3L7 4H3Z" fill="black" />
-                                </svg></span>
-                              <h5><?= $meta['opt-product-subtitle'] ?></h5>
-                            </div>
+                            <? if ($rule_title_en != 'yes') : ?>
+                              <div class="device-cart-plswb">
+                                <div class="deavice_name">
+                                  <span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                      <path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
+                                      <path opacity="0.3" d="M3 4L11 12L3 20H7L14.3 12.7C14.7 12.3 14.7 11.7 14.3 11.3L7 4H3Z" fill="black" />
+                                    </svg></span>
+                                  <h5><?= $meta['opt-product-subtitle'] ?></h5>
+                                </div>
+                              </div>
+                            <?php endif; ?>
                           </div>
-                          <?php endif; ?>
-                        </div>
                         <?php endif; ?>
 
 
@@ -503,42 +503,44 @@ if ($card_style == 'festival') : ?>
                           <div class="separator separator-solid"></div>
                         <?php endif; ?>
 
+                        <? if ($rule_price != 'yes' || $rule_timer_off != 'yes') : ?>
 
-                        <div class="wrap-content-product">
+                          <div class="wrap-content-product">
+                            <? if ($rule_timer_off != 'yes') : ?>
 
-                          <? if ($rule_timer_off != 'yes') : ?>
+                              <?php $salesPriceTo = null;
+                              if ($product->is_type('simple')) {
+                                $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
+                              } else {
+                                if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
 
-                            <?php $salesPriceTo = null;
-                            if ($product->is_type('simple')) {
-                              $salesPriceTo = get_post_meta(get_the_ID(), '_sale_price_dates_to', true);
-                            } else {
-                              if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
-
-                                $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                                  $salesPriceTo = get_post_meta($product->get_available_variations()[0]['variation_id'], '_sale_price_dates_to', true);
+                                }
                               }
-                            }
-                            if ($salesPriceTo) :
-                              $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
-                              $now = new DateTime();
-                              $futureDate = new DateTime($salesPriceDateTo);
-                              $interval = $futureDate->diff($now);
-                              $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
-                              <div class="text-center">
-                                <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
-                              </div>
+                              if ($salesPriceTo) :
+                                $salesPriceDateTo = date("Y-m-j H:i:s", $salesPriceTo);
+                                $now = new DateTime();
+                                $futureDate = new DateTime($salesPriceDateTo);
+                                $interval = $futureDate->diff($now);
+                                $diff = $interval->format("%a روز و %h ساعت و %i دقیقه") ?>
+                                <div class="text-center">
+                                  <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
+                                </div>
+                              <?php endif; ?>
+
                             <?php endif; ?>
 
-                          <?php endif; ?>
-
-                          <? if ($rule_price != 'yes') : ?>
-                            <div class="price text-gray-700 bg-light text-center mt-2 rounded">
-                              <div class="d-flex justify-content-center align-items-center bg-light py-2">
-                                <?php echo $product->get_price_html(); ?>
+                            <? if ($rule_price != 'yes') : ?>
+                              <div class="price text-gray-700 bg-light text-center mt-2 rounded">
+                                <div class="d-flex justify-content-center align-items-center bg-light py-2">
+                                  <?php echo $product->get_price_html(); ?>
+                                </div>
                               </div>
-                            </div>
-                          <?php endif; ?>
+                            <?php endif; ?>
+                          </div>
+                        <?php endif; ?>
 
-                        </div>
+
                         <?php if ($product->is_in_stock()) : ?>
                           <div class="card-footer py-1 text-center bg-primary bg-opacity-75">
                             <a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
