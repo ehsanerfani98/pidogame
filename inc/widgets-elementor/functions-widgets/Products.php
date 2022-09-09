@@ -195,6 +195,87 @@ class Products extends \Elementor\Widget_Base
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'section_rule_product',
+			[
+				'label' => esc_html__('قوانین کارت محصول', 'elementor-addon'),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'rule_price',
+			[
+				'label' => 'نمایش قیمت',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'rule_title_fa',
+			[
+				'label' => 'نمایش عنوان فارسی',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'rule_title_en',
+			[
+				'label' => 'نمایش عنوان لاتین',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'rule_button',
+			[
+				'label' => 'نمایش دکمه خرید',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'rule_percent',
+			[
+				'label' => 'نمایش درصد تخفیف',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->add_control(
+			'rule_timer_off',
+			[
+				'label' => 'نمایش تایمر تخفیف',
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => 'خاموش',
+				'label_off' => 'روشن',
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
+
+		$this->end_controls_section();
 
 
 		// Content Tab End
