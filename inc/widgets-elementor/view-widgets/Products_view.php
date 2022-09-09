@@ -406,9 +406,15 @@ if ($card_style == 'festival') : ?>
 
   if ($query->have_posts()) :
   ?>
- 
+    <? if ($status_slider != 'yes') : ?>
+      <section class="splide splide_<?= $wid ?>" aria-labelledby="carousel-heading">
+        <div class="splide__track">
+          <ul class="splide__list">
+          <?php endif; ?>
 
+          <? if ($status_slider == 'yes') : ?>
             <div class="row">
+            <?php endif; ?>
 
             <?php
             while ($query->have_posts()) :
@@ -417,17 +423,42 @@ if ($card_style == 'festival') : ?>
               $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
             ?>
 
-             
-                 
+              <? if ($status_slider != 'yes') : ?>
+                <li class="splide__slide py-5">
+                  <div>
+                  <?php endif; ?>
+
+                  <? if ($status_slider == 'yes') : ?>
+                    <div class="col-lg-3 mb-5">
+                    <?php endif; ?>
+
+                    <div class="card">
+                      dfsdf
+                    </div>
+
+                  <? if ($status_slider == 'yes') : ?>
+                    </div>
+                  <?php endif; ?>
+
+                  <? if ($status_slider != 'yes') : ?>
+                  </div>
+                </li>
+              <?php endif; ?>
 
             <?php
             endwhile;
             wp_reset_postdata();
             ?>
 
+            <? if ($status_slider == 'yes') : ?>
             </div>
+          <?php endif; ?>
 
-      
+          <? if ($status_slider != 'yes') : ?>
+          </ul>
+        </div>
+      </section>
+    <?php endif; ?>
 
   <?php endif; ?>
 
