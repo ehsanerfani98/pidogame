@@ -510,15 +510,15 @@ if ($card_style == 'festival') : ?>
                             <div class="text-center">
                               <span class="badge badge-danger ss02"><?php echo $diff ?> باقی مانده</span>
                             </div>
-                          <?php endif ?>
+                          <?php endif; ?>
 
-                          <? if ($rule_price == 'no') : ?>
+                          <? if ($rule_price != 'yes') : ?>
                           <div class="price text-gray-700 bg-light text-center mt-2 rounded">
                             <div class="d-flex justify-content-center align-items-center bg-light py-2">
                               <?php echo $product->get_price_html(); ?>
                             </div>
                           </div>
-                          <?php endif ?>
+                          <?php endif; ?>
 
                         </div>
                         <?php if ($product->is_in_stock()) : ?>
@@ -529,7 +529,7 @@ if ($card_style == 'festival') : ?>
                           <div class="card-footer py-1 text-center bg-danger bg-opacity-75">
                             <a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
                           </div>
-                        <?php endif ?>
+                        <?php endif; ?>
 
                     </a>
 
