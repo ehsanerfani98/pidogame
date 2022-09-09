@@ -540,15 +540,16 @@ if ($card_style == 'festival') : ?>
                           </div>
                         <?php endif; ?>
 
-
-                        <?php if ($product->is_in_stock()) : ?>
-                          <div class="card-footer py-1 text-center bg-primary bg-opacity-75">
-                            <a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
-                          </div>
-                        <?php else : ?>
-                          <div class="card-footer py-1 text-center bg-danger bg-opacity-75">
-                            <a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
-                          </div>
+                        <? if ($rule_button != 'yes') : ?>
+                          <?php if ($product->is_in_stock()) : ?>
+                            <div class="card-footer py-1 text-center bg-primary bg-opacity-75">
+                              <a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
+                            </div>
+                          <?php else : ?>
+                            <div class="card-footer py-1 text-center bg-danger bg-opacity-75">
+                              <a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
+                            </div>
+                          <?php endif; ?>
                         <?php endif; ?>
 
                     </a>
