@@ -491,7 +491,7 @@ if ($card_style == 'festival') : ?>
                         </div>
 
 
-                        <? if ($rule_price == 'yes' && $rule_timer_off == 'yes') : ?>
+                        <? if ($rule_price == 'yes' || $rule_timer_off == 'yes') : ?>
                           <div class="separator separator-solid"></div>
                         <?php endif; ?>
 
