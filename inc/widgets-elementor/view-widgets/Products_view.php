@@ -444,13 +444,13 @@ if ($card_style == 'festival') : ?>
                         } else {
                           if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
                             foreach ($product->get_available_variations() as $variation) {
-                              if($variation['variation_is_active']){
-                              $variationProduct = new WC_Product_Variation($variation['variation_id']);
-                              if ($variationProduct->is_on_sale()) {
-                                $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
-                                $percents[] = $percentage;
+                              if ($variation['variation_is_active']) {
+                                $variationProduct = new WC_Product_Variation($variation['variation_id']);
+                                if ($variationProduct->is_on_sale()) {
+                                  $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
+                                  $percents[] = $percentage;
+                                }
                               }
-                            }
                             }
 
                             $percentage = max(array_unique($percents));
@@ -489,7 +489,13 @@ if ($card_style == 'festival') : ?>
                             </div>
                           </div>
                         </div>
-                        <div class="separator separator-solid"></div>
+
+
+                        <? if ($rule_price != 'yes' && $rule_timer_off != 'yes') : ?>
+                          <div class="separator separator-solid"></div>
+                        <?php endif; ?>
+
+
                         <div class="wrap-content-product">
 
                           <?php $salesPriceTo = null;
@@ -513,11 +519,11 @@ if ($card_style == 'festival') : ?>
                           <?php endif; ?>
 
                           <? if ($rule_price != 'yes') : ?>
-                          <div class="price text-gray-700 bg-light text-center mt-2 rounded">
-                            <div class="d-flex justify-content-center align-items-center bg-light py-2">
-                              <?php echo $product->get_price_html(); ?>
+                            <div class="price text-gray-700 bg-light text-center mt-2 rounded">
+                              <div class="d-flex justify-content-center align-items-center bg-light py-2">
+                                <?php echo $product->get_price_html(); ?>
+                              </div>
                             </div>
-                          </div>
                           <?php endif; ?>
 
                         </div>
