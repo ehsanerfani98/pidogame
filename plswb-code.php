@@ -1585,8 +1585,8 @@ function get_variation_price_by_id($product_id, $variation_id){
 	return $priceObject;
 }
 
-add_action( 'init', function(){
+// add_action( 'init', function(){
 
-$product = wc_get_product(4035);
-dd($product->get_available_variations());
-});
+// $product = wc_get_product(4035);
+// dd($product->get_available_variations());
+// });
