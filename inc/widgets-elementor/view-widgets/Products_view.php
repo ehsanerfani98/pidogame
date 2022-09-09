@@ -428,9 +428,9 @@ if ($card_style == 'festival') : ?>
                   <div>
                   <?php endif; ?>
 
-                  <? if ($status_slider == 'yes') : ?>
+                  <?php if ($status_slider == 'yes') { ?>
                     <div class="col-lg-3 mb-5">
-                    <?php endif; ?>
+                    <?php } ?>
 
                     <a href="<?php the_permalink() ?>">
                       <div class="wrap-cart-plswb card">
@@ -560,9 +560,9 @@ if ($card_style == 'festival') : ?>
 
                     </a>
 
-                    <? if ($status_slider == 'yes') : ?>
+                    <?php if ($status_slider == 'yes') { ?>
                     </div>
-                    <?php endif; ?>
+                    <?php } ?>
 
                   <? if ($status_slider != 'yes') : ?>
                   </div>
