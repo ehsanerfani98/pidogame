@@ -1584,3 +1584,6 @@ function get_variation_price_by_id($product_id, $variation_id){
 	$priceObject = (object)$priceArray;
 	return $priceObject;
 }
+
+$product = wc_get_product(4035);
+dd($product->get_available_variations());
