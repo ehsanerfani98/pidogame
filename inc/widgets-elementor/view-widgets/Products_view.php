@@ -112,31 +112,88 @@ if ($card_style == 'festival') : ?>
           <?php endif; ?>
           <?php
 
-          if ($status_product_ids == 'yes') {
-            $product_ids = explode(',', $product_ids);
-            $args = array(
-              'post_type'        => 'product',
-              'posts_per_page'   => $count,
-              'meta_key' => $status_product,
-              'orderby' => 'meta_value_num',
-              'order'   => $orderby,
-              'post__in'      => $product_ids,
-            );
-          } else {
-            $args = array(
-              'post_type'        => 'product',
-              'posts_per_page'   => $count,
-              'meta_key' => $status_product,
-              'orderby' => 'meta_value_num',
-              'order'   => $orderby,
-              'tax_query' => array(
-                array(
-                  'taxonomy' => 'product_cat',
-                  'field' => 'term_id',
-                  'terms' => $term_id
+          if ($status_product == '_sale_price') {
+            if ($status_product_ids == 'yes') {
+              $product_ids = explode(',', $product_ids);
+              $args = array(
+                'post_type'        => 'product',
+                'posts_per_page'   => $count,
+                'meta_query'     => array(
+                  'relation' => 'OR',
+                  array(
+                    'key'           => '_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                  ),
+                  array(
+                    'key'           => '_min_variation_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                  )
+                ),
+                'orderby' => 'meta_value_num',
+                'order'   => $orderby,
+                'post__in'      => $product_ids,
+              );
+            } else {
+              $args = array(
+                'post_type'        => 'product',
+                'posts_per_page'   => $count,
+                'meta_query'     => array(
+                  'relation' => 'OR',
+                  array( 
+                    'key'           => '_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                  ),
+                  array( 
+                    'key'           => '_min_variation_sale_price',
+                    'value'         => 0,
+                    'compare'       => '>',
+                    'type'          => 'numeric'
+                  )
+                ),
+                'orderby' => 'meta_value_num',
+                'order'   => $orderby,
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'product_cat',
+                    'field' => 'term_id',
+                    'terms' => $term_id
+                  )
                 )
-              )
-            );
+              );
+            }
+          } else {
+            if ($status_product_ids == 'yes') {
+              $product_ids = explode(',', $product_ids);
+              $args = array(
+                'post_type'        => 'product',
+                'posts_per_page'   => $count,
+                'meta_key' => $status_product,
+                'orderby' => 'meta_value_num',
+                'order'   => $orderby,
+                'post__in'      => $product_ids,
+              );
+            } else {
+              $args = array(
+                'post_type'        => 'product',
+                'posts_per_page'   => $count,
+                'meta_key' => $status_product,
+                'orderby' => 'meta_value_num',
+                'order'   => $orderby,
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'product_cat',
+                    'field' => 'term_id',
+                    'terms' => $term_id
+                  )
+                )
+              );
+            }
           }
 
           $query = new WP_Query($args);
@@ -374,6 +431,62 @@ if ($card_style == 'festival') : ?>
   </style>
   <?php
 
+if ($status_product == '_sale_price') {
+  if ($status_product_ids == 'yes') {
+    $product_ids = explode(',', $product_ids);
+    $args = array(
+      'post_type'        => 'product',
+      'posts_per_page'   => $count,
+      'meta_query'     => array(
+        'relation' => 'OR',
+        array(
+          'key'           => '_sale_price',
+          'value'         => 0,
+          'compare'       => '>',
+          'type'          => 'numeric'
+        ),
+        array(
+          'key'           => '_min_variation_sale_price',
+          'value'         => 0,
+          'compare'       => '>',
+          'type'          => 'numeric'
+        )
+      ),
+      'orderby' => 'meta_value_num',
+      'order'   => $orderby,
+      'post__in'      => $product_ids,
+    );
+  } else {
+    $args = array(
+      'post_type'        => 'product',
+      'posts_per_page'   => $count,
+      'meta_query'     => array(
+        'relation' => 'OR',
+        array( 
+          'key'           => '_sale_price',
+          'value'         => 0,
+          'compare'       => '>',
+          'type'          => 'numeric'
+        ),
+        array( 
+          'key'           => '_min_variation_sale_price',
+          'value'         => 0,
+          'compare'       => '>',
+          'type'          => 'numeric'
+        )
+      ),
+      'orderby' => 'meta_value_num',
+      'order'   => $orderby,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'product_cat',
+          'field' => 'term_id',
+          'terms' => $term_id
+        )
+      )
+    );
+  }
+} else {
   if ($status_product_ids == 'yes') {
     $product_ids = explode(',', $product_ids);
     $args = array(
@@ -400,6 +513,8 @@ if ($card_style == 'festival') : ?>
       )
     );
   }
+}
+
 
   $query = new WP_Query($args);
 
