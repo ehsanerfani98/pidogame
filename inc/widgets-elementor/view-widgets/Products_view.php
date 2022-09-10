@@ -544,7 +544,7 @@ if ($card_style == 'festival') : ?>
 
                         <? if ($rule_title_fa != 'yes' || $rule_title_en != 'yes') : ?>
 
-                          <div class="wrap-content-product mt-2 pb-2">
+                          <div class="wrap-content-product mt-2 px-4 py-3">
 
                             <? if ($rule_title_fa != 'yes') : ?>
                               <div class="title-cart-plswb">
