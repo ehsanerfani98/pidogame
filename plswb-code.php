@@ -224,8 +224,6 @@ function custom_price_format($price, $product)
     } else {
         $regular_price = $product->get_regular_price();
         $sale_price    = $product->get_sale_price();
-
-
         if ($regular_price !== $sale_price && $product->is_on_sale()) {
             $percentage = round(($regular_price - $sale_price) / $regular_price * 100) . '%';
             $percentage_txt = __(' Save', 'woocommerce') . ' ' . $percentage;
@@ -242,7 +240,9 @@ function custom_price_format($price, $product)
                 return $price;
             }
         }
-        $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+
+        // $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
         return $price;
     }
 }
