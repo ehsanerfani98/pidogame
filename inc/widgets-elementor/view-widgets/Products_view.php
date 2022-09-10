@@ -115,24 +115,18 @@ if ($card_style == 'festival') : ?>
           if ($status_product_ids == 'yes') {
             $product_ids = explode(',', $product_ids);
             $args = array(
-              'post_type'        => ['product', 'product_variation'],
+              'post_type'        => ['product','product_variation'],
               'posts_per_page'   => $count,
               'meta_key' => $status_product,
-              'meta_value' => 0,
-              'meta_compare' => '>=',
-              'meta_type' => 'NUMERIC',
               'orderby' => 'meta_value_num',
               'order'   => $orderby,
               'post__in'      => $product_ids,
             );
           } else {
             $args = array(
-              'post_type'        => ['product', 'product_variation'],
+              'post_type'        => ['product','product_variation'],
               'posts_per_page'   => $count,
               'meta_key' => $status_product,
-              'meta_value' => 0,
-              'meta_compare' => '>=',
-              'meta_type' => 'NUMERIC',
               'orderby' => 'meta_value_num',
               'order'   => $orderby,
               'tax_query' => array(
@@ -383,24 +377,18 @@ if ($card_style == 'festival') : ?>
   if ($status_product_ids == 'yes') {
     $product_ids = explode(',', $product_ids);
     $args = array(
-      'post_type'        => ['product', 'product_variation'],
+      'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
-      'meta_value' => 0,
-      'meta_compare' => '>=',
-      'meta_type' => 'NUMERIC',
       'orderby' => 'meta_value_num',
       'order'   => $orderby,
       'post__in'      => $product_ids,
     );
   } else {
     $args = array(
-      'post_type'        => ['product', 'product_variation'],
+      'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
-      'meta_value' => 0,
-      'meta_compare' => '>=',
-      'meta_type' => 'NUMERIC',
       'orderby' => 'meta_value_num',
       'order'   => $orderby,
       'tax_query' => array(
