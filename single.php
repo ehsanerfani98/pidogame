@@ -137,7 +137,7 @@ get_header();
                                                         </div>
                                                     </div>
                                                     <a class="text-dark fs-2 fw-bolder ss02">
-                                                        <h1 class="fs-2 d-inline-block"><?php the_title() ?></h1>
+                                                        <h1 class="fs-2 d-inline-block"><?php substr(the_title(),0,5).'...' ?></h1>
                                                         <?php
                                                         $content = get_post_field('post_content', get_the_ID());
                                                         $countWords =  count(preg_split('~[\p{Z}\p{P}]+~u', strip_tags($content), -1, PREG_SPLIT_NO_EMPTY));
@@ -192,7 +192,7 @@ get_header();
                                                                 <div class="card-xl-stretch me-md-6">
                                                                     <a href="<?php the_permalink() ?>" class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5" style="background-image:url('<?php the_post_thumbnail_url() ?>')"></a>
                                                                     <div class="m-0">
-                                                                        <a href="<?php the_permalink() ?>" class="fs-4 text-dark fw-bolder text-hover-primary text-dark lh-base"><?php the_title() ?></a>
+                                                                        <a href="<?php the_permalink() ?>" class="fs-4 text-dark fw-bolder text-hover-primary text-dark lh-base"><?php substr(the_title(),0,5).'...' ?></a>
                                                                         <div class="fs-6 fw-bolder">
                                                                             <span class="text-muted ss02 mt-3 d-block">در <?php the_time() ?></span>
                                                                         </div>

@@ -804,7 +804,7 @@ function get_products_org()
     while ($loop->have_posts()) {
         $loop->the_post();
 
-        $products[] = ["id" => get_the_ID(), "text" => get_the_title() . " | " . get_the_ID()];
+        $products[] = ["id" => get_the_ID(), "text" => get_substr(the_title(),0,5).'...' . " | " . get_the_ID()];
     }
     wp_reset_postdata();
 
@@ -846,7 +846,7 @@ function get_products()
     while ($loop->have_posts()) {
         $loop->the_post();
 
-        $products[] = ["id" => get_the_ID(), "text" => get_the_title() . " | " . get_the_ID()];
+        $products[] = ["id" => get_the_ID(), "text" => get_substr(the_title(),0,5).'...' . " | " . get_the_ID()];
 
         $variations = new WC_Product_Variable(get_the_ID());
         foreach ($variations->get_children() as  $variation_id) {
@@ -1009,7 +1009,7 @@ function search_data_product()
                         <?php the_post_thumbnail() ?>
                     </div>
                     <div class="d-flex flex-column justify-content-start fw-bold">
-                        <span class="fs-6 fw-bold"><?php the_title(); ?></span>
+                        <span class="fs-6 fw-bold"><?php substr(the_title(),0,5).'...'; ?></span>
                     </div>
                 </a>
             <?php
@@ -1583,14 +1583,3 @@ function get_variation_price_by_id($product_id, $variation_id){
 	return $priceObject;
 }
 
-add_filter('the_title', 'trim_words_by_post_type', 10, 2);
-function trim_words_by_post_type($title, $post_id)
-{
-    $post_type = get_post_type($post_id);
-    if ('product' !== $post_type){
-        return $title;
-    }
-    if(!is_singular( $post_type )){
-        return wp_trim_words($title, 5, ' ... ');
-    }
-}

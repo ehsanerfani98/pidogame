@@ -191,7 +191,7 @@ if ($card_style == 'festival') : ?>
                     </div>
 
                     <div class="contentBox">
-                      <h3 class="text-gray-700"><?php the_title() ?></h3>
+                      <h3 class="text-gray-700"><?php substr(the_title(),0,5).'...' ?></h3>
                       <h2 class="price"><?= number_format($product->get_price()) . ' ' . get_woocommerce_currency_symbol() ?></h2>
                       <a href="<?php the_permalink() ?>" class="buy buy_<?= $wid ?>">افزودن به سبد خرید</a>
                     </div>
@@ -548,7 +548,7 @@ if ($card_style == 'festival') : ?>
 
                             <? if ($rule_title_fa != 'yes') : ?>
                               <div class="title-cart-plswb">
-                                <h4><?php the_title() ?></h4>
+                                <h4><?php substr(the_title(),0,5).'...' ?></h4>
                               </div>
                             <?php endif; ?>
 

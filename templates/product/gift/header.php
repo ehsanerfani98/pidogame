@@ -18,7 +18,7 @@ global $product;
         <div class="overlay-layer opacity-100 d-flex d-lg-none">
             <div class="d-flex flex-grow-1 flex-center py-5 px-5">
                 <div>
-                    <h1 class="text-white"><?php the_title() ?></h1>
+                    <h1 class="text-white"><?php substr(the_title(),0,5).'...' ?></h1>
                     <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
                     <div class="symbol symbol-25px me-2 d-block mt-4">
                         <span class="symbol-label bg-info d-inline-flex">
@@ -63,7 +63,7 @@ global $product;
         <?php get_template_part('templates/product/gift/header-card') ?>
     </div>
     <div class="col-lg-7 col-xl-8 mt-16">
-        <h1 class="text-white"><?php the_title() ?></h1>
+        <h1 class="text-white"><?php substr(the_title(),0,5).'...' ?></h1>
         <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
         <div class="symbol symbol-25px me-2 d-block mt-4">
             <span class="symbol-label bg-info d-inline-flex">
