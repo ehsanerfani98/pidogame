@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="col-lg-6 col-12">
+<div class="col-lg-6 col-6">
 	
 <span class="badge badge-light p-5">
 		<?php
