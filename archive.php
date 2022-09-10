@@ -71,7 +71,7 @@ get_header();
         top: 2.2px;
     }
 
-    .deavice_name {
+    .device_name {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
@@ -79,7 +79,7 @@ get_header();
         flex-wrap: wrap;
     }
 
-    .deavice_name h5 {
+    .device_name h5 {
         font-weight: bold;
         margin: 0;
         font-size: 12px;

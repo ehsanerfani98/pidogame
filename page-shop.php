@@ -43,7 +43,7 @@ get_header();
         height: 15px;
     }
 
-    .deavice_name h4 {
+    .device_name h4 {
         font-weight: bold;
         margin: 0;
     }
@@ -138,7 +138,7 @@ get_header();
                                                             <path d="M216,69.7,32,96V249H216V69.7Z" fill="#f33591"></path>
                                                         </svg>
                                                     </span>
-                                                    <div class="deavice_name">
+                                                    <div class="device_name">
                                                         <h4>Fall Guys</h4>
                                                     </div>
                                                 </div>
