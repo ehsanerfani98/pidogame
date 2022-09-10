@@ -43,7 +43,7 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 
 			<div class="wrap-content-product mt-2 px-4 py-3">
 				<div class="title-cart-plswb">
-					<h4><?= substr(get_the_title(),0,200).'...' ?></h4>
+					<h4><?= substr(get_the_title(),0,150).'...' ?></h4>
 				</div>
 
 				<div class="device-cart-plswb">
