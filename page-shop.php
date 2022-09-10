@@ -125,7 +125,7 @@ get_header();
 
                                             <div class="wrap-content-product">
                                                 <div class="title-cart-plswb">
-                                                    <h4><?php the_title() ?></h4>
+                                                    <h4><?= wp_trim_words(get_the_title(), 5, ' ... '); ?></h4>
                                                 </div>
 
                                                 <div class="device-cart-plswb">

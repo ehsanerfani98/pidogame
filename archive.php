@@ -170,7 +170,7 @@ get_header();
 
                                         <div class="wrap-content-product mt-2 px-4 py-3">
                                             <div class="title-cart-plswb">
-                                                <h4><?php substr(the_title(),0,5).'...' ?></h4>
+                                                <h4><?= wp_trim_words(get_the_title(), 5, ' ... '); ?></h4>
                                             </div>
                                         </div>
                                         <div class="separator separator-solid"></div>
