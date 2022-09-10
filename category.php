@@ -49,8 +49,8 @@ get_header();
         border-top-right-radius: 6px;
     }
 
-    .wrap-content-product {
-        padding: 0.6rem 1rem 1rem 1rem;
+    .wrap-content-product .price{
+        margin: 0.5rem;
     }
 
     .title-cart-plswb h4 {

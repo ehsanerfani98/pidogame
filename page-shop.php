@@ -21,8 +21,8 @@ get_header();
         border-radius: 6px;
     }
 
-    .wrap-content-product {
-        padding: 0.2rem 2.5rem 1.4rem 2.5rem;
+    .wrap-content-product .price{
+        margin: 0.5rem;
     }
 
     .title-cart-plswb h4 {
