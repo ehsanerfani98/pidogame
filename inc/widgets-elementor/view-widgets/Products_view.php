@@ -340,6 +340,7 @@ if ($card_style == 'festival') : ?>
       font-weight: bold;
       margin: 0;
       font-size: 12px;
+      direction: ltr;
     }
 
     .device-cart-plswb {

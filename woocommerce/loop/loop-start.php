@@ -81,6 +81,7 @@ if (!defined('ABSPATH')) {
 		font-weight: bold;
 		margin: 0;
 		font-size: 12px;
+		direction: ltr;
 	}
 
 	.device-cart-plswb {
