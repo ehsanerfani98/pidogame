@@ -218,7 +218,7 @@ function custom_price_format($price, $product)
             $regular_price = $product->get_variation_regular_price('min', true);
             $sale_price = $product->get_variation_regular_price('max', true);
         }
-        $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        $price = '<div class=" fs-5 py-2">' . wc_price($regular_price) . '</div><div class=" fs-5 py-2">' . wc_price($sale_price) . '</div>';
 
         return $price;
     } else {
