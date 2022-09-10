@@ -402,21 +402,10 @@ if ($card_style == 'festival') : ?>
     $args = array(
       'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
-      'meta_query' => array(
-        'relation' => 'OR',
-        array(
-            'key' => '_price',
-            'value' => 0,
-            'compare' => '<=',
-            'type' => 'NUMERIC'
-        ),
-        array(
-            'key' => '_sales_price',
-            'value' => 0,
-            'compare' => '<=',
-            'type' => 'NUMERIC'
-        )
-        ),
+      'meta_key' => '_sale_price',
+'meta_value' => 0,
+'meta_compare' => '>=',
+'meta_type' => 'NUMERIC',
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
