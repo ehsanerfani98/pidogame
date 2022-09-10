@@ -38,9 +38,12 @@ class Products extends \Elementor\Widget_Base
 			)
 		);
 
+		$category[''] = 'همه دسته بندی ها';
+
 		foreach ($categories as $item) {
 			$category[$item->term_id] = $item->name;
 		}
+
 		$args = array(
 			'post_type'        => 'product',
 			'posts_per_page'   => -1,
