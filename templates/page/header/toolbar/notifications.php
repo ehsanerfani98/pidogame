@@ -62,7 +62,7 @@ if ($options['opt-header-notifications-switcher']) :
                                             </span>
                                         </div>
                                         <div class="mb-0 me-2">
-                                            <a role="button" class="fs-6 text-gray-800 text-hover-primary fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_notification_modal" data-bs-notification-id="<?php echo get_the_ID() ?>"><?php substr(the_title(),0,5).'...' ?></a>
+                                            <a role="button" class="fs-6 text-gray-800 text-hover-primary fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_notification_modal" data-bs-notification-id="<?php echo get_the_ID() ?>"><?php the_title() ?></a>
                                             <?php if ($meta['opt-notifications-important'] == true) : ?>
                                                 <span class="svg-icon svg-icon-primary svg-icon-1">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">

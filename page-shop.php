@@ -125,7 +125,7 @@ get_header();
 
                                             <div class="wrap-content-product">
                                                 <div class="title-cart-plswb">
-                                                    <h4><?php substr(the_title(),0,5).'...' ?></h4>
+                                                    <h4><?php the_title() ?></h4>
                                                 </div>
 
                                                 <div class="device-cart-plswb">

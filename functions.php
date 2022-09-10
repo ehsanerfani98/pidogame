@@ -503,7 +503,7 @@ class lastProductsWidget extends WP_Widget
 					</div>
 				</a>
 				<div class="m-0">
-					<a href="<?php the_permalink() ?>" class="text-dark fw-bolder text-hover-primary fs-6"><?php substr(the_title(),0,5).'...' ?></a>
+					<a href="<?php the_permalink() ?>" class="text-dark fw-bolder text-hover-primary fs-6"><?php the_title() ?></a>
 					<span class="badge badge-light-<?php echo $badgeColor ?> ss02"><?php echo $rating ?></span>
 					<span class="text-gray-600 fw-bold d-block pt-1 fs-7 ss02"><?php echo $product->get_price_html() ?></span>
 				</div>
@@ -599,7 +599,7 @@ class sellingProductsWidget extends WP_Widget
 					</div>
 				</a>
 				<div class="m-0">
-					<a href="<?php the_permalink() ?>" class="text-dark fw-bolder text-hover-primary fs-6"><?php substr(the_title(),0,5).'...' ?></a>
+					<a href="<?php the_permalink() ?>" class="text-dark fw-bolder text-hover-primary fs-6"><?php the_title() ?></a>
 					<span class="badge badge-light-<?php echo $badgeColor ?> ss02"><?php echo $rating ?></span>
 					<span class="text-gray-600 fw-bold d-block pt-1 fs-7 ss02"><?php echo $product->get_price_html() ?></span>
 				</div>

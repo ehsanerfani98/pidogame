@@ -53,7 +53,7 @@ class Products extends \Elementor\Widget_Base
 		if ($query->have_posts()) {
 			while ($query->have_posts()) {
 				$query->the_post();
-				$product_ids[get_the_ID()] = get_substr(the_title(),0,5).'...';
+				$product_ids[get_the_ID()] = get_the_title();
 			}
 			wp_reset_postdata();
 		}

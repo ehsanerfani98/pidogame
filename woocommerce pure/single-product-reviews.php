@@ -31,7 +31,7 @@ if ( ! comments_open() ) {
 			$count = $product->get_review_count();
 			if ( $count && wc_review_ratings_enabled() ) {
 				/* translators: 1: reviews count 2: product name */
-				$reviews_title = sprintf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'woocommerce' ) ), esc_html( $count ), '<span>' . get_substr(the_title(),0,5).'...' . '</span>' );
+				$reviews_title = sprintf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'woocommerce' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
 				echo apply_filters( 'woocommerce_reviews_title', $reviews_title, $count, $product ); // WPCS: XSS ok.
 			} else {
 				esc_html_e( 'Reviews', 'woocommerce' );
@@ -72,7 +72,7 @@ if ( ! comments_open() ) {
 				$commenter    = wp_get_current_commenter();
 				$comment_form = array(
 					/* translators: %s is product title */
-					'title_reply'         => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_substr(the_title(),0,5).'...' ),
+					'title_reply'         => have_comments() ? esc_html__( 'Add a review', 'woocommerce' ) : sprintf( esc_html__( 'Be the first to review &ldquo;%s&rdquo;', 'woocommerce' ), get_the_title() ),
 					/* translators: %s is product title */
 					'title_reply_to'      => esc_html__( 'Leave a Reply to %s', 'woocommerce' ),
 					'title_reply_before'  => '<span id="reply-title" class="comment-reply-title">',
