@@ -416,7 +416,7 @@ if ($card_style == 'festival') : ?>
             'compare' => '<=',
             'type' => 'NUMERIC'
         )
-    )
+        ),
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
