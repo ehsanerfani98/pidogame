@@ -27,7 +27,7 @@ if (empty($product) || !$product->is_visible()) {
 
 $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 ?>
-<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-8">
+<div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-8">
 
 	<a href="<?php the_permalink() ?>">
 		<div class="wrap-cart-plswb card">
