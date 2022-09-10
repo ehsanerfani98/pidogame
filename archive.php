@@ -168,7 +168,7 @@ get_header();
                                             <?php the_post_thumbnail() ?>
                                         </div>
 
-                                        <div class="wrap-content-product mt-2 pb-2">
+                                        <div class="wrap-content-product mt-2 px-2 pb-2">
                                             <div class="title-cart-plswb">
                                                 <h4><?php the_title() ?></h4>
                                             </div>
