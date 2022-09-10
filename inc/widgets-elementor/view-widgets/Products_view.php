@@ -390,7 +390,7 @@ if ($card_style == 'festival') : ?>
     .sale-plswb {
       position: absolute;
       top: 10px;
-      z-index: 10;
+      z-index: 2;
       left: 10px;
       width: 60px;
       height: 35px;
