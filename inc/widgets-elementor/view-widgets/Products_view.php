@@ -377,7 +377,7 @@ if ($card_style == 'festival') : ?>
   if ($status_product_ids == 'yes') {
     $product_ids = explode(',', $product_ids);
     $args = array(
-      'post_type'        => 'product',
+      'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
       'orderby' => 'meta_value_num',
@@ -386,7 +386,7 @@ if ($card_style == 'festival') : ?>
     );
   } else {
     $args = array(
-      'post_type'        => 'product',
+      'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
       'meta_key' => $status_product,
       'orderby' => 'meta_value_num',
