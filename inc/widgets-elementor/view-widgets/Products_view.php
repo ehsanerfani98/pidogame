@@ -491,7 +491,7 @@ if ($card_style == 'festival') : ?>
                   <?php endif; ?>
 
                   <? if ($status_slider == 'yes') : ?>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-5">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-5">
                     <?php endif; ?>
 
                     <a href="<?php the_permalink() ?>">
