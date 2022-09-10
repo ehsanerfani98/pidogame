@@ -118,8 +118,8 @@ if ($card_style == 'festival') : ?>
               'post_type'        => ['product','product_variation'],
               'posts_per_page'   => $count,
               'meta_key' => $status_product,
-              // 'orderby' => 'meta_value_num',
-              // 'order'   => $orderby,
+              'orderby' => 'meta_value_num',
+              'order'   => $orderby,
               'post__in'      => $product_ids,
             );
           } else {
@@ -127,8 +127,8 @@ if ($card_style == 'festival') : ?>
               'post_type'        => ['product','product_variation'],
               'posts_per_page'   => $count,
               'meta_key' => $status_product,
-              // 'orderby' => 'meta_value_num',
-              // 'order'   => $orderby,
+              'orderby' => 'meta_value_num',
+              'order'   => $orderby,
               'tax_query' => array(
                 array(
                   'taxonomy' => 'product_cat',
@@ -379,18 +379,46 @@ if ($card_style == 'festival') : ?>
     $args = array(
       'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
-      'meta_key' => $status_product,
-      // 'orderby' => 'meta_value_num',
-      // 'order'   => $orderby,
+      'meta_query'     => array(
+        'relation' => 'OR',
+        array( // Simple products type
+            'key'           => '_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        ),
+        array( // Variable products type
+            'key'           => '_min_variation_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        )
+        ),
+      'orderby' => 'meta_value_num',
+      'order'   => $orderby,
       'post__in'      => $product_ids,
     );
   } else {
     $args = array(
       'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
-      'meta_key' => $status_product,
-      // 'orderby' => 'meta_value_num',
-      // 'order'   => $orderby,
+      'meta_query'     => array(
+        'relation' => 'OR',
+        array( // Simple products type
+            'key'           => '_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        ),
+        array( // Variable products type
+            'key'           => '_min_variation_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        )
+        ),
+      'orderby' => 'meta_value_num',
+      'order'   => $orderby,
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
