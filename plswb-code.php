@@ -1583,3 +1583,14 @@ function get_variation_price_by_id($product_id, $variation_id){
 	return $priceObject;
 }
 
+add_filter('the_title', 'trim_words_by_post_type', 10, 2);
+function trim_words_by_post_type($title, $post_id)
+{
+    $post_type = get_post_type($post_id);
+    if ('product' !== $post_type){
+        return $title;
+    }
+    if(!is_singular( $post_type )){
+        return wp_trim_words($title, 5, ' ... ');
+    }
+}
