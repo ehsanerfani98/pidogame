@@ -379,21 +379,7 @@ if ($card_style == 'festival') : ?>
     $args = array(
       'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
-      'meta_query'     => array(
-        'relation' => 'OR',
-        array( // Simple products type
-            'key'           => '_sale_price',
-            'value'         => 0,
-            'compare'       => '>',
-            'type'          => 'numeric'
-        ),
-        array( // Variable products type
-            'key'           => '_min_variation_sale_price',
-            'value'         => 0,
-            'compare'       => '>',
-            'type'          => 'numeric'
-        )
-        ),
+      'meta_key' => $status_product,
       'orderby' => 'meta_value_num',
       'order'   => $orderby,
       'post__in'      => $product_ids,
@@ -402,10 +388,10 @@ if ($card_style == 'festival') : ?>
     $args = array(
       'post_type'        => ['product','product_variation'],
       'posts_per_page'   => $count,
-      'meta_key' => '_sale_price',
-'meta_value' => 0,
-'meta_compare' => '>=',
-'meta_type' => 'NUMERIC',
+      'meta_query' => WC()->query->get_meta_query(),
+    'post__in' => array_merge(array(0), wc_get_product_ids_on_sale()),
+      'orderby' => 'meta_value_num',
+      'order'   => $orderby,
       'tax_query' => array(
         array(
           'taxonomy' => 'product_cat',
