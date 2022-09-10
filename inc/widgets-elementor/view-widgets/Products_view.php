@@ -406,13 +406,13 @@ if ($card_style == 'festival') : ?>
         'relation' => 'OR',
         array(
             'key' => '_price',
-            'value' => 5,
+            'value' => 0,
             'compare' => '<=',
             'type' => 'NUMERIC'
         ),
         array(
             'key' => '_sales_price',
-            'value' => 5,
+            'value' => 0,
             'compare' => '<=',
             'type' => 'NUMERIC'
         )
