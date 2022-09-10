@@ -229,18 +229,18 @@ function custom_price_format($price, $product)
             $percentage_txt = __(' Save', 'woocommerce') . ' ' . $percentage;
 
             // $price = '<del class="badge badge-danger">' . wc_price($regular_price) . '</del> <ins>' . wc_price($sale_price) . $percentage_txt . '</ins>';
-            $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+            $price = '<div class=" fs-5 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 py-2">' . wc_price($sale_price) . '</div>';
         } else {
             if ($sale_price == 0) {
                 if ($regular_price == 0) {
-                    $price = '<div class=" fs-5 px-4 py-2">' . 'رایگان' . '</div>';
+                    $price = '<div class=" fs-5 py-2">' . 'رایگان' . '</div>';
                     return $price;
                 }
-                $price = '<div class=" fs-5 px-4 py-2">' . wc_price($regular_price) . '</div>';
+                $price = '<div class=" fs-5 py-2">' . wc_price($regular_price) . '</div>';
                 return $price;
             }
         }
-        $price = '<div class=" fs-5 px-4 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 px-4 py-2">' . wc_price($sale_price) . '</div>';
+        $price = '<div class=" fs-5 py-2"><del>' . wc_price($regular_price) . ' </del>  </div><div class="badge badge-success fs-5 py-2">' . wc_price($sale_price) . '</div>';
         return $price;
     }
 }
