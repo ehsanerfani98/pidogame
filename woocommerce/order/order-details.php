@@ -45,7 +45,7 @@ if ( $show_downloads ) {
 
 <h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
 
-<table class="order_details table border table-striped">
+<table class="table table-bordered">
 
 	<thead>
 		<tr>
