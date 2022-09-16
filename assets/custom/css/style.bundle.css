@@ -303,3 +303,11 @@
 .wrap-cart-plswb{
 	overflow: hidden !important;
 }
+
+.ums-form-wrap-field {
+    padding: unset;
+}
+
+.ums-content-login-form.ums-theme-theme-7 {
+    padding: 0 1rem;
+}
