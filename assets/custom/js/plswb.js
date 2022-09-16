@@ -77,3 +77,4 @@ function getslug(item) {
 }
 
 
+$('.wc-forward').addClass('btn btn-danger');
