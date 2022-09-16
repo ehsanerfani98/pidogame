@@ -76,10 +76,8 @@ if ( $show_downloads ) {
 
 		do_action( 'woocommerce_order_details_after_order_table_items', $order );
 		?>
-	</tbody>
 
-	<tfoot>
-		<?php
+<?php
 		foreach ( $order->get_order_item_totals() as $key => $total ) {
 			?>
 				<tr>
@@ -95,6 +93,10 @@ if ( $show_downloads ) {
 				<td><?php echo wp_kses_post( nl2br( wptexturize( $order->get_customer_note() ) ) ); ?></td>
 			</tr>
 		<?php endif; ?>
+	</tbody>
+
+	<tfoot>
+		
 	</tfoot>
 </table>
 
