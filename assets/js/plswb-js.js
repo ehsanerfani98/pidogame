@@ -221,3 +221,4 @@ jQuery('#check_order').click(function () {
 });
 
 $('.wc-forward').addClass('btn btn-danger').removeClass('button');
+$('.woocommerce-table--custom-fields').addClass('table table-striped table-rounded border').removeClass('woocommerce-table shop_table ');
