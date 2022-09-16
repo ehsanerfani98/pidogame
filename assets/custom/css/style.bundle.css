@@ -305,9 +305,9 @@
 }
 
 .ums-form-wrap-field {
-    padding: unset;
+    padding: unset !important;
 }
 
 .ums-content-login-form.ums-theme-theme-7 {
-    padding: 0 1rem;
+    padding: 0 1rem !important;
 }
