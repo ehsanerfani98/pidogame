@@ -115,3 +115,12 @@ p.woo-wallet-price {
 svg#ums-toggle-password {
     margin: .5rem 0 !important;
 }
+
+h2.woocommerce-column__title {
+    margin-bottom: 1rem !important;
+}
+
+address p{
+    padding: 1rem;
+    border-bottom: 1px dashed #ccc;
+}
