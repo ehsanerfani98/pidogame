@@ -39,7 +39,7 @@ if ( $show_downloads ) {
 	);
 }
 ?>
-<section class="woocommerce-order-details card bg-gray-100">
+<section class="woocommerce-order-details card ">
 	<div class="card-body">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
