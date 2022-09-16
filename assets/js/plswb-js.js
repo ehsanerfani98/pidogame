@@ -220,3 +220,4 @@ jQuery('#check_order').click(function () {
     });
 });
 
+$('.wc-forward').addClass('btn btn-danger');
