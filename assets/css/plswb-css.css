@@ -122,5 +122,5 @@ h2.woocommerce-column__title {
 
 address p{
     padding: 1rem;
-    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed #ccc;
 }
