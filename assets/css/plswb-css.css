@@ -102,3 +102,12 @@ p.woo-wallet-price {
     font-size: 24px;
     color: #f1416c;
 }
+
+
+.ums-form-wrap-field {
+    padding: unset !important;
+}
+
+.ums-content-login-form {
+    padding: 0 1rem !important;
+}
