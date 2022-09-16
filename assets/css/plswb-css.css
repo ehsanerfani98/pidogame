@@ -111,3 +111,7 @@ p.woo-wallet-price {
 .ums-content-login-form {
     padding: 0 1rem !important;
 }
+
+svg#ums-toggle-password {
+    margin: .5rem 0 !important;
+}
