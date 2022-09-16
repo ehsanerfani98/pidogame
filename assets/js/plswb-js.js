@@ -222,3 +222,5 @@ jQuery('#check_order').click(function () {
 
 $('.wc-forward').addClass('btn btn-danger').removeClass('button');
 $('.woocommerce-table--custom-fields').addClass('table table-striped table-rounded border gy-7 gs-7').removeClass('woocommerce-table shop_table ');
+$('.order_details').addClass('bg-success rounded p-5 text');
+$('.wc-bacs-bank-details').addClass('p-5 bg-gray-100 rounded');
