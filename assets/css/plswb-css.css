@@ -133,8 +133,7 @@ address {
 .woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status{
     background: #c4ffb1 !important;
     color: #47b523;
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 500 !important;
-    border-radius: 15px;
-    padding: .2rem .8rem!important;
+    border-radius: 15px !important;
 }
