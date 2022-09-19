@@ -22,6 +22,7 @@ if (!wp_doing_ajax()) {
 	do_action('woocommerce_review_order_before_payment');
 }
 ?>
+
 <div id="payment" class="woocommerce-checkout-payment card text-gray-700">
 	<?php if (WC()->cart->needs_payment()) : ?>
 		<ul class="wc_payment_methods payment_methods methods">

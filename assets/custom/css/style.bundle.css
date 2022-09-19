@@ -301,3 +301,7 @@
 .wrap-cart-plswb{
 	overflow: hidden !important;
 }
+
+#payment{
+	background: unset;
+}
