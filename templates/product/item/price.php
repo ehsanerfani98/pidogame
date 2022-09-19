@@ -250,7 +250,7 @@ $type = $product->get_type();
         <?php endif;
         break;
     case 'variable': ?>
-        <div class="scroll h-400px pe-5 bg-gray-100 p-4">
+        <div class="scroll h-400px pe-5 bg-green-100 p-4">
             <?php $variations = $product->get_available_variations();
             foreach ($variations as $variation) :
                 $description = $variation['variation_description'];
