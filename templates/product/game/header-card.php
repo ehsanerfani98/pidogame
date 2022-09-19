@@ -62,7 +62,7 @@ switch (true) {
             </div>
             <div class="separator separator-dashed my-5"></div>
             <div class="mt-2 mb-4 d-flex justify-content-between" style="flex-wrap: wrap;">
-                <span>ژانر : </span>
+                <span>ژانر:</span>
                 <span class="text-gray-700 lh-lg badge badge-light-dark" style="flex-wrap: wrap; flex-direction: row-reverse;">
                     <?php if ($product->get_attribute('genre')) : ?>
                         <?php
@@ -80,7 +80,7 @@ switch (true) {
                 </span>
             </div>
             <div class="mt-2 d-flex justify-content-between">
-                <span>سال انتشار : </span>
+                <span>سال انتشار:</span>
                 <span class="text-gray-700 lh-lg badge badge-light-dark">
                     <?php if ($product->get_attribute('yearpublish')) : ?>
                         <?php echo str_replace(',', '،', $product->get_attribute('yearpublish')) ?>
@@ -88,11 +88,11 @@ switch (true) {
                 </span>
             </div>
             <div class="mt-2 d-flex justify-content-between">
-                <span>شرکت سازنده : </span>
+                <span>شرکت سازنده:</span>
                 <span class="text-gray-700 lh-lg badge badge-light-dark"><?php echo str_replace(',', '، ', $product->get_attribute('producer')) ?></span>
             </div>
             <div class="mt-2 d-flex justify-content-between">
-                <span>پلتفرم : </span>
+                <span>پلتفرم:</span>
                 <span class="text-gray-700 lh-lg badge badge-light-dark">
                     <?php if ($product->get_attribute('device')) : ?>
                         <?php echo str_replace(',', '،', $product->get_attribute('device')) ?>
@@ -102,7 +102,7 @@ switch (true) {
 
             <?php if ($product->get_sku()) : ?>
                 <div class="mt-2 mb-5 d-flex justify-content-between">
-                    <span>شناسه محصول : </span>
+                    <span>شناسه محصول:</span>
                     <span class="text-gray-700 lh-lg badge badge-light-dark"><?php echo $product->get_sku() ?></span>
                 </div>
             <?php endif ?>
