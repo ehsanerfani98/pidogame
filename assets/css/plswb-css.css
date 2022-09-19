@@ -137,9 +137,16 @@ address {
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
-.woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status{
+.woocommerce-orders-table__row--status-on-hold .woocommerce-orders-table__cell-order-status{
     background: #fffbb1 !important;
     color: #c5bc0d;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 15px !important;
+}
+.woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status{
+    background: #b1d7ff !important;
+    color: #2869af;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
