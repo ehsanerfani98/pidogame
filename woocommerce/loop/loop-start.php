@@ -69,7 +69,7 @@ if (!defined('ABSPATH')) {
 		top: 2.2px;
 	}
 
-	.woocommerce-products-header__title .page-title{
+	.page-title{
 		margin-bottom: 2rem;
 	}
 
