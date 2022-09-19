@@ -310,3 +310,7 @@ h2.widgettitle {
     font-size: 1.2rem !important;
     font-weight: 700 !important;
 }
+
+.woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status{
+	background: greenyellow !important;
+}
