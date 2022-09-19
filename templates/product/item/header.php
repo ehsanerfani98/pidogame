@@ -48,8 +48,10 @@ global $product;
     <div class="col-lg-5 col-xl-4">
         <?php get_template_part('templates/product/item/header-card') ?>
     </div>
-    <div class="col-lg-7 col-xl-8 mt-16 card">
-        <h1 class="text-white"><?php the_title() ?></h1>
+    <div class="col-lg-7 col-xl-8 mt-16">
+        <div class="card">
+            <div class="card-body">
+            <h1 class="text-white"><?php the_title() ?></h1>
         <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
         <div class="symbol symbol-25px me-2 d-block mt-4">
             <span class="symbol-label bg-info d-inline-flex">
@@ -61,5 +63,7 @@ global $product;
         </div>
         <p class="lh-xl pt-10 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
         <?php get_template_part('templates/product/item/price') ?>
+            </div>
+        </div>
     </div>
 </div>

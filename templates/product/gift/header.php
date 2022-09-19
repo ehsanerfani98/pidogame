@@ -62,7 +62,9 @@ global $product;
     <div class="col-lg-5 col-xl-4">
         <?php get_template_part('templates/product/gift/header-card') ?>
     </div>
-    <div class="col-lg-7 col-xl-8 mt-16 card">
+    <div class="col-lg-7 col-xl-8 mt-16">
+      <div class="card">
+        <div class="card-body">
         <h1 class="text-white"><?php the_title() ?></h1>
         <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
         <div class="symbol symbol-25px me-2 d-block mt-4">
@@ -89,5 +91,7 @@ global $product;
                 </div>
             </div>
         </div>
+        </div>
+      </div>
     </div>
 </div>
