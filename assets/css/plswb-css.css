@@ -139,7 +139,7 @@ address {
 }
 .woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status{
     background: #fffbb1 !important;
-    color: #eadf19;
+    color: #c5bc0d;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
