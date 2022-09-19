@@ -72,7 +72,7 @@ global $product;
                 <i class="bi bi-mouse3-fill fs-8 text-white"></i>
             </span>
             <?php if ($product->get_attribute('device')) : ?>
-                <span class="text-white ms-2"><?php echo str_replace(',', '،', $product->get_attribute('device')) ?></span>
+                <span class="text-gray-700 ms-2"><?php echo str_replace(',', '،', $product->get_attribute('device')) ?></span>
             <?php endif ?>
         </div>
         <p class="lh-xl pt-10 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
