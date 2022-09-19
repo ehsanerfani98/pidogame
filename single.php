@@ -91,7 +91,7 @@ get_header();
                                 <!-- <div class="card-body p-lg-20 py-lg-10"> -->
                                     <div class="d-flex flex-column flex-xl-row">
 
-                                        <div class="flex-lg-row-fluid me-xl-15">
+                                        <div class="flex-lg-row-fluid me-xl-5">
                                             <div class="card">
                                                 <div class="card-body">
                                                 <div class="mb-17">
@@ -288,7 +288,7 @@ get_header();
                                            
                                         </div>
 
-                                        <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10 list-unstyled">
+                                        <div class="flex-column flex-lg-row-auto w-100 w-xl-350px mb-10 list-unstyled">
                                         <div class="card">
                                             <div class="card-body">
                                             <?php if (is_active_sidebar('blog-sidebar')) : ?>
