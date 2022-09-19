@@ -154,3 +154,7 @@ address {
 .woo-wallet-content-h3{
     font-size: 14px !important;
 }
+
+.woo-wallet-sidebar ul:last-child{
+    display: none !important;
+}
