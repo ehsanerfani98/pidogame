@@ -305,3 +305,8 @@
 #payment{
 	background: unset;
 }
+
+h2.widgettitle {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
