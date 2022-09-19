@@ -162,3 +162,7 @@ address {
 .wishlist-title-container{
     display: none !important;
 }
+
+.ums-edit-profile-tab-setting ul li:last-child{
+    display: none !important;
+}
