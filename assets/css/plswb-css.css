@@ -155,6 +155,6 @@ address {
     font-size: 14px !important;
 }
 
-.woo-wallet-sidebar ul:last-child{
+.woo-wallet-sidebar ul li:last-child{
     display: none !important;
 }
