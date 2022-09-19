@@ -19,8 +19,8 @@ global $product;
                                     </svg>
                                 </span>
                                 <span class="d-flex flex-column align-items-start">
-                                    <span class="fs-4 fw-bolder">توضیحات بازی</span>
-                                    <span class="fs-7">Game Description</span>
+                                    <span class="fs-4 fw-bolder">توضیحات محصول</span>
+                                    <span class="fs-7">Description</span>
                                 </span>
                             </a>
                         </li>
