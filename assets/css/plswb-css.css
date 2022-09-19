@@ -129,3 +129,7 @@ address p {
 address {
     padding: 1rem !important;
 }
+
+.woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status{
+	background: greenyellow !important;
+}
