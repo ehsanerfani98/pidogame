@@ -135,7 +135,6 @@ address {
     color: #47b523;
     font-size: 14px;
     font-weight: 500 !important;
-    display: inline-block;
-    border-radius: 1510px;
+    border-radius: 15px;
     padding: .2rem .8rem!important;
 }
