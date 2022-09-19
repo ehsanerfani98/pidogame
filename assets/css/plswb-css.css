@@ -158,3 +158,7 @@ address {
 .woo-wallet-sidebar ul li:last-child{
     display: none !important;
 }
+
+.wishlist-title-container{
+    display: none !important;
+}
