@@ -73,6 +73,22 @@ if (!defined('ABSPATH')) {
 		margin-bottom: 1.5rem;
 	}
 
+	.sale-plswb {
+      position: absolute;
+      top: 10px;
+      z-index: 1 !important;
+      left: 10px;
+      width: 60px;
+      height: 35px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      border: 2px solid #ffffff;
+    }
+
 	.device_name {
 		display: flex;
 		flex-direction: row-reverse;

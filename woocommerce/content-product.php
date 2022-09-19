@@ -32,7 +32,44 @@ $meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 	<a href="<?php the_permalink() ?>">
 		<div class="wrap-cart-plswb card">
 
+		<? if ($rule_percent != 'yes') : ?>
+                          <?php
+                          if ($product->is_type('simple')) {
+                            $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
+                            if ($percentage != 0 && $percentage != 100) :
+                          ?>
+                              <div class="sale-plswb bg-danger text-white">
+                                <?= $percentage . '%'; ?>
+                              </div>
+                            <?php
+                            endif;
+                          } else {
+                            if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
+                              foreach ($product->get_available_variations() as $variation) {
+                                if ($variation['variation_is_active']) {
+                                  $variationProduct = new WC_Product_Variation($variation['variation_id']);
+                                  if ($variationProduct->is_on_sale()) {
+                                    $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
+                                    $percents[] = $percentage;
+                                  }
+                                }
+                              }
 
+                              $percentage = max(array_unique($percents));
+                              unset($percents);
+                            }
+                            if ($percentage != 0) :
+                            ?>
+                              <div class="sale-plswb bg-danger text-white">
+                                <?= $percentage . '%'; ?>
+                              </div>
+                          <?php
+                            endif;
+                          }
+                          ?>
+                        <?php endif; ?>
+
+						
 			<div class="image-cart-plswb">
 				<?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
 					<?php the_post_thumbnail() ?>
