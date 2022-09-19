@@ -131,5 +131,11 @@ address {
 }
 
 .woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status{
-	background: greenyellow !important;
+    background: #c4ffb1 !important;
+    color: #47b523;
+    font-size: 14px;
+    font-weight: 500 !important;
+    display: inline-block;
+    border-radius: 1510px;
+    padding: .2rem .8rem!important;
 }
