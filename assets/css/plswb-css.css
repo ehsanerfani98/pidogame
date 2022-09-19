@@ -170,3 +170,7 @@ address {
 .d-block.d-xl-flex.border.border-gray-300.border-dashed.rounded.p-6.mb-6.position-relative.bg-hover-light-dark.border-hover-primary {
     width: 96% !important;
 }
+
+a[href="https://css-tricks.com"] {
+    
+}
