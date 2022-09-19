@@ -281,11 +281,7 @@ get_header();
                                                 </div>
                                             <?php endif ?>
                                         </div>
-                                        <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10 list-unstyled">
-                                            <?php if (is_active_sidebar('blog-sidebar')) : ?>
-                                                <?php dynamic_sidebar('blog-sidebar') ?>
-                                            <?php endif; ?>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                             </div>
