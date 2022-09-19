@@ -69,6 +69,10 @@ if (!defined('ABSPATH')) {
 		top: 2.2px;
 	}
 
+	.woocommerce-products-header__title .page-title{
+		margin-bottom: 5px;
+	}
+
 	.device_name {
 		display: flex;
 		flex-direction: row-reverse;
