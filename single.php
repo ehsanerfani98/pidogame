@@ -87,11 +87,14 @@ get_header();
                             <ul class="breadcrumb breadcrumb-line fw-bold fs-7 mb-8">
                                 <?php if (function_exists('bcn_display')) bcn_display() ?>
                             </ul>
-                            <div class="card">
-                                <div class="card-body p-lg-20 py-lg-10">
+                            <!-- <div class="card"> -->
+                                <!-- <div class="card-body p-lg-20 py-lg-10"> -->
                                     <div class="d-flex flex-column flex-xl-row">
+
                                         <div class="flex-lg-row-fluid me-xl-15">
-                                            <div class="mb-17">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                <div class="mb-17">
                                                 <div class="mb-8">
                                                     <div class="d-flex flex-wrap mb-6">
                                                         <div class="me-9 my-1">
@@ -280,11 +283,24 @@ get_header();
                                                     </div>
                                                 </div>
                                             <?php endif ?>
+                                                </div>
+                                            </div>
+                                           
                                         </div>
-                                      
+
+                                        <div class="flex-column flex-lg-row-auto w-100 w-xl-300px mb-10 list-unstyled">
+                                        <div class="card">
+                                            <div class="card-body">
+                                            <?php if (is_active_sidebar('blog-sidebar')) : ?>
+                                                <?php dynamic_sidebar('blog-sidebar') ?>
+                                            <?php endif; ?>
+                                            </div>
+                                        </div>
+                                        </div>
+
                                     </div>
-                                </div>
-                            </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
                     <?php endwhile;
                     endif ?>
                 </div>
