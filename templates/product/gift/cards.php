@@ -48,7 +48,7 @@ foreach ($product->get_available_variations() as $variation) {
                     </select>
                 </div>
             <?php endif ?>
-            <div class="col-9 col-xl-3 mt-3 mt-xl-0">
+            <!-- <div class="col-9 col-xl-3 mt-3 mt-xl-0">
                 <div class="position-relative">
                     <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -58,7 +58,7 @@ foreach ($product->get_available_variations() as $variation) {
                     </span>
                     <input type="text" class="gift-cards-search form-control form-control-solid ps-10 ss02" placeholder="جستجو در گیفت کارت ها">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
