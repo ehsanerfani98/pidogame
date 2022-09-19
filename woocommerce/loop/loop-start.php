@@ -70,7 +70,7 @@ if (!defined('ABSPATH')) {
 	}
 
 	.woocommerce-products-header__title .page-title{
-		margin-bottom: 5px;
+		margin-bottom: 2rem;
 	}
 
 	.device_name {
