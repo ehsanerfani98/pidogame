@@ -70,7 +70,7 @@ if (!defined('ABSPATH')) {
 	}
 
 	.page-title{
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.device_name {
