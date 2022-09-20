@@ -97,6 +97,11 @@
                 <?php endif; ?>
             </div>
             <!--end::Content-->
+
+            <div>
+                <a href="" class="btn btn-block btn-primary">سوالات متداول</a>
+            </div>
+
         </div>
         <!--end::Body-->
     </div>
