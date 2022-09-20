@@ -142,7 +142,7 @@ if ($options['opt-header-notifications-switcher']) :
                                         <div class="d-flex align-items-center">
                                   
                                             <div class="mb-0 me-2">
-                                                <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
+                                                <a href="<?= home_url( 'my-account/view-order/' ).$note['id'] ?>" class="fs-6 text-gray-800 text-hover-primary fw-bold"><?= $note['content'] ?></a>
                                             </div>
                                         </div>
                                         <span class="badge badge-light fs-8"><?= plswb_get_date($note['date']) ?></span>
