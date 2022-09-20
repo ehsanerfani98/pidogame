@@ -22,23 +22,7 @@
         <div class="card-body" id="kt_help_body">
             <!--begin::Content-->
             <div id="kt_help_scroll" class="hover-scroll-overlay-y" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_help_body" data-kt-scroll-dependencies="#kt_help_header" data-kt-scroll-offset="5px">
-                <!--begin::Support-->
-                <div class="rounded border border-dashed border-gray-300 p-6 p-lg-8 mb-10">
-                    <!--begin::Heading-->
-                    <h2 class="fw-bolder mb-5">پشتیبانی فروشگاه
-                        <a href="#" class="">پیدوگیم</a>
-                    </h2>
-                    <!--end::Heading-->
-                    <!--begin::Description-->
-                    <div class="fs-5 fw-bold mb-5">
-                        <span class="text-gray-500">از طریق تلگرام با پشتیبانی آنلاین پیدوگیم در ارتباط باشید تا در سریع ترین زمان ممکن پاسخگوی شما باشیم.</span>
-                    </div>
-                    <!--end::Description-->
-                    <!--begin::Link-->
-                    <a href="#" class="btn btn-lg explore-btn-primary w-100">ارسال پیام</a>
-                    <!--end::Link-->
-                </div>
-                <!--end::Support-->
+               
 
                 <?php if (get_option('pidogame_framework')['help_item_wrap']) : ?>
                     <?php foreach (get_option('pidogame_framework')['help_item_wrap'] as $item) :
