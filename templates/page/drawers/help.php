@@ -98,7 +98,7 @@
             </div>
             <!--end::Content-->
 
-            <div>
+            <div class="row">
                 <a href="" class="btn btn-block btn-primary">سوالات متداول</a>
             </div>
 
