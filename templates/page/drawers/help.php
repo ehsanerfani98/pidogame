@@ -22,7 +22,7 @@
         <div class="card-body" id="kt_help_body">
             <!--begin::Content-->
             <div id="kt_help_scroll" class="hover-scroll-overlay-y" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_help_body" data-kt-scroll-dependencies="#kt_help_header" data-kt-scroll-offset="5px">
-               
+
 
                 <?php if (get_option('pidogame_framework')['help_item_wrap']) : ?>
                     <?php foreach (get_option('pidogame_framework')['help_item_wrap'] as $item) :
@@ -97,10 +97,11 @@
                 <?php endif; ?>
             </div>
             <!--end::Content-->
-
-            <div class="row">
-                <a href="" class="btn btn-block btn-primary">سوالات متداول</a>
-            </div>
+            <?php if (get_option('pidogame_framework')['faq_title']) : ?>
+                <div class="row">
+                    <a href="" class="btn btn-block btn-primary"><?= get_option('pidogame_framework')['faq_title'] ?></a>
+                </div>
+            <?php endif; ?>
 
         </div>
         <!--end::Body-->

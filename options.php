@@ -476,7 +476,6 @@ if (class_exists('CSF')) {
 		)
 	));
 
-
 	// Create alert section
 	CSF::createSection($prefix, array(
 		'id'			=>	'plswb_help_menu',
@@ -559,6 +558,27 @@ if (class_exists('CSF')) {
 				'type'  => 'link',
 				'title' => 'لینک',
 			),
+		)
+	));
+
+	// Create faq section
+	CSF::createSection($prefix, array(
+		'id'			=>	'plswb_faq',
+		'title'			=>	'سوالات متداول',
+		'fields'		=>	array(
+			
+			array(
+				'id'    => 'faq_title',
+				'type'  => 'text',
+				'title' => 'متن دکمه',
+			),
+
+			array(
+				'id'    => 'faq_link',
+				'type'  => 'link',
+				'title' => 'لینک',
+			),
+
 		)
 	));
 }
