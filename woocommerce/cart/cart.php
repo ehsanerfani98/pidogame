@@ -108,7 +108,7 @@ do_action('woocommerce_before_cart'); ?>
 			white-space: nowrap;
 		}
 
-		.woocommerce-cart-form__cart-item .cart_item{
+		.cart_item{
 			text-align: center !important;
 		}
 
