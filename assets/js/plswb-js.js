@@ -227,7 +227,7 @@ $('.woocommerce-bacs-bank-details').addClass('p-5 bg-gray-100 rounded');
 
 $('.term-description').addClass('card');
 
-$('input[required]').on('invalid', function() {
-    this.setCustomValidity("پر کردن این فیلد الزامی است");
-});
+// $('input[required]').on('invalid', function() {
+//     this.setCustomValidity("پر کردن این فیلد الزامی است");
+// });
 
