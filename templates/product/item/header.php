@@ -68,7 +68,7 @@ global $product;
     </div>
 </div>
 
-<div class="d-lg-none d-xl-none d-flex row px-12 position-relative" style="margin-top: -160px">
+<div class="d-lg-none d-xl-none d-flex row px-12 position-relative">
     <div class="col-lg-7 col-xl-8 mt-16">
         <?php get_template_part('templates/product/item/price') ?>
     </div>
