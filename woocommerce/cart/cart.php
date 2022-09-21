@@ -113,7 +113,7 @@ do_action('woocommerce_before_cart'); ?>
 			content: "";
 		}
 		td:nth-of-type(2):before {
-			content: "تصویر";
+			content: "";
 		}
 		td:nth-of-type(3):before {
 			content: "محصول";
