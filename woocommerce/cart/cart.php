@@ -70,67 +70,66 @@ do_action('woocommerce_before_cart'); ?>
 		background: #0b95e6 !important;
 	}
 
-	@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+	@media only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px) {
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
+		table,
+		thead,
+		tbody,
+		th,
+		td,
+		tr {
+			display: block;
+		}
+
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		tr {
+			border: 1px solid #ccc;
+		}
+
+		td {
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+
+		td:nth-of-type(1):before {
+			content: "محصول";
+		}
+
+		td:nth-of-type(2):before {
+			content: "قیمت";
+		}
+
+		td:nth-of-type(3):before {
+			content: "تعداد";
+		}
+
+		td:nth-of-type(4):before {
+			content: "جمع جزء";
+		}
 	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-	
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-
-            /*
-     Label the data
-     */
-            td:nth-of-type(1):before {
-                content: "محصول";
-            }
-
-            td:nth-of-type(2):before {
-                content: "قیمت";
-            }
-
-            td:nth-of-type(3):before {
-                content: "تعداد";
-            }
-
-            td:nth-of-type(4):before {
-                content: "جمع جزء";
-            }
-        }
 </style>
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
 	<div class="card">
 		<div class="card-body">
-			<div class="table-responsive">
+			<!-- <div class="table-responsive"> -->
 				<?php do_action('woocommerce_before_cart_table'); ?>
 				<table class=" table table-striped gy-7 gs-7 table-rounded border woocommerce-cart-form__contents" cellspacing="0">
 					<thead>
@@ -273,7 +272,7 @@ only screen and (max-width: 760px),
 					</tbody>
 				</table>
 				<?php do_action('woocommerce_after_cart_table'); ?>
-			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 </form>
