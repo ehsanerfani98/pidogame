@@ -1,6 +1,6 @@
 <?php
 
-
+wp_die(var_dump($category_ids));
 if ($card_style == 'festival') : ?>
 
   <style>
