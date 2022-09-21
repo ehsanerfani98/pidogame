@@ -102,7 +102,7 @@ do_action('woocommerce_before_cart'); ?>
 		td:before {
 			position: absolute;
 			top: 6px;
-			left: 6px;
+			right: 6px;
 			width: 45%;
 			padding-left: 10px;
 			white-space: nowrap;
