@@ -109,7 +109,7 @@ do_action('woocommerce_before_cart'); ?>
 		}
 
 		.woocommerce-cart-form__cart-item .cart_item{
-			text-align: center;
+			text-align: center !important;
 		}
 
 
