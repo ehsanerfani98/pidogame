@@ -23,6 +23,6 @@
         </div>
     </div>
 </div>
-<div id="kt_header" class="header align-items-stretch d-none d-sm-flex d-xs-flex" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+<div id="kt_header" class="header align-items-stretch d-lg-none d-sm-flex d-xs-flex" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
    bcvbcvbcvb
 </div>
