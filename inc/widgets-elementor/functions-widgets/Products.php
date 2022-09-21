@@ -44,7 +44,7 @@ class Products extends \Elementor\Widget_Base
 
 		foreach ($categories as $item) {
 			$category[$item->term_id] = $item->name;
-			$this->category_ids = $item->term_id;
+			$this->category_ids[] = $item->term_id;
 		}
 
 
@@ -331,7 +331,7 @@ class Products extends \Elementor\Widget_Base
 	protected function render()
 	{
 		$category_ids = $this->category_ids;
-		
+
 		$settings = $this->get_settings_for_display();
 
 		$wid = rand(0000000000, 9999999999);
