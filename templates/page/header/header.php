@@ -1,4 +1,4 @@
-<div id="kt_header" class="header align-items-stretch" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+<div id="kt_header" class="header align-items-stretch d-none d-lg-flex d-xl-flex" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
     <div class="header-container container-xxl d-flex align-items-center">
         <div class="d-flex topbar align-items-center d-lg-none ms-n2 me-3">
             <div class="btn btn-icon btn-color-gray-900 w-30px h-30px" id="kt_header_menu_mobile_toggle">
@@ -22,4 +22,7 @@
             </div>
         </div>
     </div>
+</div>
+<div id="kt_header" class="header align-items-stretch d-none d-sm-flex d-xs-flex" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+   bcvbcvbcvb
 </div>
