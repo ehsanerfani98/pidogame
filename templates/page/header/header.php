@@ -1,5 +1,5 @@
 <div id="kt_header" class="header align-items-stretch" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
-    <div class="header-container container-xxl d-flex align-items-center" style="border-bottom-left-radius:unset;border-bottom-right-radius:unset">
+    <div class="header-container container-xxl d-flex align-items-center">
         <div class="d-flex topbar align-items-center d-lg-none ms-n2 me-3">
             <div class="btn btn-icon btn-color-gray-900 w-30px h-30px" id="kt_header_menu_mobile_toggle">
                 <span class="svg-icon svg-icon-2">
@@ -12,20 +12,13 @@
         </div>
         <?php get_template_part('templates/page/header/logo') ?>
         <div class="d-flex align-items-stretch justify-content-end flex-lg-grow-1">
-            <div class="d-none d-lg-flex align-items-stretch" id="kt_header_nav">
+            <div class="d-flex align-items-stretch" id="kt_header_nav">
                 <div class="header-menu align-items-stretch h-lg-75px" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
-                    <?php get_template_part('templates/page/header/menu') ?>
+                <?php get_template_part('templates/page/header/menu') ?>
                 </div>
             </div>
             <div class="topbar d-flex align-items-stretch flex-shrink-0">
-                <?php get_template_part('templates/page/header/toolbar/toolbar') ?>
-            </div>
-        </div>
-    </div>
-    <div class="header-container container-xxl d-none d-lg-flex d-xl-flex">
-        <div class="d-flex align-items-stretch" id="">
-            <div class="header-menu align-items-stretch h-lg-75px" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
-                <?php get_template_part('templates/page/header/menu') ?>
+            <?php get_template_part('templates/page/header/toolbar/toolbar') ?>
             </div>
         </div>
     </div>
