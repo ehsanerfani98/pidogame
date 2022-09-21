@@ -174,3 +174,11 @@ address {
 a[href="https://css-tricks.com"] {
     
 }
+
+
+
+@media (min-width: 992px){
+    .header {
+        height: unset !important;
+    }
+}
