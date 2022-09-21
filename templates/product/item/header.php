@@ -51,17 +51,17 @@ global $product;
     <div class="col-lg-7 col-xl-8 mt-16">
         <div class="">
             <div class="card-body">
-            <h1 class="text-gray-700"><?php the_title() ?></h1>
+            <h1 class="text-white"><?php the_title() ?></h1>
         <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
         <div class="symbol symbol-25px me-2 d-block mt-4 ">
             <span class="symbol-label bg-info d-inline-flex">
                 <i class="bi bi-mouse3-fill fs-8 text-white"></i>
             </span>
             <?php if ($product->get_attribute('device')) : ?>
-                <span class="text-gray-700 ms-2"><?php echo str_replace(',', '،', $product->get_attribute('device')) ?></span>
+                <span class="text-white ms-2"><?php echo str_replace(',', '،', $product->get_attribute('device')) ?></span>
             <?php endif ?>
         </div>
-        <p class="lh-xl pt-10 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
+        <p class="lh-xl pt-10 text-white ss02"><?php echo get_the_excerpt() ?></p>
         <?php get_template_part('templates/product/item/price') ?>
             </div>
         </div>
