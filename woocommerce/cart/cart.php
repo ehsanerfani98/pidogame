@@ -114,8 +114,8 @@ do_action('woocommerce_before_cart'); ?>
 		}
 		td:nth-of-type(2):before {
 			content: "";
-			display: flex;
-			justify-content: center;
+			display: flex !important;
+			justify-content: center !important;
 		}
 		td:nth-of-type(3):before {
 			content: "محصول";
