@@ -26,8 +26,8 @@
     </div>
 </div>
 <div id="kt_header" class="header align-items-stretch d-lg-none d-sm-flex d-xs-flex" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
-    <div class="header-container container-xxl d-flex align-items-center">
-        <div class="d-flex topbar align-items-center d-lg-none ms-n2 me-3">
+    <div class="header-container container-xxl d-lg-none d-sm-flex d-xs-flex align-items-center">
+        <div class="d-lg-none d-sm-flex d-xs-flex topbar align-items-center d-lg-none ms-n2 me-3">
             <div class="btn btn-icon btn-color-gray-900 w-30px h-30px" id="kt_header_menu_mobile_toggle">
                 <span class="svg-icon svg-icon-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
