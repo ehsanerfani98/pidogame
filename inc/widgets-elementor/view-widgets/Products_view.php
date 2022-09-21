@@ -125,6 +125,7 @@ if ($card_style == 'festival') : ?>
                 'post__in'      => $product_ids,
               );
             } else {
+              $term_id = $term_id == 'all' ? $category_ids : $term_id;
               $args = array(
                 'post_type'        => ['product', 'product_variation'],
                 'posts_per_page'   => $count,
@@ -153,6 +154,7 @@ if ($card_style == 'festival') : ?>
                 'post__in'      => $product_ids,
               );
             } else {
+              $term_id = $term_id == 'all' ? $category_ids : $term_id;
               $args = array(
                 'post_type'        => ['product', 'product_variation'],
                 'posts_per_page'   => $count,
@@ -419,6 +421,7 @@ if ($card_style == 'festival') : ?>
         'post__in'      => $product_ids,
       );
     } else {
+      $term_id = $term_id == 'all' ? $category_ids : $term_id;
       $args = array(
         'post_type'        => ['product', 'product_variation'],
         'posts_per_page'   => $count,
@@ -447,6 +450,7 @@ if ($card_style == 'festival') : ?>
         'post__in'      => $product_ids,
       );
     } else {
+      $term_id = $term_id == 'all' ? $category_ids : $term_id;
       $args = array(
         'post_type'        => ['product', 'product_variation'],
         'posts_per_page'   => $count,
