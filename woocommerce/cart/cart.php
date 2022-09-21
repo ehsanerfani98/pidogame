@@ -117,6 +117,11 @@ do_action('woocommerce_before_cart'); ?>
 			justify-content: center;
 		}
 
+		.wrap-footer-cart {
+			display: flex;
+			justify-content: center !important;
+		}
+
 		td:nth-of-type(1):before {
 			content: "";
 		}
