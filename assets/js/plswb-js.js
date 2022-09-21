@@ -2,6 +2,8 @@
 
 function extra_fields(event) {
 
+    console.log($('input[required]').checkValidity());
+
     let myform = event.target;
     let fd = new FormData(myform);
     let meta_data_cart = [];
@@ -227,10 +229,6 @@ $('.woocommerce-bacs-bank-details').addClass('p-5 bg-gray-100 rounded');
 
 $('.term-description').addClass('card');
 
-$('#form-product').submit(function (e) { 
-console.log($('input[required]').checkValidity());
-    
-});
 // $('input[required]').on('invalid', function() {
 //     this.setCustomValidity("پر کردن این فیلد الزامی است");
 // });

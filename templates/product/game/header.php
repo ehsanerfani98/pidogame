@@ -220,7 +220,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                     <button type="button" class="btn btn-primary" onclick="open_fields(this)">نمایش گزینه ها</button>
                                                                 </div>
                                                                 <div class="align-items-center flex-grow-1 me-2 me-sm-5 wrap_open_fields d-none">
-                                                                    <form id="form-product" onsubmit="return extra_fields(event)" action="" method="post">
+                                                                    <form onsubmit="return extra_fields(event)" action="" method="post">
                                                                         <input name="variation-id" type="hidden" value="<?= $variation['variation_id'] ?>">
                                                                         <input name="product-id" type="hidden" value="<?= get_the_ID() ?>">
                                                                         <div class="d-flex flex-column">
