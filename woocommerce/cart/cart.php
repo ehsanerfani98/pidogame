@@ -114,6 +114,7 @@ do_action('woocommerce_before_cart'); ?>
 		}
 		td:nth-of-type(2):before {
 			content: "";
+			text-align: center;
 		}
 		td:nth-of-type(3):before {
 			content: "محصول";
