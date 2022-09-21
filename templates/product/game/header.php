@@ -239,7 +239,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="email" name="ext_email_<?= $variation['variation_id'] . $key ?>" id="ext_email_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="email" name="ext_email_<?= $variation['variation_id'] . $key ?>" id="ext_email_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
@@ -255,7 +255,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="text" name="ext_text_<?= $variation['variation_id'] . $key ?>" id="ext_text_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="text" name="ext_text_<?= $variation['variation_id'] . $key ?>" id="ext_text_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
@@ -271,7 +271,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="password" name="ext_password_<?= $variation['variation_id'] . $key ?>" id="ext_password_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="password" name="ext_password_<?= $variation['variation_id'] . $key ?>" id="ext_password_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
@@ -293,7 +293,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                                                                                 <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
                                                                                                             </svg></span></button>
-                                                                                                    <input data-extra-title="<?= $item['title'] ?>" id="ext_number_<?= $variation['variation_id'] . $key ?>" name="ext_number_<?= $variation['variation_id'] . $key ?>" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
+                                                                                                    <input oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" id="ext_number_<?= $variation['variation_id'] . $key ?>" name="ext_number_<?= $variation['variation_id'] . $key ?>" type="text" class="form-control form-control-solid border-0 text-center ss02 w-100px" readonly data-kt-dialer-control="input">
                                                                                                     <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                                                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
                                                                                                                 <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
@@ -316,7 +316,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="number" name="ext_number_char_<?= $variation['variation_id'] . $key ?>" id="ext_number_char_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-control" type="number" name="ext_number_char_<?= $variation['variation_id'] . $key ?>" id="ext_number_char_<?= $variation['variation_id'] . $key ?>">
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
@@ -332,7 +332,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <input value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <input oninvalid="this.setCustomValidity('Enter User Name Here')" value="<?= $item['price'] ?>" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-check-input" type="checkbox" name="ext_checkbox_<?= $variation['variation_id'] . $key ?>" id="ext_checkbox_<?= $variation['variation_id'] . $key ?>">
                                                                                                 <p class="fs-8 text-gray-700 mt-1"><?= number_format($item['price']) . ' تومان ' ?> به مبلغ اصلی اضافه می شود.</p>
                                                                                             </div>
                                                                                             <?php
@@ -350,7 +350,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
+                                                                                                <select oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
                                                                                                     <option></option>
                                                                                                     <?php
                                                                                                     $values = explode('#', $item['value_select']);
@@ -374,7 +374,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                             </svg></span>
                                                                                                     <?php endif; ?>
                                                                                                 </label>
-                                                                                                <textarea data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> name="ext_textarea_<?= $variation['variation_id'] . $key ?>" class="form-control" id="ext_textarea_<?= $variation['variation_id'] . $key ?>" cols="30" rows="5"></textarea>
+                                                                                                <textarea oninvalid="this.setCustomValidity('Enter User Name Here')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> name="ext_textarea_<?= $variation['variation_id'] . $key ?>" class="form-control" id="ext_textarea_<?= $variation['variation_id'] . $key ?>" cols="30" rows="5"></textarea>
                                                                                             </div>
                                                                                             <?php
                                                                                             break;
