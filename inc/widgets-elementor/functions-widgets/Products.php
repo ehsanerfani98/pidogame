@@ -44,7 +44,7 @@ class Products extends \Elementor\Widget_Base
 			$category_ids[] = $item->term_id;
 		}
 
-		$category[$category_ids] = 'همه دسته بندی ها';
+		$category['all'] = 'همه دسته بندی ها';
 
 		$args = array(
 			'post_type'        => 'product',
