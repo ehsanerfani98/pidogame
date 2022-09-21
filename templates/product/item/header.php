@@ -49,7 +49,7 @@ global $product;
         <?php get_template_part('templates/product/item/header-card') ?>
     </div>
     <div class="col-lg-7 col-xl-8 mt-16">
-        <div class="card">
+        <div class="">
             <div class="card-body">
             <h1 class="text-gray-700"><?php the_title() ?></h1>
         <h3 class="fs-5 text-muted mt-2 ss02"><?php echo $meta['opt-product-subtitle'] ?></h3>
