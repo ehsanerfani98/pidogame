@@ -85,7 +85,7 @@ do_action('woocommerce_before_cart'); ?>
 		thead tr {
 			position: absolute;
 			top: -9999px;
-			left: -9999px;
+			right: -9999px;
 		}
 
 		tr {
@@ -96,7 +96,7 @@ do_action('woocommerce_before_cart'); ?>
 			border: none;
 			border-bottom: 1px solid #eee;
 			position: relative;
-			padding-left: 50%;
+			padding-right: 50%;
 		}
 
 		td:before {
@@ -104,7 +104,7 @@ do_action('woocommerce_before_cart'); ?>
 			top: 6px;
 			left: 6px;
 			width: 45%;
-			padding-right: 10px;
+			padding-left: 10px;
 			white-space: nowrap;
 		}
 
