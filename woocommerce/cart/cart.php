@@ -112,22 +112,22 @@ do_action('woocommerce_before_cart'); ?>
 		td:nth-of-type(1):before {
 			content: "";
 		}
-		td:nth-of-type(1):before {
+		td:nth-of-type(2):before {
 			content: "تصویر";
 		}
-		td:nth-of-type(1):before {
+		td:nth-of-type(3):before {
 			content: "محصول";
 		}
 
-		td:nth-of-type(2):before {
+		td:nth-of-type(4):before {
 			content: "قیمت";
 		}
 
-		td:nth-of-type(3):before {
+		td:nth-of-type(5):before {
 			content: "تعداد";
 		}
 
-		td:nth-of-type(4):before {
+		td:nth-of-type(6):before {
 			content: "جمع جزء";
 		}
 	}
