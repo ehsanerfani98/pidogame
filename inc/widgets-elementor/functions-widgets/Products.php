@@ -41,8 +41,10 @@ class Products extends \Elementor\Widget_Base
 
 		foreach ($categories as $item) {
 			$category[$item->term_id] = $item->name;
+			$category_ids[] = $item->term_id;
 		}
-		$category['all'] = 'همه دسته بندی ها';
+
+		$category[$category_ids] = 'همه دسته بندی ها';
 
 		$args = array(
 			'post_type'        => 'product',
