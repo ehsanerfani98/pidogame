@@ -229,6 +229,7 @@ $('.term-description').addClass('card');
 
 
 $('input[required]').on('invalid', function() {
+    console.log(this.checkValidity());
     // this.setCustomValidity("پر کردن این فیلد الزامی است");
 });
 
