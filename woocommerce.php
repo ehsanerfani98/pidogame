@@ -14,12 +14,16 @@ get_header();
                         ?>
                             <div class="woocommerce">
                                 <?php
+                                var_dump('sdss');
                                 woocommerce_content(); ?>
                             </div>
                         <?php
                         endif ?>
                     <?php else : ?>
-                        <?php woocommerce_get_template('archive-product.php'); ?>
+                        <?php 
+                                                            var_dump('54646');
+
+                            woocommerce_get_template('archive-product.php'); ?>
                     <?php endif; ?>
                 </div>
             </div>
