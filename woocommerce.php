@@ -3,7 +3,7 @@
 get_header();
 
 
-// woocommerce_content();
+woocommerce_content();
 
 
 get_footer(  );
