@@ -9,21 +9,12 @@ get_header();
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
                 <div class="content flex-row-fluid" id="kt_content">
-                    <?php if (is_singular('product')) : ?>
+                    <?php if (is_singular( 'product' )) : ?>
                         <?php if (have_posts()) :
-                        ?>
-                            <div class="woocommerce">
-                                <?php
-                                var_dump('sdss');
-                                woocommerce_content(); ?>
-                            </div>
-                        <?php
+                            woocommerce_content();
                         endif ?>
                     <?php else : ?>
-                        <?php 
-                                                            var_dump('54646');
-
-                            woocommerce_get_template('archive-product.php'); ?>
+                        <?php woocommerce_get_template('archive-product.php'); ?>
                     <?php endif; ?>
                 </div>
             </div>
