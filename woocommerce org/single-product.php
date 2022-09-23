@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+
 get_header( 'shop' ); ?>
 
 	<?php
@@ -31,7 +32,10 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<?php while ( have_posts() ) : ?>
+		<?php 
+		
+		
+		while ( have_posts() ) : ?>
 			<?php the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
