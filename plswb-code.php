@@ -6,6 +6,13 @@ include get_template_directory() . '/inc/match_theme_elementor.php';
 include PLSWB_THEME_PATH . '/inc/widgets-elementor/register_widget_elementor.php';
 include PLSWB_THEME_PATH . '/inc/widgets-elementor/view-widgets/controller.php';
 
+function mytheme_support()
+{
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+}
+add_action('after_setup_theme', 'mytheme_support');
+
 
 //نمایش دیتا در سبد خرید
 function add_cf_after_cart_item_name($name_html, $cart_item, $cart_item_key)
