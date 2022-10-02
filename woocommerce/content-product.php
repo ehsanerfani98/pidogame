@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying product content within loops
  *
@@ -16,112 +15,53 @@
  * @version 3.6.0
  */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 global $product;
 
 // Ensure visibility.
-if (empty($product) || !$product->is_visible()) {
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
-$meta = get_post_meta(get_the_ID(), 'pidogame_framework_products', true);
 ?>
-<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-8">
+<li <?php wc_product_class( '', $product ); ?>>
+	<?php
+	/**
+	 * Hook: woocommerce_before_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 */
+	do_action( 'woocommerce_before_shop_loop_item' );
 
-	<a href="<?php the_permalink() ?>">
-		<div class="wrap-cart-plswb card">
+	/**
+	 * Hook: woocommerce_before_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_show_product_loop_sale_flash - 10
+	 * @hooked woocommerce_template_loop_product_thumbnail - 10
+	 */
+	do_action( 'woocommerce_before_shop_loop_item_title' );
 
-		<? if ($rule_percent != 'yes') : ?>
-                          <?php
-                          if ($product->is_type('simple')) {
-                            $percentage = intval((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
-                            if ($percentage != 0 && $percentage != 100) :
-                          ?>
-                              <div class="sale-plswb bg-danger text-white">
-                                <?= $percentage . '%'; ?>
-                              </div>
-                            <?php
-                            endif;
-                          } else {
-                            if (count((new WC_Product_Variable(get_the_ID()))->get_children()) > 0) {
-                              foreach ($product->get_available_variations() as $variation) {
-                                if ($variation['variation_is_active']) {
-                                  $variationProduct = new WC_Product_Variation($variation['variation_id']);
-                                  if ($variationProduct->is_on_sale()) {
-                                    $percentage = intval((($variationProduct->get_regular_price() - $variationProduct->get_sale_price()) / $variationProduct->get_regular_price()) * 100);
-                                    $percents[] = $percentage;
-                                  }
-                                }
-                              }
+	/**
+	 * Hook: woocommerce_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_product_title - 10
+	 */
+	do_action( 'woocommerce_shop_loop_item_title' );
 
-                              $percentage = max(array_unique($percents));
-                              unset($percents);
-                            }
-                            if ($percentage != 0) :
-                            ?>
-                              <div class="sale-plswb bg-danger text-white">
-                                <?= $percentage . '%'; ?>
-                              </div>
-                          <?php
-                            endif;
-                          }
-                          ?>
-                        <?php endif; ?>
+	/**
+	 * Hook: woocommerce_after_shop_loop_item_title.
+	 *
+	 * @hooked woocommerce_template_loop_rating - 5
+	 * @hooked woocommerce_template_loop_price - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop_item_title' );
 
-						
-			<div class="image-cart-plswb">
-				<?php if (file_exists(get_attached_file(get_post_thumbnail_id(get_the_ID())))) : ?>
-					<?php the_post_thumbnail() ?>
-				<?php else : ?>
-					<img class="no-image" src="<?= IMAGES_URL . 'no-image-found.png' ?>" alt="">
-				<?php endif; ?>
-			</div>
-
-			<div class="wrap-content-product mt-2 px-4 py-3">
-				<div class="title-cart-plswb">
-					<h4><?= wp_trim_words(get_the_title(), 5, ' ... '); ?></h4>
-				</div>
-
-				<div class="device-cart-plswb">
-					<div class="device_name">
-						<span class="svg-icon svg-icon-primary svg-icon-1hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path d="M10 4L18 12L10 20H14L21.3 12.7C21.7 12.3 21.7 11.7 21.3 11.3L14 4H10Z" fill="black" />
-								<path opacity="0.3" d="M3 4L11 12L3 20H7L14.3 12.7C14.7 12.3 14.7 11.7 14.3 11.3L7 4H3Z" fill="black" />
-							</svg></span>
-						<h5><?= wp_trim_words( $meta['opt-product-subtitle'], 5, ' ... '); ?></h5>
-					</div>
-				</div>
-			</div>
-			<div class="separator separator-solid"></div>
-			<div class="wrap-content-product">
-
-				<div class="price text-gray-700 bg-light text-center mt-2 rounded">
-					<div class="d-flex justify-content-around align-items-center bg-light py-2">
-						<?php echo $product->get_price_html(); ?>
-					</div>
-				</div>
-				<!-- <div class="platform-cart-plswb">
-					<div class="platform">
-						<span class="title">پلتفرم :</span>
-						<span class="content">استیم</span>
-					</div>
-					<div class="creator">
-						<span class="title">سازنده :</span>
-						<span class="content">Sanata Monica Studio</span>
-					</div>
-				</div> -->
-			</div>
-			<?php if ($product->is_in_stock()) : ?>
-				<div class="card-footer py-1 text-center bg-primary bg-opacity-75">
-					<a href="<?php the_permalink() ?>" class="d-block fw-bolder fs-6 py-2 text-white">خرید محصول</a>
-				</div>
-			<?php else : ?>
-				<div class="card-footer py-1 text-center bg-danger bg-opacity-75">
-					<a class="d-block fw-bolder fs-6 py-2 text-white">ناموجود</a>
-				</div>
-			<?php endif ?>
-
-		</div>
-	</a>
-</div>
+	/**
+	 * Hook: woocommerce_after_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_close - 5
+	 * @hooked woocommerce_template_loop_add_to_cart - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop_item' );
+	?>
+</li>
