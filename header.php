@@ -33,7 +33,6 @@ $data_alert = get_option('pidogame_framework');
 
     <link href="<?php echo $templateDirectoryUri ?>/assets/custom/css/style.bundle.css" rel="stylesheet" type="text/css" />
 
-    <!-- <?php wp_head() ?> -->
     <style>
         .bg-plswb {
             background: <?= $data_alert['at_image'] ?> !important;
