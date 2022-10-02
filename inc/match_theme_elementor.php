@@ -66,7 +66,7 @@ add_action('theme_prefix_archive', 'theme_prefix_print_elementor_archive');
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 function my_theme_enqueue_styles()
 {
-    wp_enqueue_style('plswb-bootstrap',  PLSWB_THEME_ASSETS . 'front/css/bootstrap.min.css');
+    // wp_enqueue_style('plswb-bootstrap',  PLSWB_THEME_ASSETS . 'front/css/bootstrap.min.css');
     wp_enqueue_style('plswb-style', get_template_directory_uri() . '/style.css');
 }
 /***********************/
