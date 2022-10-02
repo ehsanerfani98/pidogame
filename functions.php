@@ -841,13 +841,13 @@ function wc_form_field_args($args, $key, $value = null)
 }
 
 
-remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
-add_action('woocommerce_cart_is_empty', 'custom_empty_cart_message', 10);
+// remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
+// add_action('woocommerce_cart_is_empty', 'custom_empty_cart_message', 10);
 
-function custom_empty_cart_message()
-{
-	$html  = '<div class="woocommerce-info alert alert-dismissible bg-light-primary border border-primary border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10"><div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">';
-	$html .= wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce')));
-	echo $html . '</div></div>';
-}
+// function custom_empty_cart_message()
+// {
+// 	$html  = '<div class="woocommerce-info alert alert-dismissible bg-light-primary border border-primary border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10"><div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">';
+// 	$html .= wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce')));
+// 	echo $html . '</div></div>';
+// }
 
