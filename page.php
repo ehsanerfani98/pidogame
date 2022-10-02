@@ -1,6 +1,6 @@
 <?php
 $options = get_option('pidogame_framework');
-// get_header();
+get_header();
 ?>
 <div class="d-flex flex-column flex-root">
     <div class="page d-flex flex-row flex-column-fluid">
