@@ -754,7 +754,7 @@ add_action('woocommerce_add_to_cart', function () {
 			</button>
 			<!--end::Close-->
 		</div>
-<?php
+	<?php
 	});
 });
 
@@ -850,3 +850,4 @@ function custom_empty_cart_message()
 	$html .= wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce')));
 	echo $html . '</div></div>';
 }
+
