@@ -1,6 +1,12 @@
 <?php
 $options = get_option('pidogame_framework');
 wp_head();
- woocommerce_content(); 
+?>
+
+<div class="woocommerce">
+<?php woocommerce_content(); ?>
+</div>
+
+<?php
 
 wp_footer();

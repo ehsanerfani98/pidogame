@@ -8,8 +8,8 @@ include PLSWB_THEME_PATH . '/inc/widgets-elementor/view-widgets/controller.php';
 
 function mytheme_support()
 {
-    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+    remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+    remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 }
 add_action('after_setup_theme', 'mytheme_support');
 
@@ -1565,28 +1565,28 @@ add_shortcode('plswb_breadcrumb', function () {
 });
 
 
-function get_variation_price_by_id($product_id, $variation_id){
-	$currency_symbol = get_woocommerce_currency_symbol();
-	$product = new WC_Product_Variable($product_id);
-	$variations = $product->get_available_variations();
-	$var_data = [];
-	foreach ($variations as $variation) {
-		if($variation['variation_id'] == $variation_id){
-			$display_regular_price = $variation['display_regular_price'].'<span class="currency">'. $currency_symbol .'</span>';
-			$display_price = $variation['display_price'].'<span class="currency">'. $currency_symbol .'</span>';
-		}
-	}
+function get_variation_price_by_id($product_id, $variation_id)
+{
+    $currency_symbol = get_woocommerce_currency_symbol();
+    $product = new WC_Product_Variable($product_id);
+    $variations = $product->get_available_variations();
+    $var_data = [];
+    foreach ($variations as $variation) {
+        if ($variation['variation_id'] == $variation_id) {
+            $display_regular_price = $variation['display_regular_price'] . '<span class="currency">' . $currency_symbol . '</span>';
+            $display_price = $variation['display_price'] . '<span class="currency">' . $currency_symbol . '</span>';
+        }
+    }
 
-	//Check if Regular price is equal with Sale price (Display price)
-	if ($display_regular_price == $display_price){
-		$display_price = false;
-	}
+    //Check if Regular price is equal with Sale price (Display price)
+    if ($display_regular_price == $display_price) {
+        $display_price = false;
+    }
 
-	$priceArray = array(
-		'display_regular_price' => $display_regular_price,
-		'display_price' => $display_price
-	);
-	$priceObject = (object)$priceArray;
-	return $priceObject;
+    $priceArray = array(
+        'display_regular_price' => $display_regular_price,
+        'display_price' => $display_price
+    );
+    $priceObject = (object)$priceArray;
+    return $priceObject;
 }
-
