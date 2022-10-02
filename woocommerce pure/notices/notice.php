@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Show messages
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/notices/success.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/notices/notice.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -16,24 +15,18 @@
  * @version 3.9.0
  */
 
-if (!defined('ABSPATH')) {
-	exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
 }
 
-if (!$notices) {
+if ( ! $notices ) {
 	return;
 }
 
 ?>
-	
-<?php foreach ($notices as $notice) : ?>
 
-
-	<div class="woocommerce-message alert alert-dismissible bg-light-success border border-success border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" <?php echo wc_get_notice_data_attr($notice); ?> role="alert">
-		<div class="d-flex flex-column pe-0 pe-sm-10 plswb-restore-back" style="margin-right: 3rem">
-			<?php echo wc_kses_notice($notice['notice']); ?>
-		</div>
+<?php foreach ( $notices as $notice ) : ?>
+	<div class="woocommerce-info"<?php echo wc_get_notice_data_attr( $notice ); ?>>
+		<?php echo wc_kses_notice( $notice['notice'] ); ?>
 	</div>
-	
 <?php endforeach; ?>
-

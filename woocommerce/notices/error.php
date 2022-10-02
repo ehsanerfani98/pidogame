@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Show error messages
  *
@@ -15,19 +16,25 @@
  * @version 3.9.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-if ( ! $notices ) {
+if (!$notices) {
 	return;
 }
 
 ?>
-<ul class="woocommerce-error" role="alert">
-	<?php foreach ( $notices as $notice ) : ?>
-		<li<?php echo wc_get_notice_data_attr( $notice ); ?>>
-			<?php echo wc_kses_notice( $notice['notice'] ); ?>
-		</li>
-	<?php endforeach; ?>
+
+<ul class="woocommerce-error alert alert-dismissible bg-light-danger border border-danger border-dashed d-flex flex-column flex-sm-row w-100 p-5 mb-10" role="alert">
+<div class="d-flex flex-column pe-0 pe-sm-10" style="margin-right: 3rem">
+
+<?php foreach ($notices as $notice) : ?>
+
+			<span<?php echo wc_get_notice_data_attr($notice); ?>>
+				<?php echo wc_kses_notice($notice['notice']); ?>
+				</span>
+			<?php endforeach; ?>
+		</div>
 </ul>
+
