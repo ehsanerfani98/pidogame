@@ -11,6 +11,8 @@ define('IMAGES_URL', get_stylesheet_directory_uri() . '/assets/media/images/');
 function mytheme_add_woocommerce_support()
 {
 	add_theme_support('woocommerce');
+	remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+	remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
@@ -754,7 +756,7 @@ add_action('woocommerce_add_to_cart', function () {
 			</button>
 			<!--end::Close-->
 		</div>
-	<?php
+<?php
 	});
 });
 
@@ -850,4 +852,3 @@ function custom_empty_cart_message()
 	$html .= wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce')));
 	echo $html . '</div></div>';
 }
-
