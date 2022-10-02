@@ -1,8 +1,10 @@
 <?php
 /**
- * Show messages
+ * Proceed to checkout button
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/notices/notice.php.
+ * Contains the markup for the proceed to checkout button on the cart.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/proceed-to-checkout-button.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -12,21 +14,14 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.9.0
+ * @version 2.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-if ( ! $notices ) {
-	return;
-}
-
 ?>
 
-<?php foreach ( $notices as $notice ) : ?>
-	<div class="woocommerce-info"<?php echo wc_get_notice_data_attr( $notice ); ?>>
-		<?php echo wc_kses_notice( $notice['notice'] ); ?>
-	</div>
-<?php endforeach; ?>
+<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button alt wc-forward btn btn-primary m-0 mt-2">
+	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
+</a>
