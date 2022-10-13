@@ -851,13 +851,11 @@ function wc_form_field_args($args, $key, $value = null)
 // 	echo $html . '</div></div>';
 // }
 
-add_filter( 'woocommerce_add_to_cart_fragments', 'wc_refresh_mini_cart_count');
-function wc_refresh_mini_cart_count($fragments){
-    ob_start();
-    $items_count = WC()->cart->get_cart_contents_count();
-    ?>
-    <div id="mini-cart-count"><?php echo $items_count ? $items_count : '&nbsp;'; ?></div>
-    <?php
-        $fragments['#mini-cart-count'] = ob_get_clean();
-    return $fragments;
-}
+add_filter( 'woocommerce_add_to_cart_fragments', 'misha_add_to_cart_fragment' );
+
+function misha_add_to_cart_fragment( $fragments ) {
+
+	$fragments[ '.misha-cart' ] = '<a href="' . wc_get_cart_url() . '" class="misha-cart">Cart (' . WC()->cart->get_cart_contents_count() . ')</a>';
+ 	return $fragments;
+
+ }

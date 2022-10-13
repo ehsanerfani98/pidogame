@@ -1,6 +1,8 @@
 <?php $options = get_option('pidogame_framework') ?>
 <?php if ($options['opt-header-cart-switcher']) : ?>
     <div class="d-flex align-items-center ms-3 ms-lg-5">
+    <a href="<?php echo wc_get_cart_url() ?>" class="misha-cart">Cart (<?php echo WC()->cart->get_cart_contents_count() ?>)</a>
+
         <a href="<?= home_url('cart') ?>" id="header-cart-btn11111111" class="btn btn-icon bg-secondary bg-opacity-75 bg-hover-opacity-100 btn-color-gray-900 w-30px h-30px w-md-40px h-md-40px position-relative" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
             <span class="svg-icon svg-icon-1" id="wrap-cart-count">
                 <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
