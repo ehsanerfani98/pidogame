@@ -851,3 +851,13 @@ function wc_form_field_args($args, $key, $value = null)
 // 	echo $html . '</div></div>';
 // }
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'wc_refresh_mini_cart_count');
+function wc_refresh_mini_cart_count($fragments){
+    ob_start();
+    $items_count = WC()->cart->get_cart_contents_count();
+    ?>
+    <div id="mini-cart-count"><?php echo $items_count ? $items_count : '&nbsp;'; ?></div>
+    <?php
+        $fragments['#mini-cart-count'] = ob_get_clean();
+    return $fragments;
+}
