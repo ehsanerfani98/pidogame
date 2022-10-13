@@ -108,10 +108,12 @@ function woocommerce_ajax_add_to_cart()
 
         $data = array(
             'error' => true,
-            'product_url' => apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id)
-        );
+            'product_url' => apply_filters('woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id),
+            "count" => count(WC()->cart->get_cart())
 
-        echo wp_send_json($data);
+        );
+       
+         wp_send_json($data);
     }
 
     wp_die();

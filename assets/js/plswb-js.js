@@ -56,8 +56,7 @@ function extra_fields(event) {
         url: woocommerce_params.ajax_url,
         data: data,
         success: function (response) {
-            console.log(response.count);
-            jQuery('.display-count-display').text(response.count);
+            jQuery('#wrap-cart-count').html('<span id="header-cart-count" class="position-absolute top-0 start-0 translate-middle badge badge-circle badge-primary ss02 display-count-display">'+response.count+'</span>');
             Swal.fire({
                 text: "محصول مورد نظر با موفقیت به سبد خرید شما افزوده شد.",
                 icon: "success",
