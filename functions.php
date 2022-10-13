@@ -851,3 +851,12 @@ function wc_form_field_args($args, $key, $value = null)
 // 	echo $html . '</div></div>';
 // }
 
+function ss_cart_updated( $cart_item_key, $cart ) {
+
+    print "<pre>";
+    echo "fffff";
+    print "</pre>";
+    exit;
+
+};
+add_action( 'woocommerce_remove_cart_item', 'ss_cart_updated', 10, 2 );
