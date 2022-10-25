@@ -230,11 +230,11 @@ jQuery('.term-description').addClass('card');
 // var label_completed = $('.woocommerce-orders-table__row--status-completed').text();
 // $('.woocommerce-orders-table__row--status-completed').html('<span class="label_completed">'+ label_completed +'</span>');
 
-var status_collection = jQuery('.woocommerce-orders-table__cell');
+var status_collection = jQuery('.woocommerce-orders-table__row');
 
 
 jQuery.each(status_collection, function (index, value) {
-    if(jQuery(value).hasClass('woocommerce-orders-table__cell-order-status')){
+    if(jQuery(value).hasClass('woocommerce-orders-table__row--status-on-hold')){
         console.log('test',value);
     }
 });
