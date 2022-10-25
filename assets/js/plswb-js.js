@@ -232,10 +232,19 @@ jQuery('.term-description').addClass('card');
 
 var status_collection = jQuery('.woocommerce-orders-table__row');
 
-
+var status_label
 jQuery.each(status_collection, function (index, value) {
-    if(jQuery(value).hasClass('woocommerce-orders-table__row--status-on-hold')){
-        console.log(jQuery(value).find('.woocommerce-orders-table__cell-order-status').text());
+    if (jQuery(value).hasClass('woocommerce-orders-table__row--status-on-hold')) {
+        status_label = jQuery(value).find('.woocommerce-orders-table__cell-order-status').text();
+        jQuery(value).find('.woocommerce-orders-table__cell-order-status').html('<span class="hold_label">' + status_label + '</span>');
+    }
+    if (jQuery(value).hasClass('woocommerce-orders-table__row--status-completed')) {
+        status_label = jQuery(value).find('.woocommerce-orders-table__cell-order-status').text();
+        jQuery(value).find('.woocommerce-orders-table__cell-order-status').html('<span class="completed_label">' + status_label + '</span>');
+    }
+    if (jQuery(value).hasClass('woocommerce-orders-table__row--status-processing')) {
+        status_label = jQuery(value).find('.woocommerce-orders-table__cell-order-status').text();
+        jQuery(value).find('.woocommerce-orders-table__cell-order-status').html('<span class="processing_label">' + status_label + '</span>');
     }
 });
 
