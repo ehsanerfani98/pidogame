@@ -227,7 +227,11 @@ $('.woocommerce-bacs-bank-details').addClass('p-5 bg-gray-100 rounded');
 
 $('.term-description').addClass('card');
 
+// var label_completed = $('.woocommerce-orders-table__row--status-completed').text();
+// $('.woocommerce-orders-table__row--status-completed').html('<span class="label_completed">'+ label_completed +'</span>');
 
+var status_collection = $('.woocommerce-orders-table__row--status-processing');
+console.log(status_collection);
 
 
 
