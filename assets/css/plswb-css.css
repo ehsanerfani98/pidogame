@@ -140,6 +140,7 @@ address {
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
+
 .hold_label{
     background: #fffbb1 !important;
     color: #c5bc0d;
@@ -147,6 +148,7 @@ address {
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
+
 .processing_label{
     background: #b1d7ff !important;
     color: #2869af;
@@ -154,6 +156,7 @@ address {
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
+
 .woo-wallet-content-h3{
     font-size: 14px !important;
 }
