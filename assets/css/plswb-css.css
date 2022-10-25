@@ -130,21 +130,24 @@ address {
     padding: 1rem !important;
 }
 
-.woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status{
+
+
+
+.completed_label{
     background: #c4ffb1 !important;
     color: #47b523;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
-.woocommerce-orders-table__row--status-on-hold .woocommerce-orders-table__cell-order-status{
+.hold_label{
     background: #fffbb1 !important;
     color: #c5bc0d;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
 }
-.woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status{
+.processing_label{
     background: #b1d7ff !important;
     color: #2869af;
     font-size: 14px !important;
