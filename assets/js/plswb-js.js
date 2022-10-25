@@ -233,7 +233,7 @@ jQuery('.term-description').addClass('card');
 var status_collection = jQuery('.woocommerce-orders-table__cell');
 
 
-$.each(status_collection, function (index, value) {
+jQuery.each(status_collection, function (index, value) {
     console.log(value);
 });
 
