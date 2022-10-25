@@ -246,5 +246,9 @@ jQuery.each(status_collection, function (index, value) {
         status_label = jQuery(value).find('.woocommerce-orders-table__cell-order-status').text();
         jQuery(value).find('.woocommerce-orders-table__cell-order-status').html('<span class="processing_label">' + status_label + '</span>');
     }
+    if (jQuery(value).hasClass('woocommerce-orders-table__row--status-refunded')) {
+        status_label = jQuery(value).find('.woocommerce-orders-table__cell-order-status').text();
+        jQuery(value).find('.woocommerce-orders-table__cell-order-status').html('<span class="refunded_label">' + status_label + '</span>');
+    }
 });
 

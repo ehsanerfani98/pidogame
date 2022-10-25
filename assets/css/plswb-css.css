@@ -139,7 +139,7 @@ address {
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem;
+    padding:.5rem .8rem;
 }
 
 .hold_label{
@@ -148,7 +148,7 @@ address {
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem;
+    padding:.5rem .8rem;
 }
 
 .processing_label{
@@ -157,7 +157,16 @@ address {
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem;
+    padding:.5rem .8rem;
+}
+
+.refunded_label{
+    background: #ffb1b1 !important;
+    color: #c71e1e;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 15px !important;
+    padding:.5rem .8rem;
 }
 
 .woo-wallet-content-h3{
