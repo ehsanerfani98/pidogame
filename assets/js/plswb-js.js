@@ -231,6 +231,7 @@ jQuery('.term-description').addClass('card');
 // $('.woocommerce-orders-table__row--status-completed').html('<span class="label_completed">'+ label_completed +'</span>');
 
 var status_collection = jQuery('.woocommerce-orders-table__cell');
+
 console.log(status_collection);
 
 
