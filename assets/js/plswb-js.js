@@ -235,7 +235,7 @@ var status_collection = jQuery('.woocommerce-orders-table__row');
 
 jQuery.each(status_collection, function (index, value) {
     if(jQuery(value).hasClass('woocommerce-orders-table__row--status-on-hold')){
-        console.log(jQuery(value).html());
+        console.log(jQuery(value).find('.woocommerce-orders-table__cell-order-status'));
     }
 });
 
