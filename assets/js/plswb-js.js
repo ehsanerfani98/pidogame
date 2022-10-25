@@ -234,6 +234,8 @@ var status_collection = jQuery('.woocommerce-orders-table__cell');
 
 
 jQuery.each(status_collection, function (index, value) {
-    console.log(value);
+    if(jQuery(value).hasClass('woocommerce-orders-table__cell-order-status')){
+        console.log(value);
+    }
 });
 
