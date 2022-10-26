@@ -351,7 +351,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                                                                                     <?php endif; ?>
                                                                                                 </label>
                                                                                                 <select oninvalid="this.setCustomValidity('پر کردن این فیلد الزامیست')" oninput="setCustomValidity('')" data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
-                                                                                                    <option></option>
+                                                                                                <option value="">انتخاب کنید</option>
                                                                                                     <?php
                                                                                                     $values = explode('#', $item['value_select']);
                                                                                                     foreach ($values as $item) :

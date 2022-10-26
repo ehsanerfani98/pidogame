@@ -149,7 +149,7 @@ $type = $product->get_type();
                                                     <?php endif; ?>
                                                 </label>
                                                 <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
-                                                    <option></option>
+                                                <option value="">انتخاب کنید</option>
                                                     <?php
                                                     $values = explode('#', $item['value_select']);
                                                     foreach ($values as $item) :
@@ -408,7 +408,7 @@ $type = $product->get_type();
                                                             <?php endif; ?>
                                                         </label>
                                                         <select data-extra-title="<?= $item['title'] ?>" <?= $item['required'] ? 'required="required"' : '' ?> class="form-select" data-control="select2" data-placeholder="یک گزینه را انتخاب کنید" data-allow-clear="true" name="ext_select_<?= $variation['variation_id'] . $key ?>" id="ext_select_<?= $variation['variation_id'] . $key ?>">
-                                                            <option></option>
+                                                        <option value="">انتخاب کنید</option>
                                                             <?php
                                                             $values = explode('#', $item['value_select']);
                                                             foreach ($values as $item) :
