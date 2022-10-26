@@ -19,13 +19,13 @@
                     <div style="border: 2px solid;" class="card-footer bg-secondary border-primary border-dashed pb-0" >
                         <input type="hidden" id="pid" value="<?php the_ID() ?>">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <div class="mb-10">
                                     <label for="exampleFormControlInput1" class="required form-label">عنوان محصول درخواستی</label>
                                     <input required id="free-title" style="text-align: right;" type="text" class="form-control form-control-solid" placeholder="عنوان محصول را وارد کنید" />
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="mb-10">
                                     <label for="exampleFormControlInput2" class="required form-label">مبلغ محصول درخواستی (تومان)</label>
                                     <input required id="free-amount" style="text-align: right;" type="number" class="form-control form-control-solid" placeholder="مبلغ محصول را وارد کنید" />
