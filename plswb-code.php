@@ -1596,6 +1596,7 @@ function get_variation_price_by_id($product_id, $variation_id)
 
 add_action( 'insert_style_order_dashboard', 'insert_style_order_dashboard' );
 function insert_style_order_dashboard(){
+    dd(get_query_var())
     ?>
 <link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
    <style>
