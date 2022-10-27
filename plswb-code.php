@@ -1611,6 +1611,9 @@ function insert_style_order_dashboard()
                 width: 50% !important;
                 text-align: right !important;
             }
+            table.shop_table.order_details.fslm-license-keys-table.bg-success.rounded.p-5.text-white thead tr td {
+                text-align: right !important;
+            }
         </style>
 <?php
     endif;
