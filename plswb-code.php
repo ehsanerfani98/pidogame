@@ -1605,6 +1605,10 @@ function insert_style_order_dashboard()
             .card-body {
                 padding: 0 !important;
             }
+
+            table.shop_table.order_details.fslm-license-keys-table.bg-success.rounded.p-5.text-white tbody tr td {
+                color: #000;
+            }
         </style>
 <?php
     endif;
