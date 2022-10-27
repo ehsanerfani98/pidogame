@@ -34,6 +34,38 @@ do_action('insert_style_order_dashboard');
 		'<mark class="order-status">' . wc_get_order_status_name($order->get_status()) . '</mark>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
 	?>
+
+<table class="table table-striped table-rounded border gy-7 gs-7">
+
+	<thead>
+		<tr>
+			<th class="woocommerce-table__product-name product-name">شماره سفارش</th>
+			<th class="woocommerce-table__product-name product-name">تاریخ ثبت</th>
+			<th class="woocommerce-table__product-name product-name">وضعیت</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+
+			<td>
+				<?= $order->get_order_number() ?>
+			</td>
+			<td>
+				<?= wc_format_datetime($order->get_date_created()) ?>
+			</td>
+
+			<td>
+				<?= wc_get_order_status_name($order->get_status()) ?>
+			</td>
+
+		</tr>
+
+
+	</tbody>
+
+
+</table>
 </p>
 
 <?php if ($notes) : ?>
