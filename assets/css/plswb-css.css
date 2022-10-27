@@ -86,18 +86,22 @@ p.woo-wallet-price {
     font-size: 24px;
     color: #ffc700;
 }
+
 .svg-icon-primary {
     font-size: 24px;
     color: #00a3ff;
 }
+
 .svg-icon-info {
     font-size: 24px;
     color: #7239ea;
 }
+
 .svg-icon-success {
     font-size: 24px;
     color: #50cd89;
 }
+
 .svg-icon-danger {
     font-size: 24px;
     color: #f1416c;
@@ -133,55 +137,55 @@ address {
 
 
 
-.completed_label{
+.completed_label {
     background: #c4ffb1 !important;
     color: #47b523;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem .8rem;
+    padding: .5rem .8rem;
 }
 
-.hold_label{
+.hold_label {
     background: #fffbb1 !important;
     color: #c5bc0d;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem .8rem;
+    padding: .5rem .8rem;
 }
 
-.processing_label{
+.processing_label {
     background: #b1d7ff !important;
     color: #2869af;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem .8rem;
+    padding: .5rem .8rem;
 }
 
-.refunded_label{
+.refunded_label {
     background: #ffb1b1 !important;
     color: #c71e1e;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 15px !important;
-    padding:.5rem .8rem;
+    padding: .5rem .8rem;
 }
 
-.woo-wallet-content-h3{
+.woo-wallet-content-h3 {
     font-size: 14px !important;
 }
 
-.woo-wallet-sidebar ul li:last-child{
+.woo-wallet-sidebar ul li:last-child {
     display: none !important;
 }
 
-.wishlist-title-container{
+.wishlist-title-container {
     display: none !important;
 }
 
-.ums-edit-profile-tab-setting ul li:last-child{
+.ums-edit-profile-tab-setting ul li:last-child {
     display: none !important;
 }
 
@@ -189,9 +193,7 @@ address {
     width: 96% !important;
 }
 
-a[href="https://css-tricks.com"] {
-    
-}
+a[href="https://css-tricks.com"] {}
 
 
 
@@ -201,7 +203,8 @@ a[href="https://css-tricks.com"] {
     }
 } */
 
-
-div#kt_content_container {
-    margin-top: 5rem;
+@media (min-width: 1281px) {
+    div#kt_content_container {
+        margin-top: 5rem;
+    }
 }
