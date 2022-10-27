@@ -1601,7 +1601,7 @@ function insert_style_order_dashboard(){
 <link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
    <style>
     .card-body{
-        padding: 0;
+        padding: 0 !important;
     }
    </style>
    
