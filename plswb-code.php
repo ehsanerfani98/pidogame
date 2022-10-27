@@ -1615,6 +1615,9 @@ function insert_style_order_dashboard()
                 width: 50% !important;
                 text-align: right !important;
             }
+            .woocommerce-table--custom-fields .custom-fields{
+                margin: 1rem 0;
+            }
         </style>
 <?php
     endif;
