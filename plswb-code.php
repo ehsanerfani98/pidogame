@@ -1606,7 +1606,6 @@ function insert_style_order_dashboard()
                 padding: 0 !important;
             }
         </style>
-
 <?php
     endif;
 }
