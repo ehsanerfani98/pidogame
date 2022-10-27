@@ -1599,7 +1599,7 @@ function insert_style_order_dashboard(){
     global $post;
 
 
-    dd($post->post_name)
+    dd($post->post_name == 'my-account')
     ?>
 <link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
    <style>
