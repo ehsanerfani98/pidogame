@@ -200,3 +200,8 @@ a[href="https://css-tricks.com"] {
         flex-direction: column !important;
     }
 } */
+
+
+div#kt_content_container {
+    margin-top: 5rem;
+}
