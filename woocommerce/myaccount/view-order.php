@@ -21,12 +21,11 @@
 defined('ABSPATH') || exit;
 
 $notes = $order->get_customer_order_notes();
+do_action('insert_style_order_dashboard');
+
 ?>
 <p>
 	<?php
-
-	do_action('insert_style_order_dashboard');
-
 	printf(
 		/* translators: 1: order number 2: order date 3: order status */
 		esc_html__('Order #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce'),

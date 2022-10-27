@@ -1598,5 +1598,11 @@ add_action( 'insert_style_order_dashboard', 'insert_style_order_dashboard' );
 function insert_style_order_dashboard(){
     ?>
 <link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
-    <?php
+   <style>
+    .card-body{
+        padding: 0;
+    }
+   </style>
+   
+   <?php
 }
