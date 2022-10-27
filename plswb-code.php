@@ -112,8 +112,8 @@ function woocommerce_ajax_add_to_cart()
             "count" => count(WC()->cart->get_cart())
 
         );
-       
-         wp_send_json($data);
+
+        wp_send_json($data);
     }
 
     wp_die();
@@ -1563,7 +1563,7 @@ add_shortcode('plswb_breadcrumb', function () {
         if (function_exists('bcn_display')) bcn_display();
         ?>
     </ul>
-<?php
+    <?php
 });
 
 
@@ -1594,19 +1594,19 @@ function get_variation_price_by_id($product_id, $variation_id)
 }
 
 
-add_action( 'insert_style_order_dashboard', 'insert_style_order_dashboard' );
-function insert_style_order_dashboard(){
+add_action('insert_style_order_dashboard', 'insert_style_order_dashboard');
+function insert_style_order_dashboard()
+{
     global $post;
-
-
-    dd($post->post_name == 'my-account')
+    if ($post->post_name == 'my-account') :
     ?>
-<link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
-   <style>
-    .card-body{
-        padding: 0 !important;
-    }
-   </style>
-   
-   <?php
+        <link href="http://test.pidogame.com/wp-content/themes/pidogame/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
+        <style>
+            .card-body {
+                padding: 0 !important;
+            }
+        </style>
+
+<?php
+    endif;
 }
