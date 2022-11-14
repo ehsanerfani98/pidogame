@@ -209,6 +209,10 @@ a[href="https://css-tricks.com"] {}
     }
 }
 
-.header-respons{
-    height: 66px;
+
+
+@media (max-width: 1180px) {
+    .header-respons{
+        height: 66px;
+    }
 }
