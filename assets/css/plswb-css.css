@@ -208,3 +208,7 @@ a[href="https://css-tricks.com"] {}
         margin-top: 5rem;
     }
 }
+
+.header-respons{
+    height: 66px;
+}
