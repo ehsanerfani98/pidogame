@@ -45,7 +45,7 @@ if ($max_value && $min_value === $max_value) {
 					</svg></span></button>
 
 		</div> -->
-		<div class="wrap-input-number" id="<?php echo esc_attr($input_id); ?>" name="<?php echo esc_attr($input_name); ?>">
+		<div class="wrap-input-number" id="<?php echo esc_attr($input_id); ?>" name="<?php echo esc_attr($input_name); ?>" >
 
 			<button type="button" class="decrease">
 				<span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -54,7 +54,7 @@ if ($max_value && $min_value === $max_value) {
 					</svg></span>
 			</button>
 
-			<input readonly type="text" value="<?php echo esc_attr($input_value); ?>" data-plswb-min="<?php echo esc_attr($min_value); ?>" data-plswb-max="<?php echo esc_attr(0 < $max_value ? $max_value : ''); ?>" data-plswb-step="<?php echo esc_attr($step); ?>" class="plswb-quantity">
+			<input readonly type="text"  class="plswb-quantity">
 
 			<button type="button" class="increase">
 				<span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
