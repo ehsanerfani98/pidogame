@@ -254,12 +254,12 @@ jQuery.each(status_collection, function (index, value) {
 
 jQuery(document).ready(function ($) {
     
-    $('.increase').on('click',function(){
+    $('body').on('click','.increase',function(){
         var current_number = parseInt($(this).parent().find('.plswb-quantity').val()) + 1;
         $(this).parent().find('.plswb-quantity').val(current_number)
     });
 
-    $('.decrease').on('click',function(){
+    $('body').on('click','.decrease',function(){
         console.log('decrease');
         var current_number = parseInt($(this).parent().find('.plswb-quantity').val()) - 1;
         $(this).parent().find('.plswb-quantity').val(current_number)
