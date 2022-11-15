@@ -234,11 +234,6 @@ a[href="https://css-tricks.com"] {}
     display: flex;
     align-items: center;
 }
-
-.wrap-input-number input {
-    width: 4rem;
-}
-
 .wrap-input-number button {
     border: none;
     background: none;
@@ -250,4 +245,9 @@ a[href="https://css-tricks.com"] {}
     border: none;
     background: #eee;
     padding: .5rem;
+}
+
+.wrap-input-number input:focus-visible {
+    width: 4rem;
+    border: none;
 }
