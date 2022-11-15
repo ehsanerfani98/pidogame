@@ -229,3 +229,25 @@ a[href="https://css-tricks.com"] {}
     padding: 1rem;
     border-radius: 10px;
 }
+
+.wrap-input-number {
+    display: flex;
+    align-items: center;
+}
+
+.wrap-input-number input {
+    width: 4rem;
+}
+
+.wrap-input-number button {
+    border: none;
+    background: none;
+}
+
+.wrap-input-number input {
+    width: 4rem;
+    border-radius: 10px;
+    border: none;
+    background: #eee;
+    padding: .5rem;
+}
