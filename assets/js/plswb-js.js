@@ -252,6 +252,8 @@ jQuery.each(status_collection, function (index, value) {
     }
 });
 
+jQuery(document).ready(function () {
+    
 // Dialer container element
 var dialerElement = document.querySelector("#kt_dialer_example_1");
 
@@ -262,4 +264,6 @@ var dialerObject = new KTDialer(dialerElement, {
     step: 1000,
     prefix: "$",
     decimals: 2
+});
+
 });
