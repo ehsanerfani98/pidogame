@@ -32,7 +32,7 @@ if ($max_value && $min_value === $max_value) {
 		<?php do_action('woocommerce_before_quantity_input_field'); ?>
 		<!-- <label class="screen-reader-text" for="<?php echo esc_attr($input_id); ?>"><?php echo esc_attr($label); ?></label> -->
 rr
-		<div data-kt-dialer="true" data-kt-dialer-min="<?php echo esc_attr($min_value); ?>" data-kt-dialer-max="<?php echo esc_attr(0 < $max_value ? $max_value : ''); ?>" data-kt-dialer-step="<?php echo esc_attr($step); ?>">
+		<!-- <div data-kt-dialer="true" data-kt-dialer-min="<?php echo esc_attr($min_value); ?>" data-kt-dialer-max="<?php echo esc_attr(0 < $max_value ? $max_value : ''); ?>" data-kt-dialer-step="<?php echo esc_attr($step); ?>">
 			<button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease"><span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
 						<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
@@ -44,7 +44,33 @@ rr
 						<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
 					</svg></span></button>
 
-		</div>
+		</div> -->
+
+		<!--begin::Dialer-->
+<div class="input-group w-md-300px"
+    data-kt-dialer="true"
+    data-kt-dialer-min="1000"
+    data-kt-dialer-max="50000"
+    data-kt-dialer-step="1000"
+    data-kt-dialer-prefix="$">
+
+    <!--begin::Decrease control-->
+    <button class="btn btn-icon btn-outline btn-active-color-primary" type="button" data-kt-dialer-control="decrease">
+        <i class="bi bi-dash fs-1"></i>
+    </button>
+    <!--end::Decrease control-->
+
+    <!--begin::Input control-->
+    <input type="text" class="form-control" readonly placeholder="Amount" value="$10000" data-kt-dialer-control="input"/>
+    <!--end::Input control-->
+
+    <!--begin::Increase control-->
+    <button class="btn btn-icon btn-outline btn-active-color-primary" type="button" data-kt-dialer-control="increase">
+        <i class="bi bi-plus fs-1"></i>
+    </button>
+    <!--end::Increase control-->
+</div>
+<!--end::Dialer-->
 		
 		<!-- <input
 			type="number"
