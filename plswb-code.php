@@ -1602,6 +1602,10 @@ function insert_style_order_dashboard()
     ?>
         <link href="<?= PLSWB_THEME_ASSETS ?>css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
         <style>
+
+            .shop_table{
+                background: none !important;
+            }
             .card-body {
                 padding: 0 !important;
             }
