@@ -245,6 +245,9 @@ a[href="https://css-tricks.com"] {}
     border: none;
     background: #eee;
     padding: .5rem;
+    text-align: center;
+    color: #666;
+    font-family: 'IRANSansX' !important;
 }
 
 .wrap-input-number input:focus-visible {
