@@ -231,7 +231,6 @@ a[href="https://css-tricks.com"] {}
 }
 
 .wrap-input-number {
-    position: absolute;
     display: flex;
     align-items: center;
 }
