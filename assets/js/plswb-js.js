@@ -263,11 +263,11 @@ jQuery(document).ready(function ($) {
     });
 
     $('body').on('click', '.decrease', function () {
-        // if ($(this).parent().find('.plswb-qty').val() >= (parseInt($(this).parent().find('.plswb-qty').data('plswb-min')+1))) {
+        if ($(this).parent().find('.plswb-qty').val() >= 2) {
             var current_number = parseInt($(this).parent().find('.plswb-qty').val()) - parseInt($(this).parent().find('.plswb-qty').data('plswb-step'));
             $(this).parent().find('.plswb-qty').val(current_number);
             $('button[name="update_cart"]').attr('aria-disabled', false).prop('disabled', false);
-        // }
+        }
     });
 
 });
