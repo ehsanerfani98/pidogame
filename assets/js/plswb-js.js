@@ -252,8 +252,15 @@ jQuery.each(status_collection, function (index, value) {
     }
 });
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
     
-// Dialer container element
-var dialerElement = document.querySelector("#kt_dialer_example_1");
+    $('.increase').click(function(){
+        var current_number = parseInt($(this).parent().find('plswb-quantity').text()) + 1;
+        $(this).parent().find('plswb-quantity').text(current_number)
+    });
+    $('.decrease').click(function(){
+        var current_number = parseInt($(this).parent().find('plswb-quantity').text()) - 1;
+        $(this).parent().find('plswb-quantity').text(current_number)
+    });
 
+});
