@@ -224,7 +224,7 @@ a[href="https://css-tricks.com"] {}
     border-radius: 10px;
 }
 .comment:nth-child(odd) {
-    background: #e3e3e3 !important;
+    background: #ececec !important;
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
