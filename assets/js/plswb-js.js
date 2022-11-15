@@ -255,7 +255,7 @@ jQuery.each(status_collection, function (index, value) {
 jQuery(document).ready(function ($) {
     
     $('.increase').click(function(){
-        console.log('increase',$(this).parent().find('.plswb-quantity').text());
+        console.log('increase',$(this).parent());
         var current_number = parseInt($(this).parent().find('.plswb-quantity').text()) + 1;
         $(this).parent().find('.plswb-quantity').text(current_number)
     });
