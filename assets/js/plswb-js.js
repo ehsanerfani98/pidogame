@@ -252,3 +252,14 @@ jQuery.each(status_collection, function (index, value) {
     }
 });
 
+// Dialer container element
+var dialerElement = document.querySelector("#kt_dialer_example_1");
+
+// Create dialer object and initialize a new instance
+var dialerObject = new KTDialer(dialerElement, {
+    min: 1000,
+    max: 50000,
+    step: 1000,
+    prefix: "$",
+    decimals: 2
+});

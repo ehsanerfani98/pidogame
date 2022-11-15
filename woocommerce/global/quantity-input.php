@@ -47,14 +47,7 @@ if ($max_value && $min_value === $max_value) {
 		</div> -->
 
 <!--begin::Dialer-->
-<div class="position-relative w-md-300px"
-    data-kt-dialer="true"
-    data-kt-dialer-min="1000"
-    data-kt-dialer-max="50000"
-    data-kt-dialer-step="1000"
-    data-kt-dialer-prefix="$"
-    data-kt-dialer-decimals="2">
-
+<div class="position-relative w-md-300px" id="kt_dialer_example_1">
     <!--begin::Decrease control-->
     <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
         <span class="svg-icon svg-icon-1"><svg></svg></span>
@@ -62,7 +55,7 @@ if ($max_value && $min_value === $max_value) {
     <!--end::Decrease control-->
 
     <!--begin::Input control-->
-    <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly value="$36,000.00" />
+    <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" name="manageBudget" readonly value="$36,000.00" />
     <!--end::Input control-->
 
     <!--begin::Increase control-->
