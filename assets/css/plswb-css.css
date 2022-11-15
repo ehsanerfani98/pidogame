@@ -217,6 +217,6 @@ a[href="https://css-tricks.com"] {}
     }
 }
 
-.woocommerce-OrderUpdates .commentlist .notes:nth-child(even) {
+.woocommerce-OrderUpdates:nth-child(even) {
     background: #50cd89;
 }
