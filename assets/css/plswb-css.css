@@ -248,6 +248,5 @@ a[href="https://css-tricks.com"] {}
 }
 
 .wrap-input-number input:focus-visible {
-    width: 4rem;
-    border: none;
+    outline: none;
 }
