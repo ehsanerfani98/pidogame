@@ -218,5 +218,5 @@ a[href="https://css-tricks.com"] {}
 }
 
 .woocommerce-OrderUpdates:nth-child(even) {
-    background: #50cd89;
+    background: #50cd89 !important;
 }
