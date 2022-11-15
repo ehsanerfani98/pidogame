@@ -1624,7 +1624,7 @@ function insert_style_order_dashboard()
         <script>
             jQuery(document).ready(function($) {
                 console.log('ddd');
-                $('.shop-table').addClass('table table-striped table-rounded border gy-7 gs-7').removeClass(['shop_table', 'order_details', 'fslm-license-keys-table', 'bg-success', 'rounded', 'p-5', 'text-white']);
+                $('.shop_table').addClass('table table-striped table-rounded border gy-7 gs-7').removeClass(['shop_table', 'order_details', 'fslm-license-keys-table', 'bg-success', 'rounded', 'p-5', 'text-white']);
             })
         </script>
 <?php
