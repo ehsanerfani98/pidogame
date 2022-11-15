@@ -217,6 +217,13 @@ a[href="https://css-tricks.com"] {}
     }
 }
 
-.woocommerce-OrderUpdates:nth-child(even) {
-    background: #50cd89 !important;
+.comment:nth-child(even) {
+    background: #daf6ff !important;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.comment:nth-child(odd) {
+    background: #e3e3e3 !important;
+    margin: 1rem 0;
+    padding: 1rem;
 }
