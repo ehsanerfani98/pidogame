@@ -234,9 +234,14 @@ a[href="https://css-tricks.com"] {}
     display: flex;
     align-items: center;
 }
+
 .wrap-input-number button {
     border: none;
     background: none;
+}
+
+.wrap-input-number button:focus-visible {
+    outline: none;
 }
 
 .wrap-input-number input {
