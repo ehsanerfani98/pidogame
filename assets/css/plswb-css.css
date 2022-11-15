@@ -212,7 +212,11 @@ a[href="https://css-tricks.com"] {}
 
 
 @media (min-width: 1181px) {
-    .header-respons{
+    .header-respons {
         height: 66px;
     }
+}
+
+.woocommerce-OrderUpdates .commentlist .notes:nth-child(odd) {
+    background: #50cd89;
 }
