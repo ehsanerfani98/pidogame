@@ -1602,10 +1602,6 @@ function insert_style_order_dashboard()
     ?>
         <link href="<?= PLSWB_THEME_ASSETS ?>css/style.bundle.rtl.css" rel="stylesheet" type="text/css">
         <style>
-
-            .shop_table{
-                background: none !important;
-            }
             .card-body {
                 padding: 0 !important;
             }
@@ -1615,14 +1611,21 @@ function insert_style_order_dashboard()
                 width: 50% !important;
                 text-align: right !important;
             }
+
             table.shop_table.order_details.fslm-license-keys-table.bg-success.rounded.p-5.text-white thead tr th {
                 width: 50% !important;
                 text-align: right !important;
             }
-            .woocommerce-table--custom-fields{
+
+            .woocommerce-table--custom-fields {
                 margin: 1rem 0 !important;
             }
         </style>
+        <script>
+            jQuery(document).ready(function($) {
+                $('shop-table').addClass('table table-striped table-rounded border gy-7 gs-7');
+            })
+        </script>
 <?php
     endif;
 }
