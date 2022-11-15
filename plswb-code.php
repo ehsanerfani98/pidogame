@@ -1606,13 +1606,13 @@ function insert_style_order_dashboard()
                 padding: 0 !important;
             }
 
-            table.shop_table.order_details.fslm-license-keys-table.bg-success.rounded.p-5.text-white tbody tr td {
+            .table tbody tr td {
                 color: #000;
                 width: 50% !important;
                 text-align: right !important;
             }
 
-            table.shop_table.order_details.fslm-license-keys-table.bg-success.rounded.p-5.text-white thead tr th {
+            .table thead tr th {
                 width: 50% !important;
                 text-align: right !important;
             }
