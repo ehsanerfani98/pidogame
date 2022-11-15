@@ -256,13 +256,14 @@ jQuery(document).ready(function ($) {
     
     $('body').on('click','.increase',function(){
         var current_number = parseInt($(this).parent().find('.plswb-quantity').val()) + 1;
-        $(this).parent().find('.plswb-quantity').val(current_number)
+        $(this).parent().find('.plswb-quantity').val(current_number);
+        $('button[name="update_cart"]').attr('aria-disabled', false);
     });
 
     $('body').on('click','.decrease',function(){
-        console.log('decrease');
         var current_number = parseInt($(this).parent().find('.plswb-quantity').val()) - 1;
-        $(this).parent().find('.plswb-quantity').val(current_number)
+        $(this).parent().find('.plswb-quantity').val(current_number);
+        $('button[name="update_cart"]').attr('aria-disabled', false);
     });
 
 });
