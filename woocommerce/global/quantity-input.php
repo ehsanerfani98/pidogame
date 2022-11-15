@@ -54,7 +54,7 @@ if ($max_value && $min_value === $max_value) {
 					</svg></span>
 			</button>
 
-			<input type="number">
+			<input type="text">
 
 			<button type="button">
 				<span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
