@@ -29,7 +29,6 @@ if ($max_value && $min_value === $max_value) {
 	$label = !empty($args['product_name']) ? sprintf(esc_html__('%s quantity', 'woocommerce'), wp_strip_all_tags($args['product_name'])) : esc_html__('Quantity', 'woocommerce');
 ?>
 	<!-- <div class=" position-relative w-100px d-inline-block"> -->
-		<?php do_action('woocommerce_before_quantity_input_field'); ?>
 		<!-- <label class="screen-reader-text" for="<?php echo esc_attr($input_id); ?>"><?php echo esc_attr($label); ?></label> -->
 
 		<!-- <div data-kt-dialer="true" data-kt-dialer-min="<?php echo esc_attr($min_value); ?>" data-kt-dialer-max="<?php echo esc_attr(0 < $max_value ? $max_value : ''); ?>" data-kt-dialer-step="<?php echo esc_attr($step); ?>">
@@ -45,7 +44,8 @@ if ($max_value && $min_value === $max_value) {
 					</svg></span></button>
 
 		</div> -->
-		<div class="wrap-input-number" id="<?php echo esc_attr($input_id); ?>" name="<?php echo esc_attr($input_name); ?>" >
+		<div class="wrap-input-number">
+		<?php do_action('woocommerce_before_quantity_input_field'); ?>
 
 			<button type="button" class="decrease">
 				<span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -54,7 +54,7 @@ if ($max_value && $min_value === $max_value) {
 					</svg></span>
 			</button>
 
-			<input readonly type="text"  class="plswb-quantity">
+			<input readonly type="text" id="<?php echo esc_attr($input_id); ?>" name="<?php echo esc_attr($input_name); ?>" value="<?php echo esc_attr($input_value); ?>" data-plswb-min="<?php echo esc_attr($min_value); ?>" data-plswb-max="<?php echo esc_attr(0 < $max_value ? $max_value : ''); ?>" data-plswb-step="<?php echo esc_attr($step); ?>" class="plswb-quantity">
 
 			<button type="button" class="increase">
 				<span class="svg-icon svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
