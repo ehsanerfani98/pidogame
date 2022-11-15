@@ -255,19 +255,19 @@ jQuery.each(status_collection, function (index, value) {
 jQuery(document).ready(function ($) {
 
     $('body').on('click', '.increase', function () {
-        if ($(this).parent().find('.plswb-qty').val() <= (parseInt($(this).parent().find('.plswb-qty').data('plswb-max')-1))) {
+        // if ($(this).parent().find('.plswb-qty').val() <= (parseInt($(this).parent().find('.plswb-qty').data('plswb-max')-1))) {
             var current_number = parseInt($(this).parent().find('.plswb-qty').val()) + parseInt($(this).parent().find('.plswb-qty').data('plswb-step'));
             $(this).parent().find('.plswb-qty').val(current_number);
             $('button[name="update_cart"]').attr('aria-disabled', false).prop('disabled', false);
-        }
+        // }
     });
 
     $('body').on('click', '.decrease', function () {
-        if ($(this).parent().find('.plswb-qty').val() >= (parseInt($(this).parent().find('.plswb-qty').data('plswb-min')+1))) {
+        // if ($(this).parent().find('.plswb-qty').val() >= (parseInt($(this).parent().find('.plswb-qty').data('plswb-min')+1))) {
             var current_number = parseInt($(this).parent().find('.plswb-qty').val()) - parseInt($(this).parent().find('.plswb-qty').data('plswb-step'));
             $(this).parent().find('.plswb-qty').val(current_number);
             $('button[name="update_cart"]').attr('aria-disabled', false).prop('disabled', false);
-        }
+        // }
     });
 
 });
