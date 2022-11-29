@@ -30,7 +30,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
     <div class="col-lg-5 col-xl-4">
         <?php get_template_part('templates/product/game/header-card') ?>
     </div>
-    <div class="col-lg-7 col-xl-8">
+    <div class="col-lg-7 col-xl-8 px-5">
         <div class="row mb-4">
             <div class="card">
                 <div class="card-body" dir="ltr" style="padding:10px 0px;">
