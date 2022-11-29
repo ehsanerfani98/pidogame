@@ -16,7 +16,7 @@
 
                         ?>
                     </div>
-                    <div style="border: 2px solid;" class="card-footer bg-secondary border-primary border-dashed pb-0" >
+                    <div style="border: 2px solid;" class="card-footer bg-secondary border-primary border-dashed pb-0">
                         <input type="hidden" id="pid" value="<?php the_ID() ?>">
                         <div class="row">
                             <div class="col-lg-5">
@@ -54,17 +54,20 @@
 
                             </div> -->
                             <div class="col-lg-3" style="text-align: left;">
-                                <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
+                                <div class="mb-10">
 
-                                <button type="button" class="btn btn-primary" id="free-payment-add-to-cart">
-                                    <span class="indicator-label">
-                                        افزودن به سبد خرید
-                                    </span>
-                                    <span class="indicator-progress">
-                                        در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                    </span>
-                                </button>
+                                    <label style="width: 100%;" for="exampleFormControlInput4" class="form-label"></label>
 
+                                    <button type="button" class="btn btn-primary" id="free-payment-add-to-cart">
+                                        <span class="indicator-label">
+                                            افزودن به سبد خرید
+                                        </span>
+                                        <span class="indicator-progress">
+                                            در حال پردازش ... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                    </button>
+
+                                </div>
                             </div>
                         </div>
                     </div>
