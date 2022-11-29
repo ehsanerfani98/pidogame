@@ -477,8 +477,8 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
 
     </div>
 
-    <div class="col-lg-12">
-        <div class="row">
+    <div class="">
+        <div class="">
             <div class="card">
                 <div class="card-body px-2 py-5">
                     <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
