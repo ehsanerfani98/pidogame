@@ -20,7 +20,7 @@ $related = wc_get_related_products($product->get_id(), 4);
                                 </div>
                             </a>
                             <div class="mt-5">
-                                <a href="<?php echo get_permalink($productId) ?>" class="fs-6 text-dark fw-bolder text-hover-primary text-dark lh-base"><?php echo strip_tags(wp_trim_words(get_the_title($productId), 5, '...')) ?></a>
+                                <a href="<?php echo get_permalink($productId) ?>" class="fs-6 text-dark fw-bolder text-hover-primary text-dark lh-base"><?php echo strip_tags(wp_trim_words(get_the_title($productId), 3, '...')) ?></a>
                                 <div class="fs-6 fw-bolder mt-5 d-flex flex-stack">
                                     <span class="badge border border-dashed fs-3 fw-bolder text-dark p-2 ss02">
                                         <?php echo number_format($relatedProduct->get_price()) ?>
