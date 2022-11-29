@@ -99,7 +99,7 @@
             <!--end::Content-->
             <?php if (get_option('pidogame_framework')['faq_title']) : ?>
                 <div class="row" style="margin-top: -1.5rem;">
-                    <a href="<?= get_option('pidogame_framework')['faq_link']['url'] ?>" class="btn btn-block btn-primary"><?= get_option('pidogame_framework')['faq_title'] ?></a>
+                    <a href="<?= get_option('pidogame_framework')['faq_link']['url'] ?>" class="btn btn-block btn-primary" style="z-index: 10;"><?= get_option('pidogame_framework')['faq_title'] ?></a>
                 </div>
             <?php endif; ?>
 
