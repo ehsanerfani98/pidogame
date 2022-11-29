@@ -146,7 +146,7 @@ foreach (explode(',', $product->get_attribute('pa_device')) as $name) {
                                             <?php
                                             $i = 0;
                                             foreach ($region_options as $option_region_id) : ?>
-                                                <div class="col-lg-3 col-6 p-0 mb-5">
+                                                <div class="col-lg col-6 p-0 mb-5">
                                                     <div class="form-check form-check-custom form-check-success form-check-solid">
                                                         <input <?= $i == 0 ? 'checked' : '' ?> name="region_<?= get_term($option_id)->slug ?>" class="form-check-input switch_<?= get_term($option_id)->slug ?>" onclick="getslug(this)" data-region="<?= get_term($option_region_id)->slug; ?>" data-slug="<?= get_term($option_id)->slug ?>" type="radio" id="<?= get_term($option_id)->slug . '_' . get_term($option_region_id)->term_id; ?>" />
                                                         <label class="form-check-label" for="<?= get_term($option_id)->slug . '_' . get_term($option_region_id)->term_id; ?>">

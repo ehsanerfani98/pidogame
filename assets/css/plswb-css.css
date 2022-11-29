@@ -261,6 +261,7 @@ a[href="https://css-tricks.com"] {}
 }
 
 @media only screen and (max-width: 768px) {
+    
     #customer_details {
         display: flex;
         flex-direction: column-reverse;
