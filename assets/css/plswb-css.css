@@ -271,4 +271,10 @@ a[href="https://css-tricks.com"] {}
         height: 70px;
         min-height: 70px;
     }
+
+    .hover-scroll-overlay-y {
+        overflow-y: scroll;
+    }
 }
+
+
