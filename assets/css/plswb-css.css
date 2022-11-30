@@ -268,8 +268,8 @@ a[href="https://css-tricks.com"] {}
     }
 
     .header-tablet-and-mobile-fixed[data-kt-sticky-header=on] .header {
-        height: 70px;
-        min-height: 70px;
+        height: 20%;
+        min-height: 20%;
     }
 
     .hover-scroll-overlay-y {
