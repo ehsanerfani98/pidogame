@@ -1,5 +1,5 @@
 <style>
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 992px) {
         #kt_header_nav {
             display: none!important;
         }
