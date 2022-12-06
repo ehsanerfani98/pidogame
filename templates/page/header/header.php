@@ -1,6 +1,11 @@
 <style>
     @media only screen and (max-width: 992px) {
-        #kt_header_nav {
+        #kt_header_nav2 {
+            display: none!important;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .kt_header_menu {
             display: none!important;
         }
     }
@@ -19,7 +24,7 @@
         </div>
         <?php get_template_part('templates/page/header/logo') ?>
         <div class="d-flex align-items-stretch justify-content-sm-between flex-lg-grow-1">
-            <div class="d-flex align-items-stretch" id="kt_header_nav">
+            <div class="d-flex align-items-stretch" id="kt_header_nav2">
                 <?php
                 $menu = headerMenuArray();
                 foreach ($menu as $menuItem) :
