@@ -69,6 +69,7 @@ global $product;
 </div>
 
 <div class="d-lg-none d-xl-none d-flex row my-5 position-relative">
+    <p class="lh-xl pt-10 text-gray-700 ss02"><?php echo get_the_excerpt() ?></p>
     <div class="col-lg-12">
         <?php get_template_part('templates/product/item/price') ?>
     </div>

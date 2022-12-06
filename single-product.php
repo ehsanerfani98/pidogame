@@ -9,7 +9,7 @@ get_header();
             <?php get_template_part('templates/page/header/header') ?>
             <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
                 <?php get_template_part('templates/page/aside/aside') ?>
-                <div class="content flex-row-fluid" id="kt_content">
+                <div class="content flex-row-fluid" id="kt_content" style="overflow-x: hidden">
                     <?php
                     $type = $meta['opt-product-type'];
                     switch ($type) {
