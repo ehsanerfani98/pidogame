@@ -222,13 +222,13 @@
                 <?php endforeach ?>
 
             </div>
-            
+
             <div class="topbar d-flex align-items-stretch flex-shrink-0" style="margin-left: 35px">
                 <?php get_template_part('templates/page/header/toolbar/toolbar') ?>
             </div>
         </div>
     </div>
-    <div class="header-container container-xxl d-flex align-items-center">
+    <div class="header-container container-xxl d-flex align-items-center d-none">
         <div class="topbar d-flex align-items-stretch flex-shrink-0">
             <div class="header-menu align-items-stretch h-lg-75px" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
                 <?php get_template_part('templates/page/header/menu') ?>
