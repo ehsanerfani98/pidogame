@@ -24,7 +24,7 @@
         </div>
         <?php get_template_part('templates/page/header/logo') ?>
         <div class="d-flex align-items-stretch justify-content-sm-between flex-lg-grow-1">
-            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch kt_header_nav" id="#kt_header_menu">
+            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch kt_header_nav" id="#kt_header_menu" data-kt-menu="true">
                 <?php
                 $menu = headerMenuArray();
                 foreach ($menu as $menuItem) :
@@ -234,7 +234,6 @@
                 <?php endforeach ?>
 
             </div>
-
             <div class="topbar d-flex align-items-stretch flex-shrink-0" style="margin-left: 35px">
                 <?php get_template_part('templates/page/header/toolbar/toolbar') ?>
             </div>
