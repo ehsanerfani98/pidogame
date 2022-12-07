@@ -1,4 +1,7 @@
 <style>
+    #kt_content_container{
+        margin-top: 2rem;
+    }
     @media only screen and (max-width: 992px) {
         .kt_header_nav {
             display: none!important;
