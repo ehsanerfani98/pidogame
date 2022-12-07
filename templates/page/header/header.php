@@ -1,6 +1,6 @@
 <style>
     @media only screen and (max-width: 992px) {
-        #kt_header_nav2 {
+        #kt_header_nav {
             display: none!important;
         }
     }
@@ -24,7 +24,7 @@
         </div>
         <?php get_template_part('templates/page/header/logo') ?>
         <div class="d-flex align-items-stretch justify-content-sm-between flex-lg-grow-1">
-            <div class="d-flex align-items-stretch" id="kt_header_nav2">
+            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="kt_header_nav">
                 <?php
                 $menu = headerMenuArray();
                 foreach ($menu as $menuItem) :
