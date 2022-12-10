@@ -9,15 +9,15 @@
         .kt_header_nav {
             display: none!important;
         }
-
+        #kt_content_container{
+            margin-top: -1rem !important;
+        }
     }
     @media only screen and (min-width: 992px) {
         .kt_header_menu {
             display: none!important;
         }
-        #kt_content_container{
-            margin-top: -1rem !important;
-        }
+
     }
 </style>
 <div id="kt_header" class="header align-items-stretch d-flex flex-column mb-10 header-respons" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
