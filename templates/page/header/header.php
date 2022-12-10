@@ -2,12 +2,13 @@
     .header{
         height: 60px;
     }
-    #kt_content_container{
-        margin-top: 2rem !important;
-    }
+
     @media only screen and (max-width: 992px) {
         .kt_header_nav {
             display: none!important;
+        }
+        #kt_content_container{
+            margin-top: 2rem !important;
         }
     }
     @media only screen and (min-width: 992px) {
