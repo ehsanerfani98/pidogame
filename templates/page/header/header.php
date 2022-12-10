@@ -1,4 +1,7 @@
 <style>
+    .header{
+        height: 60px;
+    }
     #kt_content_container{
         margin-top: 2rem !important;
     }
