@@ -21,7 +21,7 @@
     }
 </style>
 <div id="kt_header" class="header align-items-stretch d-flex flex-column mb-10 header-respons" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
-    <div class="header-container px-4 d-flex align-items-center py-4" style="border-bottom-left-radius: unset; border-bottom-right-radius: unset;">
+    <div class="header-container container-xxl d-flex align-items-center" style="border-bottom-left-radius: unset; border-bottom-right-radius: unset;">
         <div class="d-flex topbar align-items-center d-lg-none ms-n2 me-3">
             <div class="btn btn-icon btn-color-gray-900 w-30px h-30px" id="kt_header_menu_mobile_toggle">
                 <span class="svg-icon svg-icon-2">
