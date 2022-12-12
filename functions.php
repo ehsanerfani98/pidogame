@@ -664,7 +664,7 @@ function replaceImages($content)
 		if ($img->parentNode->hasAttribute('data-src')) continue;
 		$aClass = $img->parentNode->getAttribute('class');
 		$img->parentNode->setAttribute('class', $aClass . ' d-block overlay');
-		$img->parentNode->setAttribute('data-fslightbox', 'lightbox-basic');
+		//$img->parentNode->setAttribute('data-fslightbox', 'lightbox-basic');
 	};
 	return $post->saveHTML();
 }
