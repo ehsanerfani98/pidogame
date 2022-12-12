@@ -244,7 +244,7 @@
                 <?php endforeach ?>
 
             </div>
-            <div class="topbar d-flex align-items-stretch flex-shrink-0" style="margin-left: 35px">
+            <div class="topbar d-flex align-items-stretch flex-shrink-0">
                 <?php get_template_part('templates/page/header/toolbar/toolbar') ?>
             </div>
         </div>
