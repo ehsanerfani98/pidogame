@@ -30,7 +30,14 @@
         .kt_header_menu {
             display: none!important;
         }
-
+        .aside {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: 98;
+            width: 140px;
+        }
     }
 </style>
 <div id="kt_header" class="header align-items-stretch d-flex flex-column mb-10 header-respons" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
