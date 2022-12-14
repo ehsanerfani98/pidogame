@@ -39,6 +39,10 @@
             width: 140px;
             border-radius: unset;
         }
+        .header-fixed[data-kt-sticky-header=on] .header .header-container{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
     }
 </style>
 <div id="kt_header" class="header align-items-stretch d-flex flex-column mb-1 header-respons" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
