@@ -37,6 +37,7 @@
             left: 0px;
             z-index: 98;
             width: 140px;
+            border-radius: unset;
         }
     }
 </style>
