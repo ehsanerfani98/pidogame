@@ -1,6 +1,15 @@
 <style>
     .header{
         height: 60px;
+        background-color: #fff;
+        box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
+    }
+    .aside-enabled.header-fixed[data-kt-sticky-header=on] .header{
+        background-color:unset;
+        box-shadow:unset!important;
+    }
+    .menu-title-gray-700 .menu-item .menu-link .menu-title{
+        font-weight: bolder;
     }
     #kt_content_container{
         margin-top: 2rem !important;
