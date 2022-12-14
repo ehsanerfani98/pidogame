@@ -68,7 +68,7 @@ if (is_user_logged_in()) :
     </div>
 <?php else : ?>
     <div class="d-none d-md-flex align-items-center fa-bold">
-        <a target="<?php echo $options['opt-header-user-login-link']['target'] ?>" href="<?php echo $options['opt-header-user-login-link']['url'] ?>" class="btn btn-secondary ms-5"><?php echo $options['opt-header-user-login-link']['text'] ?>|<?php echo $options['opt-header-user-sign-up-link']['text'] ?></a>
+        <a target="<?php echo $options['opt-header-user-login-link']['target'] ?>" href="<?php echo $options['opt-header-user-login-link']['url'] ?>" class="btn btn-secondary ms-5"><?php echo $options['opt-header-user-login-link']['text'] ?> | <?php echo $options['opt-header-user-sign-up-link']['text'] ?></a>
         <!--<a target="<?php /*echo $options['opt-header-user-sign-up-link']['target'] */?>" href="<?php /*echo $options['opt-header-user-sign-up-link']['url'] */?>" class="btn btn-primary ms-2"><?php /*echo $options['opt-header-user-sign-up-link']['text'] */?></a>-->
     </div>
     <div class="d-flex d-md-none align-items-center ms-3">
