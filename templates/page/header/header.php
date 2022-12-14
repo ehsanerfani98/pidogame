@@ -1,8 +1,12 @@
 <style>
     .header{
-        height: 60px;
+        height: 80px;
         background-color: #fff;
         box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
+    }
+    ..container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+        padding: unset;
+        margin-top: 20px;
     }
     .aside-enabled.header-fixed[data-kt-sticky-header=on] .header{
         background-color:unset;
